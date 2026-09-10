@@ -17,7 +17,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=akuity/kargo
-export VERSION=1.11.2
+export VERSION=1.11.4
 
 function generate_url {
   local crd_file=$1
