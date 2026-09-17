@@ -32,7 +32,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=k-orc/openstack-resource-controller
-export VERSION=v2.5.0
+export VERSION=v2.6.0
 
 function generate_url {
   local crd_file=$1
