@@ -725,6 +725,16 @@ sources:
   upstream: kubernetes-sigs/cluster-api-operator
   groups:
   - operator.cluster.x-k8s.io
+- id: cluster-api-provider-aws
+  name: Cluster API Provider AWS
+  category: Kubernetes
+  cncf: null
+  upstream: kubernetes-sigs/cluster-api-provider-aws
+  groups:
+  - bootstrap.cluster.x-k8s.io
+  - controlplane.cluster.x-k8s.io
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
 - id: cluster-api-provider-azure
   name: Cluster API Provider Azure
   category: Kubernetes
