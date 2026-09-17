@@ -706,7 +706,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=GoogleCloudPlatform/k8s-config-connector
-export VERSION=1.151.0
+export VERSION=1.157.0
 
 function generate_url {
   local crd_file=$1
