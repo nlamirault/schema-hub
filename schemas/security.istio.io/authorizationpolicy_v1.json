@@ -110,6 +110,13 @@
                           "maxItems": 16,
                           "type": "array"
                         },
+                        "notTrustDomains": {
+                          "description": "Optional.",
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
                         "principals": {
                           "description": "Optional.",
                           "items": {
@@ -138,6 +145,13 @@
                             "type": "string"
                           },
                           "maxItems": 16,
+                          "type": "array"
+                        },
+                        "trustDomains": {
+                          "description": "Optional.",
+                          "items": {
+                            "type": "string"
+                          },
                           "type": "array"
                         }
                       },
