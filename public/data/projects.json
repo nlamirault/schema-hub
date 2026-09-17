@@ -642,6 +642,17 @@
     ]
   },
   {
+    "id": "agent-sandbox",
+    "name": "Agent Sandbox",
+    "category": "AI Orchestration",
+    "cncf": null,
+    "upstream": "kubernetes-sigs/agent-sandbox",
+    "groups": [
+      "agents.x-k8s.io",
+      "extensions.agents.x-k8s.io"
+    ]
+  },
+  {
     "id": "kagent",
     "name": "KAgent",
     "category": "AI Orchestration",

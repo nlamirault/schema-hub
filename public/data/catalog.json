@@ -750,6 +750,16 @@
         "upstream": "kubernetes-sigs/kube-agentic-networking"
       }
     ],
+    "agents.x-k8s.io": [
+      {
+        "kind": "sandbox",
+        "version": "v1beta1",
+        "file": "agents.x-k8s.io/sandbox_v1beta1.json",
+        "slug": "agents.x-k8s.io/v1beta1/sandbox",
+        "category": "AI Orchestration",
+        "upstream": "kubernetes-sigs/agent-sandbox"
+      }
+    ],
     "aigateway.envoyproxy.io": [
       {
         "kind": "aigatewayroute",
@@ -14602,6 +14612,32 @@
         "category": "Kubernetes",
         "upstream": "kubernetes/kubernetes",
         "cncf_maturity": "graduated"
+      }
+    ],
+    "extensions.agents.x-k8s.io": [
+      {
+        "kind": "sandboxclaim",
+        "version": "v1beta1",
+        "file": "extensions.agents.x-k8s.io/sandboxclaim_v1beta1.json",
+        "slug": "extensions.agents.x-k8s.io/v1beta1/sandboxclaim",
+        "category": "AI Orchestration",
+        "upstream": "kubernetes-sigs/agent-sandbox"
+      },
+      {
+        "kind": "sandboxtemplate",
+        "version": "v1beta1",
+        "file": "extensions.agents.x-k8s.io/sandboxtemplate_v1beta1.json",
+        "slug": "extensions.agents.x-k8s.io/v1beta1/sandboxtemplate",
+        "category": "AI Orchestration",
+        "upstream": "kubernetes-sigs/agent-sandbox"
+      },
+      {
+        "kind": "sandboxwarmpool",
+        "version": "v1beta1",
+        "file": "extensions.agents.x-k8s.io/sandboxwarmpool_v1beta1.json",
+        "slug": "extensions.agents.x-k8s.io/v1beta1/sandboxwarmpool",
+        "category": "AI Orchestration",
+        "upstream": "kubernetes-sigs/agent-sandbox"
       }
     ],
     "extensions.istio.io": [
