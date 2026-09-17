@@ -846,6 +846,14 @@ sources:
   groups:
   - karpenter.clever-cloud.com
   project: karpenter
+- id: karpenter-ibm
+  name: Karpenter (IBM Cloud)
+  category: Kubernetes
+  cncf: null
+  upstream: kubernetes-sigs/karpenter-provider-ibm-cloud
+  groups:
+  - karpenter-ibm.sh
+  project: karpenter
 - id: open-feature-operator
   name: OpenFeature Operator
   category: Other Extensions

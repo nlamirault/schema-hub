@@ -17085,6 +17085,16 @@
         "cncf_maturity": "sandbox"
       }
     ],
+    "karpenter-ibm.sh": [
+      {
+        "kind": "ibmnodeclass",
+        "version": "v1alpha1",
+        "file": "karpenter-ibm.sh/ibmnodeclass_v1alpha1.json",
+        "slug": "karpenter-ibm.sh/v1alpha1/ibmnodeclass",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/karpenter-provider-ibm-cloud"
+      }
+    ],
     "karpenter.azure.com": [
       {
         "kind": "aksnodeclass",
