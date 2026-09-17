@@ -1,5 +1,5 @@
 {
-  "description": "AgentHarness is a generic remote execution environment provisioned by a backend\n(e.g. OpenShell) and addressable by exec/SSH.",
+  "description": "AgentHarness is a generic remote execution environment provisioned by a\nbackend (OpenClaw or Hermes) running on Agent Substrate.",
   "properties": {
     "apiVersion": {
       "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
@@ -19,7 +19,6 @@
           "description": "Backend selects the control plane to use. Required.",
           "enum": [
             "openclaw",
-            "nemoclaw",
             "hermes"
           ],
           "type": "string"
@@ -182,7 +181,7 @@
                     ]
                   },
                   "openclaw": {
-                    "description": "OpenClaw configures OpenClaw/NemoClaw-specific Slack routing.",
+                    "description": "OpenClaw configures OpenClaw-specific Slack routing.",
                     "properties": {
                       "allowlistChannels": {
                         "description": "AllowlistChannels is required when channelAccess is allowlist.",
@@ -495,61 +494,16 @@
           "type": "array"
         },
         "image": {
-          "description": "Image is the container image to run in the harness VM, if the backend\nsupports per-resource images. Backends openclaw and nemoclaw pin the image\nto the NemoClaw sandbox base when this field is empty; backend hermes pins\nto the Hermes sandbox base image when empty.",
+          "description": "Image is the container image to run in the harness VM, if the backend\nsupports per-resource images. Backend openclaw pins the image\nto the OpenClaw sandbox base when this field is empty; backend hermes pins\nto the Hermes sandbox base image when empty.",
           "type": "string"
         },
         "modelConfigRef": {
           "description": "ModelConfigRef is the reference to the ModelConfig used to configure the harness.\nThe controller registers the gateway provider and, after the harness is Ready,\nwrites OpenClaw config inside the VM (~/.openclaw/openclaw.json) and starts the gateway.",
           "type": "string"
         },
-        "network": {
-          "description": "Network controls outbound access from the harness. When unset,\nbackend defaults apply.",
-          "properties": {
-            "allowedDomains": {
-              "description": "AllowedDomains is a list of DNS names the harness may reach.",
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          },
-          "type": "object"
-        },
-        "runtime": {
-          "default": "openshell",
-          "description": "Runtime selects the harness provisioning stack. Defaults to openshell when unset.",
-          "enum": [
-            "openshell",
-            "substrate"
-          ],
-          "type": "string"
-        },
         "substrate": {
-          "description": "Substrate is required when runtime is substrate.",
+          "description": "Substrate configures the Agent Substrate provisioning stack. Required.",
           "properties": {
-            "gatewayToken": {
-              "description": "GatewayToken is the OpenClaw gateway Bearer token for this harness.\nPrefer gatewayTokenSecretRef for production secrets.",
-              "minLength": 1,
-              "type": "string"
-            },
-            "gatewayTokenSecretRef": {
-              "description": "GatewayTokenSecretRef references a Secret key holding the OpenClaw gateway Bearer token.\nThe Secret must contain a \"token\" key.",
-              "properties": {
-                "apiGroup": {
-                  "type": "string"
-                },
-                "kind": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
             "snapshotsConfig": {
               "description": "SnapshotsConfig configures actor memory snapshots. Defaults to\ngs://ate-snapshots/<namespace>/<agentharnessname> when unset.",
               "properties": {
@@ -583,35 +537,26 @@
               "type": "object"
             },
             "workloadImage": {
-              "description": "WorkloadImage overrides the default nemoclaw/openclaw sandbox image in the ActorTemplate.",
+              "description": "WorkloadImage overrides the default openclaw sandbox image in the ActorTemplate.",
               "type": "string"
             }
           },
-          "type": "object",
-          "x-kubernetes-validations": [
-            {
-              "message": "Exactly one of gatewayToken or gatewayTokenSecretRef must be specified",
-              "rule": "(has(self.gatewayToken) && !has(self.gatewayTokenSecretRef)) || (!has(self.gatewayToken) && has(self.gatewayTokenSecretRef))"
-            }
-          ]
+          "type": "object"
         }
       },
       "required": [
-        "backend"
+        "backend",
+        "substrate"
       ],
       "type": "object",
       "x-kubernetes-validations": [
         {
           "message": "slack backend-specific settings must match spec.backend",
-          "rule": "!has(self.channels) || self.channels.all(c, c.type != 'slack' || (has(c.slack) && ((self.backend == 'hermes' && has(c.slack.hermes) && !has(c.slack.openclaw)) || ((self.backend == 'openclaw' || self.backend == 'nemoclaw') && has(c.slack.openclaw) && !has(c.slack.hermes)))))"
+          "rule": "!has(self.channels) || self.channels.all(c, c.type != 'slack' || (has(c.slack) && ((self.backend == 'hermes' && has(c.slack.hermes) && !has(c.slack.openclaw)) || (self.backend == 'openclaw' && has(c.slack.openclaw) && !has(c.slack.hermes)))))"
         },
         {
-          "message": "spec.substrate may only be set when runtime is substrate",
-          "rule": "!has(self.substrate) || self.runtime == 'substrate'"
-        },
-        {
-          "message": "spec.substrate is required when runtime is substrate",
-          "rule": "self.runtime != 'substrate' || has(self.substrate)"
+          "message": "spec.substrate is required",
+          "rule": "has(self.substrate)"
         }
       ]
     },
@@ -625,7 +570,6 @@
               "description": "AgentHarnessBackendType selects which sandbox control plane provisions the\nenvironment. Additional backends may be added in the future.",
               "enum": [
                 "openclaw",
-                "nemoclaw",
                 "hermes"
               ],
               "type": "string"
