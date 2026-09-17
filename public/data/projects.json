@@ -622,6 +622,16 @@
     ]
   },
   {
+    "id": "agent-router",
+    "name": "Agent Router",
+    "category": "AI Orchestration",
+    "cncf": null,
+    "upstream": "theagentrouter/agent-router",
+    "groups": [
+      "aigateway.envoyproxy.io"
+    ]
+  },
+  {
     "id": "kagent",
     "name": "KAgent",
     "category": "AI Orchestration",
