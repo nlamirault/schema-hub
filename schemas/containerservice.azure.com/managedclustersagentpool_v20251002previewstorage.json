@@ -23,7 +23,7 @@
           "type": "object"
         },
         "artifactStreamingProfile": {
-          "description": "Storage version of v20251002preview.AgentPoolArtifactStreamingProfile",
+          "description": "Storage version of v20251002preview.AgentPoolArtifactStreamingProfile\nArtifact streaming profile for the agent pool.",
           "properties": {
             "$propertyBag": {
               "additionalProperties": {
@@ -593,6 +593,9 @@
           },
           "type": "object"
         },
+        "nodeImageVersion": {
+          "type": "string"
+        },
         "nodeInitializationTaints": {
           "items": {
             "type": "string"
@@ -1078,7 +1081,7 @@
           "type": "object"
         },
         "artifactStreamingProfile": {
-          "description": "Storage version of v20251002preview.AgentPoolArtifactStreamingProfile_STATUS",
+          "description": "Storage version of v20251002preview.AgentPoolArtifactStreamingProfile_STATUS\nArtifact streaming profile for the agent pool.",
           "properties": {
             "$propertyBag": {
               "additionalProperties": {

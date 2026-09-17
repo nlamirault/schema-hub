@@ -1,5 +1,5 @@
 {
-  "description": "Storage version of v1api20210501preview.DiagnosticSetting\nGenerator information:\n- Generated from: /monitor/resource-manager/Microsoft.Insights/preview/2021-05-01-preview/diagnosticsSettings_API.json\n- ARM URI: /{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}",
+  "description": "Storage version of v1api20210501preview.DiagnosticSetting\nGenerator information:\n- Generated from: /monitor/resource-manager/Microsoft.Insights/Insights/preview/2021-05-01-preview/openapi.json\n- ARM URI: /{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}",
   "properties": {
     "apiVersion": {
       "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
@@ -57,7 +57,7 @@
         },
         "logs": {
           "items": {
-            "description": "Storage version of v1api20210501preview.LogSettings\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular log.",
+            "description": "Storage version of v1api20210501preview.DiagnosticsLogSettings\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular log.",
             "properties": {
               "$propertyBag": {
                 "additionalProperties": {
@@ -76,7 +76,7 @@
                 "type": "boolean"
               },
               "retentionPolicy": {
-                "description": "Storage version of v1api20210501preview.RetentionPolicy\nSpecifies the retention policy for the log.",
+                "description": "Storage version of v1api20210501preview.MicrosoftCommonRetentionPolicy\nSpecifies the retention policy for the log.",
                 "properties": {
                   "$propertyBag": {
                     "additionalProperties": {
@@ -124,7 +124,7 @@
         },
         "metrics": {
           "items": {
-            "description": "Storage version of v1api20210501preview.MetricSettings\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular metric.",
+            "description": "Storage version of v1api20210501preview.DiagnosticsMetricSettings\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular metric.",
             "properties": {
               "$propertyBag": {
                 "additionalProperties": {
@@ -140,7 +140,7 @@
                 "type": "boolean"
               },
               "retentionPolicy": {
-                "description": "Storage version of v1api20210501preview.RetentionPolicy\nSpecifies the retention policy for the log.",
+                "description": "Storage version of v1api20210501preview.MicrosoftCommonRetentionPolicy\nSpecifies the retention policy for the log.",
                 "properties": {
                   "$propertyBag": {
                     "additionalProperties": {
@@ -407,7 +407,7 @@
         },
         "logs": {
           "items": {
-            "description": "Storage version of v1api20210501preview.LogSettings_STATUS\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular log.",
+            "description": "Storage version of v1api20210501preview.DiagnosticsLogSettings_STATUS\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular log.",
             "properties": {
               "$propertyBag": {
                 "additionalProperties": {
@@ -426,7 +426,7 @@
                 "type": "boolean"
               },
               "retentionPolicy": {
-                "description": "Storage version of v1api20210501preview.RetentionPolicy_STATUS\nSpecifies the retention policy for the log.",
+                "description": "Storage version of v1api20210501preview.MicrosoftCommonRetentionPolicy_STATUS\nSpecifies the retention policy for the log.",
                 "properties": {
                   "$propertyBag": {
                     "additionalProperties": {
@@ -454,7 +454,7 @@
         },
         "metrics": {
           "items": {
-            "description": "Storage version of v1api20210501preview.MetricSettings_STATUS\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular metric.",
+            "description": "Storage version of v1api20210501preview.DiagnosticsMetricSettings_STATUS\nPart of MultiTenantDiagnosticSettings. Specifies the settings for a particular metric.",
             "properties": {
               "$propertyBag": {
                 "additionalProperties": {
@@ -470,7 +470,7 @@
                 "type": "boolean"
               },
               "retentionPolicy": {
-                "description": "Storage version of v1api20210501preview.RetentionPolicy_STATUS\nSpecifies the retention policy for the log.",
+                "description": "Storage version of v1api20210501preview.MicrosoftCommonRetentionPolicy_STATUS\nSpecifies the retention policy for the log.",
                 "properties": {
                   "$propertyBag": {
                     "additionalProperties": {

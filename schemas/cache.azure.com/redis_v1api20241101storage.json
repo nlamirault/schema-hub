@@ -390,6 +390,12 @@
             "aad-enabled": {
               "type": "string"
             },
+            "additionalProperties": {
+              "additionalProperties": {
+                "x-kubernetes-preserve-unknown-fields": true
+              },
+              "type": "object"
+            },
             "aof-backup-enabled": {
               "type": "string"
             },
@@ -741,6 +747,12 @@
             },
             "aad-enabled": {
               "type": "string"
+            },
+            "additionalProperties": {
+              "additionalProperties": {
+                "x-kubernetes-preserve-unknown-fields": true
+              },
+              "type": "object"
             },
             "aof-backup-enabled": {
               "type": "string"
