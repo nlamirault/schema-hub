@@ -592,6 +592,16 @@
     ]
   },
   {
+    "id": "kueue",
+    "name": "Kueue",
+    "category": "Kubernetes",
+    "cncf": null,
+    "upstream": "kubernetes-sigs/kueue",
+    "groups": [
+      "kueue.x-k8s.io"
+    ]
+  },
+  {
     "id": "vpa",
     "name": "Vertical Pod Autoscaler",
     "category": "Kubernetes",

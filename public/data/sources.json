@@ -1085,6 +1085,12 @@
     "cncf_maturity": null,
     "project": "azure-service-operator-extra"
   },
+  "kueue.x-k8s.io": {
+    "category": "Kubernetes",
+    "upstream": "kubernetes-sigs/kueue",
+    "cncf_maturity": null,
+    "project": "kueue"
+  },
   "kusto.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",

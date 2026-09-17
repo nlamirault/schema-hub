@@ -17437,6 +17437,184 @@
         "upstream": "Azure/azure-service-operator"
       }
     ],
+    "kueue.x-k8s.io": [
+      {
+        "kind": "admissioncheck",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/admissioncheck_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/admissioncheck",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "admissioncheck",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/admissioncheck_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/admissioncheck",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "clusterqueue",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/clusterqueue_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/clusterqueue",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "clusterqueue",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/clusterqueue_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/clusterqueue",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "cohort",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/cohort_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/cohort",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "cohort",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/cohort_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/cohort",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "localqueue",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/localqueue_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/localqueue",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "localqueue",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/localqueue_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/localqueue",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "multikueuecluster",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/multikueuecluster_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/multikueuecluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "multikueuecluster",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/multikueuecluster_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/multikueuecluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "multikueueconfig",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/multikueueconfig_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/multikueueconfig",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "multikueueconfig",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/multikueueconfig_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/multikueueconfig",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "provisioningrequestconfig",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/provisioningrequestconfig_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/provisioningrequestconfig",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "provisioningrequestconfig",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/provisioningrequestconfig_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/provisioningrequestconfig",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "resourceflavor",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/resourceflavor_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/resourceflavor",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "resourceflavor",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/resourceflavor_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/resourceflavor",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "topology",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/topology_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/topology",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "topology",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/topology_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/topology",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "workload",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/workload_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/workload",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "workload",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/workload_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/workload",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "workloadpriorityclass",
+        "version": "v1beta1",
+        "file": "kueue.x-k8s.io/workloadpriorityclass_v1beta1.json",
+        "slug": "kueue.x-k8s.io/v1beta1/workloadpriorityclass",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      },
+      {
+        "kind": "workloadpriorityclass",
+        "version": "v1beta2",
+        "file": "kueue.x-k8s.io/workloadpriorityclass_v1beta2.json",
+        "slug": "kueue.x-k8s.io/v1beta2/workloadpriorityclass",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/kueue"
+      }
+    ],
     "kusto.azure.com": [
       {
         "kind": "cluster",
