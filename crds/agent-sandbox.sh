@@ -12,7 +12,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=kubernetes-sigs/agent-sandbox
-export VERSION=1.0.2
+export VERSION=1.0.3
 
 function generate_url {
   local crd_file=$1
