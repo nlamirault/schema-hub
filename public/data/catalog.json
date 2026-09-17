@@ -21525,6 +21525,208 @@
         "cncf_maturity": "incubating"
       }
     ],
+    "operator.victoriametrics.com": [
+      {
+        "kind": "vlagent",
+        "version": "v1",
+        "file": "operator.victoriametrics.com/vlagent_v1.json",
+        "slug": "operator.victoriametrics.com/v1/vlagent",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vlcluster",
+        "version": "v1",
+        "file": "operator.victoriametrics.com/vlcluster_v1.json",
+        "slug": "operator.victoriametrics.com/v1/vlcluster",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vldistributed",
+        "version": "v1alpha1",
+        "file": "operator.victoriametrics.com/vldistributed_v1alpha1.json",
+        "slug": "operator.victoriametrics.com/v1alpha1/vldistributed",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vlogs",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vlogs_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vlogs",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vlsingle",
+        "version": "v1",
+        "file": "operator.victoriametrics.com/vlsingle_v1.json",
+        "slug": "operator.victoriametrics.com/v1/vlsingle",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmagent",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmagent_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmagent",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmalert",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmalert_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmalert",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmalertmanager",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmalertmanager_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmalertmanager",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmalertmanagerconfig",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmalertmanagerconfig_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmalertmanagerconfig",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmanomaly",
+        "version": "v1",
+        "file": "operator.victoriametrics.com/vmanomaly_v1.json",
+        "slug": "operator.victoriametrics.com/v1/vmanomaly",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmanomalyconfig",
+        "version": "v1",
+        "file": "operator.victoriametrics.com/vmanomalyconfig_v1.json",
+        "slug": "operator.victoriametrics.com/v1/vmanomalyconfig",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmauth",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmauth_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmauth",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmcluster",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmcluster_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmcluster",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmdistributed",
+        "version": "v1alpha1",
+        "file": "operator.victoriametrics.com/vmdistributed_v1alpha1.json",
+        "slug": "operator.victoriametrics.com/v1alpha1/vmdistributed",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmnodescrape",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmnodescrape_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmnodescrape",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmpodscrape",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmpodscrape_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmpodscrape",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmprobe",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmprobe_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmprobe",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmrule",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmrule_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmrule",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmscrapeconfig",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmscrapeconfig_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmscrapeconfig",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmservicescrape",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmservicescrape_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmservicescrape",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmsingle",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmsingle_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmsingle",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmstaticscrape",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmstaticscrape_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmstaticscrape",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vmuser",
+        "version": "v1beta1",
+        "file": "operator.victoriametrics.com/vmuser_v1beta1.json",
+        "slug": "operator.victoriametrics.com/v1beta1/vmuser",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vtcluster",
+        "version": "v1",
+        "file": "operator.victoriametrics.com/vtcluster_v1.json",
+        "slug": "operator.victoriametrics.com/v1/vtcluster",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      },
+      {
+        "kind": "vtsingle",
+        "version": "v1",
+        "file": "operator.victoriametrics.com/vtsingle_v1.json",
+        "slug": "operator.victoriametrics.com/v1/vtsingle",
+        "category": "Observability",
+        "upstream": "VictoriaMetrics/operator"
+      }
+    ],
     "ops.crossplane.io": [
       {
         "kind": "cronoperation",

@@ -354,6 +354,16 @@
     ]
   },
   {
+    "id": "victoria-metrics-operator",
+    "name": "VictoriaMetrics Operator",
+    "category": "Observability",
+    "cncf": null,
+    "upstream": "VictoriaMetrics/operator",
+    "groups": [
+      "operator.victoriametrics.com"
+    ]
+  },
+  {
     "id": "cilium",
     "name": "Cilium",
     "category": "Networking & Mesh",
