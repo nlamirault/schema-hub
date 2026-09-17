@@ -750,6 +750,96 @@
         "upstream": "kubernetes-sigs/kube-agentic-networking"
       }
     ],
+    "aigateway.envoyproxy.io": [
+      {
+        "kind": "aigatewayroute",
+        "version": "v1alpha1",
+        "file": "aigateway.envoyproxy.io/aigatewayroute_v1alpha1.json",
+        "slug": "aigateway.envoyproxy.io/v1alpha1/aigatewayroute",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "aigatewayroute",
+        "version": "v1beta1",
+        "file": "aigateway.envoyproxy.io/aigatewayroute_v1beta1.json",
+        "slug": "aigateway.envoyproxy.io/v1beta1/aigatewayroute",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "aiservicebackend",
+        "version": "v1alpha1",
+        "file": "aigateway.envoyproxy.io/aiservicebackend_v1alpha1.json",
+        "slug": "aigateway.envoyproxy.io/v1alpha1/aiservicebackend",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "aiservicebackend",
+        "version": "v1beta1",
+        "file": "aigateway.envoyproxy.io/aiservicebackend_v1beta1.json",
+        "slug": "aigateway.envoyproxy.io/v1beta1/aiservicebackend",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "backendsecuritypolicy",
+        "version": "v1alpha1",
+        "file": "aigateway.envoyproxy.io/backendsecuritypolicy_v1alpha1.json",
+        "slug": "aigateway.envoyproxy.io/v1alpha1/backendsecuritypolicy",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "backendsecuritypolicy",
+        "version": "v1beta1",
+        "file": "aigateway.envoyproxy.io/backendsecuritypolicy_v1beta1.json",
+        "slug": "aigateway.envoyproxy.io/v1beta1/backendsecuritypolicy",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "gatewayconfig",
+        "version": "v1alpha1",
+        "file": "aigateway.envoyproxy.io/gatewayconfig_v1alpha1.json",
+        "slug": "aigateway.envoyproxy.io/v1alpha1/gatewayconfig",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "gatewayconfig",
+        "version": "v1beta1",
+        "file": "aigateway.envoyproxy.io/gatewayconfig_v1beta1.json",
+        "slug": "aigateway.envoyproxy.io/v1beta1/gatewayconfig",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "mcproute",
+        "version": "v1alpha1",
+        "file": "aigateway.envoyproxy.io/mcproute_v1alpha1.json",
+        "slug": "aigateway.envoyproxy.io/v1alpha1/mcproute",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "mcproute",
+        "version": "v1beta1",
+        "file": "aigateway.envoyproxy.io/mcproute_v1beta1.json",
+        "slug": "aigateway.envoyproxy.io/v1beta1/mcproute",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      },
+      {
+        "kind": "quotapolicy",
+        "version": "v1alpha1",
+        "file": "aigateway.envoyproxy.io/quotapolicy_v1alpha1.json",
+        "slug": "aigateway.envoyproxy.io/v1alpha1/quotapolicy",
+        "category": "AI Orchestration",
+        "upstream": "theagentrouter/agent-router"
+      }
+    ],
     "aiplatform.cnrm.cloud.google.com": [
       {
         "kind": "aiplatformmodel",

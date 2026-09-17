@@ -47,6 +47,12 @@
     "cncf_maturity": null,
     "project": "kube-agentic-networking"
   },
+  "aigateway.envoyproxy.io": {
+    "category": "AI Orchestration",
+    "upstream": "theagentrouter/agent-router",
+    "cncf_maturity": null,
+    "project": "agent-router"
+  },
   "aiplatform.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
