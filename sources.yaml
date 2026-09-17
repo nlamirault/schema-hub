@@ -725,6 +725,14 @@ sources:
   upstream: kubernetes-sigs/cluster-api-operator
   groups:
   - operator.cluster.x-k8s.io
+- id: cluster-api-provider-azure
+  name: Cluster API Provider Azure
+  category: Kubernetes
+  cncf: null
+  upstream: kubernetes-sigs/cluster-api-provider-azure
+  groups:
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
 - id: crossplane
   name: Crossplane
   category: Kubernetes
