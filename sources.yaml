@@ -777,6 +777,14 @@ sources:
   upstream: kedacore/keda
   groups:
   - keda.sh
+- id: kueue
+  name: Kueue
+  category: Kubernetes
+  cncf: null
+  upstream: kubernetes-sigs/kueue
+  groups:
+  - kueue.x-k8s.io
+  project: kueue
 - id: vpa
   name: Vertical Pod Autoscaler
   category: Kubernetes
