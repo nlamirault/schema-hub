@@ -1337,6 +1337,12 @@
     "cncf_maturity": "incubating",
     "project": "cluster-api-operator"
   },
+  "operator.victoriametrics.com": {
+    "category": "Observability",
+    "upstream": "VictoriaMetrics/operator",
+    "cncf_maturity": null,
+    "project": "victoria-metrics-operator"
+  },
   "ops.crossplane.io": {
     "category": "Kubernetes",
     "upstream": "crossplane/crossplane",
