@@ -323,7 +323,7 @@
                     "type": "array"
                   },
                   "rbac": {
-                    "description": "RBAC defines namespace-scoped Kubernetes RBAC rules to create for\nlifecycle hook containers. A Role and RoleBinding are provisioned\nin the agent namespace, bound to the \"sympozium-agent\" ServiceAccount.\nThis allows hooks to interact with Kubernetes resources (e.g., create\nor delete ConfigMaps, read Secrets).",
+                    "description": "RBAC defines namespace-scoped Kubernetes RBAC rules to create for\nlifecycle hook containers. A Role and RoleBinding are provisioned\nin the agent namespace, bound only to this AgentRun's unique ServiceAccount.\nThis allows hooks to interact with Kubernetes resources (e.g., create\nor delete ConfigMaps, read Secrets).",
                     "items": {
                       "description": "RBACRule defines a single Kubernetes RBAC policy rule.",
                       "properties": {
@@ -596,6 +596,37 @@
                 "description": "SystemPrompt is the system prompt that defines the agent's role and behaviour.",
                 "type": "string"
               },
+              "tolerations": {
+                "description": "Tolerations allow agent pods spawned for this agent configuration\nto schedule onto tainted nodes. Propagated to the generated\nAgent's AgentConfig.Tolerations.",
+                "items": {
+                  "description": "The pod this Toleration is attached to tolerates any taint that matches\nthe triple <key,value,effect> using the matching operator <operator>.",
+                  "properties": {
+                    "effect": {
+                      "description": "Effect indicates the taint effect to match. Empty means match all taint effects.\nWhen specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.",
+                      "type": "string"
+                    },
+                    "key": {
+                      "description": "Key is the taint key that the toleration applies to. Empty means match all taint keys.\nIf the key is empty, operator must be Exists; this combination means to match all values and all keys.",
+                      "type": "string"
+                    },
+                    "operator": {
+                      "description": "Operator represents a key's relationship to the value.\nValid operators are Exists, Equal, Lt, and Gt. Defaults to Equal.\nExists is equivalent to wildcard for value, so that a pod can\ntolerate all taints of a particular category.\nLt and Gt perform numeric comparisons (requires feature gate TaintTolerationComparisonOperators).",
+                      "type": "string"
+                    },
+                    "tolerationSeconds": {
+                      "description": "TolerationSeconds represents the period of time the toleration (which must be\nof effect NoExecute, otherwise this field is ignored) tolerates the taint. By default,\nit is not set, which means tolerate the taint forever (do not evict). Zero and\nnegative values will be treated as 0 (evict immediately) by the system.",
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "value": {
+                      "description": "Value is the taint value the toleration matches to.\nIf the operator is Exists, the value should be empty, otherwise just a regular string.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
               "toolPolicy": {
                 "description": "ToolPolicy defines which tools this agent config is allowed to use.",
                 "properties": {
@@ -647,6 +678,29 @@
                 "required": [
                   "enabled"
                 ],
+                "type": "object"
+              },
+              "workspace": {
+                "description": "Workspace overrides the ensemble-level Workspace policy for this\nagent configuration. When non-nil, replaces (not merges with) the\nensemble-level value entirely.",
+                "properties": {
+                  "idleTTL": {
+                    "description": "IdleTTL is the duration a WorkspaceSession (and its PVC) may sit\nidle without any AgentRun referencing it before the sweeper\nreclaims it. Defaults to \"720h\" (30 days). Set to \"0s\" to disable\nidle reclamation entirely.",
+                    "type": "string"
+                  },
+                  "perSessionPVC": {
+                    "description": "PerSessionPVC enables a dedicated PVC per (agent, sessionKey).\nWhen false or nil, /workspace remains an ephemeral emptyDir.",
+                    "type": "boolean"
+                  },
+                  "size": {
+                    "description": "Size requests storage capacity for the per-session PVC\n(e.g. \"1Gi\"). Defaults to \"1Gi\" (matching the emptyDir size limit\nused for ephemeral workspaces).",
+                    "pattern": "^[0-9]+([.][0-9]+)?(([KMGTPE]i?)|[a-zA-Z]*)?$",
+                    "type": "string"
+                  },
+                  "storageClassName": {
+                    "description": "StorageClassName selects the StorageClass for the per-session\nPVC. When empty, the cluster's default StorageClass is used.",
+                    "type": "string"
+                  }
+                },
                 "type": "object"
               }
             },
@@ -4205,6 +4259,29 @@
             "delegation"
           ],
           "type": "string"
+        },
+        "workspace": {
+          "description": "Workspace configures the /workspace volume policy applied to every\nAgent stamped out by this ensemble. Useful for opting an entire\nteam of harness-backed agents (codex, claude-code, etc.) into\nper-session PVCs in one place. Per-persona Workspace overrides in\nAgentConfigSpec.Workspace take precedence.",
+          "properties": {
+            "idleTTL": {
+              "description": "IdleTTL is the duration a WorkspaceSession (and its PVC) may sit\nidle without any AgentRun referencing it before the sweeper\nreclaims it. Defaults to \"720h\" (30 days). Set to \"0s\" to disable\nidle reclamation entirely.",
+              "type": "string"
+            },
+            "perSessionPVC": {
+              "description": "PerSessionPVC enables a dedicated PVC per (agent, sessionKey).\nWhen false or nil, /workspace remains an ephemeral emptyDir.",
+              "type": "boolean"
+            },
+            "size": {
+              "description": "Size requests storage capacity for the per-session PVC\n(e.g. \"1Gi\"). Defaults to \"1Gi\" (matching the emptyDir size limit\nused for ephemeral workspaces).",
+              "pattern": "^[0-9]+([.][0-9]+)?(([KMGTPE]i?)|[a-zA-Z]*)?$",
+              "type": "string"
+            },
+            "storageClassName": {
+              "description": "StorageClassName selects the StorageClass for the per-session\nPVC. When empty, the cluster's default StorageClass is used.",
+              "type": "string"
+            }
+          },
+          "type": "object"
         }
       },
       "required": [

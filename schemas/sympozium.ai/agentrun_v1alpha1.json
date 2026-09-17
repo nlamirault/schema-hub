@@ -63,7 +63,7 @@
           "type": "object"
         },
         "backend": {
-          "description": "Backend selects the execution backend for this run.\n\"job\" (default, implicit): standard Kubernetes Job backend.\n\"celln\": hardware-isolated Celln dispatcher (hermetic; no ensembles, no\n  delegation, no shared memory, no IPC, no streaming; the agent receives\n  the task string and produces a bounded output). Tasks that require\n  multiple tools, sub-agents, or workflow state must use \"job\".\n\nCelln is selected for individual high-risk or bounded computations;\nensembles and workflows always use the Job backend.",
+          "description": "Backend selects the execution backend for this run.\n\"job\" (default, implicit): standard Kubernetes Job backend.\n\"celln\": hardware-isolated Celln dispatcher (hermetic; no ensembles, no\n  delegation, no shared memory, no IPC, no streaming; the agent receives\n  the task string and produces a bounded output). Explicit native Harness\n  bindings support bounded lent tools; sub-agents and retained workflow\n  state still require \"job\".\n\nCelln is selected for individual high-risk or bounded computations;\nensembles and workflows always use the Job backend.",
           "enum": [
             "job",
             "celln"
@@ -74,6 +74,387 @@
           "description": "CanaryMode runs built-in health checks instead of the LLM conversation\nloop. The agent executes deterministic platform checks (API server,\ncluster info, k8s resources) and one minimal LLM call to verify\nprovider connectivity, then outputs a structured JSON result.",
           "type": "boolean"
         },
+        "celln": {
+          "description": "Celln names an immutable program and bounded data for backend=celln.\nA direct program invocation does not send task text to a model. An explicit\nHarness binding sends bounded task/persona data through its host model grant.\nTask text never supplies executable authority.\nThe Celln operator must independently approve every referenced artifact.",
+          "properties": {
+            "capabilities": {
+              "properties": {
+                "egress": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 32,
+                  "type": "array"
+                },
+                "memoryBytes": {
+                  "description": "Timeout is supplied by AgentRun.spec.timeout, not this object.",
+                  "format": "int64",
+                  "maximum": 268435456,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "outputBytes": {
+                  "format": "int64",
+                  "maximum": 65536,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "workspace": {
+                  "enum": [
+                    "none",
+                    "read-only",
+                    "read-write"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "memoryBytes",
+                "outputBytes",
+                "workspace"
+              ],
+              "type": "object"
+            },
+            "harness": {
+              "description": "Harness opts into an explicitly versioned sealed native runtime contract.\nThis is not the container-replacing task.mode=harness adapter.",
+              "properties": {
+                "borrowedTools": {
+                  "items": {
+                    "properties": {
+                      "description": {
+                        "maxLength": 512,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "hash": {
+                        "pattern": "^blake3:[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "jsonStdio": {
+                        "description": "CellnJSONToolIO names immutable schema data and the separate JSON stdio ABI.",
+                        "properties": {
+                          "abi": {
+                            "enum": [
+                              "celln.json-stdio/v1"
+                            ],
+                            "type": "string"
+                          },
+                          "inputBytes": {
+                            "format": "int64",
+                            "maximum": 65536,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "inputSchema": {
+                            "maxLength": 71,
+                            "pattern": "^blake3:[0-9a-f]{64}$",
+                            "type": "string"
+                          },
+                          "outputBytes": {
+                            "format": "int64",
+                            "maximum": 65536,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "outputSchema": {
+                            "maxLength": 71,
+                            "pattern": "^blake3:[0-9a-f]{64}$",
+                            "type": "string"
+                          },
+                          "timeoutMs": {
+                            "format": "int64",
+                            "maximum": 30000,
+                            "minimum": 1,
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "abi",
+                          "inputBytes",
+                          "inputSchema",
+                          "outputBytes",
+                          "outputSchema",
+                          "timeoutMs"
+                        ],
+                        "type": "object"
+                      },
+                      "name": {
+                        "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+                        "type": "string"
+                      },
+                      "path": {
+                        "maxLength": 256,
+                        "pattern": "^/",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "description",
+                      "hash",
+                      "name",
+                      "path"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 24,
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "contractVersion": {
+                  "enum": [
+                    "celln.reference-functions/v1",
+                    "celln.json-tools/v1"
+                  ],
+                  "type": "string"
+                },
+                "json": {
+                  "description": "CellnHarnessJSONLimits are explicit bounded loop ceilings, not model grants.",
+                  "properties": {
+                    "maxCalls": {
+                      "format": "int64",
+                      "maximum": 16,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "maxTurns": {
+                      "format": "int64",
+                      "maximum": 6,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "maxCalls",
+                    "maxTurns"
+                  ],
+                  "type": "object"
+                },
+                "modelGrant": {
+                  "properties": {
+                    "hash": {
+                      "maxLength": 71,
+                      "pattern": "^blake3:[0-9a-f]{64}$",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "hash"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "borrowedTools",
+                "contractVersion",
+                "modelGrant"
+              ],
+              "type": "object",
+              "x-kubernetes-validations": [
+                {
+                  "message": "JSON and reference Harness fields must match the selected contract",
+                  "rule": "self.contractVersion == 'celln.json-tools/v1' ? has(self.json) && self.borrowedTools.all(t, has(t.jsonStdio)) : !has(self.json) && size(self.borrowedTools) == 2 && self.borrowedTools.all(t, !has(t.jsonStdio))"
+                }
+              ]
+            },
+            "inputs": {
+              "items": {
+                "properties": {
+                  "bytes": {
+                    "format": "int64",
+                    "maximum": 65536,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "hash": {
+                    "pattern": "^blake3:[0-9a-f]{64}$",
+                    "type": "string"
+                  },
+                  "mediaType": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "pattern": "^[a-z0-9._-]{1,64}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "bytes",
+                  "hash",
+                  "mediaType",
+                  "name"
+                ],
+                "type": "object"
+              },
+              "maxItems": 16,
+              "type": "array"
+            },
+            "invocation": {
+              "properties": {
+                "alias": {
+                  "type": "string"
+                },
+                "args": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 128,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "alias"
+              ],
+              "type": "object"
+            },
+            "lane": {
+              "description": "Lane never promotes an agent-authored artifact to tool authority.",
+              "enum": [
+                "agent",
+                "tool"
+              ],
+              "type": "string"
+            },
+            "mote": {
+              "properties": {
+                "hash": {
+                  "maxLength": 71,
+                  "pattern": "^blake3:[0-9a-f]{64}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hash"
+              ],
+              "type": "object"
+            },
+            "tools": {
+              "items": {
+                "properties": {
+                  "alias": {
+                    "pattern": "^/",
+                    "type": "string"
+                  },
+                  "closure": {
+                    "properties": {
+                      "hash": {
+                        "maxLength": 71,
+                        "pattern": "^blake3:[0-9a-f]{64}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "hash"
+                    ],
+                    "type": "object"
+                  },
+                  "hash": {
+                    "pattern": "^blake3:[0-9a-f]{64}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "alias",
+                  "hash"
+                ],
+                "type": "object"
+              },
+              "maxItems": 16,
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "capabilities",
+            "invocation",
+            "lane",
+            "mote",
+            "tools"
+          ],
+          "type": "object"
+        },
+        "cellnSelection": {
+          "description": "CellnSelection requests same-namespace approved catalogue revisions.\nThis is intent, not host authority or readiness. Until durable issuance\nis committed, the controller waits without entering legacy execution.\nMutually exclusive with the advanced explicit Celln artifact binding.",
+          "properties": {
+            "clusterToolRefs": {
+              "description": "ClusterToolRefs selects exact shared catalogue revisions. Empty means no\nshared tools, not every installed tool.",
+              "items": {
+                "description": "ClusterCellnToolRef is an unambiguous reference to a cluster-scoped tool\ncatalogue revision. It is intentionally distinct from CellnCatalogueToolRef,\nwhich continues to mean the legacy namespaced CellnTool API.",
+                "properties": {
+                  "name": {
+                    "maxLength": 253,
+                    "minLength": 1,
+                    "pattern": "^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$",
+                    "type": "string"
+                  },
+                  "revision": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "revision"
+                ],
+                "type": "object"
+              },
+              "maxItems": 24,
+              "type": "array",
+              "x-kubernetes-list-type": "atomic"
+            },
+            "runtimeRef": {
+              "description": "RuntimeRef preserves the legacy namespaced AgentRuntime reference. It is\nnever reinterpreted as a CellnRuntimeProfile name.",
+              "maxLength": 253,
+              "minLength": 1,
+              "pattern": "^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$",
+              "type": "string"
+            },
+            "toolRefs": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "maxLength": 253,
+                    "minLength": 1,
+                    "pattern": "^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$",
+                    "type": "string"
+                  },
+                  "revision": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "revision"
+                ],
+                "type": "object"
+              },
+              "maxItems": 24,
+              "type": "array",
+              "x-kubernetes-list-type": "atomic"
+            }
+          },
+          "required": [
+            "toolRefs"
+          ],
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "catalogue tool names must be unique",
+              "rule": "self.toolRefs.all(t, self.toolRefs.filter(x, x.name == t.name).size() == 1)"
+            },
+            {
+              "message": "cluster catalogue tool names must be unique",
+              "rule": "!has(self.clusterToolRefs) || self.clusterToolRefs.all(t, self.clusterToolRefs.filter(x, x.name == t.name).size() == 1)"
+            },
+            {
+              "message": "a tool name cannot resolve through both namespaced and cluster catalogues",
+              "rule": "!has(self.clusterToolRefs) || self.clusterToolRefs.all(t, self.toolRefs.filter(x, x.name == t.name).size() == 0)"
+            }
+          ]
+        },
         "cleanup": {
           "default": "delete",
           "description": "Cleanup policy: \"delete\" to remove pod after completion, \"keep\" for debugging.",
@@ -83,9 +464,106 @@
           ],
           "type": "string"
         },
+        "conversation": {
+          "description": "Conversation relates an enduring run to the conversation it belongs\nto: re-creation after context loss and, for a continued run, the\nexchanges it starts with. Immutable once set.",
+          "properties": {
+            "continuation": {
+              "description": "Continuation decides what happens when this parent's live context is\nlost (its node left the fleet, its owner process was replaced):\nautomatic creates a new run that continues the conversation on any\nnode with capacity, seeded with the recorded exchanges; none ends it.",
+              "enum": [
+                "automatic",
+                "none"
+              ],
+              "type": "string"
+            },
+            "continuesFrom": {
+              "description": "ContinuesFrom names the run whose conversation this run continues. Set\nby the controller (automatic continuation) or the API (a restart); the\ntranscript travels in Seed so the previous run may already be gone.",
+              "maxLength": 253,
+              "type": "string"
+            },
+            "depth": {
+              "description": "Depth counts continuations along the chain so a fleet that keeps\nlosing nodes cannot re-create a parent forever.",
+              "format": "int32",
+              "maximum": 16,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "seed": {
+              "description": "Seed is the memory a continued parent starts with: the committed\nexchanges of the conversation so far, oldest first, bounded so a first\nmessage still fits the turn. Text only; never instructions or tools.",
+              "items": {
+                "description": "ConversationExchange is one committed user message and the answer it got.",
+                "properties": {
+                  "assistant": {
+                    "maxLength": 2048,
+                    "type": "string"
+                  },
+                  "user": {
+                    "maxLength": 2048,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "assistant",
+                  "user"
+                ],
+                "type": "object"
+              },
+              "maxItems": 16,
+              "type": "array",
+              "x-kubernetes-list-type": "atomic"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "conversation is immutable",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
         "dryRun": {
           "description": "DryRun skips the LLM call and produces a synthetic result, allowing\npipeline execution paths to be traced without burning tokens.\nThe flag is automatically propagated to sequential successors.",
           "type": "boolean"
+        },
+        "enduring": {
+          "description": "Enduring bounds the complete parent lifetime, not a renewable per-turn\nallowance. Effective grants may only narrow these requested ceilings.",
+          "properties": {
+            "leaseSeconds": {
+              "format": "int32",
+              "maximum": 86400,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "maxModelRequests": {
+              "format": "int32",
+              "maximum": 6144,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maxOutputTokens": {
+              "format": "int64",
+              "maximum": 3145728,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maxTurns": {
+              "format": "int32",
+              "maximum": 1024,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "requireToolCall": {
+              "description": "RequireToolCall requires actual execution of at least one lent tool on\nevery turn before successful completion; it grants no additional tools.",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "leaseSeconds",
+            "maxModelRequests",
+            "maxOutputTokens",
+            "maxTurns"
+          ],
+          "type": "object"
         },
         "env": {
           "additionalProperties": {
@@ -93,6 +571,14 @@
           },
           "description": "Env defines custom environment variables to pass to the agent container.",
           "type": "object"
+        },
+        "executionLifecycle": {
+          "description": "ExecutionLifecycle selects one-shot or enduring execution independently of Harness\nconfiguration. Omission preserves legacy task/server behaviour. Enduring\nis the native Celln parent/turn-worker path, not an OCI HarnessSession.",
+          "enum": [
+            "one-shot",
+            "enduring"
+          ],
+          "type": "string"
         },
         "imagePullSecrets": {
           "description": "ImagePullSecrets are secrets to use when pulling container images.",
@@ -325,7 +811,7 @@
               "type": "array"
             },
             "rbac": {
-              "description": "RBAC defines namespace-scoped Kubernetes RBAC rules to create for\nlifecycle hook containers. A Role and RoleBinding are provisioned\nin the agent namespace, bound to the \"sympozium-agent\" ServiceAccount.\nThis allows hooks to interact with Kubernetes resources (e.g., create\nor delete ConfigMaps, read Secrets).",
+              "description": "RBAC defines namespace-scoped Kubernetes RBAC rules to create for\nlifecycle hook containers. A Role and RoleBinding are provisioned\nin the agent namespace, bound only to this AgentRun's unique ServiceAccount.\nThis allows hooks to interact with Kubernetes resources (e.g., create\nor delete ConfigMaps, read Secrets).",
               "items": {
                 "description": "RBACRule defines a single Kubernetes RBAC policy rule.",
                 "properties": {
@@ -375,12 +861,28 @@
         "model": {
           "description": "Model specifies the LLM configuration for this run.",
           "properties": {
+            "allowInsecure": {
+              "description": "AllowInsecure is the operator opt-in for an HTTP or self-signed private\nmodel endpoint, carried from the selected connection.",
+              "type": "boolean"
+            },
             "authSecretRef": {
               "description": "AuthSecretRef references the secret containing the API key.",
               "type": "string"
             },
             "baseURL": {
               "description": "BaseURL overrides the provider's default API endpoint.\nUse this for OpenAI-compatible providers (GitHub Copilot, Azure OpenAI,\nOllama, vLLM, LMStudio, etc.).\nExamples:\n  GitHub Copilot: https://api.githubcopilot.com\n  Azure OpenAI:   https://<resource>.openai.azure.com/openai/deployments/<deployment>\n  Ollama:         http://ollama.default.svc:11434/v1",
+              "type": "string"
+            },
+            "connectionRef": {
+              "description": "ConnectionRef selects a ModelConnection in this run's namespace (native Celln only).",
+              "type": "string"
+            },
+            "connectionRevision": {
+              "description": "ConnectionRevision pins the connection UID and spec after resolution.",
+              "type": "string"
+            },
+            "credentialProfile": {
+              "description": "CredentialProfile is the independently approved opaque host mapping.",
               "type": "string"
             },
             "model": {
@@ -398,8 +900,12 @@
               "description": "NodeSelector constrains agent pods to nodes with matching labels.\nInherited from AgentConfig at AgentRun creation time.",
               "type": "object"
             },
+            "protocol": {
+              "description": "Protocol is the host API adapter selected by the connection.",
+              "type": "string"
+            },
             "provider": {
-              "description": "Provider is the AI provider (openai, anthropic, azure-openai, github-copilot, ollama, etc.).",
+              "description": "Provider is the AI provider (openai, anthropic, azure-openai, github-copilot, ollama, etc.).\nOmit when resolving a model connection.",
               "type": "string"
             },
             "providerHeaders": {
@@ -419,9 +925,7 @@
             }
           },
           "required": [
-            "authSecretRef",
-            "model",
-            "provider"
+            "model"
           ],
           "type": "object"
         },
@@ -572,6 +1076,37 @@
         "timeout": {
           "description": "Timeout is the maximum duration for this agent run.",
           "type": "string"
+        },
+        "tolerations": {
+          "description": "Tolerations allow the agent pod to schedule onto tainted nodes.\nTypically inherited from Agent.Spec.Agents.Default.Tolerations by\nthe controller, but may also be set directly on an AgentRun.",
+          "items": {
+            "description": "The pod this Toleration is attached to tolerates any taint that matches\nthe triple <key,value,effect> using the matching operator <operator>.",
+            "properties": {
+              "effect": {
+                "description": "Effect indicates the taint effect to match. Empty means match all taint effects.\nWhen specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.",
+                "type": "string"
+              },
+              "key": {
+                "description": "Key is the taint key that the toleration applies to. Empty means match all taint keys.\nIf the key is empty, operator must be Exists; this combination means to match all values and all keys.",
+                "type": "string"
+              },
+              "operator": {
+                "description": "Operator represents a key's relationship to the value.\nValid operators are Exists, Equal, Lt, and Gt. Defaults to Equal.\nExists is equivalent to wildcard for value, so that a pod can\ntolerate all taints of a particular category.\nLt and Gt perform numeric comparisons (requires feature gate TaintTolerationComparisonOperators).",
+                "type": "string"
+              },
+              "tolerationSeconds": {
+                "description": "TolerationSeconds represents the period of time the toleration (which must be\nof effect NoExecute, otherwise this field is ignored) tolerates the taint. By default,\nit is not set, which means tolerate the taint forever (do not evict). Zero and\nnegative values will be treated as 0 (evict immediately) by the system.",
+                "format": "int64",
+                "type": "integer"
+              },
+              "value": {
+                "description": "Value is the taint value the toleration matches to.\nIf the operator is Exists, the value should be empty, otherwise just a regular string.",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
         },
         "toolPolicy": {
           "description": "ToolPolicy defines which tools this agent is allowed to use.",
@@ -2117,7 +2652,33 @@
         "model",
         "sessionKey"
       ],
-      "type": "object"
+      "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "catalogue selection requires backend celln and cannot mix explicit artifacts",
+          "rule": "!has(self.cellnSelection) || (has(self.backend) && self.backend == 'celln' && !has(self.celln))"
+        },
+        {
+          "message": "enduring lifecycle requires Celln catalogue selection, limits, and task mode",
+          "rule": "!has(self.executionLifecycle) || self.executionLifecycle != 'enduring' || (has(self.enduring) && has(self.backend) && self.backend == 'celln' && has(self.cellnSelection) && (!has(self.mode) || self.mode == 'task'))"
+        },
+        {
+          "message": "enduring limits require enduring lifecycle",
+          "rule": "!has(self.enduring) || (has(self.executionLifecycle) && self.executionLifecycle == 'enduring')"
+        },
+        {
+          "message": "conversation continuation requires enduring lifecycle",
+          "rule": "!has(self.conversation) || (has(self.executionLifecycle) && self.executionLifecycle == 'enduring')"
+        },
+        {
+          "message": "one-shot lifecycle cannot use server mode",
+          "rule": "!has(self.executionLifecycle) || self.executionLifecycle != 'one-shot' || !has(self.mode) || self.mode != 'server'"
+        },
+        {
+          "message": "an enduring run cannot lose its lifecycle, Celln backend, selection or limits; delete the original run instead",
+          "rule": "!has(oldSelf.executionLifecycle) || oldSelf.executionLifecycle != 'enduring' || (has(self.executionLifecycle) && self.executionLifecycle == 'enduring' && has(self.backend) && self.backend == 'celln' && has(self.cellnSelection) && has(self.enduring))"
+        }
+      ]
     },
     "status": {
       "description": "AgentRunStatus defines the observed state of AgentRun.",
@@ -2125,6 +2686,480 @@
         "cellnActionId": {
           "description": "CellnActionID is the execution identifier returned by the Celln dispatcher\nwhen this run is dispatched through the Celln backend. Empty for\nnon-Celln backends. The controller polls /v1/executions/<id> on the\nrouter to track progress.",
           "type": "string"
+        },
+        "cellnIssuance": {
+          "description": "CellnIssuance persists the exact approved payload before remote provisioning.\nIt is history, not dispatch permission or artifact readiness.",
+          "properties": {
+            "payload": {
+              "description": "Payload contains the frozen observation and expected execution candidate.",
+              "maxLength": 393216,
+              "minLength": 1,
+              "type": "string",
+              "x-kubernetes-validations": [
+                {
+                  "message": "issuance payload is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
+            },
+            "payloadSHA256": {
+              "maxLength": 71,
+              "pattern": "^sha256:[0-9a-f]{64}$",
+              "type": "string",
+              "x-kubernetes-validations": [
+                {
+                  "message": "issuance payload hash is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
+            },
+            "phase": {
+              "enum": [
+                "Prepared",
+                "Issued"
+              ],
+              "maxLength": 8,
+              "type": "string"
+            },
+            "result": {
+              "description": "Result contains the validated remote outcome, never provider credentials.",
+              "maxLength": 196608,
+              "type": "string",
+              "x-kubernetes-validations": [
+                {
+                  "message": "issued result is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
+            },
+            "target": {
+              "description": "Target pins the operator-configured issuer endpoint, not a tenant URL.",
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string",
+              "x-kubernetes-validations": [
+                {
+                  "message": "issuer target is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
+            }
+          },
+          "required": [
+            "payload",
+            "payloadSHA256",
+            "phase",
+            "target"
+          ],
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "Celln issuance phase cannot regress",
+              "rule": "self.phase == oldSelf.phase || (oldSelf.phase == 'Prepared' && self.phase == 'Issued')"
+            },
+            {
+              "message": "issued outcome requires a durable result",
+              "rule": "self.phase != 'Issued' || (has(self.result) && size(self.result) > 0)"
+            },
+            {
+              "message": "prepared issuance cannot contain an outcome",
+              "rule": "self.phase != 'Prepared' || !has(self.result) || size(self.result) == 0"
+            }
+          ]
+        },
+        "cellnOnly": {
+          "description": "CellnOnly records a new run's execution boundary before any finalizer or\nworkload side effects. The controller refuses subsequent backend changes.\nAbsent on legacy runs: absence does not prove that Job-side RBAC is absent.",
+          "type": "boolean"
+        },
+        "cellnParent": {
+          "description": "CellnParent binds enduring intent before any parent creation side effect.",
+          "properties": {
+            "acceptedTurns": {
+              "description": "AcceptedTurns counts subsequent turns; the initial turn uses one additional\nhost turn. Claims consume budget even if dispatch later becomes uncertain.",
+              "format": "int32",
+              "maximum": 1023,
+              "minimum": 0,
+              "type": "integer",
+              "x-kubernetes-validations": [
+                {
+                  "message": "accepted turn count cannot decrease",
+                  "rule": "self >= oldSelf"
+                }
+              ]
+            },
+            "activeTurn": {
+              "description": "ActiveTurn remains until that exact child record contains a committed result.",
+              "properties": {
+                "name": {
+                  "maxLength": 253,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "uid": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "uid"
+              ],
+              "type": "object"
+            },
+            "admittedAt": {
+              "description": "AdmittedAt records when parent creation was first attempted. It anchors\nthe original execution lease: later tokens, turns or reconciles cannot\nextend it, and expiry disables new turns. Immutability is enforced by\nthe CellnParentStatus-level validation rule.",
+              "format": "date-time",
+              "type": "string"
+            },
+            "binding": {
+              "description": "CellnParentBinding freezes operator-approved routing and run intent before\ncreation. It contains no credential and is not itself execution authority.",
+              "properties": {
+                "incarnation": {
+                  "maxLength": 71,
+                  "pattern": "^blake3:[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                "launchProfile": {
+                  "maxLength": 71,
+                  "pattern": "^blake3:[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                "principal": {
+                  "maxLength": 512,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "runUID": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "specSHA256": {
+                  "maxLength": 71,
+                  "pattern": "^sha256:[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                "target": {
+                  "maxLength": 2048,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "incarnation",
+                "launchProfile",
+                "principal",
+                "runUID",
+                "specSHA256",
+                "target"
+              ],
+              "type": "object",
+              "x-kubernetes-validations": [
+                {
+                  "message": "parent binding is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
+            },
+            "continuedBy": {
+              "description": "ContinuedBy names the run that continues this conversation after its\ncontext was lost; set once by the controller or the API.",
+              "maxLength": 253,
+              "type": "string"
+            },
+            "createAttempted": {
+              "description": "CreateAttempted must be persisted before POST. A lost response cannot clear\nthis bit; reconciliation must inspect the same owner instead of replaying.",
+              "type": "boolean",
+              "x-kubernetes-validations": [
+                {
+                  "message": "parent creation attempt cannot be cleared",
+                  "rule": "!oldSelf || self"
+                }
+              ]
+            },
+            "initialTurn": {
+              "properties": {
+                "attempted": {
+                  "type": "boolean",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "turn attempt cannot be cleared",
+                      "rule": "!oldSelf || self"
+                    }
+                  ]
+                },
+                "child": {
+                  "maxLength": 71,
+                  "pattern": "^blake3:[0-9a-f]{64}$",
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "turn child is immutable",
+                      "rule": "self == oldSelf"
+                    }
+                  ]
+                },
+                "id": {
+                  "maxLength": 64,
+                  "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "turn ID is immutable",
+                      "rule": "self == oldSelf"
+                    }
+                  ]
+                },
+                "message": {
+                  "maxLength": 2048,
+                  "minLength": 1,
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "turn input is immutable",
+                      "rule": "self == oldSelf"
+                    }
+                  ]
+                },
+                "result": {
+                  "properties": {
+                    "answer": {
+                      "maxLength": 2048,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "succeeded": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "answer",
+                    "succeeded"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "committed turn result is immutable",
+                      "rule": "self == oldSelf"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "attempted",
+                "child",
+                "id",
+                "message"
+              ],
+              "type": "object",
+              "x-kubernetes-validations": [
+                {
+                  "message": "committed turn result cannot be removed",
+                  "rule": "!has(oldSelf.result) || has(self.result)"
+                },
+                {
+                  "message": "turn result requires an attempted submission",
+                  "rule": "!has(self.result) || self.attempted"
+                }
+              ]
+            },
+            "ownerOutcome": {
+              "description": "OwnerOutcome records the first terminal owner observation\n(ContextLost, Stopped, TeardownUncertain, CreateRefused) with the failure signature\nthe broker itself does not report: whether the parent ever reached\nReady and when the loss was observed. Set once; it grants no replay\nauthority and never authorizes reconstruction.",
+              "properties": {
+                "observedAt": {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "reachedReady": {
+                  "description": "ReachedReady reports whether a live Ready (or TurnActive) observation\npreceded the loss. False means the parent died during warm preparation.",
+                  "type": "boolean"
+                },
+                "status": {
+                  "enum": [
+                    "ContextLost",
+                    "Stopped",
+                    "TeardownUncertain",
+                    "CreateRefused"
+                  ],
+                  "maxLength": 32,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "observedAt",
+                "reachedReady",
+                "status"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "acceptedTurns",
+            "binding",
+            "createAttempted"
+          ],
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "initial parent turn cannot be removed",
+              "rule": "!has(oldSelf.initialTurn) || has(self.initialTurn)"
+            },
+            {
+              "message": "recorded owner outcome is immutable",
+              "rule": "!has(oldSelf.ownerOutcome) || self.ownerOutcome == oldSelf.ownerOutcome"
+            },
+            {
+              "message": "parent admission time is immutable",
+              "rule": "!has(oldSelf.admittedAt) || (has(self.admittedAt) && self.admittedAt == oldSelf.admittedAt)"
+            }
+          ]
+        },
+        "cellnReceipt": {
+          "description": "CellnReceipt retains the validated versioned terminal receipt as JSON.",
+          "maxLength": 131072,
+          "type": "string"
+        },
+        "cellnRequest": {
+          "description": "CellnRequest freezes the exact versioned request before first dispatch.",
+          "maxLength": 131072,
+          "type": "string"
+        },
+        "cellnScoped": {
+          "description": "CellnScoped binds a shared-catalogue run to immutable protected\npreparation, final decision, and receiver ownership. Enduring roots also\nretain their namespace-aware parent incarnation here.",
+          "properties": {
+            "cellId": {
+              "maxLength": 256,
+              "type": "string"
+            },
+            "childId": {
+              "maxLength": 256,
+              "type": "string"
+            },
+            "cleanupConfirmed": {
+              "description": "CleanupConfirmed means native teardown and, when applicable, gateway close\nboth completed. It is the only condition allowing finalizer removal.",
+              "type": "boolean"
+            },
+            "decisionName": {
+              "maxLength": 76,
+              "type": "string"
+            },
+            "decisionUid": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "executionProvenance": {
+              "maxLength": 65536,
+              "type": "string"
+            },
+            "gatewayRegistered": {
+              "description": "GatewayRegistered is set only after the exact final decision is accepted.",
+              "type": "boolean"
+            },
+            "gatewayRegistrationAttempted": {
+              "description": "GatewayRegistrationAttempted is persisted before registration so an\nambiguous transport failure remains visible and cleanup still fences the\noriginal budget. It does not by itself prove registration succeeded.",
+              "type": "boolean"
+            },
+            "nativePhase": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "output": {
+              "description": "Output is correlated receiver output for the initial or continuation turn.",
+              "maxLength": 4194304,
+              "type": "string"
+            },
+            "owner": {
+              "maxLength": 256,
+              "type": "string"
+            },
+            "parentId": {
+              "description": "Native IDs and provenance are copied from receiver evidence. They are\nobservational and cannot select future execution authority.",
+              "maxLength": 256,
+              "type": "string"
+            },
+            "parentIncarnation": {
+              "description": "ParentIncarnation is present only for enduring initial/turn operations and\nmust match the immutable prepared decision and receiver evidence.",
+              "maxLength": 71,
+              "pattern": "^blake3:[0-9a-f]{64}$",
+              "type": "string",
+              "x-kubernetes-validations": [
+                {
+                  "message": "scoped parent incarnation is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
+            },
+            "preparationName": {
+              "maxLength": 75,
+              "type": "string"
+            },
+            "preparationUid": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "receiptDigest": {
+              "maxLength": 256,
+              "type": "string"
+            },
+            "receiverId": {
+              "description": "ReceiverID and Owner are returned by the enrolled native receiver and\njointly identify the only execution this run may observe or clean up.",
+              "maxLength": 256,
+              "type": "string"
+            },
+            "startAttempted": {
+              "description": "StartAttempted is persisted before the non-idempotent start request. Once\ntrue, recovery reads the pinned owner before considering the exact start.",
+              "type": "boolean"
+            },
+            "substrateProvenance": {
+              "maxLength": 65536,
+              "type": "string"
+            },
+            "turnId": {
+              "description": "TurnID is the actual AgentRunTurn UID for continuation work.",
+              "maxLength": 128,
+              "type": "string",
+              "x-kubernetes-validations": [
+                {
+                  "message": "scoped turn identity is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
+            }
+          },
+          "required": [
+            "decisionName",
+            "decisionUid",
+            "preparationName",
+            "preparationUid"
+          ],
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "protected scoped preparation identity is immutable",
+              "rule": "self.preparationName == oldSelf.preparationName && self.preparationUid == oldSelf.preparationUid && self.decisionName == oldSelf.decisionName && self.decisionUid == oldSelf.decisionUid"
+            },
+            {
+              "message": "scoped receiver owner identity is immutable",
+              "rule": "!has(oldSelf.receiverId) || (has(self.receiverId) && self.receiverId == oldSelf.receiverId && self.owner == oldSelf.owner)"
+            },
+            {
+              "message": "gateway registration attempt cannot be forgotten",
+              "rule": "!has(oldSelf.gatewayRegistrationAttempted) || !oldSelf.gatewayRegistrationAttempted || (has(self.gatewayRegistrationAttempted) && self.gatewayRegistrationAttempted)"
+            },
+            {
+              "message": "gateway registration cannot regress",
+              "rule": "!has(oldSelf.gatewayRegistered) || !oldSelf.gatewayRegistered || (has(self.gatewayRegistered) && self.gatewayRegistered)"
+            },
+            {
+              "message": "scoped start attempt cannot be forgotten",
+              "rule": "!has(oldSelf.startAttempted) || !oldSelf.startAttempted || (has(self.startAttempted) && self.startAttempted)"
+            },
+            {
+              "message": "scoped cleanup confirmation cannot regress",
+              "rule": "!has(oldSelf.cleanupConfirmed) || !oldSelf.cleanupConfirmed || (has(self.cleanupConfirmed) && self.cleanupConfirmed)"
+            }
+          ]
         },
         "completedAt": {
           "description": "CompletedAt is when the agent run completed.",
@@ -2291,6 +3326,22 @@
           "description": "GateVerdict records the outcome of the response gate hook, if configured.\nOne of: approved, rejected, rewritten, timeout, error, allowed-by-default.\nEmpty when no gate hook is configured.",
           "type": "string"
         },
+        "harnessContractVersion": {
+          "description": "HarnessContractVersion records the harness contract supplied to the\nadapter that executed this run.",
+          "type": "string"
+        },
+        "harnessImageDigest": {
+          "description": "HarnessImageDigest records the digest of the external harness adapter image\nthat executed this run. Populated only for `task.mode: harness` runs, and\nonly once the run has been admitted and dispatched. Empty for all other\nmodes and backends.",
+          "type": "string"
+        },
+        "harnessRuntimeRef": {
+          "description": "HarnessRuntimeRef records the AgentRuntime that was resolved for this\nharness run. It remains populated when an Agent's runtimeRef converted a\nnormal string task into harness mode, so audit and UI do not have to infer\nthe selected runtime from the current Agent configuration.",
+          "type": "string"
+        },
+        "harnessRuntimeSource": {
+          "description": "HarnessRuntimeSource records whether the resolved runtime came from the\nAgent default (\"agent-default\") or the AgentRun (\"run\").",
+          "type": "string"
+        },
         "jobName": {
           "description": "JobName is the name of the Job created for this run.",
           "type": "string"
@@ -2367,8 +3418,40 @@
           "type": "string"
         }
       },
-      "type": "object"
+      "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "saved Celln issuance cannot be removed",
+          "rule": "!has(oldSelf.cellnIssuance) || has(self.cellnIssuance)"
+        },
+        {
+          "message": "saved Celln parent cannot be removed",
+          "rule": "!has(oldSelf.cellnParent) || has(self.cellnParent)"
+        },
+        {
+          "message": "saved scoped Celln identity cannot be removed",
+          "rule": "!has(oldSelf.cellnScoped) || has(self.cellnScoped)"
+        }
+      ]
     }
   },
-  "type": "object"
+  "type": "object",
+  "x-kubernetes-validations": [
+    {
+      "message": "saved Celln issuance status cannot be removed",
+      "rule": "!has(oldSelf.status) || !has(oldSelf.status.cellnIssuance) || (has(self.status) && has(self.status.cellnIssuance))"
+    },
+    {
+      "message": "saved Celln parent status cannot be removed",
+      "rule": "!has(oldSelf.status) || !has(oldSelf.status.cellnParent) || (has(self.status) && has(self.status.cellnParent))"
+    },
+    {
+      "message": "a recorded Celln-only execution boundary cannot be removed",
+      "rule": "!has(oldSelf.status) || !has(oldSelf.status.cellnOnly) || !oldSelf.status.cellnOnly || (has(self.status) && has(self.status.cellnOnly) && self.status.cellnOnly)"
+    },
+    {
+      "message": "a recorded Celln-only run cannot change execution backend",
+      "rule": "!has(self.status) || !has(self.status.cellnOnly) || !self.status.cellnOnly || (has(self.spec.backend) && self.spec.backend == 'celln')"
+    }
+  ]
 }
