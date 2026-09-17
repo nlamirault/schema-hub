@@ -16,7 +16,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=envoyproxy/gateway
-export VERSION=1.8.3
+export VERSION=1.9.1
 
 function generate_url {
   echo "https://github.com/envoyproxy/gateway/releases/download/v${VERSION}/envoy-gateway-crds.yaml"
