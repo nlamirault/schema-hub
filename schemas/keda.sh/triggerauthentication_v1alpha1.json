@@ -123,6 +123,10 @@
             "podIdentity": {
               "description": "AuthPodIdentity allows users to select the platform native identity\nmechanism",
               "properties": {
+                "externalID": {
+                  "description": "ExternalID sets the External ID to be used when assuming an identity. This is only applicable when using AWS pod identity with a RoleArn.",
+                  "type": "string"
+                },
                 "identityAuthorityHost": {
                   "description": "Set identityAuthorityHost to override the default Azure authority host. If this is set, then the IdentityTenantID must also be set",
                   "type": "string"
@@ -191,6 +195,7 @@
                 ],
                 "type": "object"
               },
+              "minItems": 1,
               "type": "array"
             }
           },
@@ -269,6 +274,10 @@
             "podIdentity": {
               "description": "AuthPodIdentity allows users to select the platform native identity\nmechanism",
               "properties": {
+                "externalID": {
+                  "description": "ExternalID sets the External ID to be used when assuming an identity. This is only applicable when using AWS pod identity with a RoleArn.",
+                  "type": "string"
+                },
                 "identityAuthorityHost": {
                   "description": "Set identityAuthorityHost to override the default Azure authority host. If this is set, then the IdentityTenantID must also be set",
                   "type": "string"
@@ -328,6 +337,7 @@
                 ],
                 "type": "object"
               },
+              "minItems": 1,
               "type": "array"
             },
             "vaultUri": {
@@ -451,6 +461,10 @@
             "podIdentity": {
               "description": "AuthPodIdentity allows users to select the platform native identity\nmechanism",
               "properties": {
+                "externalID": {
+                  "description": "ExternalID sets the External ID to be used when assuming an identity. This is only applicable when using AWS pod identity with a RoleArn.",
+                  "type": "string"
+                },
                 "identityAuthorityHost": {
                   "description": "Set identityAuthorityHost to override the default Azure authority host. If this is set, then the IdentityTenantID must also be set",
                   "type": "string"
@@ -510,6 +524,7 @@
                 ],
                 "type": "object"
               },
+              "minItems": 1,
               "type": "array"
             }
           },
@@ -526,6 +541,10 @@
             },
             "authentication": {
               "description": "VaultAuthentication contains the list of Hashicorp Vault authentication methods",
+              "enum": [
+                "token",
+                "kubernetes"
+              ],
               "type": "string"
             },
             "credential": {
@@ -593,6 +612,12 @@
                   },
                   "type": {
                     "description": "VaultSecretType defines the type of vault secret",
+                    "enum": [
+                      "",
+                      "secretV2",
+                      "secret",
+                      "pki"
+                    ],
                     "type": "string"
                   }
                 },
@@ -603,6 +628,7 @@
                 ],
                 "type": "object"
               },
+              "minItems": 1,
               "type": "array"
             }
           },
@@ -613,9 +639,79 @@
           ],
           "type": "object"
         },
+        "oauth2": {
+          "properties": {
+            "clientId": {
+              "type": "string"
+            },
+            "clientSecret": {
+              "properties": {
+                "valueFrom": {
+                  "properties": {
+                    "secretKeyRef": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "secretKeyRef"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "valueFrom"
+              ],
+              "type": "object"
+            },
+            "scopes": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "tokenUrl": {
+              "type": "string"
+            },
+            "tokenUrlParams": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": {
+              "default": "clientCredentials",
+              "enum": [
+                "clientCredentials"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "clientId",
+            "tokenUrl",
+            "type"
+          ],
+          "type": "object"
+        },
         "podIdentity": {
           "description": "AuthPodIdentity allows users to select the platform native identity\nmechanism",
           "properties": {
+            "externalID": {
+              "description": "ExternalID sets the External ID to be used when assuming an identity. This is only applicable when using AWS pod identity with a RoleArn.",
+              "type": "string"
+            },
             "identityAuthorityHost": {
               "description": "Set identityAuthorityHost to override the default Azure authority host. If this is set, then the IdentityTenantID must also be set",
               "type": "string"
