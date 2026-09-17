@@ -15762,6 +15762,233 @@
         "cncf_maturity": "graduated"
       }
     ],
+    "infrastructure.cluster.x-k8s.io": [
+      {
+        "kind": "azureasomanagedcluster",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedcluster_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/azureasomanagedcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedcluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedcluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureasomanagedcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedclustertemplate",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedclustertemplate_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/azureasomanagedclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureasomanagedclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedcontrolplane",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedcontrolplane_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/azureasomanagedcontrolplane",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedcontrolplane",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedcontrolplane_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureasomanagedcontrolplane",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedcontrolplanetemplate",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedcontrolplanetemplate_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/azureasomanagedcontrolplanetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedcontrolplanetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedcontrolplanetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureasomanagedcontrolplanetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedmachinepool",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedmachinepool_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/azureasomanagedmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedmachinepool",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedmachinepool_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureasomanagedmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedmachinepooltemplate",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedmachinepooltemplate_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/azureasomanagedmachinepooltemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureasomanagedmachinepooltemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureasomanagedmachinepooltemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureasomanagedmachinepooltemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azurecluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azurecluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azurecluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureclusteridentity",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureclusteridentity_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureclusteridentity",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azureclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azureclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azureclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremachinepool",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremachinepool_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremachinepoolmachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremachinepoolmachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremachinepoolmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremanagedcluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremanagedcluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremanagedcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremanagedclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremanagedclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremanagedclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremanagedcontrolplane",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremanagedcontrolplane_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremanagedcontrolplane",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremanagedcontrolplanetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremanagedcontrolplanetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremanagedcontrolplanetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremanagedmachinepool",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremanagedmachinepool_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremanagedmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "azuremanagedmachinepooltemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/azuremanagedmachinepooltemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/azuremanagedmachinepooltemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      }
+    ],
     "insights.azure.com": [
       {
         "kind": "actiongroup",

@@ -971,6 +971,12 @@
     "cncf_maturity": "graduated",
     "project": "flux"
   },
+  "infrastructure.cluster.x-k8s.io": {
+    "category": "Kubernetes",
+    "upstream": "kubernetes-sigs/cluster-api",
+    "cncf_maturity": "incubating",
+    "project": "cluster-api"
+  },
   "insights.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",

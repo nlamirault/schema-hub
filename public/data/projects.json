@@ -548,7 +548,8 @@
       "controlplane.cluster.x-k8s.io",
       "infrastructure.cluster.x-k8s.io",
       "ipam.cluster.x-k8s.io",
-      "runtime.cluster.x-k8s.io"
+      "runtime.cluster.x-k8s.io",
+      "infrastructure.cluster.x-k8s.io"
     ]
   },
   {
