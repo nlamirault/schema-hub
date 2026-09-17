@@ -51,6 +51,8 @@ if [ "${choice}" != "swagger" ]; then
     crd_file="${CRD_DIR}/${crd}"
     manage_crd "${crd_file}" "${JSON_SCHEMA_DIR}"
   done
+  log_info "[schema] Escaping stray '[' inside character classes of pattern values"
+  python3 "${SCRIPT_DIR}/fix-schema-patterns.py" "${JSON_SCHEMA_DIR}"
 else
   manage_swagger_file "${CRD_DIR}" "${JSON_SCHEMA_DIR}"
   log_info "[swagger] Rewriting internal \$ref pointers to relative paths"
