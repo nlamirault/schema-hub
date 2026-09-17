@@ -19,7 +19,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=kubernetes-sigs/kueue
-export VERSION=0.19.4
+export VERSION=0.19.5
 
 function generate_url {
   local crd_file=$1
