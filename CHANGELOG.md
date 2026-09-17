@@ -1,5 +1,65 @@
 # Changelog
 
+## [1.9.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.8.0...schema-hub-v1.9.0) (2026-09-17)
+
+
+### 🚀 Features
+
+* **crd:** add Agent Router support ([#465](https://github.com/nlamirault/schema-hub/issues/465)) ([72c7721](https://github.com/nlamirault/schema-hub/commit/72c77217291b3d9b4921929feeb96032ff6bbd77)), closes [#337](https://github.com/nlamirault/schema-hub/issues/337)
+* **crd:** add Agent Sandbox support ([#468](https://github.com/nlamirault/schema-hub/issues/468)) ([33fb5bc](https://github.com/nlamirault/schema-hub/commit/33fb5bc5956d479c36ba71fa8f5e521246714d47)), closes [#467](https://github.com/nlamirault/schema-hub/issues/467)
+* **crd:** add Cluster API Provider AWS support ([#461](https://github.com/nlamirault/schema-hub/issues/461)) ([31222ec](https://github.com/nlamirault/schema-hub/commit/31222ecb9c4028b528800a9b568f15ef2a0aaac9))
+* **crd:** add Cluster API Provider Azure support ([#456](https://github.com/nlamirault/schema-hub/issues/456)) ([c2934b9](https://github.com/nlamirault/schema-hub/commit/c2934b9e35b68b67c789d0ce1e7744b20ea3187a))
+* **crd:** add Cluster API Provider GCP support ([#458](https://github.com/nlamirault/schema-hub/issues/458)) ([c50469d](https://github.com/nlamirault/schema-hub/commit/c50469d3d5be5dd1b3f43d3715fef5ad06e98f0d)), closes [#341](https://github.com/nlamirault/schema-hub/issues/341)
+* **crd:** add Karpenter Provider Clever Cloud support ([#443](https://github.com/nlamirault/schema-hub/issues/443)) ([7901e16](https://github.com/nlamirault/schema-hub/commit/7901e16f3928049f7d4f2789716139a7f3fd42af))
+* **crd:** add Karpenter Provider IBM Cloud support ([#457](https://github.com/nlamirault/schema-hub/issues/457)) ([5c1ed2b](https://github.com/nlamirault/schema-hub/commit/5c1ed2bed52c8e7cd3bbf21e3bfc1b20fe6e18a2)), closes [#352](https://github.com/nlamirault/schema-hub/issues/352)
+* **crd:** add Kueue support ([#464](https://github.com/nlamirault/schema-hub/issues/464)) ([b0f2b52](https://github.com/nlamirault/schema-hub/commit/b0f2b52c239398998326a554b7e17aaa7edbcd86)), closes [#351](https://github.com/nlamirault/schema-hub/issues/351)
+* **crd:** add VictoriaMetrics Operator support ([#466](https://github.com/nlamirault/schema-hub/issues/466)) ([d7b0ec4](https://github.com/nlamirault/schema-hub/commit/d7b0ec43360fdd9497ad7bff68ac23f0023be1a5)), closes [#349](https://github.com/nlamirault/schema-hub/issues/349)
+
+
+### 🐛 Bug Fixes
+
+* **deps:** update dependency astro to v7.2.8 [security] ([#454](https://github.com/nlamirault/schema-hub/issues/454)) ([86a6326](https://github.com/nlamirault/schema-hub/commit/86a63268c714f68475419b9db6db7076a9c536da))
+* **ui:** point project links to working detail route ([#436](https://github.com/nlamirault/schema-hub/issues/436)) ([8c6f4b7](https://github.com/nlamirault/schema-hub/commit/8c6f4b72eed2ee3baa7293ed7c413384a7164c1e))
+
+
+### 🚨 Maintenance
+
+* **deps:** update dependency agentgateway/agentgateway to v1.4.1 ([#418](https://github.com/nlamirault/schema-hub/issues/418)) ([458d7b5](https://github.com/nlamirault/schema-hub/commit/458d7b52cfebe1a2310956e717578eccb8c6191f))
+* **deps:** update dependency agentgateway/agentgateway to v1.5.0 ([#448](https://github.com/nlamirault/schema-hub/issues/448)) ([9fe1387](https://github.com/nlamirault/schema-hub/commit/9fe13875d4d343daca52b9906927b89de0b53378))
+* **deps:** update dependency akuity/kargo to v1.11.0 ([#419](https://github.com/nlamirault/schema-hub/issues/419)) ([47dcf0a](https://github.com/nlamirault/schema-hub/commit/47dcf0aca9e1d63a3e401094f9ebd5498748d028))
+* **deps:** update dependency akuity/kargo to v1.11.2 ([#435](https://github.com/nlamirault/schema-hub/issues/435)) ([cd106f2](https://github.com/nlamirault/schema-hub/commit/cd106f2cd1f12aa2f7c7bbdf47cb3c8d04784dec))
+* **deps:** update dependency akuity/kargo to v1.11.4 ([#455](https://github.com/nlamirault/schema-hub/issues/455)) ([21214a1](https://github.com/nlamirault/schema-hub/commit/21214a1cbb6b68cfa23ae0b2e67a6424a04d313d))
+* **deps:** update dependency argoproj/argo-cd to v3.5.1 ([#446](https://github.com/nlamirault/schema-hub/issues/446)) ([c3448ac](https://github.com/nlamirault/schema-hub/commit/c3448acac8336768ba82070b94e113e3ee50faf8))
+* **deps:** update dependency argoproj/argo-cd to v3.5.3 ([#447](https://github.com/nlamirault/schema-hub/issues/447)) ([c99ad3b](https://github.com/nlamirault/schema-hub/commit/c99ad3bcc11a1cb95d5f6470f5f530e15612f2d8))
+* **deps:** update dependency argoproj/argo-rollouts to v1.10.0 ([#450](https://github.com/nlamirault/schema-hub/issues/450)) ([21652d9](https://github.com/nlamirault/schema-hub/commit/21652d956dff91b1e1d86d78dc1e20a492cc1cdc))
+* **deps:** update dependency argoproj/argo-workflows to v4.1.2 ([#451](https://github.com/nlamirault/schema-hub/issues/451)) ([f6a7781](https://github.com/nlamirault/schema-hub/commit/f6a7781063af0802da2e116fdf627dbe01e6099a))
+* **deps:** update dependency aws-controllers-k8s/acm-controller to v1.7.0 ([#422](https://github.com/nlamirault/schema-hub/issues/422)) ([f5a421d](https://github.com/nlamirault/schema-hub/commit/f5a421db863b7fe57cdabf3007e12f4afb3cdd0f))
+* **deps:** update dependency aws-controllers-k8s/acmpca-controller to v1.3.2 ([#423](https://github.com/nlamirault/schema-hub/issues/423)) ([eaa03a9](https://github.com/nlamirault/schema-hub/commit/eaa03a9dfa87211541512374a1fd93016cf78545))
+* **deps:** update dependency aws-controllers-k8s/apigatewayv2-controller to v1.3.3 ([#425](https://github.com/nlamirault/schema-hub/issues/425)) ([67ec53c](https://github.com/nlamirault/schema-hub/commit/67ec53c675f74a7a729ff05f4f910f7ba729062b))
+* **deps:** update dependency aws-controllers-k8s/applicationautoscaling-controller to v1.4.1 ([#426](https://github.com/nlamirault/schema-hub/issues/426)) ([4c1c1b6](https://github.com/nlamirault/schema-hub/commit/4c1c1b658bd9083d6406487cc68e63edce2f0ae9))
+* **deps:** update dependency aws-controllers-k8s/bedrockagent-controller to v1.2.2 ([#427](https://github.com/nlamirault/schema-hub/issues/427)) ([cd80665](https://github.com/nlamirault/schema-hub/commit/cd80665c916df9af6dac38dc8edd202590070bec))
+* **deps:** update dependency aws-controllers-k8s/cloudfront-controller to v1.7.1 ([#428](https://github.com/nlamirault/schema-hub/issues/428)) ([28be009](https://github.com/nlamirault/schema-hub/commit/28be0091d890aab341a5dc1a5e8f03021f406e3f))
+* **deps:** update dependency aws-controllers-k8s/cloudtrail-controller to v1.3.2 ([#429](https://github.com/nlamirault/schema-hub/issues/429)) ([8452416](https://github.com/nlamirault/schema-hub/commit/84524166400a99774f85014f804d572b94536975))
+* **deps:** update dependency aws-controllers-k8s/cloudwatch-controller to v1.7.0 ([#430](https://github.com/nlamirault/schema-hub/issues/430)) ([b1f9846](https://github.com/nlamirault/schema-hub/commit/b1f984606808ef2e9d74d3f02d4d663160b61988))
+* **deps:** update dependency aws-controllers-k8s/cloudwatchlogs-controller to v1.3.2 ([#431](https://github.com/nlamirault/schema-hub/issues/431)) ([a3db927](https://github.com/nlamirault/schema-hub/commit/a3db927a7df786d840d17873d19336ae0794b2fd))
+* **deps:** update dependency aws-controllers-k8s/dynamodb-controller to v1.10.1 ([#434](https://github.com/nlamirault/schema-hub/issues/434)) ([0570b92](https://github.com/nlamirault/schema-hub/commit/0570b922dfb2bf7052e79122484d6abdf391cd01))
+* **deps:** update dependency aws-controllers-k8s/dynamodb-controller to v1.9.2 ([#432](https://github.com/nlamirault/schema-hub/issues/432)) ([e1ef322](https://github.com/nlamirault/schema-hub/commit/e1ef32260dbe092f384e1cbcf62626623c42cd75))
+* **deps:** update dependency aws-controllers-k8s/ecr-controller to v1.7.0 ([#433](https://github.com/nlamirault/schema-hub/issues/433)) ([746ca97](https://github.com/nlamirault/schema-hub/commit/746ca9756aec8c0200a72b2a3fe63c74adb8c6ab))
+* **deps:** update dependency aws-controllers-k8s/rds-controller to v1.10.2 ([#420](https://github.com/nlamirault/schema-hub/issues/420)) ([1a069fd](https://github.com/nlamirault/schema-hub/commit/1a069fd67a28613534d659f79243c912b9962797))
+* **deps:** update dependency aws/karpenter-provider-aws to v1.14.1 ([#437](https://github.com/nlamirault/schema-hub/issues/437)) ([76e6e05](https://github.com/nlamirault/schema-hub/commit/76e6e05b7d32b724b05efff0ee59277a14639b9b))
+* **deps:** update dependency azure/karpenter-provider-azure to v1.14.2 ([#438](https://github.com/nlamirault/schema-hub/issues/438)) ([f3f9de5](https://github.com/nlamirault/schema-hub/commit/f3f9de5089042def2862167a4aadcd85da5e1fd7))
+* **deps:** update dependency cilium/cilium to v1.20.1 ([#439](https://github.com/nlamirault/schema-hub/issues/439)) ([6dd5a06](https://github.com/nlamirault/schema-hub/commit/6dd5a067e22184abc528c26850b1ed1c3685d1fd))
+* **deps:** update dependency cilium/cilium to v1.20.2 ([#462](https://github.com/nlamirault/schema-hub/issues/462)) ([8bba70b](https://github.com/nlamirault/schema-hub/commit/8bba70bf67ccb3aae01c4fbe999638038e987241))
+* **deps:** update dependency exoscale/karpenter-provider-exoscale to v1.36.2 ([#440](https://github.com/nlamirault/schema-hub/issues/440)) ([9d03647](https://github.com/nlamirault/schema-hub/commit/9d03647da897269d91512f1d203a20b58c2a3414))
+* **deps:** update dependency exoscale/karpenter-provider-exoscale to v1.36.4 ([#444](https://github.com/nlamirault/schema-hub/issues/444)) ([86b3ee6](https://github.com/nlamirault/schema-hub/commit/86b3ee600004bcb6709921947e5e7284d20f0736))
+* **deps:** update dependency exoscale/karpenter-provider-exoscale to v1.36.5 ([#463](https://github.com/nlamirault/schema-hub/issues/463)) ([b5ddf8b](https://github.com/nlamirault/schema-hub/commit/b5ddf8b17995548754a5f59c31b534bf2ba827b5))
+* **deps:** update dependency open-feature/open-feature-operator to v0.9.3 ([#449](https://github.com/nlamirault/schema-hub/issues/449)) ([c8626b5](https://github.com/nlamirault/schema-hub/commit/c8626b5152b1fd3306555cbb657e64a22e62e60e))
+* **deps:** update dependency sympozium-ai/sympozium to v0.10.43 ([#412](https://github.com/nlamirault/schema-hub/issues/412)) ([e29028f](https://github.com/nlamirault/schema-hub/commit/e29028f66ddf1e43b23d542570a849effc725be6))
+* **deps:** update dependency sympozium-ai/sympozium to v0.10.48 ([#441](https://github.com/nlamirault/schema-hub/issues/441)) ([92dc746](https://github.com/nlamirault/schema-hub/commit/92dc746871a69a0236475220ea0bfa1128c0f475))
+* **deps:** update dependency traefik/traefik to v3.7.10 ([#413](https://github.com/nlamirault/schema-hub/issues/413)) ([15355b8](https://github.com/nlamirault/schema-hub/commit/15355b862e577bed53ab7eec39dd6206e201641f))
+* **deps:** update dependency traefik/traefik to v3.7.12 ([#442](https://github.com/nlamirault/schema-hub/issues/442)) ([b40249d](https://github.com/nlamirault/schema-hub/commit/b40249dfb965456ecf9a4a9320eb6f4f5911ff8c))
+* **deps:** update mikefarah/yq action to v4.53.6 ([#445](https://github.com/nlamirault/schema-hub/issues/445)) ([299590d](https://github.com/nlamirault/schema-hub/commit/299590de341ff72f0ac8334c560ba17a83ca842b))
+
 ## [1.8.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.7.0...schema-hub-v1.8.0) (2026-08-03)
 
 
