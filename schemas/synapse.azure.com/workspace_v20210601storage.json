@@ -139,7 +139,7 @@
                       "type": "object"
                     },
                     "useSystemAssignedIdentity": {
-                      "x-kubernetes-preserve-unknown-fields": true
+                      "type": "boolean"
                     },
                     "userAssignedIdentityReference": {
                       "description": "UserAssignedIdentityReference: User assigned identity resource Id",
@@ -659,7 +659,7 @@
                       "type": "object"
                     },
                     "useSystemAssignedIdentity": {
-                      "x-kubernetes-preserve-unknown-fields": true
+                      "type": "boolean"
                     },
                     "userAssignedIdentity": {
                       "type": "string"

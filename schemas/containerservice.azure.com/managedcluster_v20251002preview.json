@@ -42,7 +42,21 @@
             },
             "serverAppSecret": {
               "description": "ServerAppSecret: (DEPRECATED) The server AAD application secret. Learn more at https://aka.ms/aks/aad-legacy.",
-              "type": "string"
+              "properties": {
+                "key": {
+                  "description": "Key is the key in the Kubernetes secret being referenced",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "Name is the name of the Kubernetes secret being referenced.\nThe secret must be in the same namespace as the resource",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "key",
+                "name"
+              ],
+              "type": "object"
             },
             "tenantID": {
               "description": "TenantID: The AAD tenant ID to use for authentication. If not specified, will use the tenant of the deployment\nsubscription.",
@@ -737,6 +751,10 @@
                   }
                 },
                 "type": "object"
+              },
+              "nodeImageVersion": {
+                "description": "NodeImageVersion: The version of node image",
+                "type": "string"
               },
               "nodeInitializationTaints": {
                 "description": "NodeInitializationTaints: Taints added on the nodes during creation that will not be reconciled by AKS. These taints\nwill not be reconciled by AKS and can be removed with a kubectl call. This field can be modified after node pool is\ncreated, but nodes will not be recreated with new taints until another operation that requires recreation (e.g. node\nimage upgrade) happens. These taints allow for required configuration to run before the node is ready to accept\nworkloads, for example 'key1=value1:NoSchedule' that then can be removed with `kubectl taint nodes node1\nkey1=value1:NoSchedule-`",
@@ -2776,7 +2794,7 @@
                 "type": "string"
               },
               "name": {
-                "description": "Name: The name of the private link resource.",
+                "description": "Name: The name of the private link resource. See [naming rules](https://aka.ms/search-naming-rules) for more details.",
                 "type": "string"
               },
               "reference": {
@@ -2950,6 +2968,7 @@
                     "identities": {
                       "description": "Identities: List of identities that the admission controller will make use of in order to pull security artifacts from\nthe registry. These are the same identities used by the cluster to pull container images. Each identity provided should\nhave federated identity credential attached to it.",
                       "items": {
+                        "description": "Identity information used by Defender security gating to access container registries.",
                         "properties": {
                           "azureContainerRegistry": {
                             "description": "AzureContainerRegistry: The container registry for which the identity will be used; the identity specified here should\nhave a federated identity credential attached to it.",
@@ -3537,10 +3556,6 @@
             },
             "serverAppID": {
               "description": "ServerAppID: (DEPRECATED) The server AAD application ID. Learn more at https://aka.ms/aks/aad-legacy.",
-              "type": "string"
-            },
-            "serverAppSecret": {
-              "description": "ServerAppSecret: (DEPRECATED) The server AAD application secret. Learn more at https://aka.ms/aks/aad-legacy.",
               "type": "string"
             },
             "tenantID": {
@@ -4891,6 +4906,7 @@
             },
             "userAssignedIdentities": {
               "additionalProperties": {
+                "description": "User assigned identity properties.",
                 "properties": {
                   "clientId": {
                     "description": "ClientId: The client id of user assigned identity.",
@@ -5489,6 +5505,7 @@
                     "type": "string"
                   },
                   "provisioningInfo": {
+                    "description": "ProvisioningInfo: The provisioning information for the pod identity.",
                     "properties": {
                       "error": {
                         "description": "Error: Pod identity assignment error (if any).",
@@ -5603,7 +5620,7 @@
                 "type": "string"
               },
               "name": {
-                "description": "Name: The name of the private link resource.",
+                "description": "Name: The name of the private link resource. See [naming rules](https://aka.ms/search-naming-rules) for more details.",
                 "type": "string"
               },
               "privateLinkServiceID": {
@@ -5713,6 +5730,7 @@
                     "identities": {
                       "description": "Identities: List of identities that the admission controller will make use of in order to pull security artifacts from\nthe registry. These are the same identities used by the cluster to pull container images. Each identity provided should\nhave federated identity credential attached to it.",
                       "items": {
+                        "description": "Identity information used by Defender security gating to access container registries.",
                         "properties": {
                           "azureContainerRegistry": {
                             "description": "AzureContainerRegistry: The container registry for which the identity will be used; the identity specified here should\nhave a federated identity credential attached to it.",

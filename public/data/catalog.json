@@ -4168,6 +4168,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "roleassignment",
+        "version": "v20200801preview",
+        "file": "authorization.azure.com/roleassignment_v20200801preview.json",
+        "slug": "authorization.azure.com/v20200801preview/roleassignment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "roleassignment",
+        "version": "v20200801previewstorage",
+        "file": "authorization.azure.com/roleassignment_v20200801previewstorage.json",
+        "slug": "authorization.azure.com/v20200801previewstorage/roleassignment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "roleassignment",
+        "version": "v20220401",
+        "file": "authorization.azure.com/roleassignment_v20220401.json",
+        "slug": "authorization.azure.com/v20220401/roleassignment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "roleassignment",
+        "version": "v20220401storage",
+        "file": "authorization.azure.com/roleassignment_v20220401storage.json",
+        "slug": "authorization.azure.com/v20220401storage/roleassignment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "roledefinition",
         "version": "v1api20220401",
         "file": "authorization.azure.com/roledefinition_v1api20220401.json",
@@ -4180,6 +4212,22 @@
         "version": "v1api20220401storage",
         "file": "authorization.azure.com/roledefinition_v1api20220401storage.json",
         "slug": "authorization.azure.com/v1api20220401storage/roledefinition",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "roledefinition",
+        "version": "v20220401",
+        "file": "authorization.azure.com/roledefinition_v20220401.json",
+        "slug": "authorization.azure.com/v20220401/roledefinition",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "roledefinition",
+        "version": "v20220401storage",
+        "file": "authorization.azure.com/roledefinition_v20220401storage.json",
+        "slug": "authorization.azure.com/v20220401storage/roledefinition",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       }
@@ -5356,6 +5404,70 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "redis",
+        "version": "v20201201",
+        "file": "cache.azure.com/redis_v20201201.json",
+        "slug": "cache.azure.com/v20201201/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redis",
+        "version": "v20201201storage",
+        "file": "cache.azure.com/redis_v20201201storage.json",
+        "slug": "cache.azure.com/v20201201storage/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redis",
+        "version": "v20230401",
+        "file": "cache.azure.com/redis_v20230401.json",
+        "slug": "cache.azure.com/v20230401/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redis",
+        "version": "v20230401storage",
+        "file": "cache.azure.com/redis_v20230401storage.json",
+        "slug": "cache.azure.com/v20230401storage/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redis",
+        "version": "v20230801",
+        "file": "cache.azure.com/redis_v20230801.json",
+        "slug": "cache.azure.com/v20230801/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redis",
+        "version": "v20230801storage",
+        "file": "cache.azure.com/redis_v20230801storage.json",
+        "slug": "cache.azure.com/v20230801storage/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redis",
+        "version": "v20241101",
+        "file": "cache.azure.com/redis_v20241101.json",
+        "slug": "cache.azure.com/v20241101/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redis",
+        "version": "v20241101storage",
+        "file": "cache.azure.com/redis_v20241101storage.json",
+        "slug": "cache.azure.com/v20241101storage/redis",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "redisaccesspolicy",
         "version": "v1api20241101",
         "file": "cache.azure.com/redisaccesspolicy_v1api20241101.json",
@@ -5372,6 +5484,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "redisaccesspolicy",
+        "version": "v20241101",
+        "file": "cache.azure.com/redisaccesspolicy_v20241101.json",
+        "slug": "cache.azure.com/v20241101/redisaccesspolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisaccesspolicy",
+        "version": "v20241101storage",
+        "file": "cache.azure.com/redisaccesspolicy_v20241101storage.json",
+        "slug": "cache.azure.com/v20241101storage/redisaccesspolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "redisaccesspolicyassignment",
         "version": "v1api20241101",
         "file": "cache.azure.com/redisaccesspolicyassignment_v1api20241101.json",
@@ -5384,6 +5512,22 @@
         "version": "v1api20241101storage",
         "file": "cache.azure.com/redisaccesspolicyassignment_v1api20241101storage.json",
         "slug": "cache.azure.com/v1api20241101storage/redisaccesspolicyassignment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisaccesspolicyassignment",
+        "version": "v20241101",
+        "file": "cache.azure.com/redisaccesspolicyassignment_v20241101.json",
+        "slug": "cache.azure.com/v20241101/redisaccesspolicyassignment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisaccesspolicyassignment",
+        "version": "v20241101storage",
+        "file": "cache.azure.com/redisaccesspolicyassignment_v20241101storage.json",
+        "slug": "cache.azure.com/v20241101storage/redisaccesspolicyassignment",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -5436,6 +5580,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "redisenterprise",
+        "version": "v20250401",
+        "file": "cache.azure.com/redisenterprise_v20250401.json",
+        "slug": "cache.azure.com/v20250401/redisenterprise",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisenterprise",
+        "version": "v20250401storage",
+        "file": "cache.azure.com/redisenterprise_v20250401storage.json",
+        "slug": "cache.azure.com/v20250401storage/redisenterprise",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisenterprise",
+        "version": "v20250701",
+        "file": "cache.azure.com/redisenterprise_v20250701.json",
+        "slug": "cache.azure.com/v20250701/redisenterprise",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisenterprise",
+        "version": "v20250701storage",
+        "file": "cache.azure.com/redisenterprise_v20250701storage.json",
+        "slug": "cache.azure.com/v20250701storage/redisenterprise",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "redisenterprisedatabase",
         "version": "v1api20210301",
         "file": "cache.azure.com/redisenterprisedatabase_v1api20210301.json",
@@ -5480,6 +5656,38 @@
         "version": "v1api20250401storage",
         "file": "cache.azure.com/redisenterprisedatabase_v1api20250401storage.json",
         "slug": "cache.azure.com/v1api20250401storage/redisenterprisedatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisenterprisedatabase",
+        "version": "v20250401",
+        "file": "cache.azure.com/redisenterprisedatabase_v20250401.json",
+        "slug": "cache.azure.com/v20250401/redisenterprisedatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisenterprisedatabase",
+        "version": "v20250401storage",
+        "file": "cache.azure.com/redisenterprisedatabase_v20250401storage.json",
+        "slug": "cache.azure.com/v20250401storage/redisenterprisedatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisenterprisedatabase",
+        "version": "v20250701",
+        "file": "cache.azure.com/redisenterprisedatabase_v20250701.json",
+        "slug": "cache.azure.com/v20250701/redisenterprisedatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisenterprisedatabase",
+        "version": "v20250701storage",
+        "file": "cache.azure.com/redisenterprisedatabase_v20250701storage.json",
+        "slug": "cache.azure.com/v20250701storage/redisenterprisedatabase",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -5548,6 +5756,70 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "redisfirewallrule",
+        "version": "v20201201",
+        "file": "cache.azure.com/redisfirewallrule_v20201201.json",
+        "slug": "cache.azure.com/v20201201/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisfirewallrule",
+        "version": "v20201201storage",
+        "file": "cache.azure.com/redisfirewallrule_v20201201storage.json",
+        "slug": "cache.azure.com/v20201201storage/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisfirewallrule",
+        "version": "v20230401",
+        "file": "cache.azure.com/redisfirewallrule_v20230401.json",
+        "slug": "cache.azure.com/v20230401/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisfirewallrule",
+        "version": "v20230401storage",
+        "file": "cache.azure.com/redisfirewallrule_v20230401storage.json",
+        "slug": "cache.azure.com/v20230401storage/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisfirewallrule",
+        "version": "v20230801",
+        "file": "cache.azure.com/redisfirewallrule_v20230801.json",
+        "slug": "cache.azure.com/v20230801/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisfirewallrule",
+        "version": "v20230801storage",
+        "file": "cache.azure.com/redisfirewallrule_v20230801storage.json",
+        "slug": "cache.azure.com/v20230801storage/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisfirewallrule",
+        "version": "v20241101",
+        "file": "cache.azure.com/redisfirewallrule_v20241101.json",
+        "slug": "cache.azure.com/v20241101/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redisfirewallrule",
+        "version": "v20241101storage",
+        "file": "cache.azure.com/redisfirewallrule_v20241101storage.json",
+        "slug": "cache.azure.com/v20241101storage/redisfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "redislinkedserver",
         "version": "v1api20201201",
         "file": "cache.azure.com/redislinkedserver_v1api20201201.json",
@@ -5608,6 +5880,70 @@
         "version": "v1api20241101storage",
         "file": "cache.azure.com/redislinkedserver_v1api20241101storage.json",
         "slug": "cache.azure.com/v1api20241101storage/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20201201",
+        "file": "cache.azure.com/redislinkedserver_v20201201.json",
+        "slug": "cache.azure.com/v20201201/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20201201storage",
+        "file": "cache.azure.com/redislinkedserver_v20201201storage.json",
+        "slug": "cache.azure.com/v20201201storage/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20230401",
+        "file": "cache.azure.com/redislinkedserver_v20230401.json",
+        "slug": "cache.azure.com/v20230401/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20230401storage",
+        "file": "cache.azure.com/redislinkedserver_v20230401storage.json",
+        "slug": "cache.azure.com/v20230401storage/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20230801",
+        "file": "cache.azure.com/redislinkedserver_v20230801.json",
+        "slug": "cache.azure.com/v20230801/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20230801storage",
+        "file": "cache.azure.com/redislinkedserver_v20230801storage.json",
+        "slug": "cache.azure.com/v20230801storage/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20241101",
+        "file": "cache.azure.com/redislinkedserver_v20241101.json",
+        "slug": "cache.azure.com/v20241101/redislinkedserver",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redislinkedserver",
+        "version": "v20241101storage",
+        "file": "cache.azure.com/redislinkedserver_v20241101storage.json",
+        "slug": "cache.azure.com/v20241101storage/redislinkedserver",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -5674,6 +6010,70 @@
         "slug": "cache.azure.com/v1api20241101storage/redispatchschedule",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20201201",
+        "file": "cache.azure.com/redispatchschedule_v20201201.json",
+        "slug": "cache.azure.com/v20201201/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20201201storage",
+        "file": "cache.azure.com/redispatchschedule_v20201201storage.json",
+        "slug": "cache.azure.com/v20201201storage/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20230401",
+        "file": "cache.azure.com/redispatchschedule_v20230401.json",
+        "slug": "cache.azure.com/v20230401/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20230401storage",
+        "file": "cache.azure.com/redispatchschedule_v20230401storage.json",
+        "slug": "cache.azure.com/v20230401storage/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20230801",
+        "file": "cache.azure.com/redispatchschedule_v20230801.json",
+        "slug": "cache.azure.com/v20230801/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20230801storage",
+        "file": "cache.azure.com/redispatchschedule_v20230801storage.json",
+        "slug": "cache.azure.com/v20230801storage/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20241101",
+        "file": "cache.azure.com/redispatchschedule_v20241101.json",
+        "slug": "cache.azure.com/v20241101/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "redispatchschedule",
+        "version": "v20241101storage",
+        "file": "cache.azure.com/redispatchschedule_v20241101storage.json",
+        "slug": "cache.azure.com/v20241101storage/redispatchschedule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
       }
     ],
     "cdn.azure.com": [
@@ -5694,6 +6094,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "afdcustomdomain",
+        "version": "v20230501",
+        "file": "cdn.azure.com/afdcustomdomain_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/afdcustomdomain",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "afdcustomdomain",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/afdcustomdomain_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/afdcustomdomain",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "afdendpoint",
         "version": "v1api20230501",
         "file": "cdn.azure.com/afdendpoint_v1api20230501.json",
@@ -5706,6 +6122,22 @@
         "version": "v1api20230501storage",
         "file": "cdn.azure.com/afdendpoint_v1api20230501storage.json",
         "slug": "cdn.azure.com/v1api20230501storage/afdendpoint",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "afdendpoint",
+        "version": "v20230501",
+        "file": "cdn.azure.com/afdendpoint_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/afdendpoint",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "afdendpoint",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/afdendpoint_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/afdendpoint",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -5726,6 +6158,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "afdorigin",
+        "version": "v20230501",
+        "file": "cdn.azure.com/afdorigin_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/afdorigin",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "afdorigin",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/afdorigin_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/afdorigin",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "afdorigingroup",
         "version": "v1api20230501",
         "file": "cdn.azure.com/afdorigingroup_v1api20230501.json",
@@ -5738,6 +6186,22 @@
         "version": "v1api20230501storage",
         "file": "cdn.azure.com/afdorigingroup_v1api20230501storage.json",
         "slug": "cdn.azure.com/v1api20230501storage/afdorigingroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "afdorigingroup",
+        "version": "v20230501",
+        "file": "cdn.azure.com/afdorigingroup_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/afdorigingroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "afdorigingroup",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/afdorigingroup_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/afdorigingroup",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -5774,6 +6238,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "profile",
+        "version": "v20210601",
+        "file": "cdn.azure.com/profile_v20210601.json",
+        "slug": "cdn.azure.com/v20210601/profile",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "profile",
+        "version": "v20210601storage",
+        "file": "cdn.azure.com/profile_v20210601storage.json",
+        "slug": "cdn.azure.com/v20210601storage/profile",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "profile",
+        "version": "v20230501",
+        "file": "cdn.azure.com/profile_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/profile",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "profile",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/profile_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/profile",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "profilesendpoint",
         "version": "v1api20210601",
         "file": "cdn.azure.com/profilesendpoint_v1api20210601.json",
@@ -5786,6 +6282,22 @@
         "version": "v1api20210601storage",
         "file": "cdn.azure.com/profilesendpoint_v1api20210601storage.json",
         "slug": "cdn.azure.com/v1api20210601storage/profilesendpoint",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "profilesendpoint",
+        "version": "v20210601",
+        "file": "cdn.azure.com/profilesendpoint_v20210601.json",
+        "slug": "cdn.azure.com/v20210601/profilesendpoint",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "profilesendpoint",
+        "version": "v20210601storage",
+        "file": "cdn.azure.com/profilesendpoint_v20210601storage.json",
+        "slug": "cdn.azure.com/v20210601storage/profilesendpoint",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -5806,6 +6318,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "route",
+        "version": "v20230501",
+        "file": "cdn.azure.com/route_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/route",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "route",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/route_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/route",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "rule",
         "version": "v1api20230501",
         "file": "cdn.azure.com/rule_v1api20230501.json",
@@ -5818,6 +6346,22 @@
         "version": "v1api20230501storage",
         "file": "cdn.azure.com/rule_v1api20230501storage.json",
         "slug": "cdn.azure.com/v1api20230501storage/rule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "rule",
+        "version": "v20230501",
+        "file": "cdn.azure.com/rule_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/rule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "rule",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/rule_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/rule",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -5838,6 +6382,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "ruleset",
+        "version": "v20230501",
+        "file": "cdn.azure.com/ruleset_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/ruleset",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "ruleset",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/ruleset_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/ruleset",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "secret",
         "version": "v1api20230501",
         "file": "cdn.azure.com/secret_v1api20230501.json",
@@ -5854,6 +6414,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "secret",
+        "version": "v20230501",
+        "file": "cdn.azure.com/secret_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/secret",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "secret",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/secret_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/secret",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "securitypolicy",
         "version": "v1api20230501",
         "file": "cdn.azure.com/securitypolicy_v1api20230501.json",
@@ -5866,6 +6442,22 @@
         "version": "v1api20230501storage",
         "file": "cdn.azure.com/securitypolicy_v1api20230501storage.json",
         "slug": "cdn.azure.com/v1api20230501storage/securitypolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "securitypolicy",
+        "version": "v20230501",
+        "file": "cdn.azure.com/securitypolicy_v20230501.json",
+        "slug": "cdn.azure.com/v20230501/securitypolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "securitypolicy",
+        "version": "v20230501storage",
+        "file": "cdn.azure.com/securitypolicy_v20230501storage.json",
+        "slug": "cdn.azure.com/v20230501storage/securitypolicy",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       }
@@ -7076,6 +7668,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "account",
+        "version": "v20250601",
+        "file": "cognitiveservices.azure.com/account_v20250601.json",
+        "slug": "cognitiveservices.azure.com/v20250601/account",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "account",
+        "version": "v20250601storage",
+        "file": "cognitiveservices.azure.com/account_v20250601storage.json",
+        "slug": "cognitiveservices.azure.com/v20250601storage/account",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "deployment",
         "version": "v1api20250601",
         "file": "cognitiveservices.azure.com/deployment_v1api20250601.json",
@@ -7088,6 +7696,22 @@
         "version": "v1api20250601storage",
         "file": "cognitiveservices.azure.com/deployment_v1api20250601storage.json",
         "slug": "cognitiveservices.azure.com/v1api20250601storage/deployment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "deployment",
+        "version": "v20250601",
+        "file": "cognitiveservices.azure.com/deployment_v20250601.json",
+        "slug": "cognitiveservices.azure.com/v20250601/deployment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "deployment",
+        "version": "v20250601storage",
+        "file": "cognitiveservices.azure.com/deployment_v20250601storage.json",
+        "slug": "cognitiveservices.azure.com/v20250601storage/deployment",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       }
@@ -8484,6 +9108,22 @@
         "version": "v1api20211001storage",
         "file": "containerinstance.azure.com/containergroup_v1api20211001storage.json",
         "slug": "containerinstance.azure.com/v1api20211001storage/containergroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "containergroup",
+        "version": "v20211001",
+        "file": "containerinstance.azure.com/containergroup_v20211001.json",
+        "slug": "containerinstance.azure.com/v20211001/containergroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "containergroup",
+        "version": "v20211001storage",
+        "file": "containerinstance.azure.com/containergroup_v20211001storage.json",
+        "slug": "containerinstance.azure.com/v20211001storage/containergroup",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       }
@@ -11415,6 +12055,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "backupvault",
+        "version": "v20230101",
+        "file": "dataprotection.azure.com/backupvault_v20230101.json",
+        "slug": "dataprotection.azure.com/v20230101/backupvault",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvault",
+        "version": "v20230101storage",
+        "file": "dataprotection.azure.com/backupvault_v20230101storage.json",
+        "slug": "dataprotection.azure.com/v20230101storage/backupvault",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvault",
+        "version": "v20231101",
+        "file": "dataprotection.azure.com/backupvault_v20231101.json",
+        "slug": "dataprotection.azure.com/v20231101/backupvault",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvault",
+        "version": "v20231101storage",
+        "file": "dataprotection.azure.com/backupvault_v20231101storage.json",
+        "slug": "dataprotection.azure.com/v20231101storage/backupvault",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "backupvaultsbackupinstance",
         "version": "v1api20231101",
         "file": "dataprotection.azure.com/backupvaultsbackupinstance_v1api20231101.json",
@@ -11427,6 +12099,22 @@
         "version": "v1api20231101storage",
         "file": "dataprotection.azure.com/backupvaultsbackupinstance_v1api20231101storage.json",
         "slug": "dataprotection.azure.com/v1api20231101storage/backupvaultsbackupinstance",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvaultsbackupinstance",
+        "version": "v20231101",
+        "file": "dataprotection.azure.com/backupvaultsbackupinstance_v20231101.json",
+        "slug": "dataprotection.azure.com/v20231101/backupvaultsbackupinstance",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvaultsbackupinstance",
+        "version": "v20231101storage",
+        "file": "dataprotection.azure.com/backupvaultsbackupinstance_v20231101storage.json",
+        "slug": "dataprotection.azure.com/v20231101storage/backupvaultsbackupinstance",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -11459,6 +12147,38 @@
         "version": "v1api20231101storage",
         "file": "dataprotection.azure.com/backupvaultsbackuppolicy_v1api20231101storage.json",
         "slug": "dataprotection.azure.com/v1api20231101storage/backupvaultsbackuppolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvaultsbackuppolicy",
+        "version": "v20230101",
+        "file": "dataprotection.azure.com/backupvaultsbackuppolicy_v20230101.json",
+        "slug": "dataprotection.azure.com/v20230101/backupvaultsbackuppolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvaultsbackuppolicy",
+        "version": "v20230101storage",
+        "file": "dataprotection.azure.com/backupvaultsbackuppolicy_v20230101storage.json",
+        "slug": "dataprotection.azure.com/v20230101storage/backupvaultsbackuppolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvaultsbackuppolicy",
+        "version": "v20231101",
+        "file": "dataprotection.azure.com/backupvaultsbackuppolicy_v20231101.json",
+        "slug": "dataprotection.azure.com/v20231101/backupvaultsbackuppolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "backupvaultsbackuppolicy",
+        "version": "v20231101storage",
+        "file": "dataprotection.azure.com/backupvaultsbackuppolicy_v20231101storage.json",
+        "slug": "dataprotection.azure.com/v20231101storage/backupvaultsbackuppolicy",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       }
@@ -14307,6 +15027,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "domain",
+        "version": "v20250215",
+        "file": "eventgrid.azure.com/domain_v20250215.json",
+        "slug": "eventgrid.azure.com/v20250215/domain",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "domain",
+        "version": "v20250215storage",
+        "file": "eventgrid.azure.com/domain_v20250215storage.json",
+        "slug": "eventgrid.azure.com/v20250215storage/domain",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "domainstopic",
         "version": "v1api20200601",
         "file": "eventgrid.azure.com/domainstopic_v1api20200601.json",
@@ -14335,6 +15071,22 @@
         "version": "v20200601storage",
         "file": "eventgrid.azure.com/domainstopic_v20200601storage.json",
         "slug": "eventgrid.azure.com/v20200601storage/domainstopic",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "domainstopic",
+        "version": "v20250215",
+        "file": "eventgrid.azure.com/domainstopic_v20250215.json",
+        "slug": "eventgrid.azure.com/v20250215/domainstopic",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "domainstopic",
+        "version": "v20250215storage",
+        "file": "eventgrid.azure.com/domainstopic_v20250215storage.json",
+        "slug": "eventgrid.azure.com/v20250215storage/domainstopic",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -14371,6 +15123,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "eventsubscription",
+        "version": "v20250215",
+        "file": "eventgrid.azure.com/eventsubscription_v20250215.json",
+        "slug": "eventgrid.azure.com/v20250215/eventsubscription",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "eventsubscription",
+        "version": "v20250215storage",
+        "file": "eventgrid.azure.com/eventsubscription_v20250215storage.json",
+        "slug": "eventgrid.azure.com/v20250215storage/eventsubscription",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "topic",
         "version": "v1api20200601",
         "file": "eventgrid.azure.com/topic_v1api20200601.json",
@@ -14399,6 +15167,22 @@
         "version": "v20200601storage",
         "file": "eventgrid.azure.com/topic_v20200601storage.json",
         "slug": "eventgrid.azure.com/v20200601storage/topic",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "topic",
+        "version": "v20250215",
+        "file": "eventgrid.azure.com/topic_v20250215.json",
+        "slug": "eventgrid.azure.com/v20250215/topic",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "topic",
+        "version": "v20250215storage",
+        "file": "eventgrid.azure.com/topic_v20250215storage.json",
+        "slug": "eventgrid.azure.com/v20250215storage/topic",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       }
@@ -25772,6 +26556,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "server",
+        "version": "v20211101",
+        "file": "sql.azure.com/server_v20211101.json",
+        "slug": "sql.azure.com/v20211101/server",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "server",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/server_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/server",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "server",
+        "version": "v20250101",
+        "file": "sql.azure.com/server_v20250101.json",
+        "slug": "sql.azure.com/v20250101/server",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "server",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/server_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/server",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversadministrator",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversadministrator_v1api20211101.json",
@@ -25784,6 +26600,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversadministrator_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversadministrator",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversadministrator",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversadministrator_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversadministrator",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversadministrator",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversadministrator_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversadministrator",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversadministrator",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversadministrator_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversadministrator",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversadministrator",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversadministrator_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversadministrator",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -25804,6 +26652,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversadvancedthreatprotectionsetting",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversadvancedthreatprotectionsetting_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversadvancedthreatprotectionsetting",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversadvancedthreatprotectionsetting_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversadvancedthreatprotectionsetting",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversadvancedthreatprotectionsetting_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversadvancedthreatprotectionsetting",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversadvancedthreatprotectionsetting_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversauditingsetting",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversauditingsetting_v1api20211101.json",
@@ -25816,6 +26696,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversauditingsetting_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversauditingsetting",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversauditingsetting_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversauditingsetting",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversauditingsetting_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversauditingsetting",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversauditingsetting_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversauditingsetting",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversauditingsetting_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversauditingsetting",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -25836,6 +26748,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversazureadonlyauthentication",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversazureadonlyauthentication_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversazureadonlyauthentication",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversazureadonlyauthentication",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversazureadonlyauthentication_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversazureadonlyauthentication",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversazureadonlyauthentication",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversazureadonlyauthentication_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversazureadonlyauthentication",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversazureadonlyauthentication",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversazureadonlyauthentication_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversazureadonlyauthentication",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversconnectionpolicy",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversconnectionpolicy_v1api20211101.json",
@@ -25848,6 +26792,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversconnectionpolicy_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversconnectionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversconnectionpolicy",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversconnectionpolicy_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversconnectionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversconnectionpolicy",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversconnectionpolicy_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversconnectionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversconnectionpolicy",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversconnectionpolicy_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversconnectionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversconnectionpolicy",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversconnectionpolicy_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversconnectionpolicy",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -25868,6 +26844,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversdatabase",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabase_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabase",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabase_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabase",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabase_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabase",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabase_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabase",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversdatabasesadvancedthreatprotectionsetting",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversdatabasesadvancedthreatprotectionsetting_v1api20211101.json",
@@ -25880,6 +26888,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversdatabasesadvancedthreatprotectionsetting_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversdatabasesadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesadvancedthreatprotectionsetting",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabasesadvancedthreatprotectionsetting_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabasesadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesadvancedthreatprotectionsetting",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabasesadvancedthreatprotectionsetting_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabasesadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesadvancedthreatprotectionsetting",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabasesadvancedthreatprotectionsetting_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabasesadvancedthreatprotectionsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesadvancedthreatprotectionsetting",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabasesadvancedthreatprotectionsetting_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabasesadvancedthreatprotectionsetting",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -25900,6 +26940,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversdatabasesauditingsetting",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabasesauditingsetting_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabasesauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesauditingsetting",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabasesauditingsetting_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabasesauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesauditingsetting",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabasesauditingsetting_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabasesauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesauditingsetting",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabasesauditingsetting_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabasesauditingsetting",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversdatabasesbackuplongtermretentionpolicy",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversdatabasesbackuplongtermretentionpolicy_v1api20211101.json",
@@ -25912,6 +26984,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversdatabasesbackuplongtermretentionpolicy_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversdatabasesbackuplongtermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesbackuplongtermretentionpolicy",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabasesbackuplongtermretentionpolicy_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabasesbackuplongtermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesbackuplongtermretentionpolicy",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabasesbackuplongtermretentionpolicy_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabasesbackuplongtermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesbackuplongtermretentionpolicy",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabasesbackuplongtermretentionpolicy_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabasesbackuplongtermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesbackuplongtermretentionpolicy",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabasesbackuplongtermretentionpolicy_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabasesbackuplongtermretentionpolicy",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -25932,6 +27036,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversdatabasesbackupshorttermretentionpolicy",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabasesbackupshorttermretentionpolicy_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabasesbackupshorttermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesbackupshorttermretentionpolicy",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabasesbackupshorttermretentionpolicy_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabasesbackupshorttermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesbackupshorttermretentionpolicy",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabasesbackupshorttermretentionpolicy_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabasesbackupshorttermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesbackupshorttermretentionpolicy",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabasesbackupshorttermretentionpolicy_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabasesbackupshorttermretentionpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversdatabasessecurityalertpolicy",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversdatabasessecurityalertpolicy_v1api20211101.json",
@@ -25944,6 +27080,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversdatabasessecurityalertpolicy_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversdatabasessecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasessecurityalertpolicy",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabasessecurityalertpolicy_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabasessecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasessecurityalertpolicy",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabasessecurityalertpolicy_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabasessecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasessecurityalertpolicy",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabasessecurityalertpolicy_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabasessecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasessecurityalertpolicy",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabasessecurityalertpolicy_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabasessecurityalertpolicy",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -25964,6 +27132,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversdatabasestransparentdataencryption",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabasestransparentdataencryption_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabasestransparentdataencryption",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasestransparentdataencryption",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabasestransparentdataencryption_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabasestransparentdataencryption",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasestransparentdataencryption",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabasestransparentdataencryption_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabasestransparentdataencryption",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasestransparentdataencryption",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabasestransparentdataencryption_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabasestransparentdataencryption",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversdatabasesvulnerabilityassessment",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversdatabasesvulnerabilityassessment_v1api20211101.json",
@@ -25976,6 +27176,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversdatabasesvulnerabilityassessment_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversdatabasesvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesvulnerabilityassessment",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversdatabasesvulnerabilityassessment_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversdatabasesvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesvulnerabilityassessment",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversdatabasesvulnerabilityassessment_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversdatabasesvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesvulnerabilityassessment",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversdatabasesvulnerabilityassessment_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversdatabasesvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversdatabasesvulnerabilityassessment",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversdatabasesvulnerabilityassessment_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversdatabasesvulnerabilityassessment",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -25996,6 +27228,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serverselasticpool",
+        "version": "v20211101",
+        "file": "sql.azure.com/serverselasticpool_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serverselasticpool",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverselasticpool",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serverselasticpool_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serverselasticpool",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverselasticpool",
+        "version": "v20250101",
+        "file": "sql.azure.com/serverselasticpool_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serverselasticpool",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverselasticpool",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serverselasticpool_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serverselasticpool",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversfailovergroup",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversfailovergroup_v1api20211101.json",
@@ -26008,6 +27272,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversfailovergroup_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversfailovergroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversfailovergroup",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversfailovergroup_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversfailovergroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversfailovergroup",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversfailovergroup_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversfailovergroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversfailovergroup",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversfailovergroup_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversfailovergroup",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversfailovergroup",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversfailovergroup_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversfailovergroup",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -26028,6 +27324,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversfirewallrule",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversfirewallrule_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversfirewallrule",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversfirewallrule_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversfirewallrule",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversfirewallrule_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversfirewallrule",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversfirewallrule_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversipv6firewallrule",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversipv6firewallrule_v1api20211101.json",
@@ -26040,6 +27368,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversipv6firewallrule_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversipv6firewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversipv6firewallrule",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversipv6firewallrule_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversipv6firewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversipv6firewallrule",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversipv6firewallrule_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversipv6firewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversipv6firewallrule",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversipv6firewallrule_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversipv6firewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversipv6firewallrule",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversipv6firewallrule_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversipv6firewallrule",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -26060,6 +27420,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversoutboundfirewallrule",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversoutboundfirewallrule_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversoutboundfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversoutboundfirewallrule",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversoutboundfirewallrule_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversoutboundfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversoutboundfirewallrule",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversoutboundfirewallrule_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversoutboundfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversoutboundfirewallrule",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversoutboundfirewallrule_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversoutboundfirewallrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serverssecurityalertpolicy",
         "version": "v1api20211101",
         "file": "sql.azure.com/serverssecurityalertpolicy_v1api20211101.json",
@@ -26072,6 +27464,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serverssecurityalertpolicy_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serverssecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverssecurityalertpolicy",
+        "version": "v20211101",
+        "file": "sql.azure.com/serverssecurityalertpolicy_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serverssecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverssecurityalertpolicy",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serverssecurityalertpolicy_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serverssecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverssecurityalertpolicy",
+        "version": "v20250101",
+        "file": "sql.azure.com/serverssecurityalertpolicy_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serverssecurityalertpolicy",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverssecurityalertpolicy",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serverssecurityalertpolicy_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serverssecurityalertpolicy",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -26092,6 +27516,38 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serversvirtualnetworkrule",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversvirtualnetworkrule_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversvirtualnetworkrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversvirtualnetworkrule",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversvirtualnetworkrule_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversvirtualnetworkrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversvirtualnetworkrule",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversvirtualnetworkrule_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversvirtualnetworkrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversvirtualnetworkrule",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversvirtualnetworkrule_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversvirtualnetworkrule",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "serversvulnerabilityassessment",
         "version": "v1api20211101",
         "file": "sql.azure.com/serversvulnerabilityassessment_v1api20211101.json",
@@ -26104,6 +27560,38 @@
         "version": "v1api20211101storage",
         "file": "sql.azure.com/serversvulnerabilityassessment_v1api20211101storage.json",
         "slug": "sql.azure.com/v1api20211101storage/serversvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversvulnerabilityassessment",
+        "version": "v20211101",
+        "file": "sql.azure.com/serversvulnerabilityassessment_v20211101.json",
+        "slug": "sql.azure.com/v20211101/serversvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversvulnerabilityassessment",
+        "version": "v20211101storage",
+        "file": "sql.azure.com/serversvulnerabilityassessment_v20211101storage.json",
+        "slug": "sql.azure.com/v20211101storage/serversvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversvulnerabilityassessment",
+        "version": "v20250101",
+        "file": "sql.azure.com/serversvulnerabilityassessment_v20250101.json",
+        "slug": "sql.azure.com/v20250101/serversvulnerabilityassessment",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serversvulnerabilityassessment",
+        "version": "v20250101storage",
+        "file": "sql.azure.com/serversvulnerabilityassessment_v20250101storage.json",
+        "slug": "sql.azure.com/v20250101storage/serversvulnerabilityassessment",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       },
@@ -27510,6 +28998,22 @@
         "slug": "subscription.azure.com/v1api20211001storage/alias",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "alias",
+        "version": "v20211001",
+        "file": "subscription.azure.com/alias_v20211001.json",
+        "slug": "subscription.azure.com/v20211001/alias",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "alias",
+        "version": "v20211001storage",
+        "file": "subscription.azure.com/alias_v20211001storage.json",
+        "slug": "subscription.azure.com/v20211001storage/alias",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
       }
     ],
     "sympozium.ai": [
@@ -28032,6 +29536,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "serverfarm",
+        "version": "v20250501",
+        "file": "web.azure.com/serverfarm_v20250501.json",
+        "slug": "web.azure.com/v20250501/serverfarm",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "serverfarm",
+        "version": "v20250501storage",
+        "file": "web.azure.com/serverfarm_v20250501storage.json",
+        "slug": "web.azure.com/v20250501storage/serverfarm",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "site",
         "version": "v1api20220301",
         "file": "web.azure.com/site_v1api20220301.json",
@@ -28064,6 +29584,22 @@
         "upstream": "Azure/azure-service-operator"
       },
       {
+        "kind": "site",
+        "version": "v20250501",
+        "file": "web.azure.com/site_v20250501.json",
+        "slug": "web.azure.com/v20250501/site",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "site",
+        "version": "v20250501storage",
+        "file": "web.azure.com/site_v20250501storage.json",
+        "slug": "web.azure.com/v20250501storage/site",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
         "kind": "sitessourcecontrol",
         "version": "v1api20220301",
         "file": "web.azure.com/sitessourcecontrol_v1api20220301.json",
@@ -28092,6 +29628,22 @@
         "version": "v20220301storage",
         "file": "web.azure.com/sitessourcecontrol_v20220301storage.json",
         "slug": "web.azure.com/v20220301storage/sitessourcecontrol",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "sitessourcecontrol",
+        "version": "v20250501",
+        "file": "web.azure.com/sitessourcecontrol_v20250501.json",
+        "slug": "web.azure.com/v20250501/sitessourcecontrol",
+        "category": "Azure Ecosystem",
+        "upstream": "Azure/azure-service-operator"
+      },
+      {
+        "kind": "sitessourcecontrol",
+        "version": "v20250501storage",
+        "file": "web.azure.com/sitessourcecontrol_v20250501storage.json",
+        "slug": "web.azure.com/v20250501storage/sitessourcecontrol",
         "category": "Azure Ecosystem",
         "upstream": "Azure/azure-service-operator"
       }

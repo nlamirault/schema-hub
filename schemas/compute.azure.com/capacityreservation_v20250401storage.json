@@ -1,5 +1,5 @@
 {
-  "description": "Storage version of v20250401.CapacityReservation\nGenerator information:\n- Generated from: /compute/resource-manager/Microsoft.Compute/ComputeRP/stable/2025-04-01/ComputeRP.json\n- ARM URI: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/capacityReservationGroups/{capacityReservationGroupName}/capacityReservations/{capacityReservationName}",
+  "description": "Storage version of v20250401.CapacityReservation\nGenerator information:\n- Generated from: /compute/resource-manager/Microsoft.Compute/Compute/stable/2025-04-01/ComputeRP.json\n- ARM URI: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/capacityReservationGroups/{capacityReservationGroupName}/capacityReservations/{capacityReservationName}",
   "properties": {
     "apiVersion": {
       "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
@@ -138,7 +138,7 @@
           "type": "object"
         },
         "scheduleProfile": {
-          "description": "Storage version of v20250401.ScheduleProfile\nDefines the schedule for Block-type capacity reservations. Specifies the schedule during which capacity reservation is\nactive and VM or VMSS resource can be allocated using reservation. This property is required and only supported when the\ncapacity reservation group type is 'Block'. The scheduleProfile, start, and end fields are immutable after creation.\nMinimum API version: 2025-04-01. Please refer to https://aka.ms/blockcapacityreservation for more details.",
+          "description": "Storage version of v20250401.ScheduleProfile\nDefines the schedule for Block and Future capacity reservations. Specifies the schedule during which capacity\nreservation is active and VM or VMSS resource can be allocated using reservation. For Block capacity reservations, the\nscheduleProfile, start, and end fields are immutable after creation. Please refer to\nhttps://aka.ms/blockcapacityreservation for more details. Minimum API version for Block capacity reservations:\n2025-04-01. Future capacity reservations must use this property with only a start time, which can be changed until the\n‘modifiableUntil’ time. Please refer to https://aka.ms/futurecapacityreservation for more details. Minimum API\nversion for Future capacity reservations: 2026-04-01.",
           "properties": {
             "$propertyBag": {
               "additionalProperties": {
@@ -352,7 +352,7 @@
           "type": "string"
         },
         "scheduleProfile": {
-          "description": "Storage version of v20250401.ScheduleProfile_STATUS\nDefines the schedule for Block-type capacity reservations. Specifies the schedule during which capacity reservation is\nactive and VM or VMSS resource can be allocated using reservation. This property is required and only supported when the\ncapacity reservation group type is 'Block'. The scheduleProfile, start, and end fields are immutable after creation.\nMinimum API version: 2025-04-01. Please refer to https://aka.ms/blockcapacityreservation for more details.",
+          "description": "Storage version of v20250401.ScheduleProfile_STATUS\nDefines the schedule for Block and Future capacity reservations. Specifies the schedule during which capacity\nreservation is active and VM or VMSS resource can be allocated using reservation. For Block capacity reservations, the\nscheduleProfile, start, and end fields are immutable after creation. Please refer to\nhttps://aka.ms/blockcapacityreservation for more details. Minimum API version for Block capacity reservations:\n2025-04-01. Future capacity reservations must use this property with only a start time, which can be changed until the\n‘modifiableUntil’ time. Please refer to https://aka.ms/futurecapacityreservation for more details. Minimum API\nversion for Future capacity reservations: 2026-04-01.",
           "properties": {
             "$propertyBag": {
               "additionalProperties": {
