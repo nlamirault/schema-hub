@@ -297,7 +297,7 @@
                       "type": "array"
                     },
                     "rbac": {
-                      "description": "RBAC defines namespace-scoped Kubernetes RBAC rules to create for\nlifecycle hook containers. A Role and RoleBinding are provisioned\nin the agent namespace, bound to the \"sympozium-agent\" ServiceAccount.\nThis allows hooks to interact with Kubernetes resources (e.g., create\nor delete ConfigMaps, read Secrets).",
+                      "description": "RBAC defines namespace-scoped Kubernetes RBAC rules to create for\nlifecycle hook containers. A Role and RoleBinding are provisioned\nin the agent namespace, bound only to this AgentRun's unique ServiceAccount.\nThis allows hooks to interact with Kubernetes resources (e.g., create\nor delete ConfigMaps, read Secrets).",
                       "items": {
                         "description": "RBACRule defines a single Kubernetes RBAC policy rule.",
                         "properties": {
@@ -474,6 +474,37 @@
                 "thinking": {
                   "description": "Thinking is the thinking mode (off, low, medium, high).",
                   "type": "string"
+                },
+                "tolerations": {
+                  "description": "Tolerations allow agent pods to schedule onto tainted nodes.\nPropagated to AgentRunSpec.Tolerations when runs are created.\nUse together with NodeSelector to pin agents to dedicated node\npools (e.g. a GPU pool tainted with `nvidia.com/gpu=present:NoSchedule`).",
+                  "items": {
+                    "description": "The pod this Toleration is attached to tolerates any taint that matches\nthe triple <key,value,effect> using the matching operator <operator>.",
+                    "properties": {
+                      "effect": {
+                        "description": "Effect indicates the taint effect to match. Empty means match all taint effects.\nWhen specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.",
+                        "type": "string"
+                      },
+                      "key": {
+                        "description": "Key is the taint key that the toleration applies to. Empty means match all taint keys.\nIf the key is empty, operator must be Exists; this combination means to match all values and all keys.",
+                        "type": "string"
+                      },
+                      "operator": {
+                        "description": "Operator represents a key's relationship to the value.\nValid operators are Exists, Equal, Lt, and Gt. Defaults to Equal.\nExists is equivalent to wildcard for value, so that a pod can\ntolerate all taints of a particular category.\nLt and Gt perform numeric comparisons (requires feature gate TaintTolerationComparisonOperators).",
+                        "type": "string"
+                      },
+                      "tolerationSeconds": {
+                        "description": "TolerationSeconds represents the period of time the toleration (which must be\nof effect NoExecute, otherwise this field is ignored) tolerates the taint. By default,\nit is not set, which means tolerate the taint forever (do not evict). Zero and\nnegative values will be treated as 0 (evict immediately) by the system.",
+                        "format": "int64",
+                        "type": "integer"
+                      },
+                      "value": {
+                        "description": "Value is the taint value the toleration matches to.\nIf the operator is Exists, the value should be empty, otherwise just a regular string.",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
                 }
               },
               "required": [
@@ -2142,6 +2173,162 @@
           "description": "DisplayName is the human-readable name for this agent. When set, it is\nused for per-message sender attribution in channels (e.g. the Slack\nusername a shared bot posts under) so a multi-agent Ensemble shows which\nagent is replying. Falls back to the Agent's metadata.name when empty.",
           "type": "string"
         },
+        "execution": {
+          "description": "Execution stores default run execution choices (environment, lifecycle,\nCelln catalogue tools). Omitted Agents keep historical Kubernetes Job\nbehaviour. Changes here do not mutate already-live native Celln parents.",
+          "properties": {
+            "backend": {
+              "description": "Backend selects the default execution environment.\n\"job\" (Kubernetes containers/OCI) remains the product default when unset.\n\"celln\" is a privileged opt-in for hardware-isolated cells.",
+              "enum": [
+                "job",
+                "celln"
+              ],
+              "type": "string"
+            },
+            "cellnSelection": {
+              "description": "CellnSelection is the default catalogue selection for backend=celln.\nRuntimeRef here overrides Agent.spec.runtimeRef for inherited Celln runs only.",
+              "properties": {
+                "clusterToolRefs": {
+                  "description": "ClusterToolRefs selects exact shared catalogue revisions. Empty means no\nshared tools, not every installed tool.",
+                  "items": {
+                    "description": "ClusterCellnToolRef is an unambiguous reference to a cluster-scoped tool\ncatalogue revision. It is intentionally distinct from CellnCatalogueToolRef,\nwhich continues to mean the legacy namespaced CellnTool API.",
+                    "properties": {
+                      "name": {
+                        "maxLength": 253,
+                        "minLength": 1,
+                        "pattern": "^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$",
+                        "type": "string"
+                      },
+                      "revision": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "revision"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 24,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                },
+                "runtimeRef": {
+                  "description": "RuntimeRef preserves the legacy namespaced AgentRuntime reference. It is\nnever reinterpreted as a CellnRuntimeProfile name.",
+                  "maxLength": 253,
+                  "minLength": 1,
+                  "pattern": "^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$",
+                  "type": "string"
+                },
+                "toolRefs": {
+                  "items": {
+                    "properties": {
+                      "name": {
+                        "maxLength": 253,
+                        "minLength": 1,
+                        "pattern": "^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$",
+                        "type": "string"
+                      },
+                      "revision": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "revision"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 24,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                }
+              },
+              "required": [
+                "toolRefs"
+              ],
+              "type": "object",
+              "x-kubernetes-validations": [
+                {
+                  "message": "catalogue tool names must be unique",
+                  "rule": "self.toolRefs.all(t, self.toolRefs.filter(x, x.name == t.name).size() == 1)"
+                },
+                {
+                  "message": "cluster catalogue tool names must be unique",
+                  "rule": "!has(self.clusterToolRefs) || self.clusterToolRefs.all(t, self.clusterToolRefs.filter(x, x.name == t.name).size() == 1)"
+                },
+                {
+                  "message": "a tool name cannot resolve through both namespaced and cluster catalogues",
+                  "rule": "!has(self.clusterToolRefs) || self.clusterToolRefs.all(t, self.toolRefs.filter(x, x.name == t.name).size() == 0)"
+                }
+              ]
+            },
+            "enduring": {
+              "description": "Enduring bounds inherited by enduring runs when the request omits limits.",
+              "properties": {
+                "leaseSeconds": {
+                  "format": "int32",
+                  "maximum": 86400,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "maxModelRequests": {
+                  "format": "int32",
+                  "maximum": 6144,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxOutputTokens": {
+                  "format": "int64",
+                  "maximum": 3145728,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxTurns": {
+                  "format": "int32",
+                  "maximum": 1024,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "requireToolCall": {
+                  "description": "RequireToolCall requires actual execution of at least one lent tool on\nevery turn before successful completion; it grants no additional tools.",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "leaseSeconds",
+                "maxModelRequests",
+                "maxOutputTokens",
+                "maxTurns"
+              ],
+              "type": "object"
+            },
+            "executionLifecycle": {
+              "description": "ExecutionLifecycle selects the default one-shot or enduring lifecycle.\nEnduring is the native Celln parent/turn path, not an OCI HarnessSession.",
+              "enum": [
+                "one-shot",
+                "enduring"
+              ],
+              "type": "string"
+            },
+            "model": {
+              "description": "Model is the default model id for inherited Celln catalogue runs.",
+              "type": "string"
+            },
+            "modelConnectionRef": {
+              "description": "ModelConnectionRef selects a namespaced model connection.",
+              "type": "string"
+            },
+            "provider": {
+              "description": "Provider is the default model provider for inherited Celln catalogue runs.\nOmit when using modelConnectionRef; independent host model admission still applies.",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "imagePullSecrets": {
           "description": "ImagePullSecrets are secrets to use when pulling container images.",
           "items": {
@@ -2301,6 +2488,10 @@
         },
         "policyRef": {
           "description": "PolicyRef references the SympoziumPolicy that applies to this instance.",
+          "type": "string"
+        },
+        "runtimeRef": {
+          "description": "RuntimeRef references an administrator-approved AgentRuntime that\nreplaces agent-runner as the primary process for this Agent's ordinary\nstring-form runs. Those runs are dispatched through harness mode with this\nruntime and their original task as the prompt. An explicit object-form\nharness task may still select an image or runtime itself.",
           "type": "string"
         },
         "skills": {
@@ -3876,6 +4067,29 @@
           "required": [
             "enabled"
           ],
+          "type": "object"
+        },
+        "workspace": {
+          "description": "Workspace configures the /workspace volume for agent pods spawned\nby this Agent. When PerSessionPVC is enabled, each unique\nSessionKey gets a dedicated PVC that persists across AgentRuns —\nrequired for harnesses (codex, claude-code) whose session state\nlives under $HOME, and useful for long-lived conversations that\nneed filesystem continuity. When nil or PerSessionPVC is false,\n/workspace remains an ephemeral emptyDir as before.",
+          "properties": {
+            "idleTTL": {
+              "description": "IdleTTL is the duration a WorkspaceSession (and its PVC) may sit\nidle without any AgentRun referencing it before the sweeper\nreclaims it. Defaults to \"720h\" (30 days). Set to \"0s\" to disable\nidle reclamation entirely.",
+              "type": "string"
+            },
+            "perSessionPVC": {
+              "description": "PerSessionPVC enables a dedicated PVC per (agent, sessionKey).\nWhen false or nil, /workspace remains an ephemeral emptyDir.",
+              "type": "boolean"
+            },
+            "size": {
+              "description": "Size requests storage capacity for the per-session PVC\n(e.g. \"1Gi\"). Defaults to \"1Gi\" (matching the emptyDir size limit\nused for ephemeral workspaces).",
+              "pattern": "^[0-9]+([.][0-9]+)?(([KMGTPE]i?)|[a-zA-Z]*)?$",
+              "type": "string"
+            },
+            "storageClassName": {
+              "description": "StorageClassName selects the StorageClass for the per-session\nPVC. When empty, the cluster's default StorageClass is used.",
+              "type": "string"
+            }
+          },
           "type": "object"
         }
       },

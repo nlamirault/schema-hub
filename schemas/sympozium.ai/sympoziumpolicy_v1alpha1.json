@@ -22,6 +22,21 @@
           "description": "FeatureGates controls which features are enabled/disabled.",
           "type": "object"
         },
+        "harnessPolicy": {
+          "description": "HarnessPolicy controls whether an Agent bound to this policy may replace\nSympozium's trusted agent-runner with an external harness adapter image.\nExternal harnesses are disabled unless this field is present and enabled.",
+          "properties": {
+            "allowUnmetered": {
+              "description": "AllowUnmetered permits a harness adapter that does not report token usage.\nExternal adapters own their model loop, so Sympozium cannot infer usage;\nwithout this opt-in, an ensemble token budget could appear enforced while\nsilently receiving no accounting data. Defaults to false.",
+              "type": "boolean"
+            },
+            "enabled": {
+              "default": false,
+              "description": "Enabled explicitly opts Agents bound to this policy into external harness\nexecution. It defaults to false because the harness becomes the pod's\nprimary process and receives the run's model and MCP credentials.",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
         "imagePolicy": {
           "description": "ImagePolicy defines allowed container image registries for user-specified\nimages in lifecycle hooks, sandbox overrides, and skill sidecars.",
           "properties": {
