@@ -59,9 +59,10 @@
           "type": "string"
         },
         "provider": {
-          "description": "Provider used for authentication, can be 'azure', 'github', 'generic'.\nWhen not specified, defaults to 'generic'.",
+          "description": "Provider used for authentication, can be 'aws', 'azure', 'github', 'generic'.\nWhen not specified, defaults to 'generic'.",
           "enum": [
             "generic",
+            "aws",
             "azure",
             "github"
           ],
@@ -124,7 +125,7 @@
           "type": "object"
         },
         "serviceAccountName": {
-          "description": "ServiceAccountName is the name of the Kubernetes ServiceAccount used to\nauthenticate to the GitRepository. This field is only supported for 'azure' provider.",
+          "description": "ServiceAccountName is the name of the Kubernetes ServiceAccount used to\nauthenticate to the GitRepository. This field is only supported for 'azure' and 'aws' providers.",
           "type": "string"
         },
         "sparseCheckout": {
@@ -164,7 +165,7 @@
               "type": "string"
             },
             "secretRef": {
-              "description": "SecretRef specifies the Secret containing the public keys of trusted Git\nauthors.",
+              "description": "SecretRef specifies the Secret containing the public keys of trusted Git\nauthors. PGP public keys must be stored under keys with the .asc suffix,\nand SSH public keys must be stored under keys with the .sshpub suffix.",
               "properties": {
                 "name": {
                   "description": "Name of the referent.",
@@ -190,8 +191,8 @@
       "type": "object",
       "x-kubernetes-validations": [
         {
-          "message": "serviceAccountName can only be set when provider is 'azure'",
-          "rule": "!has(self.serviceAccountName) || (has(self.provider) && self.provider == 'azure')"
+          "message": "serviceAccountName can only be set when provider is 'azure' or 'aws'",
+          "rule": "!has(self.serviceAccountName) || (has(self.provider) && (self.provider == 'azure' || self.provider == 'aws'))"
         }
       ]
     },
