@@ -23,7 +23,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=fluxcd/flux2
-export VERSION=2.8.7
+export VERSION=2.9.5
 
 function generate_url {
   echo "https://github.com/fluxcd/flux2/manifests/crds?ref=v${VERSION}"
