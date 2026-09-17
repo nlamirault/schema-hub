@@ -1,0 +1,76 @@
+{
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "properties": {
+        "replicas": {
+          "default": 1,
+          "format": "int32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sandboxTemplateRef": {
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "updateStrategy": {
+          "properties": {
+            "type": {
+              "default": "OnReplenish",
+              "enum": [
+                "Recreate",
+                "OnReplenish"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "sandboxTemplateRef"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "properties": {
+        "observedGeneration": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "readyReplicas": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "replicas": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "selector": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}
