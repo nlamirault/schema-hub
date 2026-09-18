@@ -88,7 +88,7 @@
           "type": "string"
         },
         "roleARN": {
-          "description": "The ARN of an IAM role that this metric stream will use to access Amazon\nKinesis Data Firehose resources. This IAM role must already exist and must\nbe in the same account as the metric stream. This IAM role must include the\nfollowing permissions:\n\n  - firehose:PutRecord\n\n  - firehose:PutRecordBatch",
+          "description": "The ARN of an IAM role that this metric stream will use to access Amazon\nKinesis Data Firehose resources. This IAM role must already exist and must\nbe in the same account as the metric stream. This IAM role must include the\nfollowing permissions:\n\n   * firehose:PutRecord\n\n   * firehose:PutRecordBatch",
           "type": "string"
         },
         "roleRef": {
