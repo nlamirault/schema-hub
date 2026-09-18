@@ -46,7 +46,7 @@
           "type": "string"
         },
         "endDateType": {
-          "description": "Indicates the way in which the Capacity Reservation ends. A Capacity Reservation\ncan have one of the following end types:\n\n  - unlimited - The Capacity Reservation remains active until you explicitly\n    cancel it. Do not provide an EndDate if the EndDateType is unlimited.\n\n  - limited - The Capacity Reservation expires automatically at a specified\n    date and time. You must provide an EndDate value if the EndDateType value\n    is limited.",
+          "description": "Indicates the way in which the Capacity Reservation ends. A Capacity Reservation\ncan have one of the following end types:\n\n   * unlimited - The Capacity Reservation remains active until you explicitly\n   cancel it. Do not provide an EndDate if the EndDateType is unlimited.\n\n   * limited - The Capacity Reservation expires automatically at a specified\n   date and time. You must provide an EndDate value if the EndDateType value\n   is limited.",
           "type": "string"
         },
         "ephemeralStorage": {
@@ -59,7 +59,7 @@
           "type": "integer"
         },
         "instanceMatchCriteria": {
-          "description": "Indicates the type of instance launches that the Capacity Reservation accepts.\nThe options include:\n\n  - open - The Capacity Reservation automatically matches all instances\n    that have matching attributes (instance type, platform, and Availability\n    Zone). Instances that have matching attributes run in the Capacity Reservation\n    automatically without specifying any additional parameters.\n\n  - targeted - The Capacity Reservation only accepts instances that have\n    matching attributes (instance type, platform, and Availability Zone),\n    and explicitly target the Capacity Reservation. This ensures that only\n    permitted instances can use the reserved capacity.\n\nIf you are requesting a future-dated Capacity Reservation, you must specify\ntargeted.\n\nDefault: open",
+          "description": "Indicates the type of instance launches that the Capacity Reservation accepts.\nThe options include:\n\n   * open - The Capacity Reservation automatically matches all instances\n   that have matching attributes (instance type, platform, and Availability\n   Zone). Instances that have matching attributes run in the Capacity Reservation\n   automatically without specifying any additional parameters.\n\n   * targeted - The Capacity Reservation only accepts instances that have\n   matching attributes (instance type, platform, and Availability Zone),\n   and explicitly target the Capacity Reservation. This ensures that only\n   permitted instances can use the reserved capacity.\n\nIf you are requesting a future-dated Capacity Reservation, you must specify\ntargeted.\n\nDefault: open",
           "type": "string"
         },
         "instancePlatform": {
@@ -100,7 +100,7 @@
           "type": "array"
         },
         "tenancy": {
-          "description": "Indicates the tenancy of the Capacity Reservation. A Capacity Reservation\ncan have one of the following tenancy settings:\n\n  - default - The Capacity Reservation is created on hardware that is shared\n    with other Amazon Web Services accounts.\n\n  - dedicated - The Capacity Reservation is created on single-tenant hardware\n    that is dedicated to a single Amazon Web Services account.",
+          "description": "Indicates the tenancy of the Capacity Reservation. A Capacity Reservation\ncan have one of the following tenancy settings:\n\n   * default - The Capacity Reservation is created on hardware that is shared\n   with other Amazon Web Services accounts.\n\n   * dedicated - The Capacity Reservation is created on single-tenant hardware\n   that is dedicated to a single Amazon Web Services account.",
           "type": "string"
         }
       },
