@@ -1,5 +1,49 @@
 # Changelog
 
+## [1.9.1](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.9.0...schema-hub-v1.9.1) (2026-09-18)
+
+
+### 🐛 Bug Fixes
+
+* **deps:** update dependency @astrojs/react to v6 ([#491](https://github.com/nlamirault/schema-hub/issues/491)) ([10a1286](https://github.com/nlamirault/schema-hub/commit/10a1286358e6f7aa7d3439f4d79cb84073a730c3))
+
+
+### 🚨 Maintenance
+
+* **deps:** update actions/checkout action to v7 ([#486](https://github.com/nlamirault/schema-hub/issues/486)) ([140006a](https://github.com/nlamirault/schema-hub/commit/140006a482fe250abeb0b75c1014266b7806562a))
+* **deps:** update actions/labeler action to v7 ([#487](https://github.com/nlamirault/schema-hub/issues/487)) ([c54fdcd](https://github.com/nlamirault/schema-hub/commit/c54fdcd5d47ac448fba5840d9a54deeb5bc6cc08))
+* **deps:** update astral-sh/setup-uv action to v10 ([#488](https://github.com/nlamirault/schema-hub/issues/488)) ([4e5c016](https://github.com/nlamirault/schema-hub/commit/4e5c01648aa75a861174ef1fd354431834e74dd7))
+* **deps:** update dependency aws-controllers-k8s/acm-controller to v1.9.1 ([#489](https://github.com/nlamirault/schema-hub/issues/489)) ([46af89b](https://github.com/nlamirault/schema-hub/commit/46af89b6e7cc73db014f6851a0202606fb7ee4af))
+* **deps:** update dependency aws-controllers-k8s/acmpca-controller to v1.5.0 ([#490](https://github.com/nlamirault/schema-hub/issues/490)) ([78fc294](https://github.com/nlamirault/schema-hub/commit/78fc29451a422aac3709330b8aa0f6def1bdb158))
+* **deps:** update dependency aws-controllers-k8s/applicationautoscaling-controller to v1.7.0 ([#492](https://github.com/nlamirault/schema-hub/issues/492)) ([3fe2298](https://github.com/nlamirault/schema-hub/commit/3fe22983bd4f5c74c5406cf5a2342b6ecca3292b))
+* **deps:** update dependency aws-controllers-k8s/bedrockagent-controller to v1.4.1 ([#493](https://github.com/nlamirault/schema-hub/issues/493)) ([1d33bed](https://github.com/nlamirault/schema-hub/commit/1d33bedde030cbe8db256b5a50d9f6f86047ce61))
+* **deps:** update dependency aws-controllers-k8s/cloudfront-controller to v1.8.0 ([#494](https://github.com/nlamirault/schema-hub/issues/494)) ([a81edf2](https://github.com/nlamirault/schema-hub/commit/a81edf26d03c7fb26caaaf33922a47eeeb488f26))
+* **deps:** update dependency aws-controllers-k8s/cloudtrail-controller to v1.7.0 ([#495](https://github.com/nlamirault/schema-hub/issues/495)) ([82d916c](https://github.com/nlamirault/schema-hub/commit/82d916cd6a29f5b2cbeb14d05e3a1af4a2799e76))
+* **deps:** update dependency aws-controllers-k8s/cloudwatch-controller to v1.9.1 ([#496](https://github.com/nlamirault/schema-hub/issues/496)) ([72cc5f6](https://github.com/nlamirault/schema-hub/commit/72cc5f6d9c6193d63b77d9897be3fc04a9321ec8))
+* **deps:** update dependency aws-controllers-k8s/cloudwatchlogs-controller to v1.6.1 ([#497](https://github.com/nlamirault/schema-hub/issues/497)) ([fbd1e25](https://github.com/nlamirault/schema-hub/commit/fbd1e2535e93f68472527e877152b35b0f39ca7e))
+* **deps:** update dependency aws-controllers-k8s/dynamodb-controller to v1.12.1 ([#501](https://github.com/nlamirault/schema-hub/issues/501)) ([dba7cdc](https://github.com/nlamirault/schema-hub/commit/dba7cdc0e81a52e999b8bef1da15235c78158a8f))
+* **deps:** update dependency aws-controllers-k8s/ec2-controller to v1.21.1 ([#502](https://github.com/nlamirault/schema-hub/issues/502)) ([4bd6b82](https://github.com/nlamirault/schema-hub/commit/4bd6b825498aa29ccb6cd1d36b7d9ae08eefb44f))
+* **deps:** update dependency aws-controllers-k8s/ecr-controller to v1.9.0 ([#503](https://github.com/nlamirault/schema-hub/issues/503)) ([dca63e0](https://github.com/nlamirault/schema-hub/commit/dca63e0bb5df29f627660ea47afe759520084eaf))
+* **deps:** update dependency azure/azure-service-operator to v2.21.1 ([#473](https://github.com/nlamirault/schema-hub/issues/473)) ([782979a](https://github.com/nlamirault/schema-hub/commit/782979af15964b2da074636aa3d8eed3e8e06c3c))
+* **deps:** update dependency envoyproxy/gateway to v1.9.1 ([#474](https://github.com/nlamirault/schema-hub/issues/474)) ([ebb405a](https://github.com/nlamirault/schema-hub/commit/ebb405abc4a5fbdc6efcd75684326d4ed8b0651a))
+* **deps:** update dependency fluxcd/flux2 to v2.9.5 ([#475](https://github.com/nlamirault/schema-hub/issues/475)) ([edaf991](https://github.com/nlamirault/schema-hub/commit/edaf991e44a1acc09b7dc6ef766ce5129a0cbb96))
+* **deps:** update dependency googlecloudplatform/k8s-config-connector to v1.157.0 ([#476](https://github.com/nlamirault/schema-hub/issues/476)) ([4123619](https://github.com/nlamirault/schema-hub/commit/4123619537b870f0d26b4fc1f74112d8b55dc510))
+* **deps:** update dependency grafana/grafana-operator to v5.25.0 ([#477](https://github.com/nlamirault/schema-hub/issues/477)) ([6b70759](https://github.com/nlamirault/schema-hub/commit/6b7075953f5facb69e5a355e814491cbe9334899))
+* **deps:** update dependency istio/istio to v1.31.0 ([#478](https://github.com/nlamirault/schema-hub/issues/478)) ([38f43cb](https://github.com/nlamirault/schema-hub/commit/38f43cb038d7297a97502f6991762ab8802c11b6))
+* **deps:** update dependency k-orc/openstack-resource-controller to v2.6.0 ([#479](https://github.com/nlamirault/schema-hub/issues/479)) ([296d182](https://github.com/nlamirault/schema-hub/commit/296d18231c6ff8bb10ed6be3ca442019b76e5a17))
+* **deps:** update dependency kagent-dev/kagent to v0.10.1 ([#480](https://github.com/nlamirault/schema-hub/issues/480)) ([12ad42b](https://github.com/nlamirault/schema-hub/commit/12ad42be69afb0cdae6f22ff795cf4c764b1955a))
+* **deps:** update dependency kedacore/keda to v2.20.2 ([#481](https://github.com/nlamirault/schema-hub/issues/481)) ([4bf7fa1](https://github.com/nlamirault/schema-hub/commit/4bf7fa13b38dd68b7af199d7d2e05544cbecd9af))
+* **deps:** update dependency kubernetes-sigs/agent-sandbox to v1.0.3 ([#498](https://github.com/nlamirault/schema-hub/issues/498)) ([14e37e1](https://github.com/nlamirault/schema-hub/commit/14e37e143d01a527087d712a6243deab3225239a))
+* **deps:** update dependency kubernetes-sigs/cluster-api to v1.14.2 ([#482](https://github.com/nlamirault/schema-hub/issues/482)) ([b0444ca](https://github.com/nlamirault/schema-hub/commit/b0444cad3b7027f672f051e696c6489aba432a49))
+* **deps:** update dependency kubernetes-sigs/cluster-api-operator to v0.29.0 ([#483](https://github.com/nlamirault/schema-hub/issues/483)) ([74f8d2b](https://github.com/nlamirault/schema-hub/commit/74f8d2b54c7eb0bb031b5dcf7dc31a022d25c878))
+* **deps:** update dependency kubernetes-sigs/gateway-api to v1.6.2 ([#484](https://github.com/nlamirault/schema-hub/issues/484)) ([16b83df](https://github.com/nlamirault/schema-hub/commit/16b83dfeebe8f4f54b01f04364b10a7669dcbe93))
+* **deps:** update dependency kubernetes-sigs/karpenter to v1.14.1 ([#485](https://github.com/nlamirault/schema-hub/issues/485)) ([9a57598](https://github.com/nlamirault/schema-hub/commit/9a575984a717bb207114965c948b030e442cd06f))
+* **deps:** update dependency kubernetes-sigs/kueue to v0.19.5 ([#499](https://github.com/nlamirault/schema-hub/issues/499)) ([d6af70e](https://github.com/nlamirault/schema-hub/commit/d6af70e8d201e61a8c12a746494c3291945fb669))
+* **deps:** update dependency kubernetes-sigs/secrets-store-csi-driver to v1.6.1 ([#469](https://github.com/nlamirault/schema-hub/issues/469)) ([6a1642f](https://github.com/nlamirault/schema-hub/commit/6a1642f572cf989a3a23858666fb0ae7a1c9e188))
+* **deps:** update dependency sympozium-ai/sympozium to v0.10.78 ([#470](https://github.com/nlamirault/schema-hub/issues/470)) ([5a1b773](https://github.com/nlamirault/schema-hub/commit/5a1b77327faf3d1431d6d7a08ffb444d8b85bc70))
+* **deps:** update dependency sympozium-ai/sympozium to v0.10.80 ([#500](https://github.com/nlamirault/schema-hub/issues/500)) ([39aa2e7](https://github.com/nlamirault/schema-hub/commit/39aa2e7d86ff88bd4734858f37620f41b7a712a5))
+* **deps:** update dependency traefik/traefik to v3.7.13 ([#472](https://github.com/nlamirault/schema-hub/issues/472)) ([29a399f](https://github.com/nlamirault/schema-hub/commit/29a399f4cf847e9c33fdff0af0b938d64e16b23d))
+
 ## [1.9.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.8.0...schema-hub-v1.9.0) (2026-09-17)
 
 
