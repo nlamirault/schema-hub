@@ -17,7 +17,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=aws-controllers-k8s/cloudfront-controller
-export VERSION=1.8.0
+export VERSION=1.8.1
 
 function generate_url {
   local crd_file=$1
