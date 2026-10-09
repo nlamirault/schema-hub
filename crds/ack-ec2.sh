@@ -27,7 +27,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=aws-controllers-k8s/ec2-controller
-export VERSION=1.21.1
+export VERSION=1.22.0
 
 function generate_url {
   local crd_file=$1
