@@ -9,7 +9,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=DopplerHQ/kubernetes-operator
-export VERSION=1.7.1
+export VERSION=1.7.2
 
 function generate_url {
   local crd_file=$1
