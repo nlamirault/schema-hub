@@ -1,0 +1,2032 @@
+{
+  "description": "Gateway is the Schema for the Gateways API. Manages an AWS Bedrock AgentCore Gateway.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "GatewaySpec defines the desired state of Gateway",
+      "properties": {
+        "forProvider": {
+          "properties": {
+            "authorizerConfiguration": {
+              "description": "Configuration for request authorization. Required when authorizer_type is set to CUSTOM_JWT. See authorizer_configuration below.",
+              "properties": {
+                "customJwtAuthorizer": {
+                  "description": "JWT-based authorization configuration block. See custom_jwt_authorizer below.",
+                  "properties": {
+                    "allowedAudience": {
+                      "description": "Set of allowed audience values for JWT token validation.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedClients": {
+                      "description": "Set of allowed client IDs for JWT token validation.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedScopes": {
+                      "description": "Set of scopes that are allowed to access the token.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedWorkloadConfiguration": {
+                      "description": "Configuration restricting which workloads may use this authorizer. See allowed_workload_configuration below.",
+                      "properties": {
+                        "hostingEnvironment": {
+                          "description": "Hosting environments allowed to use the authorizer. Between 1 and 10 entries. See hosting_environment below.",
+                          "items": {
+                            "properties": {
+                              "arn": {
+                                "description": "ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "workloadIdentities": {
+                          "description": "List of workload identity names allowed to use the authorizer. Between 1 and 10 entries.",
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "customClaim": {
+                      "description": "Repeatable block to define a custom claim validation name, value, and operation. See custom_claim below.",
+                      "items": {
+                        "properties": {
+                          "authorizingClaimMatchValue": {
+                            "description": "Configuration block to define the value or values to match for and the relationship of the match. See authorizing_claim_match_value below.",
+                            "properties": {
+                              "claimMatchOperator": {
+                                "description": "Relationship between the claim field value and the value or values to match for. Valid values are EQUALS, CONTAINS, and CONTAINS_ANY. EQUALS can be used only when inbound_token_claim_value_type is STRING. CONTAINS or CONTAINS_ANY can be used only when inbound_token_claim_value_type is STRING_ARRAY.",
+                                "type": "string"
+                              },
+                              "claimMatchValue": {
+                                "description": "Value or values to match for. See claim_match_value below.",
+                                "properties": {
+                                  "matchValueString": {
+                                    "description": "String value to match for. Must be specified when claim_match_operator is EQUALS or CONTAINS. Exactly one of match_value_string or match_value_string_list must be specified.",
+                                    "type": "string"
+                                  },
+                                  "matchValueStringList": {
+                                    "description": "List of strings to check for a match. Must be specified when claim_match_operator is CONTAINS_ANY. Exactly one of match_value_string or match_value_string_list must be specified.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "inboundTokenClaimName": {
+                            "description": "Name of the custom claim field to check.",
+                            "type": "string"
+                          },
+                          "inboundTokenClaimValueType": {
+                            "description": "Data type of the claim value to check for. Valid values are STRING and STRING_ARRAY.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "discoveryUrl": {
+                      "description": "URL used to fetch OpenID Connect configuration or authorization server metadata. Must end with .well-known/openid-configuration.",
+                      "type": "string"
+                    },
+                    "privateEndpoint": {
+                      "description": "Private endpoint used to reach the authorization server. See private_endpoint below.",
+                      "properties": {
+                        "managedVpcResource": {
+                          "description": "Managed VPC resource configuration. See managed_vpc_resource below.",
+                          "properties": {
+                            "endpointIpAddressType": {
+                              "description": "IP address type for the endpoint. Valid values are IPV4 and IPV6.",
+                              "type": "string"
+                            },
+                            "routingDomain": {
+                              "description": "Routing domain for the endpoint.",
+                              "type": "string"
+                            },
+                            "securityGroupIds": {
+                              "description": "IDs of the security groups for the endpoint.",
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array",
+                              "x-kubernetes-list-type": "set"
+                            },
+                            "subnetIds": {
+                              "description": "IDs of the subnets for the endpoint.",
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array",
+                              "x-kubernetes-list-type": "set"
+                            },
+                            "tags": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "description": "Key-value map of resource tags.",
+                              "type": "object",
+                              "x-kubernetes-map-type": "granular"
+                            },
+                            "vpcIdentifier": {
+                              "description": "Identifier of the VPC for the endpoint.",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "selfManagedLatticeResource": {
+                          "description": "Self-managed VPC Lattice resource configuration. See self_managed_lattice_resource below.",
+                          "properties": {
+                            "resourceConfigurationIdentifier": {
+                              "description": "Identifier of the VPC Lattice resource configuration.",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "privateEndpointOverrides": {
+                      "description": "Overrides for the private endpoints used to reach the authorization server. See private_endpoint_overrides below.",
+                      "items": {
+                        "properties": {
+                          "domain": {
+                            "description": "Domain the override applies to.",
+                            "type": "string"
+                          },
+                          "privateEndpoint": {
+                            "description": "Private endpoint configuration. See private_endpoint below.",
+                            "properties": {
+                              "managedVpcResource": {
+                                "description": "Managed VPC resource configuration. See managed_vpc_resource below.",
+                                "properties": {
+                                  "endpointIpAddressType": {
+                                    "description": "IP address type for the endpoint. Valid values are IPV4 and IPV6.",
+                                    "type": "string"
+                                  },
+                                  "routingDomain": {
+                                    "description": "Routing domain for the endpoint.",
+                                    "type": "string"
+                                  },
+                                  "securityGroupIds": {
+                                    "description": "IDs of the security groups for the endpoint.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  },
+                                  "subnetIds": {
+                                    "description": "IDs of the subnets for the endpoint.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  },
+                                  "tags": {
+                                    "additionalProperties": {
+                                      "type": "string"
+                                    },
+                                    "description": "Key-value map of resource tags.",
+                                    "type": "object",
+                                    "x-kubernetes-map-type": "granular"
+                                  },
+                                  "vpcIdentifier": {
+                                    "description": "Identifier of the VPC for the endpoint.",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "selfManagedLatticeResource": {
+                                "description": "Self-managed VPC Lattice resource configuration. See self_managed_lattice_resource below.",
+                                "properties": {
+                                  "resourceConfigurationIdentifier": {
+                                    "description": "Identifier of the VPC Lattice resource configuration.",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "authorizerType": {
+              "description": "Type of authorizer to use. Valid values: CUSTOM_JWT, AWS_IAM, NONE, AUTHENTICATE_ONLY. When set to CUSTOM_JWT, authorizer_configuration block is required.",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the gateway.",
+              "type": "string"
+            },
+            "exceptionLevel": {
+              "description": "Exception level for the gateway. Valid values: DEBUG.",
+              "type": "string"
+            },
+            "interceptorConfiguration": {
+              "description": "List of interceptor configurations for the gateway. Minimum of 1, maximum of 2. See interceptor_configuration below.",
+              "items": {
+                "properties": {
+                  "inputConfiguration": {
+                    "description": "Input configuration for the interceptor. See input_configuration below.",
+                    "properties": {
+                      "passRequestHeaders": {
+                        "description": "Whether to pass request headers to the interceptor.",
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "interceptionPoints": {
+                    "description": "Set of interception points. Valid values: REQUEST, RESPONSE.",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array",
+                    "x-kubernetes-list-type": "set"
+                  },
+                  "interceptor": {
+                    "description": "Interceptor infrastructure configuration. See interceptor below.",
+                    "properties": {
+                      "lambda": {
+                        "description": "Lambda function configuration for the interceptor. See lambda below.",
+                        "properties": {
+                          "arn": {
+                            "description": "ARN of the Lambda function to invoke for the interceptor.",
+                            "type": "string"
+                          },
+                          "arnRef": {
+                            "description": "Reference to a Function in lambda to populate arn.",
+                            "properties": {
+                              "name": {
+                                "description": "Name of the referenced object.",
+                                "type": "string"
+                              },
+                              "namespace": {
+                                "description": "Namespace of the referenced object",
+                                "type": "string"
+                              },
+                              "policy": {
+                                "description": "Policies for referencing.",
+                                "properties": {
+                                  "resolution": {
+                                    "default": "Required",
+                                    "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                                    "enum": [
+                                      "Required",
+                                      "Optional"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "resolve": {
+                                    "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                                    "enum": [
+                                      "Always",
+                                      "IfNotPresent"
+                                    ],
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "name"
+                            ],
+                            "type": "object"
+                          },
+                          "arnSelector": {
+                            "description": "Selector for a Function in lambda to populate arn.",
+                            "properties": {
+                              "matchControllerRef": {
+                                "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                                "type": "boolean"
+                              },
+                              "matchLabels": {
+                                "additionalProperties": {
+                                  "type": "string"
+                                },
+                                "description": "MatchLabels ensures an object with matching labels is selected.",
+                                "type": "object"
+                              },
+                              "namespace": {
+                                "description": "Namespace for the selector",
+                                "type": "string"
+                              },
+                              "policy": {
+                                "description": "Policies for selection.",
+                                "properties": {
+                                  "resolution": {
+                                    "default": "Required",
+                                    "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                                    "enum": [
+                                      "Required",
+                                      "Optional"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "resolve": {
+                                    "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                                    "enum": [
+                                      "Always",
+                                      "IfNotPresent"
+                                    ],
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "kmsKeyArn": {
+              "description": "ARN of the KMS key used to encrypt the gateway data.",
+              "type": "string"
+            },
+            "kmsKeyArnRef": {
+              "description": "Reference to a Key in kms to populate kmsKeyArn.",
+              "properties": {
+                "name": {
+                  "description": "Name of the referenced object.",
+                  "type": "string"
+                },
+                "namespace": {
+                  "description": "Namespace of the referenced object",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for referencing.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "kmsKeyArnSelector": {
+              "description": "Selector for a Key in kms to populate kmsKeyArn.",
+              "properties": {
+                "matchControllerRef": {
+                  "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                  "type": "boolean"
+                },
+                "matchLabels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "MatchLabels ensures an object with matching labels is selected.",
+                  "type": "object"
+                },
+                "namespace": {
+                  "description": "Namespace for the selector",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for selection.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "name": {
+              "description": "Name of the gateway.",
+              "type": "string"
+            },
+            "policyEngineConfiguration": {
+              "description": "Configuration for a policy engine associated with the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. See policy_engine_configuration below.",
+              "properties": {
+                "arn": {
+                  "description": "ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.",
+                  "type": "string"
+                },
+                "arnRef": {
+                  "description": "Reference to a PolicyEngine in bedrockagentcore to populate arn.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "arnSelector": {
+                  "description": "Selector for a PolicyEngine in bedrockagentcore to populate arn.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "mode": {
+                  "description": "Enforcement mode for the policy engine. Valid values: LOG_ONLY, ENFORCE. In LOG_ONLY mode, the policy engine evaluates actions and records traces but does not enforce decisions. In ENFORCE mode, the policy engine evaluates actions and enforces allow/deny decisions.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "protocolConfiguration": {
+              "description": "Protocol-specific configuration for the gateway. See protocol_configuration below.",
+              "properties": {
+                "mcp": {
+                  "description": "Model Context Protocol (MCP) configuration block. See mcp below.",
+                  "properties": {
+                    "instructions": {
+                      "description": "Instructions for the MCP protocol configuration.",
+                      "type": "string"
+                    },
+                    "searchType": {
+                      "description": "Search type for MCP. Valid values: SEMANTIC.",
+                      "type": "string"
+                    },
+                    "sessionConfiguration": {
+                      "description": "Configuration block for session settings of the MCP gateway. See session_configuration below.",
+                      "properties": {
+                        "sessionTimeoutInSeconds": {
+                          "description": "Integer value for session timeout in seconds. Must be between 900 and 28800.",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "streamingConfiguration": {
+                      "description": "Configuration block for streaming settings of the MCP gateway. See streaming_configuration below.",
+                      "properties": {
+                        "enableResponseStreaming": {
+                          "description": "Boolean indicating whether response streaming is enabled for the gateway.",
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "supportedVersions": {
+                      "description": "Set of supported MCP protocol versions.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "protocolType": {
+              "description": "Protocol type for the gateway. Valid values: MCP. Omit this argument to create a gateway that routes traffic directly to HTTP targets such as AgentCore Runtime agents (see aws_bedrockagentcore_gateway_target target_configuration.http).",
+              "type": "string"
+            },
+            "region": {
+              "description": "Region where this resource will be managed. Defaults to the Region set in the provider configuration.\nRegion is the region you'd like your resource to be created in.",
+              "type": "string"
+            },
+            "roleArn": {
+              "description": "ARN of the IAM role that the gateway assumes to access AWS services.",
+              "type": "string"
+            },
+            "roleArnRef": {
+              "description": "Reference to a Role in iam to populate roleArn.",
+              "properties": {
+                "name": {
+                  "description": "Name of the referenced object.",
+                  "type": "string"
+                },
+                "namespace": {
+                  "description": "Namespace of the referenced object",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for referencing.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "roleArnSelector": {
+              "description": "Selector for a Role in iam to populate roleArn.",
+              "properties": {
+                "matchControllerRef": {
+                  "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                  "type": "boolean"
+                },
+                "matchLabels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "MatchLabels ensures an object with matching labels is selected.",
+                  "type": "object"
+                },
+                "namespace": {
+                  "description": "Namespace for the selector",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for selection.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "tags": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Key-value map of resource tags.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            }
+          },
+          "required": [
+            "region"
+          ],
+          "type": "object"
+        },
+        "initProvider": {
+          "description": "THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.",
+          "properties": {
+            "authorizerConfiguration": {
+              "description": "Configuration for request authorization. Required when authorizer_type is set to CUSTOM_JWT. See authorizer_configuration below.",
+              "properties": {
+                "customJwtAuthorizer": {
+                  "description": "JWT-based authorization configuration block. See custom_jwt_authorizer below.",
+                  "properties": {
+                    "allowedAudience": {
+                      "description": "Set of allowed audience values for JWT token validation.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedClients": {
+                      "description": "Set of allowed client IDs for JWT token validation.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedScopes": {
+                      "description": "Set of scopes that are allowed to access the token.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedWorkloadConfiguration": {
+                      "description": "Configuration restricting which workloads may use this authorizer. See allowed_workload_configuration below.",
+                      "properties": {
+                        "hostingEnvironment": {
+                          "description": "Hosting environments allowed to use the authorizer. Between 1 and 10 entries. See hosting_environment below.",
+                          "items": {
+                            "properties": {
+                              "arn": {
+                                "description": "ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "workloadIdentities": {
+                          "description": "List of workload identity names allowed to use the authorizer. Between 1 and 10 entries.",
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "customClaim": {
+                      "description": "Repeatable block to define a custom claim validation name, value, and operation. See custom_claim below.",
+                      "items": {
+                        "properties": {
+                          "authorizingClaimMatchValue": {
+                            "description": "Configuration block to define the value or values to match for and the relationship of the match. See authorizing_claim_match_value below.",
+                            "properties": {
+                              "claimMatchOperator": {
+                                "description": "Relationship between the claim field value and the value or values to match for. Valid values are EQUALS, CONTAINS, and CONTAINS_ANY. EQUALS can be used only when inbound_token_claim_value_type is STRING. CONTAINS or CONTAINS_ANY can be used only when inbound_token_claim_value_type is STRING_ARRAY.",
+                                "type": "string"
+                              },
+                              "claimMatchValue": {
+                                "description": "Value or values to match for. See claim_match_value below.",
+                                "properties": {
+                                  "matchValueString": {
+                                    "description": "String value to match for. Must be specified when claim_match_operator is EQUALS or CONTAINS. Exactly one of match_value_string or match_value_string_list must be specified.",
+                                    "type": "string"
+                                  },
+                                  "matchValueStringList": {
+                                    "description": "List of strings to check for a match. Must be specified when claim_match_operator is CONTAINS_ANY. Exactly one of match_value_string or match_value_string_list must be specified.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "inboundTokenClaimName": {
+                            "description": "Name of the custom claim field to check.",
+                            "type": "string"
+                          },
+                          "inboundTokenClaimValueType": {
+                            "description": "Data type of the claim value to check for. Valid values are STRING and STRING_ARRAY.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "discoveryUrl": {
+                      "description": "URL used to fetch OpenID Connect configuration or authorization server metadata. Must end with .well-known/openid-configuration.",
+                      "type": "string"
+                    },
+                    "privateEndpoint": {
+                      "description": "Private endpoint used to reach the authorization server. See private_endpoint below.",
+                      "properties": {
+                        "managedVpcResource": {
+                          "description": "Managed VPC resource configuration. See managed_vpc_resource below.",
+                          "properties": {
+                            "endpointIpAddressType": {
+                              "description": "IP address type for the endpoint. Valid values are IPV4 and IPV6.",
+                              "type": "string"
+                            },
+                            "routingDomain": {
+                              "description": "Routing domain for the endpoint.",
+                              "type": "string"
+                            },
+                            "securityGroupIds": {
+                              "description": "IDs of the security groups for the endpoint.",
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array",
+                              "x-kubernetes-list-type": "set"
+                            },
+                            "subnetIds": {
+                              "description": "IDs of the subnets for the endpoint.",
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array",
+                              "x-kubernetes-list-type": "set"
+                            },
+                            "tags": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "description": "Key-value map of resource tags.",
+                              "type": "object",
+                              "x-kubernetes-map-type": "granular"
+                            },
+                            "vpcIdentifier": {
+                              "description": "Identifier of the VPC for the endpoint.",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "selfManagedLatticeResource": {
+                          "description": "Self-managed VPC Lattice resource configuration. See self_managed_lattice_resource below.",
+                          "properties": {
+                            "resourceConfigurationIdentifier": {
+                              "description": "Identifier of the VPC Lattice resource configuration.",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "privateEndpointOverrides": {
+                      "description": "Overrides for the private endpoints used to reach the authorization server. See private_endpoint_overrides below.",
+                      "items": {
+                        "properties": {
+                          "domain": {
+                            "description": "Domain the override applies to.",
+                            "type": "string"
+                          },
+                          "privateEndpoint": {
+                            "description": "Private endpoint configuration. See private_endpoint below.",
+                            "properties": {
+                              "managedVpcResource": {
+                                "description": "Managed VPC resource configuration. See managed_vpc_resource below.",
+                                "properties": {
+                                  "endpointIpAddressType": {
+                                    "description": "IP address type for the endpoint. Valid values are IPV4 and IPV6.",
+                                    "type": "string"
+                                  },
+                                  "routingDomain": {
+                                    "description": "Routing domain for the endpoint.",
+                                    "type": "string"
+                                  },
+                                  "securityGroupIds": {
+                                    "description": "IDs of the security groups for the endpoint.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  },
+                                  "subnetIds": {
+                                    "description": "IDs of the subnets for the endpoint.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  },
+                                  "tags": {
+                                    "additionalProperties": {
+                                      "type": "string"
+                                    },
+                                    "description": "Key-value map of resource tags.",
+                                    "type": "object",
+                                    "x-kubernetes-map-type": "granular"
+                                  },
+                                  "vpcIdentifier": {
+                                    "description": "Identifier of the VPC for the endpoint.",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "selfManagedLatticeResource": {
+                                "description": "Self-managed VPC Lattice resource configuration. See self_managed_lattice_resource below.",
+                                "properties": {
+                                  "resourceConfigurationIdentifier": {
+                                    "description": "Identifier of the VPC Lattice resource configuration.",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "authorizerType": {
+              "description": "Type of authorizer to use. Valid values: CUSTOM_JWT, AWS_IAM, NONE, AUTHENTICATE_ONLY. When set to CUSTOM_JWT, authorizer_configuration block is required.",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the gateway.",
+              "type": "string"
+            },
+            "exceptionLevel": {
+              "description": "Exception level for the gateway. Valid values: DEBUG.",
+              "type": "string"
+            },
+            "interceptorConfiguration": {
+              "description": "List of interceptor configurations for the gateway. Minimum of 1, maximum of 2. See interceptor_configuration below.",
+              "items": {
+                "properties": {
+                  "inputConfiguration": {
+                    "description": "Input configuration for the interceptor. See input_configuration below.",
+                    "properties": {
+                      "passRequestHeaders": {
+                        "description": "Whether to pass request headers to the interceptor.",
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "interceptionPoints": {
+                    "description": "Set of interception points. Valid values: REQUEST, RESPONSE.",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array",
+                    "x-kubernetes-list-type": "set"
+                  },
+                  "interceptor": {
+                    "description": "Interceptor infrastructure configuration. See interceptor below.",
+                    "properties": {
+                      "lambda": {
+                        "description": "Lambda function configuration for the interceptor. See lambda below.",
+                        "properties": {
+                          "arn": {
+                            "description": "ARN of the Lambda function to invoke for the interceptor.",
+                            "type": "string"
+                          },
+                          "arnRef": {
+                            "description": "Reference to a Function in lambda to populate arn.",
+                            "properties": {
+                              "name": {
+                                "description": "Name of the referenced object.",
+                                "type": "string"
+                              },
+                              "namespace": {
+                                "description": "Namespace of the referenced object",
+                                "type": "string"
+                              },
+                              "policy": {
+                                "description": "Policies for referencing.",
+                                "properties": {
+                                  "resolution": {
+                                    "default": "Required",
+                                    "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                                    "enum": [
+                                      "Required",
+                                      "Optional"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "resolve": {
+                                    "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                                    "enum": [
+                                      "Always",
+                                      "IfNotPresent"
+                                    ],
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "name"
+                            ],
+                            "type": "object"
+                          },
+                          "arnSelector": {
+                            "description": "Selector for a Function in lambda to populate arn.",
+                            "properties": {
+                              "matchControllerRef": {
+                                "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                                "type": "boolean"
+                              },
+                              "matchLabels": {
+                                "additionalProperties": {
+                                  "type": "string"
+                                },
+                                "description": "MatchLabels ensures an object with matching labels is selected.",
+                                "type": "object"
+                              },
+                              "namespace": {
+                                "description": "Namespace for the selector",
+                                "type": "string"
+                              },
+                              "policy": {
+                                "description": "Policies for selection.",
+                                "properties": {
+                                  "resolution": {
+                                    "default": "Required",
+                                    "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                                    "enum": [
+                                      "Required",
+                                      "Optional"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "resolve": {
+                                    "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                                    "enum": [
+                                      "Always",
+                                      "IfNotPresent"
+                                    ],
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "kmsKeyArn": {
+              "description": "ARN of the KMS key used to encrypt the gateway data.",
+              "type": "string"
+            },
+            "kmsKeyArnRef": {
+              "description": "Reference to a Key in kms to populate kmsKeyArn.",
+              "properties": {
+                "name": {
+                  "description": "Name of the referenced object.",
+                  "type": "string"
+                },
+                "namespace": {
+                  "description": "Namespace of the referenced object",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for referencing.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "kmsKeyArnSelector": {
+              "description": "Selector for a Key in kms to populate kmsKeyArn.",
+              "properties": {
+                "matchControllerRef": {
+                  "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                  "type": "boolean"
+                },
+                "matchLabels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "MatchLabels ensures an object with matching labels is selected.",
+                  "type": "object"
+                },
+                "namespace": {
+                  "description": "Namespace for the selector",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for selection.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "name": {
+              "description": "Name of the gateway.",
+              "type": "string"
+            },
+            "policyEngineConfiguration": {
+              "description": "Configuration for a policy engine associated with the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. See policy_engine_configuration below.",
+              "properties": {
+                "arn": {
+                  "description": "ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.",
+                  "type": "string"
+                },
+                "arnRef": {
+                  "description": "Reference to a PolicyEngine in bedrockagentcore to populate arn.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "arnSelector": {
+                  "description": "Selector for a PolicyEngine in bedrockagentcore to populate arn.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "mode": {
+                  "description": "Enforcement mode for the policy engine. Valid values: LOG_ONLY, ENFORCE. In LOG_ONLY mode, the policy engine evaluates actions and records traces but does not enforce decisions. In ENFORCE mode, the policy engine evaluates actions and enforces allow/deny decisions.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "protocolConfiguration": {
+              "description": "Protocol-specific configuration for the gateway. See protocol_configuration below.",
+              "properties": {
+                "mcp": {
+                  "description": "Model Context Protocol (MCP) configuration block. See mcp below.",
+                  "properties": {
+                    "instructions": {
+                      "description": "Instructions for the MCP protocol configuration.",
+                      "type": "string"
+                    },
+                    "searchType": {
+                      "description": "Search type for MCP. Valid values: SEMANTIC.",
+                      "type": "string"
+                    },
+                    "sessionConfiguration": {
+                      "description": "Configuration block for session settings of the MCP gateway. See session_configuration below.",
+                      "properties": {
+                        "sessionTimeoutInSeconds": {
+                          "description": "Integer value for session timeout in seconds. Must be between 900 and 28800.",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "streamingConfiguration": {
+                      "description": "Configuration block for streaming settings of the MCP gateway. See streaming_configuration below.",
+                      "properties": {
+                        "enableResponseStreaming": {
+                          "description": "Boolean indicating whether response streaming is enabled for the gateway.",
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "supportedVersions": {
+                      "description": "Set of supported MCP protocol versions.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "protocolType": {
+              "description": "Protocol type for the gateway. Valid values: MCP. Omit this argument to create a gateway that routes traffic directly to HTTP targets such as AgentCore Runtime agents (see aws_bedrockagentcore_gateway_target target_configuration.http).",
+              "type": "string"
+            },
+            "roleArn": {
+              "description": "ARN of the IAM role that the gateway assumes to access AWS services.",
+              "type": "string"
+            },
+            "roleArnRef": {
+              "description": "Reference to a Role in iam to populate roleArn.",
+              "properties": {
+                "name": {
+                  "description": "Name of the referenced object.",
+                  "type": "string"
+                },
+                "namespace": {
+                  "description": "Namespace of the referenced object",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for referencing.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "roleArnSelector": {
+              "description": "Selector for a Role in iam to populate roleArn.",
+              "properties": {
+                "matchControllerRef": {
+                  "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                  "type": "boolean"
+                },
+                "matchLabels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "MatchLabels ensures an object with matching labels is selected.",
+                  "type": "object"
+                },
+                "namespace": {
+                  "description": "Namespace for the selector",
+                  "type": "string"
+                },
+                "policy": {
+                  "description": "Policies for selection.",
+                  "properties": {
+                    "resolution": {
+                      "default": "Required",
+                      "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                      "enum": [
+                        "Required",
+                        "Optional"
+                      ],
+                      "type": "string"
+                    },
+                    "resolve": {
+                      "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                      "enum": [
+                        "Always",
+                        "IfNotPresent"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "tags": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Key-value map of resource tags.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            }
+          },
+          "type": "object"
+        },
+        "managementPolicies": {
+          "default": [
+            "*"
+          ],
+          "description": "THIS IS A BETA FIELD. It is on by default but can be opted out\nthrough a Crossplane feature flag.\nManagementPolicies specify the array of actions Crossplane is allowed to\ntake on the managed and external resources.\nSee the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223\nand this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md",
+          "items": {
+            "description": "A ManagementAction represents an action that the Crossplane controllers\ncan take on an external resource.",
+            "enum": [
+              "Observe",
+              "Create",
+              "Update",
+              "Delete",
+              "LateInitialize",
+              "*"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "providerConfigRef": {
+          "default": {
+            "kind": "ClusterProviderConfig",
+            "name": "default"
+          },
+          "description": "ProviderConfigReference specifies how the provider that will be used to\ncreate, observe, update, and delete this managed resource should be\nconfigured.",
+          "properties": {
+            "kind": {
+              "description": "Kind of the referenced object.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the referenced object.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "type": "object"
+        },
+        "writeConnectionSecretToRef": {
+          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
+          "properties": {
+            "name": {
+              "description": "Name of the secret.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "forProvider"
+      ],
+      "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "spec.forProvider.authorizerType is a required parameter",
+          "rule": "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.authorizerType) || (has(self.initProvider) && has(self.initProvider.authorizerType))"
+        },
+        {
+          "message": "spec.forProvider.name is a required parameter",
+          "rule": "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.name) || (has(self.initProvider) && has(self.initProvider.name))"
+        }
+      ]
+    },
+    "status": {
+      "description": "GatewayStatus defines the observed state of Gateway.",
+      "properties": {
+        "atProvider": {
+          "properties": {
+            "authorizerConfiguration": {
+              "description": "Configuration for request authorization. Required when authorizer_type is set to CUSTOM_JWT. See authorizer_configuration below.",
+              "properties": {
+                "customJwtAuthorizer": {
+                  "description": "JWT-based authorization configuration block. See custom_jwt_authorizer below.",
+                  "properties": {
+                    "allowedAudience": {
+                      "description": "Set of allowed audience values for JWT token validation.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedClients": {
+                      "description": "Set of allowed client IDs for JWT token validation.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedScopes": {
+                      "description": "Set of scopes that are allowed to access the token.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    },
+                    "allowedWorkloadConfiguration": {
+                      "description": "Configuration restricting which workloads may use this authorizer. See allowed_workload_configuration below.",
+                      "properties": {
+                        "hostingEnvironment": {
+                          "description": "Hosting environments allowed to use the authorizer. Between 1 and 10 entries. See hosting_environment below.",
+                          "items": {
+                            "properties": {
+                              "arn": {
+                                "description": "ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "workloadIdentities": {
+                          "description": "List of workload identity names allowed to use the authorizer. Between 1 and 10 entries.",
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "customClaim": {
+                      "description": "Repeatable block to define a custom claim validation name, value, and operation. See custom_claim below.",
+                      "items": {
+                        "properties": {
+                          "authorizingClaimMatchValue": {
+                            "description": "Configuration block to define the value or values to match for and the relationship of the match. See authorizing_claim_match_value below.",
+                            "properties": {
+                              "claimMatchOperator": {
+                                "description": "Relationship between the claim field value and the value or values to match for. Valid values are EQUALS, CONTAINS, and CONTAINS_ANY. EQUALS can be used only when inbound_token_claim_value_type is STRING. CONTAINS or CONTAINS_ANY can be used only when inbound_token_claim_value_type is STRING_ARRAY.",
+                                "type": "string"
+                              },
+                              "claimMatchValue": {
+                                "description": "Value or values to match for. See claim_match_value below.",
+                                "properties": {
+                                  "matchValueString": {
+                                    "description": "String value to match for. Must be specified when claim_match_operator is EQUALS or CONTAINS. Exactly one of match_value_string or match_value_string_list must be specified.",
+                                    "type": "string"
+                                  },
+                                  "matchValueStringList": {
+                                    "description": "List of strings to check for a match. Must be specified when claim_match_operator is CONTAINS_ANY. Exactly one of match_value_string or match_value_string_list must be specified.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "inboundTokenClaimName": {
+                            "description": "Name of the custom claim field to check.",
+                            "type": "string"
+                          },
+                          "inboundTokenClaimValueType": {
+                            "description": "Data type of the claim value to check for. Valid values are STRING and STRING_ARRAY.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "discoveryUrl": {
+                      "description": "URL used to fetch OpenID Connect configuration or authorization server metadata. Must end with .well-known/openid-configuration.",
+                      "type": "string"
+                    },
+                    "privateEndpoint": {
+                      "description": "Private endpoint used to reach the authorization server. See private_endpoint below.",
+                      "properties": {
+                        "managedVpcResource": {
+                          "description": "Managed VPC resource configuration. See managed_vpc_resource below.",
+                          "properties": {
+                            "endpointIpAddressType": {
+                              "description": "IP address type for the endpoint. Valid values are IPV4 and IPV6.",
+                              "type": "string"
+                            },
+                            "routingDomain": {
+                              "description": "Routing domain for the endpoint.",
+                              "type": "string"
+                            },
+                            "securityGroupIds": {
+                              "description": "IDs of the security groups for the endpoint.",
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array",
+                              "x-kubernetes-list-type": "set"
+                            },
+                            "subnetIds": {
+                              "description": "IDs of the subnets for the endpoint.",
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array",
+                              "x-kubernetes-list-type": "set"
+                            },
+                            "tags": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "description": "Key-value map of resource tags.",
+                              "type": "object",
+                              "x-kubernetes-map-type": "granular"
+                            },
+                            "vpcIdentifier": {
+                              "description": "Identifier of the VPC for the endpoint.",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "selfManagedLatticeResource": {
+                          "description": "Self-managed VPC Lattice resource configuration. See self_managed_lattice_resource below.",
+                          "properties": {
+                            "resourceConfigurationIdentifier": {
+                              "description": "Identifier of the VPC Lattice resource configuration.",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "privateEndpointOverrides": {
+                      "description": "Overrides for the private endpoints used to reach the authorization server. See private_endpoint_overrides below.",
+                      "items": {
+                        "properties": {
+                          "domain": {
+                            "description": "Domain the override applies to.",
+                            "type": "string"
+                          },
+                          "privateEndpoint": {
+                            "description": "Private endpoint configuration. See private_endpoint below.",
+                            "properties": {
+                              "managedVpcResource": {
+                                "description": "Managed VPC resource configuration. See managed_vpc_resource below.",
+                                "properties": {
+                                  "endpointIpAddressType": {
+                                    "description": "IP address type for the endpoint. Valid values are IPV4 and IPV6.",
+                                    "type": "string"
+                                  },
+                                  "routingDomain": {
+                                    "description": "Routing domain for the endpoint.",
+                                    "type": "string"
+                                  },
+                                  "securityGroupIds": {
+                                    "description": "IDs of the security groups for the endpoint.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  },
+                                  "subnetIds": {
+                                    "description": "IDs of the subnets for the endpoint.",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array",
+                                    "x-kubernetes-list-type": "set"
+                                  },
+                                  "tags": {
+                                    "additionalProperties": {
+                                      "type": "string"
+                                    },
+                                    "description": "Key-value map of resource tags.",
+                                    "type": "object",
+                                    "x-kubernetes-map-type": "granular"
+                                  },
+                                  "vpcIdentifier": {
+                                    "description": "Identifier of the VPC for the endpoint.",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "selfManagedLatticeResource": {
+                                "description": "Self-managed VPC Lattice resource configuration. See self_managed_lattice_resource below.",
+                                "properties": {
+                                  "resourceConfigurationIdentifier": {
+                                    "description": "Identifier of the VPC Lattice resource configuration.",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "authorizerType": {
+              "description": "Type of authorizer to use. Valid values: CUSTOM_JWT, AWS_IAM, NONE, AUTHENTICATE_ONLY. When set to CUSTOM_JWT, authorizer_configuration block is required.",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the gateway.",
+              "type": "string"
+            },
+            "exceptionLevel": {
+              "description": "Exception level for the gateway. Valid values: DEBUG.",
+              "type": "string"
+            },
+            "gatewayArn": {
+              "description": "ARN of the Gateway.",
+              "type": "string"
+            },
+            "gatewayId": {
+              "description": "Unique identifier of the Gateway.",
+              "type": "string"
+            },
+            "gatewayUrl": {
+              "description": "URL endpoint for the gateway.",
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "interceptorConfiguration": {
+              "description": "List of interceptor configurations for the gateway. Minimum of 1, maximum of 2. See interceptor_configuration below.",
+              "items": {
+                "properties": {
+                  "inputConfiguration": {
+                    "description": "Input configuration for the interceptor. See input_configuration below.",
+                    "properties": {
+                      "passRequestHeaders": {
+                        "description": "Whether to pass request headers to the interceptor.",
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "interceptionPoints": {
+                    "description": "Set of interception points. Valid values: REQUEST, RESPONSE.",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array",
+                    "x-kubernetes-list-type": "set"
+                  },
+                  "interceptor": {
+                    "description": "Interceptor infrastructure configuration. See interceptor below.",
+                    "properties": {
+                      "lambda": {
+                        "description": "Lambda function configuration for the interceptor. See lambda below.",
+                        "properties": {
+                          "arn": {
+                            "description": "ARN of the Lambda function to invoke for the interceptor.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "kmsKeyArn": {
+              "description": "ARN of the KMS key used to encrypt the gateway data.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the gateway.",
+              "type": "string"
+            },
+            "policyEngineConfiguration": {
+              "description": "Configuration for a policy engine associated with the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. See policy_engine_configuration below.",
+              "properties": {
+                "arn": {
+                  "description": "ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.",
+                  "type": "string"
+                },
+                "mode": {
+                  "description": "Enforcement mode for the policy engine. Valid values: LOG_ONLY, ENFORCE. In LOG_ONLY mode, the policy engine evaluates actions and records traces but does not enforce decisions. In ENFORCE mode, the policy engine evaluates actions and enforces allow/deny decisions.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "protocolConfiguration": {
+              "description": "Protocol-specific configuration for the gateway. See protocol_configuration below.",
+              "properties": {
+                "mcp": {
+                  "description": "Model Context Protocol (MCP) configuration block. See mcp below.",
+                  "properties": {
+                    "instructions": {
+                      "description": "Instructions for the MCP protocol configuration.",
+                      "type": "string"
+                    },
+                    "searchType": {
+                      "description": "Search type for MCP. Valid values: SEMANTIC.",
+                      "type": "string"
+                    },
+                    "sessionConfiguration": {
+                      "description": "Configuration block for session settings of the MCP gateway. See session_configuration below.",
+                      "properties": {
+                        "sessionTimeoutInSeconds": {
+                          "description": "Integer value for session timeout in seconds. Must be between 900 and 28800.",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "streamingConfiguration": {
+                      "description": "Configuration block for streaming settings of the MCP gateway. See streaming_configuration below.",
+                      "properties": {
+                        "enableResponseStreaming": {
+                          "description": "Boolean indicating whether response streaming is enabled for the gateway.",
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "supportedVersions": {
+                      "description": "Set of supported MCP protocol versions.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array",
+                      "x-kubernetes-list-type": "set"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "protocolType": {
+              "description": "Protocol type for the gateway. Valid values: MCP. Omit this argument to create a gateway that routes traffic directly to HTTP targets such as AgentCore Runtime agents (see aws_bedrockagentcore_gateway_target target_configuration.http).",
+              "type": "string"
+            },
+            "region": {
+              "description": "Region where this resource will be managed. Defaults to the Region set in the provider configuration.\nRegion is the region you'd like your resource to be created in.",
+              "type": "string"
+            },
+            "roleArn": {
+              "description": "ARN of the IAM role that the gateway assumes to access AWS services.",
+              "type": "string"
+            },
+            "tags": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Key-value map of resource tags.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            },
+            "tagsAll": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "A map of tags assigned to the resource, including those inherited from the provider default_tags configuration block.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            },
+            "workloadIdentityDetails": {
+              "description": "Workload identity details for the gateway. See workload_identity_details below.",
+              "items": {
+                "properties": {
+                  "workloadIdentityArn": {
+                    "description": "ARN of the workload identity.",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "conditions": {
+          "description": "Conditions of the resource.",
+          "items": {
+            "description": "A Condition that may apply to a resource.",
+            "properties": {
+              "lastTransitionTime": {
+                "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
+                "format": "date-time",
+                "type": "string"
+              },
+              "message": {
+                "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
+                "type": "string"
+              },
+              "observedGeneration": {
+                "description": "ObservedGeneration represents the .metadata.generation that the condition was set based upon.\nFor instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date\nwith respect to the current state of the instance.",
+                "format": "int64",
+                "type": "integer"
+              },
+              "reason": {
+                "description": "A Reason for this condition's last transition from one status to another.",
+                "type": "string"
+              },
+              "status": {
+                "description": "Status of this condition; is it currently True, False, or Unknown?",
+                "type": "string"
+              },
+              "type": {
+                "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "lastTransitionTime",
+              "reason",
+              "status",
+              "type"
+            ],
+            "type": "object"
+          },
+          "type": "array",
+          "x-kubernetes-list-map-keys": [
+            "type"
+          ],
+          "x-kubernetes-list-type": "map"
+        },
+        "lastHandledReconcileAt": {
+          "description": "LastHandledReconcileAt holds the value of the most recent\nreconcile-requested-at annotation token that the controller has\nprocessed. Users can compare this to the annotation to determine\nwhether a reconcile request has been handled.",
+          "type": "string"
+        },
+        "observedGeneration": {
+          "description": "ObservedGeneration is the latest metadata.generation\nwhich resulted in either a ready state, or stalled due to error\nit can not recover from without human intervention.",
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}
