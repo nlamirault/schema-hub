@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.10.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.9.1...schema-hub-v1.10.0) (2026-10-16)
+
+
+### 🚀 Features
+
+* **crd:** add upbound aws provider crds support ([#522](https://github.com/nlamirault/schema-hub/issues/522)) ([8b9d6e6](https://github.com/nlamirault/schema-hub/commit/8b9d6e62b0c5fd1a2d99d8846b4d0b64d9ce57fb)), closes [#519](https://github.com/nlamirault/schema-hub/issues/519)
+
+
+### 🐛 Bug Fixes
+
+* **build:** stop sidebar from duplicating full nav into every page ([#525](https://github.com/nlamirault/schema-hub/issues/525)) ([0ab91eb](https://github.com/nlamirault/schema-hub/commit/0ab91eb6ca6bdd3a15a2b61aebda4c58ddde1bda))
+
+
+### 🚨 Maintenance
+
+* **deps:** update dependency argoproj/argo-cd to v3.5.5 ([#510](https://github.com/nlamirault/schema-hub/issues/510)) ([5b34375](https://github.com/nlamirault/schema-hub/commit/5b343750b8882ee49d040c91398d796272177c03))
+* **deps:** update dependency argoproj/argo-rollouts to v1.10.1 ([#517](https://github.com/nlamirault/schema-hub/issues/517)) ([cd1a45e](https://github.com/nlamirault/schema-hub/commit/cd1a45ee4e198a6ce0bb36826042e93115549e8f))
+* **deps:** update dependency argoproj/argo-workflows to v4.1.5 ([#518](https://github.com/nlamirault/schema-hub/issues/518)) ([baadb90](https://github.com/nlamirault/schema-hub/commit/baadb90827ba6e03b0c8329518cdda0957090b21))
+* **deps:** update dependency aws-controllers-k8s/acm-controller to v1.10.2 ([#511](https://github.com/nlamirault/schema-hub/issues/511)) ([2984972](https://github.com/nlamirault/schema-hub/commit/29849720daf5b13e5251b178a858e69b092e5a58))
+* **deps:** update dependency aws-controllers-k8s/cloudwatch-controller to v1.10.1 ([#512](https://github.com/nlamirault/schema-hub/issues/512)) ([2465490](https://github.com/nlamirault/schema-hub/commit/2465490715ff286ebbc6e739e1bb67e0f030d26e))
+* **deps:** update dependency aws-controllers-k8s/cloudwatchlogs-controller to v1.7.1 ([#513](https://github.com/nlamirault/schema-hub/issues/513)) ([83f519a](https://github.com/nlamirault/schema-hub/commit/83f519ac530c426190b03151c2e53ddc21fdf074))
+* **deps:** update dependency aws-controllers-k8s/ec2-controller to v1.22.2 ([#515](https://github.com/nlamirault/schema-hub/issues/515)) ([103a229](https://github.com/nlamirault/schema-hub/commit/103a2294fbe6238d37ce9fb283648a0883717ea1))
+* **deps:** update dependency cloudnative-pg/cloudnative-pg to v1.30.1 ([#526](https://github.com/nlamirault/schema-hub/issues/526)) ([4f429e0](https://github.com/nlamirault/schema-hub/commit/4f429e095956cd07f6687cd8e302017cca84ffcd))
+* **deps:** update dependency dopplerhq/kubernetes-operator to v1.7.2 ([#527](https://github.com/nlamirault/schema-hub/issues/527)) ([03b5b8a](https://github.com/nlamirault/schema-hub/commit/03b5b8afe3a1ed78f574f77f7e1b3911588e5880))
+
 ## [1.9.1](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.9.0...schema-hub-v1.9.1) (2026-10-07)
 
 
