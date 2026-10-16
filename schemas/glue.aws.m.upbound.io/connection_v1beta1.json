@@ -1,0 +1,1581 @@
+{
+  "description": "Connection is the Schema for the Connections API. Manages an AWS Glue Connection.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "ConnectionSpec defines the desired state of Connection",
+      "properties": {
+        "forProvider": {
+          "properties": {
+            "athenaPropertiesSecretRef": {
+              "description": "Map of key-value pairs used as connection properties specific to the Athena compute environment.",
+              "properties": {
+                "name": {
+                  "description": "Name of the secret.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "authenticationConfiguration": {
+              "description": "Configuration block for authentication options. See authentication_configuration below.",
+              "properties": {
+                "authenticationType": {
+                  "description": "Type of authentication. Valid values: BASIC, CUSTOM, IAM, OAUTH2.",
+                  "type": "string"
+                },
+                "basicAuthenticationCredentials": {
+                  "description": "Basic authentication credentials. See basic_authentication_credentials below.",
+                  "properties": {
+                    "passwordSecretRef": {
+                      "description": "Password for authentication.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "username": {
+                      "description": "Username for authentication.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "customAuthenticationCredentialsSecretRef": {
+                  "description": "Map of custom authentication credentials.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "kmsKeyArn": {
+                  "description": "ARN of the KMS key used for encryption.",
+                  "type": "string"
+                },
+                "oauth2Properties": {
+                  "description": "OAuth2 properties. See oauth2_properties below.",
+                  "properties": {
+                    "authorizationCodeProperties": {
+                      "description": "Authorization code properties. See authorization_code_properties below.",
+                      "properties": {
+                        "authorizationCodeSecretRef": {
+                          "description": "Authorization code.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "redirectUri": {
+                          "description": "Redirect URI for OAuth2 flow.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2ClientApplication": {
+                      "description": "OAuth2 client application details. See oauth2_client_application below.",
+                      "properties": {
+                        "awsManagedClientApplicationReference": {
+                          "description": "Reference to an AWS-managed client application.",
+                          "type": "string"
+                        },
+                        "userManagedClientApplicationClientId": {
+                          "description": "Client ID for a user-managed client application.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2Credentials": {
+                      "description": "OAuth2 credentials. See oauth2_credentials below.",
+                      "properties": {
+                        "accessTokenSecretRef": {
+                          "description": "OAuth2 access token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "jwtTokenSecretRef": {
+                          "description": "JWT token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "refreshTokenSecretRef": {
+                          "description": "OAuth2 refresh token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "userManagedClientApplicationClientSecretSecretRef": {
+                          "description": "Client secret for user-managed client application.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2GrantType": {
+                      "description": "OAuth2 grant type. Valid values: AUTHORIZATION_CODE, CLIENT_CREDENTIALS, JWT_BEARER.",
+                      "type": "string"
+                    },
+                    "tokenUrl": {
+                      "description": "Token URL for OAuth2 authentication.",
+                      "type": "string"
+                    },
+                    "tokenUrlParametersMapSecretRef": {
+                      "description": "Map of additional parameters for the token URL.",
+                      "properties": {
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "secretArn": {
+                  "description": "ARN of the Secrets Manager secret containing credentials.",
+                  "type": "string"
+                },
+                "secretArnRef": {
+                  "description": "Reference to a Secret in secretsmanager to populate secretArn.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "secretArnSelector": {
+                  "description": "Selector for a Secret in secretsmanager to populate secretArn.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "catalogId": {
+              "description": "ID of the Data Catalog in which to create the connection. If none is supplied, the AWS account ID is used by default.",
+              "type": "string"
+            },
+            "connectionPropertiesSecretRef": {
+              "description": "Map of key-value pairs used as parameters for this connection. For more information, see the AWS Documentation.",
+              "properties": {
+                "name": {
+                  "description": "Name of the secret.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "connectionType": {
+              "description": "Type of the connection. Valid values: AZURECOSMOS, AZURESQL, BIGQUERY, CUSTOM, DYNAMODB, JDBC, KAFKA, MARKETPLACE, MONGODB, NETWORK, OPENSEARCH, SNOWFLAKE. Defaults to JDBC. Some connection types require the SparkProperties property with a JSON document that contains the actual connection properties. For specific examples, refer to Example Usage.",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the connection.",
+              "type": "string"
+            },
+            "matchCriteria": {
+              "description": "List of criteria that can be used in selecting this connection.",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "physicalConnectionRequirements": {
+              "description": "Map of physical connection requirements, such as VPC and SecurityGroup. See physical_connection_requirements below.",
+              "properties": {
+                "availabilityZone": {
+                  "description": "Availability zone of the connection. This field is redundant and implied by subnet_id, but is currently an API requirement.",
+                  "type": "string"
+                },
+                "availabilityZoneRef": {
+                  "description": "Reference to a Subnet in ec2 to populate availabilityZone.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "availabilityZoneSelector": {
+                  "description": "Selector for a Subnet in ec2 to populate availabilityZone.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "securityGroupIdList": {
+                  "description": "Security group ID list used by the connection.",
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "x-kubernetes-list-type": "set"
+                },
+                "securityGroupIdListRefs": {
+                  "description": "References to SecurityGroup in ec2 to populate securityGroupIdList.",
+                  "items": {
+                    "description": "A NamespacedReference to a named object.",
+                    "properties": {
+                      "name": {
+                        "description": "Name of the referenced object.",
+                        "type": "string"
+                      },
+                      "namespace": {
+                        "description": "Namespace of the referenced object",
+                        "type": "string"
+                      },
+                      "policy": {
+                        "description": "Policies for referencing.",
+                        "properties": {
+                          "resolution": {
+                            "default": "Required",
+                            "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                            "enum": [
+                              "Required",
+                              "Optional"
+                            ],
+                            "type": "string"
+                          },
+                          "resolve": {
+                            "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                            "enum": [
+                              "Always",
+                              "IfNotPresent"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "securityGroupIdListSelector": {
+                  "description": "Selector for a list of SecurityGroup in ec2 to populate securityGroupIdList.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "subnetId": {
+                  "description": "Subnet ID used by the connection.",
+                  "type": "string"
+                },
+                "subnetIdRef": {
+                  "description": "Reference to a Subnet in ec2 to populate subnetId.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "subnetIdSelector": {
+                  "description": "Selector for a Subnet in ec2 to populate subnetId.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "region": {
+              "description": "Region where this resource will be managed. Defaults to the Region set in the provider configuration.\nRegion is the region you'd like your resource to be created in.",
+              "type": "string"
+            },
+            "tags": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Key-value map of resource tags.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            }
+          },
+          "required": [
+            "catalogId",
+            "region"
+          ],
+          "type": "object"
+        },
+        "initProvider": {
+          "description": "THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.",
+          "properties": {
+            "athenaPropertiesSecretRef": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "authenticationConfiguration": {
+              "description": "Configuration block for authentication options. See authentication_configuration below.",
+              "properties": {
+                "authenticationType": {
+                  "description": "Type of authentication. Valid values: BASIC, CUSTOM, IAM, OAUTH2.",
+                  "type": "string"
+                },
+                "basicAuthenticationCredentials": {
+                  "description": "Basic authentication credentials. See basic_authentication_credentials below.",
+                  "properties": {
+                    "passwordSecretRef": {
+                      "description": "Password for authentication.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "username": {
+                      "description": "Username for authentication.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "passwordSecretRef"
+                  ],
+                  "type": "object"
+                },
+                "customAuthenticationCredentialsSecretRef": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                "kmsKeyArn": {
+                  "description": "ARN of the KMS key used for encryption.",
+                  "type": "string"
+                },
+                "oauth2Properties": {
+                  "description": "OAuth2 properties. See oauth2_properties below.",
+                  "properties": {
+                    "authorizationCodeProperties": {
+                      "description": "Authorization code properties. See authorization_code_properties below.",
+                      "properties": {
+                        "authorizationCodeSecretRef": {
+                          "description": "Authorization code.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "redirectUri": {
+                          "description": "Redirect URI for OAuth2 flow.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "authorizationCodeSecretRef"
+                      ],
+                      "type": "object"
+                    },
+                    "oauth2ClientApplication": {
+                      "description": "OAuth2 client application details. See oauth2_client_application below.",
+                      "properties": {
+                        "awsManagedClientApplicationReference": {
+                          "description": "Reference to an AWS-managed client application.",
+                          "type": "string"
+                        },
+                        "userManagedClientApplicationClientId": {
+                          "description": "Client ID for a user-managed client application.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2Credentials": {
+                      "description": "OAuth2 credentials. See oauth2_credentials below.",
+                      "properties": {
+                        "accessTokenSecretRef": {
+                          "description": "OAuth2 access token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "jwtTokenSecretRef": {
+                          "description": "JWT token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "refreshTokenSecretRef": {
+                          "description": "OAuth2 refresh token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "userManagedClientApplicationClientSecretSecretRef": {
+                          "description": "Client secret for user-managed client application.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2GrantType": {
+                      "description": "OAuth2 grant type. Valid values: AUTHORIZATION_CODE, CLIENT_CREDENTIALS, JWT_BEARER.",
+                      "type": "string"
+                    },
+                    "tokenUrl": {
+                      "description": "Token URL for OAuth2 authentication.",
+                      "type": "string"
+                    },
+                    "tokenUrlParametersMapSecretRef": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "secretArn": {
+                  "description": "ARN of the Secrets Manager secret containing credentials.",
+                  "type": "string"
+                },
+                "secretArnRef": {
+                  "description": "Reference to a Secret in secretsmanager to populate secretArn.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "secretArnSelector": {
+                  "description": "Selector for a Secret in secretsmanager to populate secretArn.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "connectionPropertiesSecretRef": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "connectionType": {
+              "description": "Type of the connection. Valid values: AZURECOSMOS, AZURESQL, BIGQUERY, CUSTOM, DYNAMODB, JDBC, KAFKA, MARKETPLACE, MONGODB, NETWORK, OPENSEARCH, SNOWFLAKE. Defaults to JDBC. Some connection types require the SparkProperties property with a JSON document that contains the actual connection properties. For specific examples, refer to Example Usage.",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the connection.",
+              "type": "string"
+            },
+            "matchCriteria": {
+              "description": "List of criteria that can be used in selecting this connection.",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "physicalConnectionRequirements": {
+              "description": "Map of physical connection requirements, such as VPC and SecurityGroup. See physical_connection_requirements below.",
+              "properties": {
+                "availabilityZone": {
+                  "description": "Availability zone of the connection. This field is redundant and implied by subnet_id, but is currently an API requirement.",
+                  "type": "string"
+                },
+                "availabilityZoneRef": {
+                  "description": "Reference to a Subnet in ec2 to populate availabilityZone.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "availabilityZoneSelector": {
+                  "description": "Selector for a Subnet in ec2 to populate availabilityZone.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "securityGroupIdList": {
+                  "description": "Security group ID list used by the connection.",
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "x-kubernetes-list-type": "set"
+                },
+                "securityGroupIdListRefs": {
+                  "description": "References to SecurityGroup in ec2 to populate securityGroupIdList.",
+                  "items": {
+                    "description": "A NamespacedReference to a named object.",
+                    "properties": {
+                      "name": {
+                        "description": "Name of the referenced object.",
+                        "type": "string"
+                      },
+                      "namespace": {
+                        "description": "Namespace of the referenced object",
+                        "type": "string"
+                      },
+                      "policy": {
+                        "description": "Policies for referencing.",
+                        "properties": {
+                          "resolution": {
+                            "default": "Required",
+                            "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                            "enum": [
+                              "Required",
+                              "Optional"
+                            ],
+                            "type": "string"
+                          },
+                          "resolve": {
+                            "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                            "enum": [
+                              "Always",
+                              "IfNotPresent"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "securityGroupIdListSelector": {
+                  "description": "Selector for a list of SecurityGroup in ec2 to populate securityGroupIdList.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "subnetId": {
+                  "description": "Subnet ID used by the connection.",
+                  "type": "string"
+                },
+                "subnetIdRef": {
+                  "description": "Reference to a Subnet in ec2 to populate subnetId.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "subnetIdSelector": {
+                  "description": "Selector for a Subnet in ec2 to populate subnetId.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "tags": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Key-value map of resource tags.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            }
+          },
+          "type": "object"
+        },
+        "managementPolicies": {
+          "default": [
+            "*"
+          ],
+          "description": "THIS IS A BETA FIELD. It is on by default but can be opted out\nthrough a Crossplane feature flag.\nManagementPolicies specify the array of actions Crossplane is allowed to\ntake on the managed and external resources.\nSee the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223\nand this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md",
+          "items": {
+            "description": "A ManagementAction represents an action that the Crossplane controllers\ncan take on an external resource.",
+            "enum": [
+              "Observe",
+              "Create",
+              "Update",
+              "Delete",
+              "LateInitialize",
+              "*"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "providerConfigRef": {
+          "default": {
+            "kind": "ClusterProviderConfig",
+            "name": "default"
+          },
+          "description": "ProviderConfigReference specifies how the provider that will be used to\ncreate, observe, update, and delete this managed resource should be\nconfigured.",
+          "properties": {
+            "kind": {
+              "description": "Kind of the referenced object.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the referenced object.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "type": "object"
+        },
+        "writeConnectionSecretToRef": {
+          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
+          "properties": {
+            "name": {
+              "description": "Name of the secret.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "forProvider"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "description": "ConnectionStatus defines the observed state of Connection.",
+      "properties": {
+        "atProvider": {
+          "properties": {
+            "arn": {
+              "description": "ARN of the Glue Connection.",
+              "type": "string"
+            },
+            "authenticationConfiguration": {
+              "description": "Configuration block for authentication options. See authentication_configuration below.",
+              "properties": {
+                "authenticationType": {
+                  "description": "Type of authentication. Valid values: BASIC, CUSTOM, IAM, OAUTH2.",
+                  "type": "string"
+                },
+                "basicAuthenticationCredentials": {
+                  "description": "Basic authentication credentials. See basic_authentication_credentials below.",
+                  "properties": {
+                    "username": {
+                      "description": "Username for authentication.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "kmsKeyArn": {
+                  "description": "ARN of the KMS key used for encryption.",
+                  "type": "string"
+                },
+                "oauth2Properties": {
+                  "description": "OAuth2 properties. See oauth2_properties below.",
+                  "properties": {
+                    "authorizationCodeProperties": {
+                      "description": "Authorization code properties. See authorization_code_properties below.",
+                      "properties": {
+                        "redirectUri": {
+                          "description": "Redirect URI for OAuth2 flow.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2ClientApplication": {
+                      "description": "OAuth2 client application details. See oauth2_client_application below.",
+                      "properties": {
+                        "awsManagedClientApplicationReference": {
+                          "description": "Reference to an AWS-managed client application.",
+                          "type": "string"
+                        },
+                        "userManagedClientApplicationClientId": {
+                          "description": "Client ID for a user-managed client application.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2Credentials": {
+                      "description": "OAuth2 credentials. See oauth2_credentials below.",
+                      "properties": {
+                        "accessTokenSecretRef": {
+                          "description": "OAuth2 access token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "jwtTokenSecretRef": {
+                          "description": "JWT token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "refreshTokenSecretRef": {
+                          "description": "OAuth2 refresh token.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "userManagedClientApplicationClientSecretSecretRef": {
+                          "description": "Client secret for user-managed client application.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "oauth2GrantType": {
+                      "description": "OAuth2 grant type. Valid values: AUTHORIZATION_CODE, CLIENT_CREDENTIALS, JWT_BEARER.",
+                      "type": "string"
+                    },
+                    "tokenUrl": {
+                      "description": "Token URL for OAuth2 authentication.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "secretArn": {
+                  "description": "ARN of the Secrets Manager secret containing credentials.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "catalogId": {
+              "description": "ID of the Data Catalog in which to create the connection. If none is supplied, the AWS account ID is used by default.",
+              "type": "string"
+            },
+            "connectionType": {
+              "description": "Type of the connection. Valid values: AZURECOSMOS, AZURESQL, BIGQUERY, CUSTOM, DYNAMODB, JDBC, KAFKA, MARKETPLACE, MONGODB, NETWORK, OPENSEARCH, SNOWFLAKE. Defaults to JDBC. Some connection types require the SparkProperties property with a JSON document that contains the actual connection properties. For specific examples, refer to Example Usage.",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the connection.",
+              "type": "string"
+            },
+            "id": {
+              "description": "Catalog ID and name of the connection.",
+              "type": "string"
+            },
+            "matchCriteria": {
+              "description": "List of criteria that can be used in selecting this connection.",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "physicalConnectionRequirements": {
+              "description": "Map of physical connection requirements, such as VPC and SecurityGroup. See physical_connection_requirements below.",
+              "properties": {
+                "availabilityZone": {
+                  "description": "Availability zone of the connection. This field is redundant and implied by subnet_id, but is currently an API requirement.",
+                  "type": "string"
+                },
+                "securityGroupIdList": {
+                  "description": "Security group ID list used by the connection.",
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "x-kubernetes-list-type": "set"
+                },
+                "subnetId": {
+                  "description": "Subnet ID used by the connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "region": {
+              "description": "Region where this resource will be managed. Defaults to the Region set in the provider configuration.\nRegion is the region you'd like your resource to be created in.",
+              "type": "string"
+            },
+            "tags": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Key-value map of resource tags.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            },
+            "tagsAll": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Map of tags assigned to the resource, including those inherited from the provider default_tags configuration block.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            }
+          },
+          "type": "object"
+        },
+        "conditions": {
+          "description": "Conditions of the resource.",
+          "items": {
+            "description": "A Condition that may apply to a resource.",
+            "properties": {
+              "lastTransitionTime": {
+                "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
+                "format": "date-time",
+                "type": "string"
+              },
+              "message": {
+                "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
+                "type": "string"
+              },
+              "observedGeneration": {
+                "description": "ObservedGeneration represents the .metadata.generation that the condition was set based upon.\nFor instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date\nwith respect to the current state of the instance.",
+                "format": "int64",
+                "type": "integer"
+              },
+              "reason": {
+                "description": "A Reason for this condition's last transition from one status to another.",
+                "type": "string"
+              },
+              "status": {
+                "description": "Status of this condition; is it currently True, False, or Unknown?",
+                "type": "string"
+              },
+              "type": {
+                "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "lastTransitionTime",
+              "reason",
+              "status",
+              "type"
+            ],
+            "type": "object"
+          },
+          "type": "array",
+          "x-kubernetes-list-map-keys": [
+            "type"
+          ],
+          "x-kubernetes-list-type": "map"
+        },
+        "lastHandledReconcileAt": {
+          "description": "LastHandledReconcileAt holds the value of the most recent\nreconcile-requested-at annotation token that the controller has\nprocessed. Users can compare this to the annotation to determine\nwhether a reconcile request has been handled.",
+          "type": "string"
+        },
+        "observedGeneration": {
+          "description": "ObservedGeneration is the latest metadata.generation\nwhich resulted in either a ready state, or stalled due to error\nit can not recover from without human intervention.",
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}

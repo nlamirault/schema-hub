@@ -1,9 +1,45 @@
 {
+  "accessanalyzer.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "accessanalyzer.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "accesscontextmanager.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "account.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "account.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "acm.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "acm.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "acm.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -16,6 +52,18 @@
     "upstream": "cert-manager/cert-manager",
     "cncf_maturity": "graduated",
     "project": "cert-manager"
+  },
+  "acmpca.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "acmpca.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "acmpca.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -47,6 +95,18 @@
     "cncf_maturity": null,
     "project": "kube-agentic-networking"
   },
+  "agentregistry.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "agentregistry.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "agents.x-k8s.io": {
     "category": "AI Orchestration",
     "upstream": "kubernetes-sigs/agent-sandbox",
@@ -77,6 +137,30 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "amp.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "amp.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "amplify.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "amplify.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "analytics.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -95,11 +179,35 @@
     "cncf_maturity": "graduated",
     "project": "crossplane"
   },
+  "apigateway.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "apigateway.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "apigateway.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "apigatewayv2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "apigatewayv2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "apigatewayv2.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -143,6 +251,30 @@
     "cncf_maturity": null,
     "project": "azure-service-operator"
   },
+  "appautoscaling.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appautoscaling.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appconfig.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appconfig.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "appconfiguration.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
@@ -155,11 +287,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "appflow.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appflow.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "apphub.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "appintegrations.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appintegrations.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "applicationautoscaling.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -167,11 +323,71 @@
     "cncf_maturity": "sandbox",
     "project": "ack"
   },
+  "applicationinsights.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "applicationinsights.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appmesh.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appmesh.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "apprunner.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "apprunner.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "apps.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
     "cncf_maturity": "graduated",
     "project": "kubernetes"
+  },
+  "appstream.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appstream.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appsync.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "appsync.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "argoproj.io": {
     "category": "GitOps & Deployment",
@@ -197,6 +413,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "athena.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "athena.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "authentication.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
@@ -221,11 +449,59 @@
     "cncf_maturity": "graduated",
     "project": "kubernetes"
   },
+  "autoscaling.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "autoscaling.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "autoscaling.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/autoscaler",
     "cncf_maturity": null,
     "project": "vpa"
+  },
+  "autoscalingplans.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "autoscalingplans.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "backup.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "backup.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "backupdr.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -239,6 +515,18 @@
     "cncf_maturity": "graduated",
     "project": "kubernetes"
   },
+  "batch.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "batch.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "batch.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
@@ -251,11 +539,47 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "bedrock.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "bedrock.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "bedrockagent.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "bedrockagent.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "bedrockagent.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/bedrockagent-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "bedrockagentcore.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "bedrockagentcore.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "beyondcorp.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -335,6 +659,18 @@
     "cncf_maturity": "incubating",
     "project": "cluster-api"
   },
+  "budgets.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "budgets.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "cache.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
@@ -346,6 +682,18 @@
     "upstream": "Azure/azure-service-operator",
     "cncf_maturity": null,
     "project": "azure-service-operator"
+  },
+  "ce.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ce.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "cert-manager.io": {
     "category": "Security",
@@ -365,6 +713,18 @@
     "cncf_maturity": "graduated",
     "project": "kubernetes"
   },
+  "chime.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "chime.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "cilium.io": {
     "category": "Networking & Mesh",
     "upstream": "cilium/cilium",
@@ -383,6 +743,18 @@
     "cncf_maturity": null,
     "project": "clickhouse-operator"
   },
+  "cloud9.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloud9.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "cloudasset.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -395,6 +767,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "cloudcontrol.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudcontrol.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "clouddeploy.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -406,6 +790,30 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "cloudformation.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudformation.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudfront.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudfront.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "cloudfront.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -455,11 +863,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "cloudsearch.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudsearch.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "cloudtasks.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "cloudtrail.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudtrail.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "cloudtrail.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -467,11 +899,47 @@
     "cncf_maturity": "sandbox",
     "project": "ack"
   },
+  "cloudwatch.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudwatch.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "cloudwatch.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/cloudwatch-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "cloudwatchevents.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudwatchevents.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudwatchlogs.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cloudwatchlogs.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "cloudwatchlogs.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -491,11 +959,119 @@
     "cncf_maturity": "incubating",
     "project": "cluster-api-extra"
   },
+  "codeartifact.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codeartifact.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codebuild.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codebuild.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codecommit.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codecommit.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codeguruprofiler.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codeguruprofiler.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codepipeline.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codepipeline.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codestarconnections.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codestarconnections.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codestarnotifications.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "codestarnotifications.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "cognitiveservices.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
     "cncf_maturity": null,
     "project": "azure-service-operator"
+  },
+  "cognitoidentity.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cognitoidentity.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cognitoidp.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cognitoidp.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "colab.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -532,6 +1108,30 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "configservice.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "configservice.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "connect.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "connect.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "container.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -593,11 +1193,35 @@
     "cncf_maturity": "incubating",
     "project": "open-feature-operator"
   },
+  "cur.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "cur.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "datacatalog.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "dataexchange.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dataexchange.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "datafactory.azure.com": {
     "category": "Azure Ecosystem",
@@ -622,6 +1246,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "datapipeline.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "datapipeline.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "dataplex.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -653,6 +1289,30 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "datasync.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "datasync.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dax.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dax.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "dbformariadb.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
@@ -671,11 +1331,47 @@
     "cncf_maturity": null,
     "project": "azure-service-operator"
   },
+  "deploy.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "deploy.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "deploymentmanager.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "detective.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "detective.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "devicefarm.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "devicefarm.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "devices.azure.com": {
     "category": "Azure Ecosystem",
@@ -695,6 +1391,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "directconnect.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "directconnect.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "discovery.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
@@ -707,17 +1415,53 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "dlm.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dlm.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "dlp.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "dms.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dms.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "dns.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "docdb.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "docdb.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "documentai.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -737,11 +1481,59 @@
     "cncf_maturity": null,
     "project": "dragonfly-operator"
   },
+  "ds.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ds.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dsql.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dsql.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dynamodb.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "dynamodb.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "dynamodb.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/dynamodb-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "ec2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ec2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "ec2.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -749,11 +1541,47 @@
     "cncf_maturity": "sandbox",
     "project": "ack"
   },
+  "ecr.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ecr.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "ecr.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/ecr-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "ecrpublic.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ecrpublic.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ecs.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ecs.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "ecs.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -773,11 +1601,47 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "efs.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "efs.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "eks.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "eks.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "eks.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/eks-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "elasticache.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elasticache.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "elasticache.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -785,11 +1649,107 @@
     "cncf_maturity": "sandbox",
     "project": "ack"
   },
+  "elasticbeanstalk.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elasticbeanstalk.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elasticsearch.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elasticsearch.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elastictranscoder.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elastictranscoder.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elb.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elb.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elbv2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "elbv2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "emr.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "emr.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "emrcontainers.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "emrcontainers.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "emrcontainers.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/emrcontainers-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "emrserverless.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "emrserverless.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "entra.azure.com": {
     "category": "Azure Ecosystem",
@@ -839,6 +1799,18 @@
     "cncf_maturity": "graduated",
     "project": "kubernetes"
   },
+  "evidently.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "evidently.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "extensions.agents.x-k8s.io": {
     "category": "AI Orchestration",
     "upstream": "kubernetes-sigs/agent-sandbox",
@@ -887,17 +1859,65 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "firehose.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "firehose.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "firestore.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "fis.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "fis.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "flowcontrol.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
     "cncf_maturity": "graduated",
     "project": "kubernetes"
+  },
+  "fsx.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "fsx.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "gamelift.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "gamelift.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "gateway.envoyproxy.io": {
     "category": "Networking & Mesh",
@@ -941,11 +1961,71 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "glacier.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "glacier.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "globalaccelerator.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "globalaccelerator.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "glue.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "glue.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "grafana.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "grafana.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "grafana.integreatly.org": {
     "category": "Observability",
     "upstream": "grafana/grafana-operator",
     "cncf_maturity": null,
     "project": "grafana-operator"
+  },
+  "guardduty.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "guardduty.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "healthcare.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -958,6 +2038,18 @@
     "upstream": "fluxcd/flux2",
     "cncf_maturity": "graduated",
     "project": "flux"
+  },
+  "iam.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "iam.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "iam.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -983,11 +2075,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "identitystore.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "identitystore.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "image.toolkit.fluxcd.io": {
     "category": "GitOps & Deployment",
     "upstream": "fluxcd/flux2",
     "cncf_maturity": "graduated",
     "project": "flux"
+  },
+  "imagebuilder.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "imagebuilder.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "infrastructure.cluster.x-k8s.io": {
     "category": "Kubernetes",
@@ -1001,11 +2117,59 @@
     "cncf_maturity": null,
     "project": "azure-service-operator"
   },
+  "inspector.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "inspector.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "inspector2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "inspector2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "iot.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "iot.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "ipam.cluster.x-k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes-sigs/cluster-api",
     "cncf_maturity": "incubating",
     "project": "cluster-api"
+  },
+  "ivs.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ivs.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "k8s.mariadb.com": {
     "category": "Databases & Storage",
@@ -1013,11 +2177,35 @@
     "cncf_maturity": null,
     "project": "mariadb-operator"
   },
+  "kafka.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kafka.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "kafka.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/kafka-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "kafkaconnect.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kafkaconnect.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "kagent.dev": {
     "category": "AI Orchestration",
@@ -1073,17 +2261,101 @@
     "cncf_maturity": "graduated",
     "project": "keda"
   },
+  "kendra.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kendra.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "keyspaces.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "keyspaces.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "keyvault.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
     "cncf_maturity": null,
     "project": "azure-service-operator"
   },
+  "kinesis.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kinesis.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "kinesis.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/kinesis-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "kinesisanalytics.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kinesisanalytics.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kinesisanalyticsv2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kinesisanalyticsv2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kinesisvideo.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kinesisvideo.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kms.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "kms.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "kms.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1121,11 +2393,107 @@
     "cncf_maturity": "graduated",
     "project": "flux"
   },
+  "lakeformation.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lakeformation.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lambda.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lambda.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "lambda.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/lambda-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "lambdacore.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lambdacore.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lambdamicrovms.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lambdamicrovms.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lexmodels.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lexmodels.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "licensemanager.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "licensemanager.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lightsail.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "lightsail.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "location.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "location.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "logging.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1139,6 +2507,18 @@
     "cncf_maturity": null,
     "project": "azure-service-operator-extra"
   },
+  "macie2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "macie2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "managedidentity.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
@@ -1151,11 +2531,71 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "mediaconvert.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "mediaconvert.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "medialive.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "medialive.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "mediapackage.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "mediapackage.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "mediastore.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "mediastore.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "memcache.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "memorydb.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "memorydb.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "memorydb.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1211,11 +2651,47 @@
     "cncf_maturity": "graduated",
     "project": "prometheus-operator"
   },
+  "mq.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "mq.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "mq.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/mq-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "mwaa.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "mwaa.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "neptune.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "neptune.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "netapp.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1241,6 +2717,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "networkfirewall.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "networkfirewall.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "networkfirewall.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/networkfirewall-controller",
@@ -1264,6 +2752,30 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "networkmanager.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "networkmanager.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "networkmonitor.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "networkmonitor.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "networksecurity.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1301,6 +2813,18 @@
     "cncf_maturity": null,
     "project": "azure-service-operator-extra"
   },
+  "oam.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "oam.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "oci.oraclecloud.com": {
     "category": "Kubernetes",
     "upstream": "oracle/karpenter-provider-oci",
@@ -1318,6 +2842,30 @@
     "upstream": "openreports/reports-api",
     "cncf_maturity": null,
     "project": "open-reports-io"
+  },
+  "opensearch.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "opensearch.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "opensearchserverless.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "opensearchserverless.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "opensearchservice.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1361,6 +2909,18 @@
     "cncf_maturity": "graduated",
     "project": "crossplane"
   },
+  "organizations.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "organizations.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "organizations.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/organizations-controller",
@@ -1379,11 +2939,47 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "osis.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "osis.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "oslogin.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "pinpoint.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "pinpoint.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "pipes.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "pipes.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "pipes.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1457,11 +3053,47 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "qldb.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "qldb.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "quicksight.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "quicksight.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "quota.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
     "cncf_maturity": null,
     "project": "azure-service-operator-extra"
+  },
+  "ram.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ram.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "ram.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1474,6 +3106,18 @@
     "upstream": "kubernetes/kubernetes",
     "cncf_maturity": "graduated",
     "project": "kubernetes"
+  },
+  "rds.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "rds.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "rds.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1499,11 +3143,47 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "redshift.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "redshift.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "redshiftserverless.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "redshiftserverless.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "resource.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
     "cncf_maturity": "graduated",
     "project": "kubernetes"
+  },
+  "resourcegroups.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "resourcegroups.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "resourcemanager.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1517,11 +3197,95 @@
     "cncf_maturity": null,
     "project": "azure-service-operator"
   },
+  "rolesanywhere.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "rolesanywhere.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "route53.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/route53-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "route53profiles.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53profiles.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53recoverycontrolconfig.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53recoverycontrolconfig.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53recoveryreadiness.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53recoveryreadiness.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53resolver.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "route53resolver.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "rum.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "rum.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "run.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1535,11 +3299,71 @@
     "cncf_maturity": "incubating",
     "project": "cluster-api"
   },
+  "s3.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "s3.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "s3.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/s3-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "s3control.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "s3control.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "s3files.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "s3files.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "s3vectors.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "s3vectors.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sagemaker.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sagemaker.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "sagemaker.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1547,11 +3371,35 @@
     "cncf_maturity": "sandbox",
     "project": "ack"
   },
+  "scheduler.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "scheduler.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "scheduling.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
     "cncf_maturity": "graduated",
     "project": "kubernetes"
+  },
+  "schemas.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "schemas.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "search.azure.com": {
     "category": "Azure Ecosystem",
@@ -1589,6 +3437,18 @@
     "cncf_maturity": null,
     "project": "infisical-operator"
   },
+  "secretsmanager.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "secretsmanager.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "secretsmanager.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/secretsmanager-controller",
@@ -1613,11 +3473,47 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "securityhub.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "securityhub.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "serverlessrepo.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "serverlessrepo.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "servicebus.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
     "cncf_maturity": null,
     "project": "azure-service-operator"
+  },
+  "servicecatalog.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "servicecatalog.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "servicedirectory.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1625,11 +3521,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "servicediscovery.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "servicediscovery.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "servicenetworking.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "servicequotas.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "servicequotas.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1643,6 +3563,42 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "ses.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ses.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sesv2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sesv2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sfn.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sfn.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "sfn.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/sfn-controller",
@@ -1654,6 +3610,30 @@
     "upstream": "Azure/azure-service-operator",
     "cncf_maturity": null,
     "project": "azure-service-operator"
+  },
+  "signer.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "signer.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sns.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sns.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "sns.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1703,11 +3683,47 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "sqs.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "sqs.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "sqs.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/sqs-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "ssm.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ssm.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ssoadmin.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "ssoadmin.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "storage.api.k8s.io": {
     "category": "Kubernetes",
@@ -1745,6 +3761,18 @@
     "cncf_maturity": null,
     "project": "azure-service-operator"
   },
+  "swf.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "swf.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "sympozium.ai": {
     "category": "AI Orchestration",
     "upstream": "sympozium-ai/sympozium",
@@ -1769,6 +3797,30 @@
     "cncf_maturity": "graduated",
     "project": "istio"
   },
+  "timestreaminfluxdb.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "timestreaminfluxdb.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "timestreamwrite.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "timestreamwrite.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "tpu.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -1781,11 +3833,47 @@
     "cncf_maturity": null,
     "project": "traefik"
   },
+  "transcribe.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "transcribe.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "transfer.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "transfer.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "tuppr.home-operations.com": {
     "category": "Other Extensions",
     "upstream": "home-operations/tuppr",
     "cncf_maturity": null,
     "project": "tuppr"
+  },
+  "verifiedaccess.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "verifiedaccess.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "vertexai.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1799,11 +3887,71 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "vpc.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "vpc.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "vpcaccess.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "vpclattice.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "vpclattice.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "waf.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "waf.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "wafregional.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "wafregional.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "wafv2.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "wafv2.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   },
   "web.azure.com": {
     "category": "Azure Ecosystem",
@@ -1823,10 +3971,34 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "workspaces.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "workspaces.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
   "workstations.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "xray.aws.m.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
+  },
+  "xray.aws.upbound.io": {
+    "category": "AWS Infrastructure",
+    "upstream": "crossplane-contrib/provider-upjet-aws",
+    "cncf_maturity": null,
+    "project": "crossplane-aws"
   }
 }
