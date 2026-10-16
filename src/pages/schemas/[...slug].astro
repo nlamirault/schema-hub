@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import catalog from '../../../public/data/catalog.json';
-import titles from '../../../public/data/titles.json';
 import SchemaViewToggle from '../../components/SchemaViewToggle';
 import SchemaDiffViewer from '../../components/SchemaDiffViewer';
 import * as fs from 'node:fs';
@@ -203,8 +202,6 @@ const sortedVersions = Object.keys(resourcesByVersion).sort((a, b) => b.localeCo
             <SchemaViewToggle
                 client:load
                 initialSchema={schema}
-                titles={titles as any}
-                schemaJson={JSON.stringify(schema, null, 2)}
                 schemaFile={file!}
             />
         </section>

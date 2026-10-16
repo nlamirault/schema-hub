@@ -14,17 +14,30 @@ interface Schema {
 
 interface Props {
   initialSchema: Schema;
-  titles: Record<string, string>;
-  schemaJson?: string;
   schemaFile?: string;
 }
 
 type CopyState = 'idle' | 'copied' | 'failed';
 
-export default function SchemaViewToggle({ initialSchema, titles, schemaJson = '', schemaFile = '' }: Props) {
+export default function SchemaViewToggle({ initialSchema, schemaFile = '' }: Props) {
+  // Computed on the client instead of taking a pre-serialized `schemaJson`
+  // prop, which used to duplicate the whole schema in every page's
+  // hydration payload (it's already present as `initialSchema`).
+  const schemaJson = JSON.stringify(initialSchema, null, 2);
   const [view, setView] = useState<ViewMode>('tree');
   const [yamlCopy, setYamlCopy] = useState<CopyState>('idle');
   const [jsonCopy, setJsonCopy] = useState<CopyState>('idle');
+  // Fetched once from the shared, browser-cached /data/titles.json instead
+  // of being passed as a prop, which used to duplicate this ~74KB map into
+  // every one of the ~5,900 resource pages' hydration payloads.
+  const [titles, setTitles] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    fetch('/data/titles.json')
+      .then(r => r.json())
+      .then(setTitles)
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     try {
