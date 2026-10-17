@@ -11,7 +11,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=agentgateway/agentgateway
-export VERSION=1.5.0
+export VERSION=1.6.0
 
 function generate_url {
   local crd_file=$1
