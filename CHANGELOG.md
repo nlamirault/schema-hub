@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.10.1](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.10.0...schema-hub-v1.10.1) (2026-10-17)
+
+
+### 🚨 Maintenance
+
+* **deps:** update astral-sh/setup-uv action to v10.3.0 ([#539](https://github.com/nlamirault/schema-hub/issues/539)) ([61aaae2](https://github.com/nlamirault/schema-hub/commit/61aaae20d26ecd8fad025a17a564bd8465805f7e))
+* **deps:** update dependency fluxcd/flux2 to v2.9.6 ([#530](https://github.com/nlamirault/schema-hub/issues/530)) ([ad12ded](https://github.com/nlamirault/schema-hub/commit/ad12ded1f74da45e47a97897c9ffd91aa0fb4bb4))
+* **deps:** update dependency istio/istio to v1.31.2 ([#531](https://github.com/nlamirault/schema-hub/issues/531)) ([dd2f683](https://github.com/nlamirault/schema-hub/commit/dd2f683f8ae65f2917d7825ed297deea8c7ac40c))
+* **deps:** update dependency kagent-dev/kagent to v0.10.3 ([#532](https://github.com/nlamirault/schema-hub/issues/532)) ([5edfe7b](https://github.com/nlamirault/schema-hub/commit/5edfe7b6be2acf4f73ad23f0a7301f93d4d1e9ce))
+* **deps:** update dependency kubernetes-sigs/agent-sandbox to v1.0.7 ([#533](https://github.com/nlamirault/schema-hub/issues/533)) ([bcc8b39](https://github.com/nlamirault/schema-hub/commit/bcc8b397aef7d96cca78edb5771d62e1ba532534))
+* **deps:** update dependency kubernetes-sigs/cluster-api to v1.14.3 ([#534](https://github.com/nlamirault/schema-hub/issues/534)) ([0fadc12](https://github.com/nlamirault/schema-hub/commit/0fadc12f818ba23d2efc63fd6c0c232edb89283f))
+* **deps:** update dependency kubernetes-sigs/cluster-api-provider-aws to v2.13.1 ([#535](https://github.com/nlamirault/schema-hub/issues/535)) ([8deca7a](https://github.com/nlamirault/schema-hub/commit/8deca7a1f31adbf75d864a9be4658b619c87a39d))
+* **deps:** update dependency kubernetes-sigs/gateway-api to v1.6.3 ([#537](https://github.com/nlamirault/schema-hub/issues/537)) ([9e7aad3](https://github.com/nlamirault/schema-hub/commit/9e7aad3f6ec7f7fae71c4dde41140376eaa5bcce))
+* **deps:** update dependency traefik/traefik to v3.7.15 ([#538](https://github.com/nlamirault/schema-hub/issues/538)) ([dbe82ed](https://github.com/nlamirault/schema-hub/commit/dbe82ed54fc86c21d00d83d41bd6f04c6dbe80e1))
+
 ## [1.10.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.9.1...schema-hub-v1.10.0) (2026-10-16)
 
 
