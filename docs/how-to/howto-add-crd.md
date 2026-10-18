@@ -65,6 +65,25 @@ function generate_url {
 
 The `FILES` array must list the individual filenames that `kubectl slice` will produce from the bundle.
 
+### `swagger` — CRDs described by a Swagger/OpenAPI 2.0 spec
+
+Use when the upstream project (typically a core Kubernetes API group) publishes a Swagger 2.0 spec instead of CRD YAML.
+
+```bash
+#!/usr/bin/env bash
+
+export choice=swagger
+
+# renovate: datasource=github-tags depName=kubernetes/kubernetes
+export VERSION=1.31.0
+
+function generate_url {
+  echo "https://raw.githubusercontent.com/kubernetes/kubernetes/v${VERSION}/api/openapi-spec/swagger.json"
+}
+```
+
+`FILES` is not used in this mode. Each definition in the spec is extracted and written to `schemas/{group}.api.k8s.io/{kind}_{version}.json`.
+
 ### `kustomize` — CRDs assembled via Kustomize
 
 Use when the upstream project provides a kustomize overlay that builds the CRDs.
@@ -116,17 +135,39 @@ cat schemas/myoperator.io/foo_v1alpha1.json | python3 -m json.tool | head -30
 
 ---
 
-## Step 4 — Regenerate the web catalog
+## Step 4 — Register the operator in sources.yaml
 
-The web application reads from `public/data/catalog.json`. Regenerate it after adding new schemas:
+`sources.yaml` at the repository root is the canonical metadata list — it drives the website catalog's categories/upstream links and the [Supported schemas reference](../reference/schemas.md). Schemas are not categorized until their API groups are listed here.
+
+Add an entry with the API groups your script produced:
+
+```yaml
+- id: my-operator
+  name: My Operator
+  project: my-operator
+  category: Observability
+  cncf: sandbox
+  upstream: myorg/myoperator
+  groups:
+    - myoperator.io
+```
+
+`category` should match one of the existing categories in the file (e.g. `AWS Infrastructure`, `Observability`, `Security`) unless the operator genuinely needs a new one.
+
+---
+
+## Step 5 — Regenerate the web catalog and reference docs
+
+The web application reads from `public/data/catalog.json`, and the reference doc is generated from `sources.yaml`. Regenerate both after adding new schemas:
 
 ```bash
 make catalog
+make docs-schemas
 ```
 
 ---
 
-## Step 5 — Submit a pull request
+## Step 6 — Submit a pull request
 
 1. Commit the new script and the generated schemas.
 2. Open a pull request with a description of the operator and a link to its upstream repository.

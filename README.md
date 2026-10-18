@@ -6,7 +6,7 @@ A collection of JSON schemas extracted from Kubernetes Custom Resource Definitio
 
 ## Overview
 
-Schema Hub provides ready-to-use JSON Schema files for Kubernetes CRDs. Use them in your IDE or CI pipeline to get validation and autocomplete for resources like ArgoCD Applications, Flux Kustomizations, Prometheus rules, External Secrets, and 70+ more.
+Schema Hub provides ready-to-use JSON Schema files for Kubernetes CRDs. Use them in your IDE or CI pipeline to get validation and autocomplete for resources like ArgoCD Applications, Flux Kustomizations, Prometheus rules, External Secrets, and 100+ other operators and controllers.
 
 Schemas are served directly from GitHub:
 
