@@ -54,6 +54,10 @@ init: ## Initialize environment
 build: guard-CRD ## Update CRD for an application
 	@scripts/schema-store.sh $$(basename "${CRD}" .sh)
 
+.PHONY: docs-schemas
+docs-schemas: ## Regenerate docs/reference/schemas.md from sources.yaml
+	uv run scripts/generate-schemas-reference.py
+
 ##@ Website
 
 .PHONY: catalog
