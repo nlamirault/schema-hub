@@ -1,0 +1,972 @@
+{
+  "description": "Reservation is the Schema for the Reservations API. Represents a reservation resource.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "ReservationSpec defines the desired state of Reservation",
+      "properties": {
+        "forProvider": {
+          "properties": {
+            "deleteAfterDuration": {
+              "description": "Duration after which the reservation will be auto-deleted by Compute Engine. Cannot be used with delete_at_time.\nStructure is documented below.",
+              "properties": {
+                "nanos": {
+                  "description": "Number of nanoseconds for the auto-delete duration.",
+                  "type": "number"
+                },
+                "seconds": {
+                  "description": "Number of seconds for the auto-delete duration.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "deleteAtTime": {
+              "description": "Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.\nCannot be used with delete_after_duration.",
+              "type": "string"
+            },
+            "description": {
+              "description": "An optional description of this resource.",
+              "type": "string"
+            },
+            "params": {
+              "description": "Additional params passed with the request, but not persisted as part of resource payload\nStructure is documented below.",
+              "properties": {
+                "resourceManagerTags": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Resource manager tags to be bound to the reservation. Tag keys and values have the\nsame definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id},\nand values are in the format tagValues/456.",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                }
+              },
+              "type": "object"
+            },
+            "project": {
+              "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+              "type": "string"
+            },
+            "reservationSharingPolicy": {
+              "description": "Sharing policy for reservations with Google Cloud managed services.\nStructure is documented below.",
+              "properties": {
+                "serviceShareType": {
+                  "description": "Sharing config for all Google Cloud services.\nPossible values are: ALLOW_ALL, DISALLOW_ALL.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "shareSettings": {
+              "description": "The share setting for reservations.\nStructure is documented below.",
+              "properties": {
+                "projectMap": {
+                  "description": "A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.\nStructure is documented below.",
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "description": "The identifier for this object. Format specified above.",
+                        "type": "string"
+                      },
+                      "projectId": {
+                        "description": "The project id/number, should be same as the key of this project config in the project map.",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "shareType": {
+                  "description": "Type of sharing for this shared-reservation\nPossible values are: LOCAL, SPECIFIC_PROJECTS.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "specificReservation": {
+              "description": "Reservation for instances with specific machine shapes.\nStructure is documented below.",
+              "properties": {
+                "count": {
+                  "description": "The number of resources that are allocated.",
+                  "type": "number"
+                },
+                "instanceProperties": {
+                  "description": "The instance properties for the reservation.\nStructure is documented below.",
+                  "properties": {
+                    "guestAccelerators": {
+                      "description": "Guest accelerator type and count.\nStructure is documented below.",
+                      "items": {
+                        "properties": {
+                          "acceleratorCount": {
+                            "description": "The number of the guest accelerator cards exposed to\nthis instance.",
+                            "type": "number"
+                          },
+                          "acceleratorType": {
+                            "description": "The full or partial URL of the accelerator type to\nattach to this instance. For example:\nprojects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100\nIf you are creating an instance template, specify only the accelerator name.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "localSsds": {
+                      "description": "The amount of local ssd to reserve with each instance. This\nreserves disks of type local-ssd.\nStructure is documented below.",
+                      "items": {
+                        "properties": {
+                          "diskSizeGb": {
+                            "description": "The size of the disk in base-2 GB.",
+                            "type": "number"
+                          },
+                          "interface": {
+                            "description": "The disk interface to use for attaching this disk.\nDefault value is SCSI.\nPossible values are: SCSI, NVME.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "machineType": {
+                      "description": "The name of the machine type to reserve.",
+                      "type": "string"
+                    },
+                    "minCpuPlatform": {
+                      "description": "The minimum CPU platform for the reservation. For example,\n\"Intel Skylake\". See\nthe CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)\nfor information on available CPU platforms.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "sourceInstanceTemplate": {
+                  "description": "Specifies the instance template to create the reservation. If you use this field, you must exclude the\ninstanceProperties field.",
+                  "type": "string"
+                },
+                "sourceInstanceTemplateRef": {
+                  "description": "Reference to a InstanceTemplate in compute to populate sourceInstanceTemplate.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "sourceInstanceTemplateSelector": {
+                  "description": "Selector for a InstanceTemplate in compute to populate sourceInstanceTemplate.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "specificReservationRequired": {
+              "description": "When set to true, only VMs that target this reservation by name can\nconsume this reservation. Otherwise, it can be consumed by VMs with\naffinity for any reservation. Defaults to false.",
+              "type": "boolean"
+            },
+            "zone": {
+              "description": "The zone where the reservation is made.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "zone"
+          ],
+          "type": "object"
+        },
+        "initProvider": {
+          "description": "THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.",
+          "properties": {
+            "deleteAfterDuration": {
+              "description": "Duration after which the reservation will be auto-deleted by Compute Engine. Cannot be used with delete_at_time.\nStructure is documented below.",
+              "properties": {
+                "nanos": {
+                  "description": "Number of nanoseconds for the auto-delete duration.",
+                  "type": "number"
+                },
+                "seconds": {
+                  "description": "Number of seconds for the auto-delete duration.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "deleteAtTime": {
+              "description": "Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.\nCannot be used with delete_after_duration.",
+              "type": "string"
+            },
+            "description": {
+              "description": "An optional description of this resource.",
+              "type": "string"
+            },
+            "params": {
+              "description": "Additional params passed with the request, but not persisted as part of resource payload\nStructure is documented below.",
+              "properties": {
+                "resourceManagerTags": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Resource manager tags to be bound to the reservation. Tag keys and values have the\nsame definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id},\nand values are in the format tagValues/456.",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                }
+              },
+              "type": "object"
+            },
+            "project": {
+              "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+              "type": "string"
+            },
+            "reservationSharingPolicy": {
+              "description": "Sharing policy for reservations with Google Cloud managed services.\nStructure is documented below.",
+              "properties": {
+                "serviceShareType": {
+                  "description": "Sharing config for all Google Cloud services.\nPossible values are: ALLOW_ALL, DISALLOW_ALL.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "shareSettings": {
+              "description": "The share setting for reservations.\nStructure is documented below.",
+              "properties": {
+                "projectMap": {
+                  "description": "A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.\nStructure is documented below.",
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "description": "The identifier for this object. Format specified above.",
+                        "type": "string"
+                      },
+                      "projectId": {
+                        "description": "The project id/number, should be same as the key of this project config in the project map.",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "shareType": {
+                  "description": "Type of sharing for this shared-reservation\nPossible values are: LOCAL, SPECIFIC_PROJECTS.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "specificReservation": {
+              "description": "Reservation for instances with specific machine shapes.\nStructure is documented below.",
+              "properties": {
+                "count": {
+                  "description": "The number of resources that are allocated.",
+                  "type": "number"
+                },
+                "instanceProperties": {
+                  "description": "The instance properties for the reservation.\nStructure is documented below.",
+                  "properties": {
+                    "guestAccelerators": {
+                      "description": "Guest accelerator type and count.\nStructure is documented below.",
+                      "items": {
+                        "properties": {
+                          "acceleratorCount": {
+                            "description": "The number of the guest accelerator cards exposed to\nthis instance.",
+                            "type": "number"
+                          },
+                          "acceleratorType": {
+                            "description": "The full or partial URL of the accelerator type to\nattach to this instance. For example:\nprojects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100\nIf you are creating an instance template, specify only the accelerator name.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "localSsds": {
+                      "description": "The amount of local ssd to reserve with each instance. This\nreserves disks of type local-ssd.\nStructure is documented below.",
+                      "items": {
+                        "properties": {
+                          "diskSizeGb": {
+                            "description": "The size of the disk in base-2 GB.",
+                            "type": "number"
+                          },
+                          "interface": {
+                            "description": "The disk interface to use for attaching this disk.\nDefault value is SCSI.\nPossible values are: SCSI, NVME.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "machineType": {
+                      "description": "The name of the machine type to reserve.",
+                      "type": "string"
+                    },
+                    "minCpuPlatform": {
+                      "description": "The minimum CPU platform for the reservation. For example,\n\"Intel Skylake\". See\nthe CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)\nfor information on available CPU platforms.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "sourceInstanceTemplate": {
+                  "description": "Specifies the instance template to create the reservation. If you use this field, you must exclude the\ninstanceProperties field.",
+                  "type": "string"
+                },
+                "sourceInstanceTemplateRef": {
+                  "description": "Reference to a InstanceTemplate in compute to populate sourceInstanceTemplate.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "sourceInstanceTemplateSelector": {
+                  "description": "Selector for a InstanceTemplate in compute to populate sourceInstanceTemplate.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "specificReservationRequired": {
+              "description": "When set to true, only VMs that target this reservation by name can\nconsume this reservation. Otherwise, it can be consumed by VMs with\naffinity for any reservation. Defaults to false.",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
+        "managementPolicies": {
+          "default": [
+            "*"
+          ],
+          "description": "THIS IS A BETA FIELD. It is on by default but can be opted out\nthrough a Crossplane feature flag.\nManagementPolicies specify the array of actions Crossplane is allowed to\ntake on the managed and external resources.\nSee the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223\nand this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md",
+          "items": {
+            "description": "A ManagementAction represents an action that the Crossplane controllers\ncan take on an external resource.",
+            "enum": [
+              "Observe",
+              "Create",
+              "Update",
+              "Delete",
+              "LateInitialize",
+              "*"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "providerConfigRef": {
+          "default": {
+            "kind": "ClusterProviderConfig",
+            "name": "default"
+          },
+          "description": "ProviderConfigReference specifies how the provider that will be used to\ncreate, observe, update, and delete this managed resource should be\nconfigured.",
+          "properties": {
+            "kind": {
+              "description": "Kind of the referenced object.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the referenced object.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "type": "object"
+        },
+        "writeConnectionSecretToRef": {
+          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
+          "properties": {
+            "name": {
+              "description": "Name of the secret.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "forProvider"
+      ],
+      "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "spec.forProvider.specificReservation is a required parameter",
+          "rule": "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.specificReservation) || (has(self.initProvider) && has(self.initProvider.specificReservation))"
+        }
+      ]
+    },
+    "status": {
+      "description": "ReservationStatus defines the observed state of Reservation.",
+      "properties": {
+        "atProvider": {
+          "properties": {
+            "blockNames": {
+              "description": "List of all reservation block names in the parent reservation.",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "commitment": {
+              "description": "Full or partial URL to a parent commitment. This field displays for\nreservations that are tied to a commitment.",
+              "type": "string"
+            },
+            "creationTimestamp": {
+              "description": "Creation timestamp in RFC3339 text format.",
+              "type": "string"
+            },
+            "deleteAfterDuration": {
+              "description": "Duration after which the reservation will be auto-deleted by Compute Engine. Cannot be used with delete_at_time.\nStructure is documented below.",
+              "properties": {
+                "nanos": {
+                  "description": "Number of nanoseconds for the auto-delete duration.",
+                  "type": "number"
+                },
+                "seconds": {
+                  "description": "Number of seconds for the auto-delete duration.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "deleteAtTime": {
+              "description": "Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.\nCannot be used with delete_after_duration.",
+              "type": "string"
+            },
+            "deletionPolicy": {
+              "description": "Defaults to DELETE.\nWhen set to \"DELETE\", deleting the resource is allowed.",
+              "type": "string"
+            },
+            "description": {
+              "description": "An optional description of this resource.",
+              "type": "string"
+            },
+            "id": {
+              "description": "an identifier for the resource with format projects/{{project}}/zones/{{zone}}/reservations/{{name}}",
+              "type": "string"
+            },
+            "kind": {
+              "description": "Type of the resource. Always compute#reservations for reservations.",
+              "type": "string"
+            },
+            "linkedCommitments": {
+              "description": "Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "params": {
+              "description": "Additional params passed with the request, but not persisted as part of resource payload\nStructure is documented below.",
+              "properties": {
+                "resourceManagerTags": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Resource manager tags to be bound to the reservation. Tag keys and values have the\nsame definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id},\nand values are in the format tagValues/456.",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                }
+              },
+              "type": "object"
+            },
+            "project": {
+              "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+              "type": "string"
+            },
+            "reservationBlockCount": {
+              "description": "The number of reservation blocks associated with this reservation.",
+              "type": "number"
+            },
+            "reservationSharingPolicy": {
+              "description": "Sharing policy for reservations with Google Cloud managed services.\nStructure is documented below.",
+              "properties": {
+                "serviceShareType": {
+                  "description": "Sharing config for all Google Cloud services.\nPossible values are: ALLOW_ALL, DISALLOW_ALL.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "resourceStatus": {
+              "description": "Status information for Reservation resource.\nStructure is documented below.",
+              "items": {
+                "properties": {
+                  "healthInfo": {
+                    "description": "(Output)\nHealth information for the reservation.\nStructure is documented below.",
+                    "items": {
+                      "properties": {
+                        "degradedBlockCount": {
+                          "description": "(Output)\nThe number of reservation blocks that are degraded.",
+                          "type": "number"
+                        },
+                        "healthStatus": {
+                          "description": "(Output)\nThe health status of the reservation.",
+                          "type": "string"
+                        },
+                        "healthyBlockCount": {
+                          "description": "(Output)\nThe number of reservation blocks that are healthy.",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "reservationBlockCount": {
+                    "description": "(Output)\nThe number of reservation blocks associated with this reservation.",
+                    "type": "number"
+                  },
+                  "reservationMaintenance": {
+                    "description": "(Output)\nMaintenance information for this reservation\nStructure is documented below.",
+                    "items": {
+                      "properties": {
+                        "instanceMaintenanceOngoingCount": {
+                          "description": "(Output)\nDescribes number of instances that have ongoing maintenance.",
+                          "type": "number"
+                        },
+                        "instanceMaintenancePendingCount": {
+                          "description": "(Output)\nDescribes number of instances that have pending maintenance.",
+                          "type": "number"
+                        },
+                        "maintenanceOngoingCount": {
+                          "description": "(Output)\nProgress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.",
+                          "type": "number"
+                        },
+                        "maintenancePendingCount": {
+                          "description": "(Output)\nProgress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.",
+                          "type": "number"
+                        },
+                        "schedulingType": {
+                          "description": "(Output)\nThe type of maintenance for the reservation.",
+                          "type": "string"
+                        },
+                        "subblockInfraMaintenanceOngoingCount": {
+                          "description": "(Output)\nDescribes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.",
+                          "type": "number"
+                        },
+                        "subblockInfraMaintenancePendingCount": {
+                          "description": "(Output)\nDescribes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.",
+                          "type": "number"
+                        },
+                        "upcomingGroupMaintenance": {
+                          "description": "(Output)\nMaintenance information on this group of VMs.\nStructure is documented below.",
+                          "items": {
+                            "properties": {
+                              "canReschedule": {
+                                "description": "(Output)\nIndicates if the maintenance can be customer triggered.",
+                                "type": "boolean"
+                              },
+                              "latestWindowStartTime": {
+                                "description": "(Output)\nThe latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.",
+                                "type": "string"
+                              },
+                              "maintenanceOnShutdown": {
+                                "description": "(Output)\nIndicates whether the UpcomingMaintenance will be triggered on VM shutdown.",
+                                "type": "boolean"
+                              },
+                              "maintenanceReasons": {
+                                "description": "(Output)\nThe reasons for the maintenance. Only valid for vms.",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
+                              "maintenanceStatus": {
+                                "description": "(Output)\nStatus of the maintenance.",
+                                "type": "string"
+                              },
+                              "type": {
+                                "description": "(Output)\nDefines the type of maintenance.",
+                                "type": "string"
+                              },
+                              "windowEndTime": {
+                                "description": "(Output)\nThe time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.",
+                                "type": "string"
+                              },
+                              "windowStartTime": {
+                                "description": "(Output)\nThe current start time of the maintenance window. This timestamp value is in RFC3339 text format.",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "specificSkuAllocation": {
+                    "description": "(Output)\nAllocation Properties of this reservation.\nStructure is documented below.",
+                    "items": {
+                      "properties": {
+                        "sourceInstanceTemplateId": {
+                          "description": "(Output)\nID of the instance template used to populate reservation properties.",
+                          "type": "string"
+                        },
+                        "utilizations": {
+                          "additionalProperties": {
+                            "type": "string"
+                          },
+                          "description": "(Output)\nPer service utilization breakdown. The Key is the Google Cloud managed service name.",
+                          "type": "object",
+                          "x-kubernetes-map-type": "granular"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "satisfiesPzs": {
+              "description": "Reserved for future use.",
+              "type": "boolean"
+            },
+            "selfLink": {
+              "description": "The URI of the created resource.",
+              "type": "string"
+            },
+            "shareSettings": {
+              "description": "The share setting for reservations.\nStructure is documented below.",
+              "properties": {
+                "projectMap": {
+                  "description": "A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.\nStructure is documented below.",
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "description": "The identifier for this object. Format specified above.",
+                        "type": "string"
+                      },
+                      "projectId": {
+                        "description": "The project id/number, should be same as the key of this project config in the project map.",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "shareType": {
+                  "description": "Type of sharing for this shared-reservation\nPossible values are: LOCAL, SPECIFIC_PROJECTS.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "specificReservation": {
+              "description": "Reservation for instances with specific machine shapes.\nStructure is documented below.",
+              "properties": {
+                "assuredCount": {
+                  "description": "(Output)\nIndicates how many instances are actually usable currently.",
+                  "type": "number"
+                },
+                "count": {
+                  "description": "The number of resources that are allocated.",
+                  "type": "number"
+                },
+                "inUseCount": {
+                  "description": "(Output)\nHow many instances are in use.",
+                  "type": "number"
+                },
+                "instanceProperties": {
+                  "description": "The instance properties for the reservation.\nStructure is documented below.",
+                  "properties": {
+                    "guestAccelerators": {
+                      "description": "Guest accelerator type and count.\nStructure is documented below.",
+                      "items": {
+                        "properties": {
+                          "acceleratorCount": {
+                            "description": "The number of the guest accelerator cards exposed to\nthis instance.",
+                            "type": "number"
+                          },
+                          "acceleratorType": {
+                            "description": "The full or partial URL of the accelerator type to\nattach to this instance. For example:\nprojects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100\nIf you are creating an instance template, specify only the accelerator name.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "localSsds": {
+                      "description": "The amount of local ssd to reserve with each instance. This\nreserves disks of type local-ssd.\nStructure is documented below.",
+                      "items": {
+                        "properties": {
+                          "diskSizeGb": {
+                            "description": "The size of the disk in base-2 GB.",
+                            "type": "number"
+                          },
+                          "interface": {
+                            "description": "The disk interface to use for attaching this disk.\nDefault value is SCSI.\nPossible values are: SCSI, NVME.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "locationHint": {
+                      "description": "(Output)\nAn opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.",
+                      "type": "string"
+                    },
+                    "machineType": {
+                      "description": "The name of the machine type to reserve.",
+                      "type": "string"
+                    },
+                    "minCpuPlatform": {
+                      "description": "The minimum CPU platform for the reservation. For example,\n\"Intel Skylake\". See\nthe CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)\nfor information on available CPU platforms.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "sourceInstanceTemplate": {
+                  "description": "Specifies the instance template to create the reservation. If you use this field, you must exclude the\ninstanceProperties field.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "specificReservationRequired": {
+              "description": "When set to true, only VMs that target this reservation by name can\nconsume this reservation. Otherwise, it can be consumed by VMs with\naffinity for any reservation. Defaults to false.",
+              "type": "boolean"
+            },
+            "status": {
+              "description": "The status of the reservation.",
+              "type": "string"
+            },
+            "zone": {
+              "description": "The zone where the reservation is made.",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "conditions": {
+          "description": "Conditions of the resource.",
+          "items": {
+            "description": "A Condition that may apply to a resource.",
+            "properties": {
+              "lastTransitionTime": {
+                "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
+                "format": "date-time",
+                "type": "string"
+              },
+              "message": {
+                "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
+                "type": "string"
+              },
+              "observedGeneration": {
+                "description": "ObservedGeneration represents the .metadata.generation that the condition was set based upon.\nFor instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date\nwith respect to the current state of the instance.",
+                "format": "int64",
+                "type": "integer"
+              },
+              "reason": {
+                "description": "A Reason for this condition's last transition from one status to another.",
+                "type": "string"
+              },
+              "status": {
+                "description": "Status of this condition; is it currently True, False, or Unknown?",
+                "type": "string"
+              },
+              "type": {
+                "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "lastTransitionTime",
+              "reason",
+              "status",
+              "type"
+            ],
+            "type": "object"
+          },
+          "type": "array",
+          "x-kubernetes-list-map-keys": [
+            "type"
+          ],
+          "x-kubernetes-list-type": "map"
+        },
+        "lastHandledReconcileAt": {
+          "description": "LastHandledReconcileAt holds the value of the most recent\nreconcile-requested-at annotation token that the controller has\nprocessed. Users can compare this to the annotation to determine\nwhether a reconcile request has been handled.",
+          "type": "string"
+        },
+        "observedGeneration": {
+          "description": "ObservedGeneration is the latest metadata.generation\nwhich resulted in either a ready state, or stalled due to error\nit can not recover from without human intervention.",
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}

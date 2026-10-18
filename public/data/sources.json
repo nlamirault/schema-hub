@@ -17,6 +17,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "accesscontextmanager.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "accesscontextmanager.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "account.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -70,6 +82,18 @@
     "upstream": "aws-controllers-k8s/acmpca-controller",
     "cncf_maturity": "sandbox",
     "project": "ack"
+  },
+  "activedirectory.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "activedirectory.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "addons.cluster.x-k8s.io": {
     "category": "Kubernetes",
@@ -136,6 +160,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "alloydb.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "alloydb.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "amp.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -221,6 +257,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "apigee.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "apigee.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "apikeys.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -286,6 +334,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "appengine.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "appengine.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "appflow.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -394,6 +454,18 @@
     "upstream": "argoproj/argo-cd",
     "cncf_maturity": "graduated",
     "project": "argo-cd"
+  },
+  "artifact.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "artifact.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "artifactregistry.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -587,11 +659,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "beyondcorp.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "beyondcorp.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "bigquery.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "bigquery.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "bigquery.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "bigqueryanalyticshub.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -635,6 +731,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "bigtable.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "bigtable.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "billing.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -652,6 +760,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "binaryauthorization.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "binaryauthorization.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "bootstrap.cluster.x-k8s.io": {
     "category": "Kubernetes",
@@ -707,6 +827,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "certificatemanager.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "certificatemanager.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "certificates.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
@@ -743,6 +875,18 @@
     "cncf_maturity": null,
     "project": "clickhouse-operator"
   },
+  "cloud.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloud.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "cloud9.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -766,6 +910,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "cloudbuild.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudbuild.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "cloudcontrol.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -827,17 +983,53 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "cloudfunctions.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudfunctions.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "cloudfunctions2.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "cloudfunctions2.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudfunctions2.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "cloudidentity.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "cloudidentity.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudidentity.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "cloudids.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -851,17 +1043,65 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "cloudplatform.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudplatform.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "cloudquota.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "cloudquotas.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudquotas.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudrun.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudrun.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "cloudscheduler.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "cloudscheduler.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudscheduler.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "cloudsearch.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -880,6 +1120,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "cloudtasks.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "cloudtasks.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "cloudtrail.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -1085,6 +1337,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "composer.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "composer.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "compute.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
@@ -1096,6 +1360,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "compute.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "compute.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "configcontroller.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1139,17 +1415,77 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "container.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "container.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "containeranalysis.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "containeranalysis.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "containeranalysis.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "containerattached.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "containerattached.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "containerattached.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "containeraws.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "containeraws.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "containerazure.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "containerazure.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "containerinstance.azure.com": {
     "category": "Azure Ecosystem",
@@ -1211,6 +1547,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "datacatalog.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "datacatalog.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "dataexchange.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -1235,6 +1583,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "dataflow.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "dataflow.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "dataform.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -1246,6 +1606,30 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "datafusion.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "datafusion.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "datalossprevention.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "datalossprevention.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "datapipeline.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -1265,11 +1649,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "dataplex.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "dataplex.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "dataproc.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "dataproc.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "dataproc.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "dataprotection.azure.com": {
     "category": "Azure Ecosystem",
@@ -1288,6 +1696,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "datastream.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "datastream.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "datasync.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -1361,6 +1781,18 @@
     "cncf_maturity": null,
     "project": "crossplane-aws"
   },
+  "developerconnect.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "developerconnect.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "devicefarm.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -1390,6 +1822,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "dialogflowcx.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "dialogflowcx.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "directconnect.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -1451,6 +1895,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "dns.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "dns.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "docdb.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -1468,6 +1924,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "documentai.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "documentai.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "documentdb.azure.com": {
     "category": "Azure Ecosystem",
@@ -1763,11 +2231,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "essentialcontacts.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "essentialcontacts.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "eventarc.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "eventarc.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "eventarc.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "eventbridge.services.k8s.aws": {
     "category": "AWS Infrastructure",
@@ -1835,6 +2327,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "filestore.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "filestore.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "firebase.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -1852,6 +2356,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "firebaserules.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "firebaserules.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "firebasestorage.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1876,6 +2392,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "firestore.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "firestore.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "fis.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -1943,11 +2471,47 @@
     "cncf_maturity": null,
     "project": "gateway-api"
   },
+  "gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "gemini.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "gemini.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "generators.external-secrets.io": {
     "category": "Security",
     "upstream": "external-secrets/external-secrets",
     "cncf_maturity": "incubating",
     "project": "external-secrets"
+  },
+  "gke.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "gke.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "gkebackup.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -1960,6 +2524,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "gkehub.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "gkehub.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "glacier.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -2033,6 +2609,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "healthcare.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "healthcare.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "helm.toolkit.fluxcd.io": {
     "category": "GitOps & Deployment",
     "upstream": "fluxcd/flux2",
@@ -2057,6 +2645,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "iam.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "iam.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "iam.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/iam-controller",
@@ -2069,11 +2669,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "iap.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "iap.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "identityplatform.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "identityplatform.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "identityplatform.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "identitystore.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -2363,6 +2987,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "kms.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "kms.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "kms.services.k8s.aws": {
     "category": "AWS Infrastructure",
     "upstream": "aws-controllers-k8s/kms-controller",
@@ -2501,6 +3137,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "logging.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "logging.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "machinelearningservices.azure.com": {
     "category": "Azure Ecosystem",
     "upstream": "Azure/azure-service-operator",
@@ -2585,6 +3233,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "memcache.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "memcache.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "memorydb.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -2609,6 +3269,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "memorystore.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "memorystore.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "meta.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
@@ -2627,11 +3299,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "mlengine.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "mlengine.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "moco.cybozu.com": {
     "category": "Databases & Storage",
     "upstream": "cybozu-go/moco",
     "cncf_maturity": null,
     "project": "moco"
+  },
+  "modelarmor.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "modelarmor.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "monitor.azure.com": {
     "category": "Azure Ecosystem",
@@ -2650,6 +3346,18 @@
     "upstream": "prometheus-operator/prometheus-operator",
     "cncf_maturity": "graduated",
     "project": "prometheus-operator"
+  },
+  "monitoring.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "monitoring.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "mq.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -2717,6 +3425,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "networkconnectivity.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "networkconnectivity.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "networkfirewall.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -2753,6 +3473,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "networkmanagement.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "networkmanagement.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "networkmanager.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -2783,11 +3515,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "networksecurity.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "networksecurity.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "networkservices.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "networkservices.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "networkservices.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "node.api.k8s.io": {
     "category": "Kubernetes",
@@ -2800,6 +3556,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "notebooks.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "notebooks.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "notification.toolkit.fluxcd.io": {
     "category": "GitOps & Deployment",
@@ -2933,11 +3701,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "orgpolicy.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "orgpolicy.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "osconfig.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "osconfig.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "osconfig.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "osis.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -2956,6 +3748,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
+  },
+  "oslogin.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "oslogin.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "pinpoint.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -3023,6 +3827,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "privateca.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "privateca.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "privilegedaccessmanager.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
@@ -3046,6 +3862,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "pubsub.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "pubsub.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "pubsublite.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -3142,6 +3970,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "redis.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "redis.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "redshift.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -3413,6 +4253,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "secretmanager.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "secretmanager.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "secrets-store.csi.x-k8s.io": {
     "category": "Security",
     "upstream": "kubernetes-sigs/secrets-store-csi-driver",
@@ -3539,6 +4391,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector-extra"
   },
+  "servicenetworking.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "servicenetworking.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "servicequotas.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -3659,11 +4523,35 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "sourcerepo.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "sourcerepo.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "spanner.cnrm.cloud.google.com": {
     "category": "Google Cloud",
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "spanner.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "spanner.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "speech.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -3682,6 +4570,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "sql.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "sql.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "sqs.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -3743,6 +4643,18 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "storage.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "storage.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "storagemigration.api.k8s.io": {
     "category": "Kubernetes",
     "upstream": "kubernetes/kubernetes",
@@ -3754,6 +4666,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "storagetransfer.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "storagetransfer.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "subscription.azure.com": {
     "category": "Azure Ecosystem",
@@ -3790,6 +4714,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "tags.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "tags.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "telemetry.istio.io": {
     "category": "Networking & Mesh",
@@ -3863,6 +4799,18 @@
     "cncf_maturity": null,
     "project": "tuppr"
   },
+  "vectorsearch.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "vectorsearch.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
   "verifiedaccess.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
     "upstream": "crossplane-contrib/provider-upjet-aws",
@@ -3880,6 +4828,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "vertexai.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "vertexai.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "vmwareengine.cnrm.cloud.google.com": {
     "category": "Google Cloud",
@@ -3904,6 +4864,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "vpcaccess.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "vpcaccess.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "vpclattice.aws.m.upbound.io": {
     "category": "AWS Infrastructure",
@@ -3970,6 +4942,18 @@
     "upstream": "GoogleCloudPlatform/k8s-config-connector",
     "cncf_maturity": null,
     "project": "k8s-config-connector"
+  },
+  "workflows.gcp.m.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
+  },
+  "workflows.gcp.upbound.io": {
+    "category": "Google Cloud",
+    "upstream": "crossplane-contrib/provider-upjet-gcp",
+    "cncf_maturity": null,
+    "project": "crossplane-gcp"
   },
   "workspaces.aws.m.upbound.io": {
     "category": "AWS Infrastructure",

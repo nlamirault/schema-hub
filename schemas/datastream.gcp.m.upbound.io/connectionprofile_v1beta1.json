@@ -1,0 +1,2875 @@
+{
+  "description": "ConnectionProfile is the Schema for the ConnectionProfiles API. A set of reusable connection configurations to be used as a source or destination for a stream.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "ConnectionProfileSpec defines the desired state of ConnectionProfile",
+      "properties": {
+        "forProvider": {
+          "properties": {
+            "bigqueryProfile": {
+              "description": "BigQuery warehouse profile.",
+              "type": "object"
+            },
+            "createWithoutValidation": {
+              "description": "Create the connection profile without validating it.",
+              "type": "boolean"
+            },
+            "displayName": {
+              "description": "Display name.",
+              "type": "string"
+            },
+            "forwardSshConnectivity": {
+              "description": "Forward SSH tunnel connectivity.\nStructure is documented below.",
+              "properties": {
+                "hostname": {
+                  "description": "Hostname for the SSH tunnel.",
+                  "type": "string"
+                },
+                "passwordSecretRef": {
+                  "description": "SSH password.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the SSH tunnel.",
+                  "type": "number"
+                },
+                "privateKeySecretRef": {
+                  "description": "SSH private key.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the SSH tunnel.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "gcsProfile": {
+              "description": "Cloud Storage bucket profile.\nStructure is documented below.",
+              "properties": {
+                "bucket": {
+                  "description": "The Cloud Storage bucket name.",
+                  "type": "string"
+                },
+                "rootPath": {
+                  "description": "The root path inside the Cloud Storage bucket.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "labels": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Labels.\nNote: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field effective_labels for all of the labels present on the resource.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            },
+            "location": {
+              "description": "The name of the location this connection profile is located in.",
+              "type": "string"
+            },
+            "mongodbProfile": {
+              "description": "Configuration for connecting to a MongoDB database.\nStructure is documented below.",
+              "properties": {
+                "additionalOptions": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "A map of additional options for the MongoDB connection.\nKeys are case-sensitive and should match the official\nMongoDB connection string options: https://www.mongodb.com/docs/manual/reference/connection-string-options/",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                },
+                "hostAddresses": {
+                  "description": "List of host addresses for a MongoDB cluster.\nStructure is documented below.",
+                  "items": {
+                    "properties": {
+                      "hostname": {
+                        "description": "Hostname for the SQL Server connection.",
+                        "type": "string"
+                      },
+                      "port": {
+                        "description": "Port for the SQL Server connection.",
+                        "type": "number"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the MongoDB connection. Mutually exclusive with\nsecretManagerStoredPassword.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "replicaSet": {
+                  "description": "Name of the replica set.",
+                  "type": "string"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the MongoDB\nconnection password. Mutually exclusive with password.",
+                  "type": "string"
+                },
+                "srvConnectionFormat": {
+                  "description": "Srv connection format. Mutually exclusive with\nstandard_connection_Format.",
+                  "type": "object"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the MongoDB connection.\nStructure is documented below.",
+                  "properties": {
+                    "caCertificateSecretRef": {
+                      "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientCertificateSecretRef": {
+                      "description": "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientKeySecretRef": {
+                      "description": "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "secretManagerStoredClientKeySecretRef": {
+                      "description": "A reference to a Secret Manager resource name storing the\nPEM-encoded private key. Mutually exclusive with clientKey.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "standardConnectionFormat": {
+                  "description": "Standard connection format. Mutually exclusive with\nsrv_connection_format.\nStructure is documented below.",
+                  "properties": {
+                    "directConnection": {
+                      "description": "Specifies whether the client connects directly to the\nhost[:port] in the connection URI.",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the MongoDB connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "mysqlProfile": {
+              "description": "MySQL database profile.\nStructure is documented below.",
+              "properties": {
+                "hostname": {
+                  "description": "Hostname for the MySQL connection.",
+                  "type": "string"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the MySQL connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the MySQL connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the MySQL connection.\nStructure is documented below.",
+                  "properties": {
+                    "caCertificateSecretRef": {
+                      "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientCertificateSecretRef": {
+                      "description": "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientKeySecretRef": {
+                      "description": "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the MySQL connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "oracleProfile": {
+              "description": "Oracle database profile.\nStructure is documented below.",
+              "properties": {
+                "connectionAttributes": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Connection string attributes",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                },
+                "databaseService": {
+                  "description": "Database for the Oracle connection.",
+                  "type": "string"
+                },
+                "hostname": {
+                  "description": "Hostname for the Oracle connection.",
+                  "type": "string"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the Oracle connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the Oracle connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "username": {
+                  "description": "Username for the Oracle connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "postgresqlProfile": {
+              "description": "PostgreSQL database profile.\nStructure is documented below.",
+              "properties": {
+                "database": {
+                  "description": "Database for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "databaseRef": {
+                  "description": "Reference to a Database in sql to populate database.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "databaseSelector": {
+                  "description": "Selector for a Database in sql to populate database.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "hostname": {
+                  "description": "Hostname for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "hostnameRef": {
+                  "description": "Reference to a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "hostnameSelector": {
+                  "description": "Selector for a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the PostgreSQL connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the PostgreSQL connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the PostgreSQL connection.\nStructure is documented below.",
+                  "properties": {
+                    "serverAndClientVerification": {
+                      "description": "If this field is set, the communication will be encrypted with TLS encryption\nand both the server identity and the client identity will be authenticated.\nStructure is documented below.",
+                      "properties": {
+                        "caCertificateSecretRef": {
+                          "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "clientCertificateSecretRef": {
+                          "description": "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "clientKeySecretRef": {
+                          "description": "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "serverVerification": {
+                      "description": "If this field is set, the communication will be encrypted with TLS encryption\nand the server identity will be authenticated.\nStructure is documented below.",
+                      "properties": {
+                        "caCertificateSecretRef": {
+                          "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "usernameRef": {
+                  "description": "Reference to a User in sql to populate username.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "usernameSelector": {
+                  "description": "Selector for a User in sql to populate username.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "privateConnectivity": {
+              "description": "Private connectivity.\nStructure is documented below.",
+              "properties": {
+                "privateConnection": {
+                  "description": "A reference to a private connection resource. Format: projects/{project}/locations/{location}/privateConnections/{name}",
+                  "type": "string"
+                },
+                "privateConnectionRef": {
+                  "description": "Reference to a PrivateConnection in datastream to populate privateConnection.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "privateConnectionSelector": {
+                  "description": "Selector for a PrivateConnection in datastream to populate privateConnection.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "project": {
+              "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+              "type": "string"
+            },
+            "sqlServerProfile": {
+              "description": "SQL Server database profile.\nStructure is documented below.",
+              "properties": {
+                "database": {
+                  "description": "Database for the SQL Server connection.",
+                  "type": "string"
+                },
+                "databaseRef": {
+                  "description": "Reference to a Database in sql to populate database.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "databaseSelector": {
+                  "description": "Selector for a Database in sql to populate database.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "hostname": {
+                  "description": "Hostname for the SQL Server connection.",
+                  "type": "string"
+                },
+                "hostnameRef": {
+                  "description": "Reference to a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "hostnameSelector": {
+                  "description": "Selector for a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the SQL Server connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the SQL Server connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "username": {
+                  "description": "Username for the SQL Server connection.",
+                  "type": "string"
+                },
+                "usernameRef": {
+                  "description": "Reference to a User in sql to populate username.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "usernameSelector": {
+                  "description": "Selector for a User in sql to populate username.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "type": "object"
+        },
+        "initProvider": {
+          "description": "THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.",
+          "properties": {
+            "bigqueryProfile": {
+              "description": "BigQuery warehouse profile.",
+              "type": "object"
+            },
+            "createWithoutValidation": {
+              "description": "Create the connection profile without validating it.",
+              "type": "boolean"
+            },
+            "displayName": {
+              "description": "Display name.",
+              "type": "string"
+            },
+            "forwardSshConnectivity": {
+              "description": "Forward SSH tunnel connectivity.\nStructure is documented below.",
+              "properties": {
+                "hostname": {
+                  "description": "Hostname for the SSH tunnel.",
+                  "type": "string"
+                },
+                "passwordSecretRef": {
+                  "description": "SSH password.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the SSH tunnel.",
+                  "type": "number"
+                },
+                "privateKeySecretRef": {
+                  "description": "SSH private key.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the SSH tunnel.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "gcsProfile": {
+              "description": "Cloud Storage bucket profile.\nStructure is documented below.",
+              "properties": {
+                "bucket": {
+                  "description": "The Cloud Storage bucket name.",
+                  "type": "string"
+                },
+                "rootPath": {
+                  "description": "The root path inside the Cloud Storage bucket.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "labels": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Labels.\nNote: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field effective_labels for all of the labels present on the resource.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            },
+            "mongodbProfile": {
+              "description": "Configuration for connecting to a MongoDB database.\nStructure is documented below.",
+              "properties": {
+                "additionalOptions": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "A map of additional options for the MongoDB connection.\nKeys are case-sensitive and should match the official\nMongoDB connection string options: https://www.mongodb.com/docs/manual/reference/connection-string-options/",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                },
+                "hostAddresses": {
+                  "description": "List of host addresses for a MongoDB cluster.\nStructure is documented below.",
+                  "items": {
+                    "properties": {
+                      "hostname": {
+                        "description": "Hostname for the SQL Server connection.",
+                        "type": "string"
+                      },
+                      "port": {
+                        "description": "Port for the SQL Server connection.",
+                        "type": "number"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the MongoDB connection. Mutually exclusive with\nsecretManagerStoredPassword.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "replicaSet": {
+                  "description": "Name of the replica set.",
+                  "type": "string"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the MongoDB\nconnection password. Mutually exclusive with password.",
+                  "type": "string"
+                },
+                "srvConnectionFormat": {
+                  "description": "Srv connection format. Mutually exclusive with\nstandard_connection_Format.",
+                  "type": "object"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the MongoDB connection.\nStructure is documented below.",
+                  "properties": {
+                    "caCertificateSecretRef": {
+                      "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientCertificateSecretRef": {
+                      "description": "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientKeySecretRef": {
+                      "description": "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "secretManagerStoredClientKeySecretRef": {
+                      "description": "A reference to a Secret Manager resource name storing the\nPEM-encoded private key. Mutually exclusive with clientKey.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "standardConnectionFormat": {
+                  "description": "Standard connection format. Mutually exclusive with\nsrv_connection_format.\nStructure is documented below.",
+                  "properties": {
+                    "directConnection": {
+                      "description": "Specifies whether the client connects directly to the\nhost[:port] in the connection URI.",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the MongoDB connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "mysqlProfile": {
+              "description": "MySQL database profile.\nStructure is documented below.",
+              "properties": {
+                "hostname": {
+                  "description": "Hostname for the MySQL connection.",
+                  "type": "string"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the MySQL connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the MySQL connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the MySQL connection.\nStructure is documented below.",
+                  "properties": {
+                    "caCertificateSecretRef": {
+                      "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientCertificateSecretRef": {
+                      "description": "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "clientKeySecretRef": {
+                      "description": "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the secret.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the MySQL connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "oracleProfile": {
+              "description": "Oracle database profile.\nStructure is documented below.",
+              "properties": {
+                "connectionAttributes": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Connection string attributes",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                },
+                "databaseService": {
+                  "description": "Database for the Oracle connection.",
+                  "type": "string"
+                },
+                "hostname": {
+                  "description": "Hostname for the Oracle connection.",
+                  "type": "string"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the Oracle connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the Oracle connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "username": {
+                  "description": "Username for the Oracle connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "postgresqlProfile": {
+              "description": "PostgreSQL database profile.\nStructure is documented below.",
+              "properties": {
+                "database": {
+                  "description": "Database for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "databaseRef": {
+                  "description": "Reference to a Database in sql to populate database.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "databaseSelector": {
+                  "description": "Selector for a Database in sql to populate database.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "hostname": {
+                  "description": "Hostname for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "hostnameRef": {
+                  "description": "Reference to a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "hostnameSelector": {
+                  "description": "Selector for a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the PostgreSQL connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the PostgreSQL connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the PostgreSQL connection.\nStructure is documented below.",
+                  "properties": {
+                    "serverAndClientVerification": {
+                      "description": "If this field is set, the communication will be encrypted with TLS encryption\nand both the server identity and the client identity will be authenticated.\nStructure is documented below.",
+                      "properties": {
+                        "caCertificateSecretRef": {
+                          "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "clientCertificateSecretRef": {
+                          "description": "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "clientKeySecretRef": {
+                          "description": "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "caCertificateSecretRef",
+                        "clientCertificateSecretRef",
+                        "clientKeySecretRef"
+                      ],
+                      "type": "object"
+                    },
+                    "serverVerification": {
+                      "description": "If this field is set, the communication will be encrypted with TLS encryption\nand the server identity will be authenticated.\nStructure is documented below.",
+                      "properties": {
+                        "caCertificateSecretRef": {
+                          "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "caCertificateSecretRef"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "usernameRef": {
+                  "description": "Reference to a User in sql to populate username.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "usernameSelector": {
+                  "description": "Selector for a User in sql to populate username.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "privateConnectivity": {
+              "description": "Private connectivity.\nStructure is documented below.",
+              "properties": {
+                "privateConnection": {
+                  "description": "A reference to a private connection resource. Format: projects/{project}/locations/{location}/privateConnections/{name}",
+                  "type": "string"
+                },
+                "privateConnectionRef": {
+                  "description": "Reference to a PrivateConnection in datastream to populate privateConnection.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "privateConnectionSelector": {
+                  "description": "Selector for a PrivateConnection in datastream to populate privateConnection.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "project": {
+              "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+              "type": "string"
+            },
+            "sqlServerProfile": {
+              "description": "SQL Server database profile.\nStructure is documented below.",
+              "properties": {
+                "database": {
+                  "description": "Database for the SQL Server connection.",
+                  "type": "string"
+                },
+                "databaseRef": {
+                  "description": "Reference to a Database in sql to populate database.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "databaseSelector": {
+                  "description": "Selector for a Database in sql to populate database.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "hostname": {
+                  "description": "Hostname for the SQL Server connection.",
+                  "type": "string"
+                },
+                "hostnameRef": {
+                  "description": "Reference to a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "hostnameSelector": {
+                  "description": "Selector for a DatabaseInstance in sql to populate hostname.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "passwordSecretRef": {
+                  "description": "Password for the SQL Server connection.\nNote: This property is sensitive and will not be displayed in the plan.",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the secret.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "key",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "port": {
+                  "description": "Port for the SQL Server connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "username": {
+                  "description": "Username for the SQL Server connection.",
+                  "type": "string"
+                },
+                "usernameRef": {
+                  "description": "Reference to a User in sql to populate username.",
+                  "properties": {
+                    "name": {
+                      "description": "Name of the referenced object.",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the referenced object",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for referencing.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "usernameSelector": {
+                  "description": "Selector for a User in sql to populate username.",
+                  "properties": {
+                    "matchControllerRef": {
+                      "description": "MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.",
+                      "type": "boolean"
+                    },
+                    "matchLabels": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "MatchLabels ensures an object with matching labels is selected.",
+                      "type": "object"
+                    },
+                    "namespace": {
+                      "description": "Namespace for the selector",
+                      "type": "string"
+                    },
+                    "policy": {
+                      "description": "Policies for selection.",
+                      "properties": {
+                        "resolution": {
+                          "default": "Required",
+                          "description": "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved.",
+                          "enum": [
+                            "Required",
+                            "Optional"
+                          ],
+                          "type": "string"
+                        },
+                        "resolve": {
+                          "description": "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile.",
+                          "enum": [
+                            "Always",
+                            "IfNotPresent"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "managementPolicies": {
+          "default": [
+            "*"
+          ],
+          "description": "THIS IS A BETA FIELD. It is on by default but can be opted out\nthrough a Crossplane feature flag.\nManagementPolicies specify the array of actions Crossplane is allowed to\ntake on the managed and external resources.\nSee the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223\nand this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md",
+          "items": {
+            "description": "A ManagementAction represents an action that the Crossplane controllers\ncan take on an external resource.",
+            "enum": [
+              "Observe",
+              "Create",
+              "Update",
+              "Delete",
+              "LateInitialize",
+              "*"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "providerConfigRef": {
+          "default": {
+            "kind": "ClusterProviderConfig",
+            "name": "default"
+          },
+          "description": "ProviderConfigReference specifies how the provider that will be used to\ncreate, observe, update, and delete this managed resource should be\nconfigured.",
+          "properties": {
+            "kind": {
+              "description": "Kind of the referenced object.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the referenced object.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "type": "object"
+        },
+        "writeConnectionSecretToRef": {
+          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
+          "properties": {
+            "name": {
+              "description": "Name of the secret.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "forProvider"
+      ],
+      "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "spec.forProvider.displayName is a required parameter",
+          "rule": "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.displayName) || (has(self.initProvider) && has(self.initProvider.displayName))"
+        }
+      ]
+    },
+    "status": {
+      "description": "ConnectionProfileStatus defines the observed state of ConnectionProfile.",
+      "properties": {
+        "atProvider": {
+          "properties": {
+            "bigqueryProfile": {
+              "description": "BigQuery warehouse profile.",
+              "type": "object"
+            },
+            "createWithoutValidation": {
+              "description": "Create the connection profile without validating it.",
+              "type": "boolean"
+            },
+            "deletionPolicy": {
+              "description": "Defaults to DELETE.\nWhen set to \"DELETE\", deleting the resource is allowed.",
+              "type": "string"
+            },
+            "displayName": {
+              "description": "Display name.",
+              "type": "string"
+            },
+            "effectiveLabels": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            },
+            "forwardSshConnectivity": {
+              "description": "Forward SSH tunnel connectivity.\nStructure is documented below.",
+              "properties": {
+                "hostname": {
+                  "description": "Hostname for the SSH tunnel.",
+                  "type": "string"
+                },
+                "port": {
+                  "description": "Port for the SSH tunnel.",
+                  "type": "number"
+                },
+                "username": {
+                  "description": "Username for the SSH tunnel.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "gcsProfile": {
+              "description": "Cloud Storage bucket profile.\nStructure is documented below.",
+              "properties": {
+                "bucket": {
+                  "description": "The Cloud Storage bucket name.",
+                  "type": "string"
+                },
+                "rootPath": {
+                  "description": "The root path inside the Cloud Storage bucket.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "id": {
+              "description": "an identifier for the resource with format projects/{{project}}/locations/{{location}}/connectionProfiles/{{connection_profile_id}}",
+              "type": "string"
+            },
+            "labels": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Labels.\nNote: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field effective_labels for all of the labels present on the resource.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            },
+            "location": {
+              "description": "The name of the location this connection profile is located in.",
+              "type": "string"
+            },
+            "mongodbProfile": {
+              "description": "Configuration for connecting to a MongoDB database.\nStructure is documented below.",
+              "properties": {
+                "additionalOptions": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "A map of additional options for the MongoDB connection.\nKeys are case-sensitive and should match the official\nMongoDB connection string options: https://www.mongodb.com/docs/manual/reference/connection-string-options/",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                },
+                "hostAddresses": {
+                  "description": "List of host addresses for a MongoDB cluster.\nStructure is documented below.",
+                  "items": {
+                    "properties": {
+                      "hostname": {
+                        "description": "Hostname for the SQL Server connection.",
+                        "type": "string"
+                      },
+                      "port": {
+                        "description": "Port for the SQL Server connection.",
+                        "type": "number"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "replicaSet": {
+                  "description": "Name of the replica set.",
+                  "type": "string"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the MongoDB\nconnection password. Mutually exclusive with password.",
+                  "type": "string"
+                },
+                "srvConnectionFormat": {
+                  "description": "Srv connection format. Mutually exclusive with\nstandard_connection_Format.",
+                  "type": "object"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the MongoDB connection.\nStructure is documented below.",
+                  "properties": {
+                    "caCertificateSet": {
+                      "description": "(Output)\nIndicates whether the clientKey field is set.",
+                      "type": "boolean"
+                    },
+                    "clientCertificateSet": {
+                      "description": "(Output)\nIndicates whether the clientCertificate field is set.",
+                      "type": "boolean"
+                    },
+                    "clientKeySet": {
+                      "description": "(Output)\nIndicates whether the clientKey field is set.",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "standardConnectionFormat": {
+                  "description": "Standard connection format. Mutually exclusive with\nsrv_connection_format.\nStructure is documented below.",
+                  "properties": {
+                    "directConnection": {
+                      "description": "Specifies whether the client connects directly to the\nhost[:port] in the connection URI.",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the MongoDB connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "mysqlProfile": {
+              "description": "MySQL database profile.\nStructure is documented below.",
+              "properties": {
+                "hostname": {
+                  "description": "Hostname for the MySQL connection.",
+                  "type": "string"
+                },
+                "port": {
+                  "description": "Port for the MySQL connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the MySQL connection.\nStructure is documented below.",
+                  "properties": {
+                    "caCertificateSet": {
+                      "description": "(Output)\nIndicates whether the clientKey field is set.",
+                      "type": "boolean"
+                    },
+                    "clientCertificateSet": {
+                      "description": "(Output)\nIndicates whether the clientCertificate field is set.",
+                      "type": "boolean"
+                    },
+                    "clientKeySet": {
+                      "description": "(Output)\nIndicates whether the clientKey field is set.",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the MySQL connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "name": {
+              "description": "The resource's name.",
+              "type": "string"
+            },
+            "oracleProfile": {
+              "description": "Oracle database profile.\nStructure is documented below.",
+              "properties": {
+                "connectionAttributes": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Connection string attributes",
+                  "type": "object",
+                  "x-kubernetes-map-type": "granular"
+                },
+                "databaseService": {
+                  "description": "Database for the Oracle connection.",
+                  "type": "string"
+                },
+                "hostname": {
+                  "description": "Hostname for the Oracle connection.",
+                  "type": "string"
+                },
+                "port": {
+                  "description": "Port for the Oracle connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "username": {
+                  "description": "Username for the Oracle connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "postgresqlProfile": {
+              "description": "PostgreSQL database profile.\nStructure is documented below.",
+              "properties": {
+                "database": {
+                  "description": "Database for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "hostname": {
+                  "description": "Hostname for the PostgreSQL connection.",
+                  "type": "string"
+                },
+                "port": {
+                  "description": "Port for the PostgreSQL connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "sslConfig": {
+                  "description": "SSL configuration for the PostgreSQL connection.\nStructure is documented below.",
+                  "properties": {
+                    "serverAndClientVerification": {
+                      "description": "If this field is set, the communication will be encrypted with TLS encryption\nand both the server identity and the client identity will be authenticated.\nStructure is documented below.",
+                      "properties": {
+                        "caCertificateSecretRef": {
+                          "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "clientCertificateSecretRef": {
+                          "description": "PEM-encoded certificate that will be used by the replica to\nauthenticate against the source database server. If this field\nis used then the 'clientKey' and the 'caCertificate' fields are\nmandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "clientKeySecretRef": {
+                          "description": "PEM-encoded private key associated with the Client Certificate.\nIf this field is used then the 'client_certificate' and the\n'ca_certificate' fields are mandatory.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "serverVerification": {
+                      "description": "If this field is set, the communication will be encrypted with TLS encryption\nand the server identity will be authenticated.\nStructure is documented below.",
+                      "properties": {
+                        "caCertificateSecretRef": {
+                          "description": "PEM-encoded certificate of the CA that signed the source database\nserver's certificate.\nNote: This property is sensitive and will not be displayed in the plan.",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the secret.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "name"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "username": {
+                  "description": "Username for the PostgreSQL connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "privateConnectivity": {
+              "description": "Private connectivity.\nStructure is documented below.",
+              "properties": {
+                "privateConnection": {
+                  "description": "A reference to a private connection resource. Format: projects/{project}/locations/{location}/privateConnections/{name}",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "project": {
+              "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+              "type": "string"
+            },
+            "sqlServerProfile": {
+              "description": "SQL Server database profile.\nStructure is documented below.",
+              "properties": {
+                "database": {
+                  "description": "Database for the SQL Server connection.",
+                  "type": "string"
+                },
+                "hostname": {
+                  "description": "Hostname for the SQL Server connection.",
+                  "type": "string"
+                },
+                "port": {
+                  "description": "Port for the SQL Server connection.",
+                  "type": "number"
+                },
+                "secretManagerStoredPassword": {
+                  "description": "A reference to a Secret Manager resource name storing the user's password.",
+                  "type": "string"
+                },
+                "username": {
+                  "description": "Username for the SQL Server connection.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "terraformLabels": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "The combination of labels configured directly on the resource\nand default labels configured on the provider.",
+              "type": "object",
+              "x-kubernetes-map-type": "granular"
+            }
+          },
+          "type": "object"
+        },
+        "conditions": {
+          "description": "Conditions of the resource.",
+          "items": {
+            "description": "A Condition that may apply to a resource.",
+            "properties": {
+              "lastTransitionTime": {
+                "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
+                "format": "date-time",
+                "type": "string"
+              },
+              "message": {
+                "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
+                "type": "string"
+              },
+              "observedGeneration": {
+                "description": "ObservedGeneration represents the .metadata.generation that the condition was set based upon.\nFor instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date\nwith respect to the current state of the instance.",
+                "format": "int64",
+                "type": "integer"
+              },
+              "reason": {
+                "description": "A Reason for this condition's last transition from one status to another.",
+                "type": "string"
+              },
+              "status": {
+                "description": "Status of this condition; is it currently True, False, or Unknown?",
+                "type": "string"
+              },
+              "type": {
+                "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "lastTransitionTime",
+              "reason",
+              "status",
+              "type"
+            ],
+            "type": "object"
+          },
+          "type": "array",
+          "x-kubernetes-list-map-keys": [
+            "type"
+          ],
+          "x-kubernetes-list-type": "map"
+        },
+        "lastHandledReconcileAt": {
+          "description": "LastHandledReconcileAt holds the value of the most recent\nreconcile-requested-at annotation token that the controller has\nprocessed. Users can compare this to the annotation to determine\nwhether a reconcile request has been handled.",
+          "type": "string"
+        },
+        "observedGeneration": {
+          "description": "ObservedGeneration is the latest metadata.generation\nwhich resulted in either a ready state, or stalled due to error\nit can not recover from without human intervention.",
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}
