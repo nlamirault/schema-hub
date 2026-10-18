@@ -90,7 +90,7 @@
           ]
         },
         "upstreamRegistryURL": {
-          "description": "The registry URL of the upstream public registry to use as the source for\nthe pull through cache rule. The following is the syntax to use for each\nsupported upstream registry.\n\n  - Amazon ECR (ecr) – .dkr.ecr..amazonaws.com\n\n  - Amazon ECR Public (ecr-public) – public.ecr.aws\n\n  - Docker Hub (docker-hub) – registry-1.docker.io\n\n  - GitHub Container Registry (github-container-registry) – ghcr.io\n\n  - GitLab Container Registry (gitlab-container-registry) – registry.gitlab.com\n\n  - Kubernetes (k8s) – registry.k8s.io\n\n  - Microsoft Azure Container Registry (azure-container-registry) – .azurecr.io\n\n  - Quay (quay) – quay.io",
+          "description": "The registry URL of the upstream public registry to use as the source for\nthe pull through cache rule. The following is the syntax to use for each\nsupported upstream registry.\n\n   * Amazon ECR (ecr) – .dkr.ecr..amazonaws.com\n\n   * Amazon ECR Public (ecr-public) – public.ecr.aws\n\n   * Docker Hub (docker-hub) – registry-1.docker.io\n\n   * GitHub Container Registry (github-container-registry) – ghcr.io\n\n   * GitLab Container Registry (gitlab-container-registry) – registry.gitlab.com\n\n   * Kubernetes (k8s) – registry.k8s.io\n\n   * Microsoft Azure Container Registry (azure-container-registry) – .azurecr.io\n\n   * Quay (quay) – quay.io",
           "type": "string",
           "x-kubernetes-validations": [
             {
