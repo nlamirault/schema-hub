@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.11.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.10.0...schema-hub-v1.11.0) (2026-10-18)
+
+
+### 🚀 Features
+
+* **crd:** add upbound azure provider crds support ([#552](https://github.com/nlamirault/schema-hub/issues/552)) ([91c9d83](https://github.com/nlamirault/schema-hub/commit/91c9d83799aca4a544fe6dc14e41f4396ecb1641)), closes [#521](https://github.com/nlamirault/schema-hub/issues/521)
+* **crd:** add upbound gcp provider crds support ([#549](https://github.com/nlamirault/schema-hub/issues/549)) ([c33243e](https://github.com/nlamirault/schema-hub/commit/c33243e642184530c780e4c84401b881bd700901)), closes [#520](https://github.com/nlamirault/schema-hub/issues/520)
+
+
+### 🚨 Maintenance
+
+* **deps:** update astral-sh/setup-uv action to v10.3.0 ([#539](https://github.com/nlamirault/schema-hub/issues/539)) ([61aaae2](https://github.com/nlamirault/schema-hub/commit/61aaae20d26ecd8fad025a17a564bd8465805f7e))
+* **deps:** update azure/setup-kubectl action to v5.2.0 ([#540](https://github.com/nlamirault/schema-hub/issues/540)) ([783010d](https://github.com/nlamirault/schema-hub/commit/783010d885241fdcbccadddec75d8b30a388693d))
+* **deps:** update codelytv/pr-size-labeler action to v1.12.0 ([#541](https://github.com/nlamirault/schema-hub/issues/541)) ([546a06b](https://github.com/nlamirault/schema-hub/commit/546a06b2b6041fb29ab02e45bf6359323b0c0486))
+* **deps:** update dependency agentgateway/agentgateway to v1.6.0 ([#542](https://github.com/nlamirault/schema-hub/issues/542)) ([731a9de](https://github.com/nlamirault/schema-hub/commit/731a9ded90c86067ddacfe20327ccec011c7fb45))
+* **deps:** update dependency akuity/kargo to v1.12.4 ([#543](https://github.com/nlamirault/schema-hub/issues/543)) ([b90e1c3](https://github.com/nlamirault/schema-hub/commit/b90e1c3f09dedebef0509f32e06a11e2e5fa3ae5))
+* **deps:** update dependency aws-controllers-k8s/acmpca-controller to v1.6.1 ([#544](https://github.com/nlamirault/schema-hub/issues/544)) ([50f85c5](https://github.com/nlamirault/schema-hub/commit/50f85c54b6978c17032e87847ba357cc05c9650f))
+* **deps:** update dependency aws-controllers-k8s/applicationautoscaling-controller to v1.8.2 ([#545](https://github.com/nlamirault/schema-hub/issues/545)) ([ad1f92b](https://github.com/nlamirault/schema-hub/commit/ad1f92b018401d1b9120d676b8194d60e51ab04f))
+* **deps:** update dependency aws-controllers-k8s/bedrockagent-controller to v1.5.1 ([#546](https://github.com/nlamirault/schema-hub/issues/546)) ([8bd3f40](https://github.com/nlamirault/schema-hub/commit/8bd3f40467513954a96155fc584721ca122b9afc))
+* **deps:** update dependency aws-controllers-k8s/cloudfront-controller to v1.9.1 ([#547](https://github.com/nlamirault/schema-hub/issues/547)) ([0a67e2a](https://github.com/nlamirault/schema-hub/commit/0a67e2a2fa67fbcc0fdce397bfedd82776dc573a))
+* **deps:** update dependency aws-controllers-k8s/cloudtrail-controller to v1.8.1 ([#548](https://github.com/nlamirault/schema-hub/issues/548)) ([c1314db](https://github.com/nlamirault/schema-hub/commit/c1314db89e3689682e6885dabb40a4a2cd820ab4))
+* **deps:** update dependency aws-controllers-k8s/ecr-controller to v1.10.1 ([#550](https://github.com/nlamirault/schema-hub/issues/550)) ([224b438](https://github.com/nlamirault/schema-hub/commit/224b4380db3daaf36bdefb32f32e6d4a51d00250))
+* **deps:** update dependency aws-controllers-k8s/ecs-controller to v1.8.2 ([#551](https://github.com/nlamirault/schema-hub/issues/551)) ([18fa5f6](https://github.com/nlamirault/schema-hub/commit/18fa5f6bc8ec1faa72ad9bc367a3bf84d97c76a3))
+* **deps:** update dependency aws-controllers-k8s/eks-controller to v1.24.3 ([#553](https://github.com/nlamirault/schema-hub/issues/553)) ([ca7ac18](https://github.com/nlamirault/schema-hub/commit/ca7ac18ae572568c660f8dd1c6454c186e634a2d))
+* **deps:** update dependency aws-controllers-k8s/elasticache-controller to v1.10.2 ([#554](https://github.com/nlamirault/schema-hub/issues/554)) ([5dff9af](https://github.com/nlamirault/schema-hub/commit/5dff9af1d8ab15c08423b939ea57bbe45ce24cc4))
+* **deps:** update dependency aws-controllers-k8s/emrcontainers-controller to v1.8.1 ([#555](https://github.com/nlamirault/schema-hub/issues/555)) ([b5e77b2](https://github.com/nlamirault/schema-hub/commit/b5e77b2fbf420d78bc166aa467b9c308a7ace951))
+* **deps:** update dependency aws-controllers-k8s/eventbridge-controller to v1.8.1 ([#556](https://github.com/nlamirault/schema-hub/issues/556)) ([2abd08f](https://github.com/nlamirault/schema-hub/commit/2abd08fc5798071bf7b42ba661b1f00dbc705ac4))
+* **deps:** update dependency fluxcd/flux2 to v2.9.6 ([#530](https://github.com/nlamirault/schema-hub/issues/530)) ([ad12ded](https://github.com/nlamirault/schema-hub/commit/ad12ded1f74da45e47a97897c9ffd91aa0fb4bb4))
+* **deps:** update dependency istio/istio to v1.31.2 ([#531](https://github.com/nlamirault/schema-hub/issues/531)) ([dd2f683](https://github.com/nlamirault/schema-hub/commit/dd2f683f8ae65f2917d7825ed297deea8c7ac40c))
+* **deps:** update dependency kagent-dev/kagent to v0.10.3 ([#532](https://github.com/nlamirault/schema-hub/issues/532)) ([5edfe7b](https://github.com/nlamirault/schema-hub/commit/5edfe7b6be2acf4f73ad23f0a7301f93d4d1e9ce))
+* **deps:** update dependency kubernetes-sigs/agent-sandbox to v1.0.7 ([#533](https://github.com/nlamirault/schema-hub/issues/533)) ([bcc8b39](https://github.com/nlamirault/schema-hub/commit/bcc8b397aef7d96cca78edb5771d62e1ba532534))
+* **deps:** update dependency kubernetes-sigs/cluster-api to v1.14.3 ([#534](https://github.com/nlamirault/schema-hub/issues/534)) ([0fadc12](https://github.com/nlamirault/schema-hub/commit/0fadc12f818ba23d2efc63fd6c0c232edb89283f))
+* **deps:** update dependency kubernetes-sigs/cluster-api-provider-aws to v2.13.1 ([#535](https://github.com/nlamirault/schema-hub/issues/535)) ([8deca7a](https://github.com/nlamirault/schema-hub/commit/8deca7a1f31adbf75d864a9be4658b619c87a39d))
+* **deps:** update dependency kubernetes-sigs/gateway-api to v1.6.3 ([#537](https://github.com/nlamirault/schema-hub/issues/537)) ([9e7aad3](https://github.com/nlamirault/schema-hub/commit/9e7aad3f6ec7f7fae71c4dde41140376eaa5bcce))
+* **deps:** update dependency traefik/traefik to v3.7.15 ([#538](https://github.com/nlamirault/schema-hub/issues/538)) ([dbe82ed](https://github.com/nlamirault/schema-hub/commit/dbe82ed54fc86c21d00d83d41bd6f04c6dbe80e1))
+
 ## [1.10.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.9.1...schema-hub-v1.10.0) (2026-10-16)
 
 
