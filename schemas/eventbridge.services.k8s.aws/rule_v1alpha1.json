@@ -65,12 +65,30 @@
           "description": "The Amazon Resource Name (ARN) of the IAM role associated with the rule.\n\nIf you're setting an event bus in another account as the target and that\naccount granted permission to your account through an organization instead\nof directly by the account ID, you must specify a RoleArn with proper permissions\nin the Target structure, instead of here in this parameter.",
           "type": "string"
         },
+        "roleRef": {
+          "description": "AWSResourceReferenceWrapper provides a wrapper around *AWSResourceReference\ntype to provide more user friendly syntax for references using 'from' field\nEx:\nAPIIDRef:\n\n\tfrom:\n\t  name: my-api",
+          "properties": {
+            "from": {
+              "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "scheduleExpression": {
           "description": "The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".",
           "type": "string"
         },
         "state": {
-          "description": "The state of the rule.\n\nValid values include:\n\n  - DISABLED: The rule is disabled. EventBridge does not match any events\n    against the rule.\n\n  - ENABLED: The rule is enabled. EventBridge matches events against the\n    rule, except for Amazon Web Services management events delivered through\n    CloudTrail.\n\n  - ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS: The rule is enabled for\n    all events, including Amazon Web Services management events delivered\n    through CloudTrail. Management events provide visibility into management\n    operations that are performed on resources in your Amazon Web Services\n    account. These are also known as control plane operations. For more information,\n    see Logging management events (https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events)\n    in the CloudTrail User Guide, and Filtering management events from Amazon\n    Web Services services (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail)\n    in the Amazon EventBridge User Guide . This value is only valid for rules\n    on the default (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses)\n    event bus or custom event buses (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html).\n    It does not apply to partner event buses (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html).",
+          "description": "The state of the rule.\n\nValid values include:\n\n   * DISABLED: The rule is disabled. EventBridge does not match any events\n   against the rule.\n\n   * ENABLED: The rule is enabled. EventBridge matches events against the\n   rule, except for Amazon Web Services management events delivered through\n   CloudTrail.\n\n   * ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS: The rule is enabled for\n   all events, including Amazon Web Services management events delivered\n   through CloudTrail. Management events provide visibility into management\n   operations that are performed on resources in your Amazon Web Services\n   account. These are also known as control plane operations. For more information,\n   see Logging management events (https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events)\n   in the CloudTrail User Guide, and Filtering management events from Amazon\n   Web Services services (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail)\n   in the Amazon EventBridge User Guide . This value is only valid for rules\n   on the default (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses)\n   event bus or custom event buses (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html).\n   It does not apply to partner event buses (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html).",
           "type": "string"
         },
         "tags": {
@@ -450,6 +468,10 @@
             },
             "ownerAccountID": {
               "description": "OwnerAccountID is the AWS Account ID of the account that owns the\nbackend AWS service API resource.",
+              "type": "string"
+            },
+            "partition": {
+              "description": "Partition is the AWS partition in which the resource exists or will exist",
               "type": "string"
             },
             "region": {
