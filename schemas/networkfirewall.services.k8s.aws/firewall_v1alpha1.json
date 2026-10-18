@@ -47,6 +47,24 @@
           "description": "A setting indicating whether the firewall is protected against a change to\nthe firewall policy association. Use this setting to protect against accidentally\nmodifying the firewall policy for a firewall that is in use. When you create\na firewall, the operation initializes this setting to TRUE.",
           "type": "boolean"
         },
+        "firewallPolicyRef": {
+          "description": "AWSResourceReferenceWrapper provides a wrapper around *AWSResourceReference\ntype to provide more user friendly syntax for references using 'from' field\nEx:\nAPIIDRef:\n\n\tfrom:\n\t  name: my-api",
+          "properties": {
+            "from": {
+              "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "loggingConfiguration": {
           "description": "Defines how Network Firewall performs logging for a firewall. If you omit\nthis setting, Network Firewall disables logging for the firewall.",
           "properties": {
@@ -113,13 +131,29 @@
         "vpcID": {
           "description": "The unique identifier of the VPC where Network Firewall should create the\nfirewall.\n\nYou can't change this setting after you create the firewall.\n\nRegex Pattern: `^vpc-[0-9a-f]+$`",
           "type": "string"
+        },
+        "vpcRef": {
+          "description": "AWSResourceReferenceWrapper provides a wrapper around *AWSResourceReference\ntype to provide more user friendly syntax for references using 'from' field\nEx:\nAPIIDRef:\n\n\tfrom:\n\t  name: my-api",
+          "properties": {
+            "from": {
+              "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
         }
       },
       "required": [
         "firewallName",
-        "firewallPolicyARN",
-        "subnetMappings",
-        "vpcID"
+        "subnetMappings"
       ],
       "type": "object"
     },
