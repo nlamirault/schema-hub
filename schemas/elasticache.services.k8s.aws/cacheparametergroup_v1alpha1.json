@@ -20,7 +20,7 @@
           "type": "string"
         },
         "cacheParameterGroupName": {
-          "description": "A user-specified name for the cache parameter group.",
+          "description": "A user-specified name for the cache parameter group. This value is stored\nas a lowercase string.",
           "type": "string"
         },
         "description": {
@@ -79,6 +79,10 @@
             },
             "ownerAccountID": {
               "description": "OwnerAccountID is the AWS Account ID of the account that owns the\nbackend AWS service API resource.",
+              "type": "string"
+            },
+            "partition": {
+              "description": "Partition is the AWS partition in which the resource exists or will exist",
               "type": "string"
             },
             "region": {
