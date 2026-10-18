@@ -16,11 +16,11 @@
       "description": "ReplicationGroupSpec defines the desired state of ReplicationGroup.\n\nContains all of the attributes of a specific Valkey or Redis OSS replication\ngroup.",
       "properties": {
         "atRestEncryptionEnabled": {
-          "description": "A flag that enables encryption at rest when set to true.\n\nYou cannot modify the value of AtRestEncryptionEnabled after the replication\ngroup is created. To enable encryption at rest on a replication group you\nmust set AtRestEncryptionEnabled to true when you create the replication\ngroup.\n\nRequired: Only available when creating a replication group in an Amazon VPC\nusing Valkey 7.2 and later, Redis OSS version 3.2.6, or Redis OSS 4.x and\nlater.\n\nDefault: true when using Valkey, false when using Redis OSS",
+          "description": "A flag that enables encryption at-rest on the replication group when set\nto true. In some cases, encryption at-rest may be enabled even when this\nvalue is false. Use StorageEncryptionType to view the effective encryption\nstate of a cluster.\n\nYou cannot modify the value of AtRestEncryptionEnabled after the replication\ngroup is created.\n\nDefault: true when using Valkey, false when using Redis OSS",
           "type": "boolean"
         },
         "authToken": {
-          "description": "Reserved parameter. The password used to access a password protected server.\n\nAuthToken can be specified only on replication groups where TransitEncryptionEnabled\nis true.\n\nFor HIPAA compliance, you must specify TransitEncryptionEnabled as true,\nan AuthToken, and a CacheSubnetGroup.\n\nPassword constraints:\n\n  - Must be only printable ASCII characters.\n\n  - Must be at least 16 characters and no more than 128 characters in length.",
+          "description": "Reserved parameter. The password used to access a password protected server.\n\nAuthToken can be specified only on replication groups where TransitEncryptionEnabled\nis true.\n\nFor HIPAA compliance, you must specify TransitEncryptionEnabled as true,\nan AuthToken, and a CacheSubnetGroup.\n\nPassword constraints:\n\n   * Must be only printable ASCII characters.\n\n   * Must be at least 16 characters and no more than 128 characters in length.",
           "properties": {
             "key": {
               "description": "Key is the key within the secret",
@@ -46,11 +46,11 @@
           "type": "boolean"
         },
         "cacheNodeType": {
-          "description": "The compute and memory capacity of the nodes in the node group (shard).\n\nThe following node types are supported by ElastiCache. Generally speaking,\nthe current generation types provide more memory and computational power\nat lower cost when compared to their equivalent previous generation counterparts.\n\n  - General purpose: Current generation: M7g node types: cache.m7g.large,\n    cache.m7g.xlarge, cache.m7g.2xlarge, cache.m7g.4xlarge, cache.m7g.8xlarge,\n    cache.m7g.12xlarge, cache.m7g.16xlarge For region availability, see Supported\n    Node Types (https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion)\n    M6g node types (available only for Redis OSS engine version 5.0.6 onward\n    and for Memcached engine version 1.5.16 onward): cache.m6g.large, cache.m6g.xlarge,\n    cache.m6g.2xlarge, cache.m6g.4xlarge, cache.m6g.8xlarge, cache.m6g.12xlarge,\n    cache.m6g.16xlarge M5 node types: cache.m5.large, cache.m5.xlarge, cache.m5.2xlarge,\n    cache.m5.4xlarge, cache.m5.12xlarge, cache.m5.24xlarge M4 node types:\n    cache.m4.large, cache.m4.xlarge, cache.m4.2xlarge, cache.m4.4xlarge, cache.m4.10xlarge\n    T4g node types (available only for Redis OSS engine version 5.0.6 onward\n    and Memcached engine version 1.5.16 onward): cache.t4g.micro, cache.t4g.small,\n    cache.t4g.medium T3 node types: cache.t3.micro, cache.t3.small, cache.t3.medium\n    T2 node types: cache.t2.micro, cache.t2.small, cache.t2.medium Previous\n    generation: (not recommended. Existing clusters are still supported but\n    creation of new clusters is not supported for these types.) T1 node types:\n    cache.t1.micro M1 node types: cache.m1.small, cache.m1.medium, cache.m1.large,\n    cache.m1.xlarge M3 node types: cache.m3.medium, cache.m3.large, cache.m3.xlarge,\n    cache.m3.2xlarge\n\n  - Compute optimized: Previous generation: (not recommended. Existing clusters\n    are still supported but creation of new clusters is not supported for\n    these types.) C1 node types: cache.c1.xlarge\n\n  - Memory optimized: Current generation: R7g node types: cache.r7g.large,\n    cache.r7g.xlarge, cache.r7g.2xlarge, cache.r7g.4xlarge, cache.r7g.8xlarge,\n    cache.r7g.12xlarge, cache.r7g.16xlarge For region availability, see Supported\n    Node Types (https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion)\n    R6g node types (available only for Redis OSS engine version 5.0.6 onward\n    and for Memcached engine version 1.5.16 onward): cache.r6g.large, cache.r6g.xlarge,\n    cache.r6g.2xlarge, cache.r6g.4xlarge, cache.r6g.8xlarge, cache.r6g.12xlarge,\n    cache.r6g.16xlarge R5 node types: cache.r5.large, cache.r5.xlarge, cache.r5.2xlarge,\n    cache.r5.4xlarge, cache.r5.12xlarge, cache.r5.24xlarge R4 node types:\n    cache.r4.large, cache.r4.xlarge, cache.r4.2xlarge, cache.r4.4xlarge, cache.r4.8xlarge,\n    cache.r4.16xlarge Previous generation: (not recommended. Existing clusters\n    are still supported but creation of new clusters is not supported for\n    these types.) M2 node types: cache.m2.xlarge, cache.m2.2xlarge, cache.m2.4xlarge\n    R3 node types: cache.r3.large, cache.r3.xlarge, cache.r3.2xlarge, cache.r3.4xlarge,\n    cache.r3.8xlarge\n\nAdditional node type info\n\n  - All current generation instance types are created in Amazon VPC by default.\n\n  - Valkey or Redis OSS append-only files (AOF) are not supported for T1\n    or T2 instances.\n\n  - Valkey or Redis OSS Multi-AZ with automatic failover is not supported\n    on T1 instances.\n\n  - The configuration variables appendonly and appendfsync are not supported\n    on Valkey, or on Redis OSS version 2.8.22 and later.",
+          "description": "The compute and memory capacity of the nodes in the node group (shard).\n\nThe following node types are supported by ElastiCache. Generally speaking,\nthe current generation types provide more memory and computational power\nat lower cost when compared to their equivalent previous generation counterparts.\n\n   * General purpose: Current generation: M7g node types: cache.m7g.large,\n   cache.m7g.xlarge, cache.m7g.2xlarge, cache.m7g.4xlarge, cache.m7g.8xlarge,\n   cache.m7g.12xlarge, cache.m7g.16xlarge For region availability, see Supported\n   Node Types (https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion)\n   M6g node types (available only for Redis OSS engine version 5.0.6 onward\n   and for Memcached engine version 1.5.16 onward): cache.m6g.large, cache.m6g.xlarge,\n   cache.m6g.2xlarge, cache.m6g.4xlarge, cache.m6g.8xlarge, cache.m6g.12xlarge,\n   cache.m6g.16xlarge M5 node types: cache.m5.large, cache.m5.xlarge, cache.m5.2xlarge,\n   cache.m5.4xlarge, cache.m5.12xlarge, cache.m5.24xlarge M4 node types:\n   cache.m4.large, cache.m4.xlarge, cache.m4.2xlarge, cache.m4.4xlarge, cache.m4.10xlarge\n   T4g node types (available only for Redis OSS engine version 5.0.6 onward\n   and Memcached engine version 1.5.16 onward): cache.t4g.micro, cache.t4g.small,\n   cache.t4g.medium T3 node types: cache.t3.micro, cache.t3.small, cache.t3.medium\n   T2 node types: cache.t2.micro, cache.t2.small, cache.t2.medium Previous\n   generation: (not recommended. Existing clusters are still supported but\n   creation of new clusters is not supported for these types.) T1 node types:\n   cache.t1.micro M1 node types: cache.m1.small, cache.m1.medium, cache.m1.large,\n   cache.m1.xlarge M3 node types: cache.m3.medium, cache.m3.large, cache.m3.xlarge,\n   cache.m3.2xlarge\n\n   * Compute optimized: Previous generation: (not recommended. Existing clusters\n   are still supported but creation of new clusters is not supported for\n   these types.) C1 node types: cache.c1.xlarge\n\n   * Memory optimized: Current generation: R7g node types: cache.r7g.large,\n   cache.r7g.xlarge, cache.r7g.2xlarge, cache.r7g.4xlarge, cache.r7g.8xlarge,\n   cache.r7g.12xlarge, cache.r7g.16xlarge For region availability, see Supported\n   Node Types (https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion)\n   R6g node types (available only for Redis OSS engine version 5.0.6 onward\n   and for Memcached engine version 1.5.16 onward): cache.r6g.large, cache.r6g.xlarge,\n   cache.r6g.2xlarge, cache.r6g.4xlarge, cache.r6g.8xlarge, cache.r6g.12xlarge,\n   cache.r6g.16xlarge R5 node types: cache.r5.large, cache.r5.xlarge, cache.r5.2xlarge,\n   cache.r5.4xlarge, cache.r5.12xlarge, cache.r5.24xlarge R4 node types:\n   cache.r4.large, cache.r4.xlarge, cache.r4.2xlarge, cache.r4.4xlarge, cache.r4.8xlarge,\n   cache.r4.16xlarge Previous generation: (not recommended. Existing clusters\n   are still supported but creation of new clusters is not supported for\n   these types.) M2 node types: cache.m2.xlarge, cache.m2.2xlarge, cache.m2.4xlarge\n   R3 node types: cache.r3.large, cache.r3.xlarge, cache.r3.2xlarge, cache.r3.4xlarge,\n   cache.r3.8xlarge\n\nAdditional node type info\n\n   * All current generation instance types are created in Amazon VPC by default.\n\n   * Valkey or Redis OSS append-only files (AOF) are not supported for T1\n   or T2 instances.\n\n   * Valkey or Redis OSS Multi-AZ with automatic failover is not supported\n   on T1 instances.\n\n   * The configuration variables appendonly and appendfsync are not supported\n   on Valkey, or on Redis OSS version 2.8.22 and later.",
           "type": "string"
         },
         "cacheParameterGroupName": {
-          "description": "The name of the parameter group to associate with this replication group.\nIf this argument is omitted, the default cache parameter group for the specified\nengine is used.\n\nIf you are running Valkey or Redis OSS version 3.2.4 or later, only one node\ngroup (shard), and want to use a default parameter group, we recommend that\nyou specify the parameter group by name.\n\n  - To create a Valkey or Redis OSS (cluster mode disabled) replication\n    group, use CacheParameterGroupName=default.redis3.2.\n\n  - To create a Valkey or Redis OSS (cluster mode enabled) replication group,\n    use CacheParameterGroupName=default.redis3.2.cluster.on.",
+          "description": "The name of the parameter group to associate with this replication group.\nIf this argument is omitted, the default cache parameter group for the specified\nengine is used.\n\nIf you are running Valkey or Redis OSS version 3.2.4 or later, only one node\ngroup (shard), and want to use a default parameter group, we recommend that\nyou specify the parameter group by name.\n\n   * To create a Valkey or Redis OSS (cluster mode disabled) replication\n   group, use CacheParameterGroupName=default.redis3.2.\n\n   * To create a Valkey or Redis OSS (cluster mode enabled) replication group,\n   use CacheParameterGroupName=default.redis3.2.cluster.on.",
           "type": "string"
         },
         "cacheParameterGroupRef": {
@@ -108,6 +108,10 @@
           "description": "A user-created description for the replication group.",
           "type": "string"
         },
+        "durability": {
+          "description": "Specifies the durability setting for the replication group. When set to default,\nthe service determines the effective durability based on the engine version,\ncluster mode, and other parameters. The resolved setting is reflected in\nthe EffectiveDurability property of the replication group. For more information,\nsee Durability (http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html).",
+          "type": "string"
+        },
         "engine": {
           "description": "The name of the cache engine to be used for the clusters in this replication\ngroup. The value must be set to valkey or redis.",
           "type": "string"
@@ -122,7 +126,31 @@
         },
         "kmsKeyID": {
           "description": "The ID of the KMS key used to encrypt the disk in the cluster.",
-          "type": "string"
+          "type": "string",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable once set",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
+        "kmsKeyRef": {
+          "description": "AWSResourceReferenceWrapper provides a wrapper around *AWSResourceReference\ntype to provide more user friendly syntax for references using 'from' field\nEx:\nAPIIDRef:\n\n\tfrom:\n\t  name: my-api",
+          "properties": {
+            "from": {
+              "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "logDeliveryConfigurations": {
           "description": "Specifies the destination, format and type of the logs.",
@@ -226,6 +254,24 @@
           "description": "The Amazon Resource Name (ARN) of the Amazon Simple Notification Service\n(SNS) topic to which notifications are sent.\n\nThe Amazon SNS topic owner must be the same as the cluster owner.",
           "type": "string"
         },
+        "notificationTopicRef": {
+          "description": "AWSResourceReferenceWrapper provides a wrapper around *AWSResourceReference\ntype to provide more user friendly syntax for references using 'from' field\nEx:\nAPIIDRef:\n\n\tfrom:\n\t  name: my-api",
+          "properties": {
+            "from": {
+              "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "numNodeGroups": {
           "description": "An optional parameter that specifies the number of node groups (shards) for\nthis Valkey or Redis OSS (cluster mode enabled) replication group. For Valkey\nor Redis OSS (cluster mode disabled) either omit this parameter or set it\nto 1.\n\nDefault: 1",
           "format": "int64",
@@ -244,7 +290,7 @@
           "type": "array"
         },
         "preferredMaintenanceWindow": {
-          "description": "Specifies the weekly time range during which maintenance on the cluster is\nperformed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi\n(24H Clock UTC). The minimum maintenance window is a 60 minute period.\n\nValid values for ddd are:\n\n  - sun\n\n  - mon\n\n  - tue\n\n  - wed\n\n  - thu\n\n  - fri\n\n  - sat\n\nExample: sun:23:00-mon:01:30",
+          "description": "Specifies the weekly time range during which maintenance on the cluster is\nperformed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi\n(24H Clock UTC). The minimum maintenance window is a 60 minute period.\n\nValid values for ddd are:\n\n   * sun\n\n   * mon\n\n   * tue\n\n   * wed\n\n   * thu\n\n   * fri\n\n   * sat\n\nExample: sun:23:00-mon:01:30",
           "type": "string"
         },
         "primaryClusterID": {
@@ -257,7 +303,7 @@
           "type": "integer"
         },
         "replicationGroupID": {
-          "description": "The replication group identifier. This parameter is stored as a lowercase\nstring.\n\nConstraints:\n\n  - A name must contain from 1 to 40 alphanumeric characters or hyphens.\n\n  - The first character must be a letter.\n\n  - A name cannot end with a hyphen or contain two consecutive hyphens.",
+          "description": "The replication group identifier. This parameter is stored as a lowercase\nstring.\n\nConstraints:\n\n   * A name must contain from 1 to 40 alphanumeric characters or hyphens.\n\n   * The first character must be a letter.\n\n   * A name cannot end with a hyphen or contain two consecutive hyphens.",
           "type": "string"
         },
         "securityGroupIDs": {
@@ -297,7 +343,31 @@
         },
         "snapshotName": {
           "description": "The name of a snapshot from which to restore data into the new replication\ngroup. The snapshot status changes to restoring while the new replication\ngroup is being created.",
-          "type": "string"
+          "type": "string",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable once set",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
+        "snapshotRef": {
+          "description": "AWSResourceReferenceWrapper provides a wrapper around *AWSResourceReference\ntype to provide more user friendly syntax for references using 'from' field\nEx:\nAPIIDRef:\n\n\tfrom:\n\t  name: my-api",
+          "properties": {
+            "from": {
+              "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "snapshotRetentionLimit": {
           "description": "The number of days for which ElastiCache retains automatic snapshots before\ndeleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot\nthat was taken today is retained for 5 days before being deleted.\n\nDefault: 0 (i.e., automatic backups are disabled for this cluster).",
@@ -334,6 +404,27 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "userGroupRefs": {
+          "items": {
+            "description": "AWSResourceReferenceWrapper provides a wrapper around *AWSResourceReference\ntype to provide more user friendly syntax for references using 'from' field\nEx:\nAPIIDRef:\n\n\tfrom:\n\t  name: my-api",
+            "properties": {
+              "from": {
+                "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "namespace": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
         }
       },
       "required": [
@@ -354,6 +445,10 @@
             },
             "ownerAccountID": {
               "description": "OwnerAccountID is the AWS Account ID of the account that owns the\nbackend AWS service API resource.",
+              "type": "string"
+            },
+            "partition": {
+              "description": "Partition is the AWS partition in which the resource exists or will exist",
               "type": "string"
             },
             "region": {
@@ -452,6 +547,10 @@
         },
         "dataTiering": {
           "description": "Enables data tiering. Data tiering is only supported for replication groups\nusing the r6gd node type. This parameter must be set to true when using r6gd\nnodes. For more information, see Data tiering (https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html).",
+          "type": "string"
+        },
+        "effectiveDurability": {
+          "description": "The effective durability of the replication group. When Durability is set\nto default, the service resolves the actual durability based on the engine\nversion, cluster mode, and other parameters. This field reflects the resolved\nvalue. For more information, see Configuring Durability (http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html).",
           "type": "string"
         },
         "events": {
@@ -739,6 +838,10 @@
         },
         "status": {
           "description": "The current state of this replication group - creating, available, modifying,\ndeleting, create-failed, snapshotting.",
+          "type": "string"
+        },
+        "storageEncryptionType": {
+          "description": "Indicates the type of encryption for data stored at rest in the replication\ngroup. The value is none if at-rest encryption is not enabled, sse-elasticache\nif an ElastiCache service-managed key is used, or sse-kms if a customer-managed\nKMS key is used.",
           "type": "string"
         }
       },

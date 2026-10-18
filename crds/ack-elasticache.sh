@@ -19,7 +19,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=aws-controllers-k8s/elasticache-controller
-export VERSION=1.3.4
+export VERSION=1.10.2
 
 function generate_url {
   local crd_file=$1
