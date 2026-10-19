@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.11.1](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.11.0...schema-hub-v1.11.1) (2026-10-19)
+
+
+### 🚨 Maintenance
+
+* **deps:** update dependency aws-controllers-k8s/iam-controller to v1.10.1 ([#557](https://github.com/nlamirault/schema-hub/issues/557)) ([9b6e15d](https://github.com/nlamirault/schema-hub/commit/9b6e15db9225e5b4eb3571df7caadf8987fb81be))
+* **deps:** update dependency aws-controllers-k8s/kafka-controller to v1.13.1 ([#558](https://github.com/nlamirault/schema-hub/issues/558)) ([bb4a299](https://github.com/nlamirault/schema-hub/commit/bb4a29929081c015ca075bd6624912e59edf24f5))
+* **deps:** update dependency aws-controllers-k8s/kinesis-controller to v1.6.1 ([#561](https://github.com/nlamirault/schema-hub/issues/561)) ([4a32456](https://github.com/nlamirault/schema-hub/commit/4a324566b258ab17fb5c097611a603ec148815ae))
+* **deps:** update dependency aws-controllers-k8s/lambda-controller to v1.18.2 ([#562](https://github.com/nlamirault/schema-hub/issues/562)) ([cdd76a8](https://github.com/nlamirault/schema-hub/commit/cdd76a89777a48900ab17e3b1f34f19749359d0c))
+* **deps:** update dependency aws-controllers-k8s/mq-controller to v1.7.1 ([#563](https://github.com/nlamirault/schema-hub/issues/563)) ([8665e25](https://github.com/nlamirault/schema-hub/commit/8665e25fc7fb3cd230cfd460e286ba9b0816c03a))
+* **deps:** update dependency aws-controllers-k8s/networkfirewall-controller to v1.6.1 ([#564](https://github.com/nlamirault/schema-hub/issues/564)) ([778f084](https://github.com/nlamirault/schema-hub/commit/778f08400d2de69c838eebdb5b9c2ddd2b8211c4))
+* **deps:** update dependency aws-controllers-k8s/opensearchservice-controller to v1.8.1 ([#565](https://github.com/nlamirault/schema-hub/issues/565)) ([0b20433](https://github.com/nlamirault/schema-hub/commit/0b20433969103e3e2fc0269ba2b8408dfa0d041b))
+* **deps:** update dependency aws-controllers-k8s/organizations-controller to v1.6.2 ([#566](https://github.com/nlamirault/schema-hub/issues/566)) ([493825d](https://github.com/nlamirault/schema-hub/commit/493825de5d21330b40f0dd5d3183eb7b8b07c822))
+* **deps:** update dependency aws-controllers-k8s/pipes-controller to v1.7.1 ([#567](https://github.com/nlamirault/schema-hub/issues/567)) ([12a8bb8](https://github.com/nlamirault/schema-hub/commit/12a8bb8ae58a38e3d954081f960bab7639495ebb))
+
+
+### 📚 Documentation
+
+* **schemas:** generate reference docs from sources.yaml ([#559](https://github.com/nlamirault/schema-hub/issues/559)) ([75bf377](https://github.com/nlamirault/schema-hub/commit/75bf3771160a91c9489c1aa5b627686295da31f4))
+
 ## [1.11.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.10.0...schema-hub-v1.11.0) (2026-10-18)
 
 
