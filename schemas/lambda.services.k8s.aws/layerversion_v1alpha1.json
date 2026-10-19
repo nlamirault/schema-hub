@@ -35,6 +35,24 @@
             "s3Bucket": {
               "type": "string"
             },
+            "s3BucketRef": {
+              "description": "Reference field for S3Bucket",
+              "properties": {
+                "from": {
+                  "description": "AWSResourceReference provides all the values necessary to reference another\nk8s resource for finding the identifier(Id/ARN/Name)",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
             "s3Key": {
               "type": "string"
             },
@@ -57,7 +75,7 @@
           "type": "string"
         },
         "licenseInfo": {
-          "description": "The layer's software license. It can be any of the following:\n\n  - An SPDX license identifier (https://spdx.org/licenses/). For example,\n    MIT.\n\n  - The URL of a license hosted on the internet. For example, https://opensource.org/licenses/MIT.\n\n  - The full text of the license.",
+          "description": "The layer's software license. It can be any of the following:\n\n   * An SPDX license identifier (https://spdx.org/licenses/). For example,\n   MIT.\n\n   * The URL of a license hosted on the internet. For example, https://opensource.org/licenses/MIT.\n\n   * The full text of the license.",
           "type": "string"
         }
       },
