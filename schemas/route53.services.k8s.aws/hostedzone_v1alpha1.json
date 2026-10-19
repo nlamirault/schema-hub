@@ -26,7 +26,7 @@
           ]
         },
         "hostedZoneConfig": {
-          "description": "(Optional) A complex type that contains the following optional values:\n\n  - For public and private hosted zones, an optional comment\n\n  - For private hosted zones, an optional PrivateZone element\n\nIf you don't specify a comment or the PrivateZone element, omit HostedZoneConfig\nand the other elements.",
+          "description": "(Optional) A complex type that contains the following optional values:\n\n   * For public and private hosted zones, an optional comment\n\n   * For private hosted zones, an optional PrivateZone element\n\nIf you don't specify a comment or the PrivateZone element, omit HostedZoneConfig\nand the other elements.",
           "properties": {
             "comment": {
               "type": "string"
