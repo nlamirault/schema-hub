@@ -20,7 +20,7 @@
           "type": "string"
         },
         "parentID": {
-          "description": "The unique identifier (ID) of the parent root or OU that you want to create\nthe new OU in.\n\nThe regex pattern (http://wikipedia.org/wiki/regex) for a parent ID string\nrequires one of the following:\n\n  - Root - A string that begins with \"r-\" followed by from 4 to 32 lowercase\n    letters or digits.\n\n  - Organizational unit (OU) - A string that begins with \"ou-\" followed\n    by from 4 to 32 lowercase letters or digits (the ID of the root that the\n    OU is in). This string is followed by a second \"-\" dash and from 8 to\n    32 additional lowercase letters or digits.\n\nRegex Pattern: `^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$`",
+          "description": "The unique identifier (ID) of the parent root or OU that you want to create\nthe new OU in.\n\nThe regex pattern (http://wikipedia.org/wiki/regex) for a parent ID string\nrequires one of the following:\n\n   * Root - A string that begins with \"r-\" followed by from 4 to 32 lowercase\n   letters or digits.\n\n   * Organizational unit (OU) - A string that begins with \"ou-\" followed\n   by from 4 to 32 lowercase letters or digits (the ID of the root that the\n   OU is in). This string is followed by a second \"-\" dash and from 8 to\n   32 additional lowercase letters or digits.\n\nRegex Pattern: `^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$`",
           "type": "string"
         },
         "tags": {
