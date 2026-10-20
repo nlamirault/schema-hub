@@ -15,6 +15,15 @@
     "spec": {
       "description": "BucketSpec defines the desired state of Bucket.\n\nIn terms of implementation, a Bucket is a resource.",
       "properties": {
+        "abac": {
+          "description": "The ABAC status of the general purpose bucket. When ABAC is enabled for the\ngeneral purpose bucket, you can use tags to manage access to the general\npurpose buckets as well as for cost tracking purposes. When ABAC is disabled\nfor the general purpose buckets, you can only use tags for cost tracking\npurposes. For more information, see Using tags with S3 general purpose buckets\n(https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html).",
+          "properties": {
+            "status": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "accelerate": {
           "description": "Container for setting the transfer acceleration state.",
           "properties": {
@@ -617,6 +626,21 @@
                     "type": "object"
                   },
                   "type": "array"
+                },
+                "targetObjectKeyFormat": {
+                  "description": "Amazon S3 key format for log objects. Only one format, PartitionedPrefix\nor SimplePrefix, is allowed.",
+                  "properties": {
+                    "partitionedPrefix": {
+                      "description": "Amazon S3 keys for log objects are partitioned in the following format:\n\n[DestinationPrefix][SourceAccountId]/[SourceRegion]/[SourceBucket]/[YYYY]/[MM]/[DD]/[YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]\n\nPartitionedPrefix defaults to EventTime delivery when server access logs\nare delivered.",
+                      "properties": {
+                        "partitionDateSource": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
                 },
                 "targetPrefix": {
                   "type": "string"
