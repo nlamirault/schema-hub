@@ -16,7 +16,7 @@ from it.
 
 <!-- BEGIN GENERATED: generate-schemas-reference.py -->
 
-_119 operators and controllers, 1050 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
+_120 operators and controllers, 1051 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
 
 ## AI Orchestration
 
@@ -137,6 +137,7 @@ _119 operators and controllers, 1050 API groups. Generated from `sources.yaml` �
 | Cluster API Provider GCP | [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp) | `bootstrap.cluster.x-k8s.io`, `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider Hetzner | [syself/cluster-api-provider-hetzner](https://github.com/syself/cluster-api-provider-hetzner) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider IBM Cloud | [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud) | `infrastructure.cluster.x-k8s.io` |
+| Cluster API Provider OCI | [oracle/cluster-api-provider-oci](https://github.com/oracle/cluster-api-provider-oci) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider OpenStack | [kubernetes-sigs/cluster-api-provider-openstack](https://github.com/kubernetes-sigs/cluster-api-provider-openstack) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider Scaleway | [scaleway/cluster-api-provider-scaleway](https://github.com/scaleway/cluster-api-provider-scaleway) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider vCluster | [loft-sh/cluster-api-provider-vcluster](https://github.com/loft-sh/cluster-api-provider-vcluster) | `infrastructure.cluster.x-k8s.io` |
