@@ -41085,6 +41085,69 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "docluster",
+        "version": "v1alpha4",
+        "file": "infrastructure.cluster.x-k8s.io/docluster_v1alpha4.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha4/docluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "docluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/docluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/docluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "doclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/doclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/doclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachine",
+        "version": "v1alpha4",
+        "file": "infrastructure.cluster.x-k8s.io/domachine_v1alpha4.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha4/domachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/domachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/domachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachinetemplate",
+        "version": "v1alpha4",
+        "file": "infrastructure.cluster.x-k8s.io/domachinetemplate_v1alpha4.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha4/domachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/domachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/domachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "gcpcluster",
         "version": "v1beta1",
         "file": "infrastructure.cluster.x-k8s.io/gcpcluster_v1beta1.json",

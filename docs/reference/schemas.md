@@ -16,7 +16,7 @@ from it.
 
 <!-- BEGIN GENERATED: generate-schemas-reference.py -->
 
-_112 operators and controllers, 1043 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
+_113 operators and controllers, 1044 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
 
 ## AI Orchestration
 
@@ -133,6 +133,7 @@ _112 operators and controllers, 1043 API groups. Generated from `sources.yaml` �
 | Cluster API Operator | [kubernetes-sigs/cluster-api-operator](https://github.com/kubernetes-sigs/cluster-api-operator) | `operator.cluster.x-k8s.io` |
 | Cluster API Provider AWS | [kubernetes-sigs/cluster-api-provider-aws](https://github.com/kubernetes-sigs/cluster-api-provider-aws) | `bootstrap.cluster.x-k8s.io`, `controlplane.cluster.x-k8s.io`, `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider Azure | [kubernetes-sigs/cluster-api-provider-azure](https://github.com/kubernetes-sigs/cluster-api-provider-azure) | `infrastructure.cluster.x-k8s.io` |
+| Cluster API Provider DigitalOcean | [kubernetes-sigs/cluster-api-provider-digitalocean](https://github.com/kubernetes-sigs/cluster-api-provider-digitalocean) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider GCP | [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp) | `bootstrap.cluster.x-k8s.io`, `infrastructure.cluster.x-k8s.io` |
 | Crossplane | [crossplane/crossplane](https://github.com/crossplane/crossplane) | 4 API groups — see `sources.yaml` (`crossplane`) |
 | Karpenter | [kubernetes-sigs/karpenter](https://github.com/kubernetes-sigs/karpenter) | `karpenter.sh` |
