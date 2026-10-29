@@ -41292,6 +41292,15 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "vcluster",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/vcluster_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/vcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "vultrbaremetalmachine",
         "version": "v1beta2",
         "file": "infrastructure.cluster.x-k8s.io/vultrbaremetalmachine_v1beta2.json",
