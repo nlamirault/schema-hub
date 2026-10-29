@@ -41499,6 +41499,258 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "ocicluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocicluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocicluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocicluster",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocicluster_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocicluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ociclusteridentity",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ociclusteridentity_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ociclusteridentity",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ociclusteridentity",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ociclusteridentity_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ociclusteridentity",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ociclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ociclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ociclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ociclustertemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ociclustertemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ociclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachinepool",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachinepool_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachinepool",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachinepool_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachinepoolmachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachinepoolmachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimachinepoolmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachinepoolmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachinepoolmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimachinepoolmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedcluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedcluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimanagedcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedcluster",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedcluster_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimanagedcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimanagedclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedclustertemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedclustertemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimanagedclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedcontrolplane",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedcontrolplane_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimanagedcontrolplane",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedcontrolplane",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedcontrolplane_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimanagedcontrolplane",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedcontrolplanetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedcontrolplanetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimanagedcontrolplanetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedcontrolplanetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedcontrolplanetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimanagedcontrolplanetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedmachinepool",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedmachinepool_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimanagedmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedmachinepool",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedmachinepool_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimanagedmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedmachinepooltemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedmachinepooltemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocimanagedmachinepooltemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocimanagedmachinepooltemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocimanagedmachinepooltemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocimanagedmachinepooltemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocivirtualmachinepool",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ocivirtualmachinepool_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ocivirtualmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ocivirtualmachinepool",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ocivirtualmachinepool_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ocivirtualmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "openstackcluster",
         "version": "v1beta1",
         "file": "infrastructure.cluster.x-k8s.io/openstackcluster_v1beta1.json",

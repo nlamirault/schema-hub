@@ -790,6 +790,14 @@ sources:
   groups:
   - infrastructure.cluster.x-k8s.io
   project: cluster-api
+- id: cluster-api-provider-oci
+  name: Cluster API Provider OCI
+  category: Kubernetes
+  cncf: null
+  upstream: oracle/cluster-api-provider-oci
+  groups:
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
 - id: cluster-api-provider-openstack
   name: Cluster API Provider OpenStack
   category: Kubernetes
