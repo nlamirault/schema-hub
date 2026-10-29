@@ -1,0 +1,82 @@
+{
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "VultrMachineTemplateSpec defines the desired state of VultrMachineTemplate",
+      "properties": {
+        "template": {
+          "description": "VultrMachineTemplateResource describes the data needed to create a VultrMachine from a template.",
+          "properties": {
+            "spec": {
+              "description": "Spec is the specification of the desired behavior of the machine.",
+              "properties": {
+                "firewall_group_id": {
+                  "description": "The Vultr firewall group ID to attach to the instance",
+                  "type": "string"
+                },
+                "planID": {
+                  "description": "PlanID is the id of Vultr VPS plan (VPSPLANID).",
+                  "type": "string"
+                },
+                "providerID": {
+                  "description": "ProviderID is the unique identifier as specified by the cloud provider.",
+                  "type": "string"
+                },
+                "region": {
+                  "description": "The Vultr Region (DCID) the cluster lives on",
+                  "type": "string"
+                },
+                "snapshot_id": {
+                  "description": "The Vultr snapshot_id to use when deploying this instance.",
+                  "type": "string"
+                },
+                "sshKey": {
+                  "description": "sshKey is the name of the ssh key to attach to the instance.",
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "vpc_id": {
+                  "description": "VPCID is the id of the VPC to be attached.",
+                  "type": "string"
+                },
+                "vpc_only": {
+                  "description": "VPCOnly indicates that the VPS will not receive a public IP or public NIC when true.",
+                  "type": "boolean"
+                },
+                "vpc2_id": {
+                  "description": "VPC2ID is the id of the VPC2.0 to be attached.\nDeprecated: VPC2 is no longer supported and functionality will cease in a\nfuture release",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "region"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "spec"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "template"
+      ],
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

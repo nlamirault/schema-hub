@@ -1,0 +1,219 @@
+{
+  "description": "VultrClusterTemplate is the Schema for the vultrclustertemplates API",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "VultrClusterTemplateSpec defines the desired state of VultrClusterTemplate",
+      "properties": {
+        "template": {
+          "description": "VultrClusterTemplateResource contains spec for VultrClusterSpec.",
+          "properties": {
+            "spec": {
+              "description": "VultrClusterSpec defines the desired state of VultrCluster.",
+              "properties": {
+                "controlPlaneEndpoint": {
+                  "description": "ControlPlaneEndpoint represents the endpoint used to communicate with the control plane.",
+                  "minProperties": 1,
+                  "properties": {
+                    "host": {
+                      "description": "host is the hostname on which the API server is serving.",
+                      "maxLength": 512,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "port": {
+                      "description": "port is the port on which the API server is serving.",
+                      "format": "int32",
+                      "maximum": 65535,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "network": {
+                  "description": "NetworkSpec encapsulates all things related to Vultr network.",
+                  "properties": {
+                    "apiServerLoadbalancers": {
+                      "description": "Configures an API Server loadbalancers",
+                      "properties": {
+                        "date_created": {
+                          "type": "string"
+                        },
+                        "firewall_rules": {
+                          "items": {
+                            "description": "LBFirewallRule represents a single firewall rule",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "ip_type": {
+                                "type": "string"
+                              },
+                              "port": {
+                                "type": "integer"
+                              },
+                              "source": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "forwarding_rules": {
+                          "items": {
+                            "description": "ForwardingRule represent a single forwarding rule",
+                            "properties": {
+                              "backend_port": {
+                                "type": "integer"
+                              },
+                              "backend_protocol": {
+                                "type": "string"
+                              },
+                              "frontend_port": {
+                                "type": "integer"
+                              },
+                              "frontend_protocol": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "generic_info": {
+                          "description": "GenericInfo represents generic configuration of your load balancer",
+                          "properties": {
+                            "balancing_algorithm": {
+                              "type": "string"
+                            },
+                            "private_network": {
+                              "type": "string"
+                            },
+                            "proxy_protocol": {
+                              "type": "boolean"
+                            },
+                            "ssl_redirect": {
+                              "type": "boolean"
+                            },
+                            "sticky_sessions": {
+                              "description": "StickySessions represents cookie for your load balancer",
+                              "properties": {
+                                "cookie_name": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "vpc": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "has_ssl": {
+                          "type": "boolean"
+                        },
+                        "health_check": {
+                          "description": "HealthCheck represents your health check configuration for your load balancer.",
+                          "properties": {
+                            "check_interval": {
+                              "type": "integer"
+                            },
+                            "healthy_threshold": {
+                              "type": "integer"
+                            },
+                            "path": {
+                              "type": "string"
+                            },
+                            "port": {
+                              "type": "integer"
+                            },
+                            "protocol": {
+                              "type": "string"
+                            },
+                            "response_timeout": {
+                              "type": "integer"
+                            },
+                            "unhealthy_threshold": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "instances": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "ipv4": {
+                          "type": "string"
+                        },
+                        "ipv6": {
+                          "type": "string"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "nodes": {
+                          "type": "integer"
+                        },
+                        "region": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "region": {
+                  "description": "The Vultr Region of the cluster",
+                  "type": "string"
+                },
+                "vpc_id": {
+                  "description": "VPCID is the Vultr VPC ID used for the cluster's load balancer.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "region"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "spec"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "template"
+      ],
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

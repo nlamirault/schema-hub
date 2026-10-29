@@ -135,6 +135,7 @@ _113 operators and controllers, 1044 API groups. Generated from `sources.yaml` â
 | Cluster API Provider Azure | [kubernetes-sigs/cluster-api-provider-azure](https://github.com/kubernetes-sigs/cluster-api-provider-azure) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider DigitalOcean | [kubernetes-sigs/cluster-api-provider-digitalocean](https://github.com/kubernetes-sigs/cluster-api-provider-digitalocean) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider GCP | [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp) | `bootstrap.cluster.x-k8s.io`, `infrastructure.cluster.x-k8s.io` |
+| Cluster API Provider Vultr | [vultr/cluster-api-provider-vultr](https://github.com/vultr/cluster-api-provider-vultr) | `infrastructure.cluster.x-k8s.io` |
 | Crossplane | [crossplane/crossplane](https://github.com/crossplane/crossplane) | 4 API groups â€” see `sources.yaml` (`crossplane`) |
 | Karpenter | [kubernetes-sigs/karpenter](https://github.com/kubernetes-sigs/karpenter) | `karpenter.sh` |
 | Karpenter (AWS) | [aws/karpenter-provider-aws](https://github.com/aws/karpenter-provider-aws) | `karpenter.k8s.aws` |
