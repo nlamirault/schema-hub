@@ -757,6 +757,14 @@ sources:
   groups:
   - infrastructure.cluster.x-k8s.io
   project: cluster-api
+- id: cluster-api-provider-digitalocean
+  name: Cluster API Provider DigitalOcean
+  category: Kubernetes
+  cncf: null
+  upstream: kubernetes-sigs/cluster-api-provider-digitalocean
+  groups:
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
 - id: cluster-api-provider-gcp
   name: Cluster API Provider GCP
   category: Kubernetes
@@ -771,6 +779,22 @@ sources:
   category: Kubernetes
   cncf: null
   upstream: syself/cluster-api-provider-hetzner
+  groups:
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
+- id: cluster-api-provider-vcluster
+  name: Cluster API Provider vCluster
+  category: Kubernetes
+  cncf: null
+  upstream: loft-sh/cluster-api-provider-vcluster
+  groups:
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
+- id: cluster-api-provider-vultr
+  name: Cluster API Provider Vultr
+  category: Kubernetes
+  cncf: null
+  upstream: vultr/cluster-api-provider-vultr
   groups:
   - infrastructure.cluster.x-k8s.io
   project: cluster-api

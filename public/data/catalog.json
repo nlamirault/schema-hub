@@ -41085,6 +41085,69 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "docluster",
+        "version": "v1alpha4",
+        "file": "infrastructure.cluster.x-k8s.io/docluster_v1alpha4.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha4/docluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "docluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/docluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/docluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "doclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/doclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/doclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachine",
+        "version": "v1alpha4",
+        "file": "infrastructure.cluster.x-k8s.io/domachine_v1alpha4.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha4/domachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/domachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/domachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachinetemplate",
+        "version": "v1alpha4",
+        "file": "infrastructure.cluster.x-k8s.io/domachinetemplate_v1alpha4.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha4/domachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "domachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/domachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/domachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "gcpcluster",
         "version": "v1beta1",
         "file": "infrastructure.cluster.x-k8s.io/gcpcluster_v1beta1.json",
@@ -41323,6 +41386,69 @@
         "version": "v1beta2",
         "file": "infrastructure.cluster.x-k8s.io/rosaroleconfig_v1beta2.json",
         "slug": "infrastructure.cluster.x-k8s.io/v1beta2/rosaroleconfig",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vcluster",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/vcluster_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/vcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrbaremetalmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrbaremetalmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrbaremetalmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrbaremetalmachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrbaremetalmachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrbaremetalmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrcluster",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrcluster_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrclustertemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrclustertemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrmachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrmachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrmachinetemplate",
         "category": "Kubernetes",
         "upstream": "kubernetes-sigs/cluster-api",
         "cncf_maturity": "incubating"
