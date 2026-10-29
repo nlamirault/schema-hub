@@ -41490,6 +41490,132 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "scalewaycluster",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaycluster_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/scalewaycluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaycluster",
+        "version": "v1alpha2",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaycluster_v1alpha2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha2/scalewaycluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewayclustertemplate",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/scalewayclustertemplate_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/scalewayclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewayclustertemplate",
+        "version": "v1alpha2",
+        "file": "infrastructure.cluster.x-k8s.io/scalewayclustertemplate_v1alpha2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha2/scalewayclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymachine",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymachine_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/scalewaymachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymachine",
+        "version": "v1alpha2",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymachine_v1alpha2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha2/scalewaymachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymachinetemplate",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymachinetemplate_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/scalewaymachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymachinetemplate",
+        "version": "v1alpha2",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymachinetemplate_v1alpha2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha2/scalewaymachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymanagedcluster",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymanagedcluster_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/scalewaymanagedcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymanagedcluster",
+        "version": "v1alpha2",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymanagedcluster_v1alpha2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha2/scalewaymanagedcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymanagedcontrolplane",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymanagedcontrolplane_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/scalewaymanagedcontrolplane",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymanagedcontrolplane",
+        "version": "v1alpha2",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymanagedcontrolplane_v1alpha2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha2/scalewaymanagedcontrolplane",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymanagedmachinepool",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymanagedmachinepool_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/scalewaymanagedmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "scalewaymanagedmachinepool",
+        "version": "v1alpha2",
+        "file": "infrastructure.cluster.x-k8s.io/scalewaymanagedmachinepool_v1alpha2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha2/scalewaymanagedmachinepool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "vcluster",
         "version": "v1alpha1",
         "file": "infrastructure.cluster.x-k8s.io/vcluster_v1alpha1.json",

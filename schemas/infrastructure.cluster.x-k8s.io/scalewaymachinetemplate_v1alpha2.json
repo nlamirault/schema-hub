@@ -1,0 +1,244 @@
+{
+  "description": "ScalewayMachineTemplate is the Schema for the scalewaymachinetemplates API",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "spec defines the desired state of ScalewayMachineTemplate",
+      "properties": {
+        "template": {
+          "description": "template is a ScalewayMachine template resource.",
+          "properties": {
+            "metadata": {
+              "description": "metadata is a Standard object's metadata.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
+              "minProperties": 1,
+              "properties": {
+                "annotations": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "annotations is an unstructured key value map stored with a resource that may be\nset by external tools to store and retrieve arbitrary metadata. They are not\nqueryable and should be preserved when modifying objects.\nMore info: http://kubernetes.io/docs/user-guide/annotations",
+                  "type": "object"
+                },
+                "labels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "labels is a map of string keys and values that can be used to organize and categorize\n(scope and select) objects. May match selectors of replication controllers\nand services.\nMore info: http://kubernetes.io/docs/user-guide/labels",
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "spec": {
+              "description": "spec defines the desired state of ScalewayMachine",
+              "properties": {
+                "additionalVolumes": {
+                  "description": "additionalVolumes to be created and attached to the instance before it's first started.\nThese volumes are deleted during instance deletion.",
+                  "items": {
+                    "description": "AdditionalVolume defines the characteristics of an additional volume.",
+                    "minProperties": 1,
+                    "properties": {
+                      "iops": {
+                        "description": "iops is the number of IOPS requested for the disk. This is only applicable for block volumes.",
+                        "format": "int64",
+                        "minimum": 5000,
+                        "type": "integer"
+                      },
+                      "size": {
+                        "description": "size of the volume in GB.",
+                        "format": "int64",
+                        "maximum": 10000,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "type": {
+                        "default": "block",
+                        "description": "type of the volume. Note that not all types of instances support local or\nscratch volumes. Please refer to the Scaleway documentation for more details\non supported volume types per instance type.",
+                        "enum": [
+                          "local",
+                          "block",
+                          "scratch"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "iops can only be set for block volumes",
+                        "rule": "!has(self.iops) || has(self.type) && self.type == 'block'"
+                      }
+                    ]
+                  },
+                  "maxItems": 15,
+                  "minItems": 1,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                },
+                "commercialType": {
+                  "description": "commercialType of instance (e.g. PRO2-S).",
+                  "maxLength": 20,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "image": {
+                  "description": "image defines an image ID, Name or Label to use to create the instance.",
+                  "maxProperties": 1,
+                  "minProperties": 1,
+                  "properties": {
+                    "id": {
+                      "description": "id of the Scaleway resource.",
+                      "maxLength": 36,
+                      "minLength": 36,
+                      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                      "type": "string"
+                    },
+                    "label": {
+                      "description": "label of the image (as defined in the marketplace).",
+                      "maxLength": 100,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "name of the Scaleway resource.",
+                      "maxLength": 100,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "placementGroup": {
+                  "description": "placementGroup allows attaching a Placement Group to the instance.",
+                  "maxProperties": 1,
+                  "minProperties": 1,
+                  "properties": {
+                    "id": {
+                      "description": "id of the Scaleway resource.",
+                      "maxLength": 36,
+                      "minLength": 36,
+                      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "name of the Scaleway resource.",
+                      "maxLength": 100,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "providerID": {
+                  "description": "providerID must match the provider ID as seen on the node object corresponding to this machine.",
+                  "maxLength": 512,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "publicNetwork": {
+                  "description": "publicNetwork allows attaching public IPs to the instance.",
+                  "minProperties": 1,
+                  "properties": {
+                    "enableIPv4": {
+                      "description": "enableIPv4 defines whether server should have an IPv4 created and attached.",
+                      "type": "boolean"
+                    },
+                    "enableIPv6": {
+                      "description": "enableIPv6 defines whether server should have an IPv6 created and attached.",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "rootVolume": {
+                  "description": "rootVolume defines the characteristics of the system (root) volume.",
+                  "minProperties": 1,
+                  "properties": {
+                    "iops": {
+                      "description": "iops is the number of IOPS requested for the disk. This is only applicable for block volumes.",
+                      "format": "int64",
+                      "minimum": 5000,
+                      "type": "integer"
+                    },
+                    "size": {
+                      "default": 20,
+                      "description": "size of the root volume in GB. Defaults to 20 GB.",
+                      "format": "int64",
+                      "maximum": 10000,
+                      "minimum": 8,
+                      "type": "integer"
+                    },
+                    "type": {
+                      "default": "block",
+                      "description": "type of the root volume. Can be local or block. Note that not all types\nof instances support local volumes.",
+                      "enum": [
+                        "local",
+                        "block"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "iops can only be set for block volumes",
+                      "rule": "!has(self.iops) || has(self.type) && self.type == 'block'"
+                    }
+                  ]
+                },
+                "securityGroup": {
+                  "description": "securityGroup allows attaching a Security Group to the instance.",
+                  "maxProperties": 1,
+                  "minProperties": 1,
+                  "properties": {
+                    "id": {
+                      "description": "id of the Scaleway resource.",
+                      "maxLength": 36,
+                      "minLength": 36,
+                      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "name of the Scaleway resource.",
+                      "maxLength": 100,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "commercialType",
+                "image"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "spec"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "template"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}
