@@ -491,6 +491,16 @@
     ]
   },
   {
+    "id": "security-profiles-operator",
+    "name": "Security Profiles Operator",
+    "category": "Security",
+    "cncf": null,
+    "upstream": "kubernetes-sigs/security-profiles-operator",
+    "groups": [
+      "security-profiles-operator.x-k8s.io"
+    ]
+  },
+  {
     "id": "sigstore-policy-controller",
     "name": "Sigstore Policy Controller",
     "category": "Security",

@@ -25,7 +25,7 @@ export choice=individual
 
 Array of YAML filenames.
 
-- For `individual`: the upstream filenames to download.
+- For `individual`: the upstream filenames to download. A file may hold several CRDs separated by `---`; every document must be a `CustomResourceDefinition`.
 - For `bundle` and `kustomize`: the filenames that `kubectl slice` produces from the bundle.
 - For `swagger`: not used (leave empty or omit).
 

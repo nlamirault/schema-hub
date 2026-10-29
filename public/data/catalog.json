@@ -61729,6 +61729,72 @@
         "upstream": "GoogleCloudPlatform/k8s-config-connector"
       }
     ],
+    "security-profiles-operator.x-k8s.io": [
+      {
+        "kind": "apparmorprofile",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/apparmorprofile_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/apparmorprofile",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      },
+      {
+        "kind": "profilebinding",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/profilebinding_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/profilebinding",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      },
+      {
+        "kind": "profilerecording",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/profilerecording_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/profilerecording",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      },
+      {
+        "kind": "rawselinuxprofile",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/rawselinuxprofile_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/rawselinuxprofile",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      },
+      {
+        "kind": "seccompprofile",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/seccompprofile_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/seccompprofile",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      },
+      {
+        "kind": "securityprofilenodestatus",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/securityprofilenodestatus_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/securityprofilenodestatus",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      },
+      {
+        "kind": "securityprofilesoperatordaemon",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/securityprofilesoperatordaemon_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/securityprofilesoperatordaemon",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      },
+      {
+        "kind": "selinuxprofile",
+        "version": "v1",
+        "file": "security-profiles-operator.x-k8s.io/selinuxprofile_v1.json",
+        "slug": "security-profiles-operator.x-k8s.io/v1/selinuxprofile",
+        "category": "Security",
+        "upstream": "kubernetes-sigs/security-profiles-operator"
+      }
+    ],
     "security.azure.m.upbound.io": [
       {
         "kind": "advancedthreatprotection",

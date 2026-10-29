@@ -5225,6 +5225,12 @@
     "cncf_maturity": null,
     "project": "k8s-config-connector"
   },
+  "security-profiles-operator.x-k8s.io": {
+    "category": "Security",
+    "upstream": "kubernetes-sigs/security-profiles-operator",
+    "cncf_maturity": null,
+    "project": "security-profiles-operator"
+  },
   "security.azure.m.upbound.io": {
     "category": "Azure Ecosystem",
     "upstream": "crossplane-contrib/provider-upjet-azure",
