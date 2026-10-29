@@ -13,7 +13,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=aws-controllers-k8s/route53-controller
-export VERSION=1.4.4
+export VERSION=1.7.1
 
 function generate_url {
   local crd_file=$1
