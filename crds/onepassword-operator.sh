@@ -9,7 +9,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=1Password/onepassword-operator
-export VERSION=1.12.0
+export VERSION=1.12.1
 
 function generate_url {
   local crd_file=$1
