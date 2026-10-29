@@ -16,7 +16,7 @@ from it.
 
 <!-- BEGIN GENERATED: generate-schemas-reference.py -->
 
-_111 operators and controllers, 1042 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
+_112 operators and controllers, 1043 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
 
 ## AI Orchestration
 
@@ -201,6 +201,7 @@ _111 operators and controllers, 1042 API groups. Generated from `sources.yaml` �
 | External Secrets Operator | [external-secrets/external-secrets](https://github.com/external-secrets/external-secrets) | `external-secrets.io`, `generators.external-secrets.io` |
 | Infisical Operator | [Infisical/kubernetes-operator](https://github.com/Infisical/kubernetes-operator) | `secrets.infisical.com` |
 | Secrets Store CSI Driver | [kubernetes-sigs/secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) | `secrets-store.csi.x-k8s.io` |
+| Security Profiles Operator | [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator) | `security-profiles-operator.x-k8s.io` |
 | Sigstore Policy Controller | [sigstore/policy-controller](https://github.com/sigstore/policy-controller) | `policy.sigstore.dev` |
 | Vault Secrets Operator | [hashicorp/vault-secrets-operator](https://github.com/hashicorp/vault-secrets-operator) | `secrets.hashicorp.com` |
 

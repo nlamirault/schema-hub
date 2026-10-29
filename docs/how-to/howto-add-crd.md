@@ -42,6 +42,8 @@ function generate_url {
 }
 ```
 
+A file listed in `FILES` may contain several CRDs separated by `---` (for example, Security Profiles Operator's `selinuxpolicy.yaml` defines both `SelinuxProfile` and `RawSelinuxProfile`). A schema is generated for each CRD in the file, but every document in it must be a `CustomResourceDefinition` or the whole file is skipped.
+
 ### `bundle` — all CRDs in a single file
 
 Use when the upstream project ships a single YAML file containing all CRDs concatenated with `---` separators.

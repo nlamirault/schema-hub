@@ -118,8 +118,10 @@ function manage_crd {
   local jsonschema_dir=$2
 
   log_debug "[kubernetes] CRD file: ${crd_file}"
+  # A CRD file may hold several YAML documents (e.g. two CRDs in one file):
+  # every non-empty document must be a CustomResourceDefinition.
   local kind
-  kind=$(yq e '.kind' "${crd_file}" 2>/dev/null)
+  kind=$(yq ea '[select(.kind != null) | .kind] | unique | join(",")' "${crd_file}" 2>/dev/null)
   if [[ "${kind}" != "CustomResourceDefinition" ]]; then
     log_error "[kubernetes] Not a CRD (kind=${kind}): ${crd_file}"
     return 1
