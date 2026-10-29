@@ -1,0 +1,284 @@
+{
+  "description": "IBMPowerVSMachineTemplate is the Schema for the ibmpowervsmachinetemplates API.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "spec defines the desired state of IBMPowerVSMachineTemplate",
+      "properties": {
+        "template": {
+          "description": "template is the IBMPowerVSMachineTemplateResource.",
+          "minProperties": 1,
+          "properties": {
+            "metadata": {
+              "description": "metadata is the standard object's metadata.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
+              "minProperties": 1,
+              "properties": {
+                "annotations": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "annotations is an unstructured key value map stored with a resource that may be\nset by external tools to store and retrieve arbitrary metadata. They are not\nqueryable and should be preserved when modifying objects.\nMore info: http://kubernetes.io/docs/user-guide/annotations",
+                  "type": "object"
+                },
+                "labels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "labels is a map of string keys and values that can be used to organize and categorize\n(scope and select) objects. May match selectors of replication controllers\nand services.\nMore info: http://kubernetes.io/docs/user-guide/labels",
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "spec": {
+              "description": "spec is the IBMPowerVSMachineSpec.",
+              "minProperties": 1,
+              "properties": {
+                "image": {
+                  "description": "image specifies how to resolve the OS image used to create the instance.",
+                  "properties": {
+                    "import": {
+                      "description": "import is a reference to an IBMPowerVSImage CRD, which manages importing an image from an IBM COS Bucket.",
+                      "properties": {
+                        "name": {
+                          "description": "name of the IBMPowerVSImage resource.",
+                          "maxLength": 253,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "reference": {
+                      "description": "reference contains the information to identify an existing image in the PowerVS workspace.\nSupported identifiers are Name, ID, and RegEx.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "stockImage": {
+                      "description": "stockImage identifies an IBM-provided stock catalog image by Name or ID.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "type defines whether to use an existing image in IBM Cloud, import a new one via the IBMPowerVSImage CRD,\nor use an IBM-provided stock catalog image.",
+                      "enum": [
+                        "Reference",
+                        "Import",
+                        "StockImage"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                      "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                    },
+                    {
+                      "message": "import configuration is required when type is Import, and forbidden otherwise",
+                      "rule": "self.type == 'Import' ? has(self.import) : !has(self.import)"
+                    },
+                    {
+                      "message": "stockImage configuration is required when type is StockImage, and forbidden otherwise",
+                      "rule": "self.type == 'StockImage' ? has(self.stockImage) : !has(self.stockImage)"
+                    }
+                  ]
+                },
+                "memoryGiB": {
+                  "description": "memoryGiB is the size of a virtual machine's memory, in GiB.\nmaximum value for the MemoryGiB depends on the selected SystemType, which can be found here: https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-pricing-virtual-server-on-cloud\nThe minimum memory is 2 GiB.\nWhen omitted, this means the user has no opinion and the platform is left to choose a reasonable\ndefault, which is subject to change over time. The current default is 2.",
+                  "format": "int32",
+                  "minimum": 2,
+                  "type": "integer"
+                },
+                "network": {
+                  "description": "network is the reference to the Network to use for this instance.\nSupported identifiers in ResourceIdentifier are Name, ID, and RegEx and can be obtained from IBM Cloud UI or IBM Cloud CLI.",
+                  "minProperties": 1,
+                  "properties": {
+                    "id": {
+                      "description": "id of the resource.",
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "name of the resource.",
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "exactly one of id or name must be specified",
+                      "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                    }
+                  ]
+                },
+                "processorType": {
+                  "description": "processorType is the VM instance processor type.\nIt must be set to one of the following values: Dedicated, Capped or Shared.\nDedicated: resources are allocated for a specific client, The hypervisor makes a 1:1 binding of a partition’s processor to a physical processor core.\nShared: Shared among other clients.\nCapped: Shared, but resources do not expand beyond those that are requested, the amount of CPU time is Capped to the value specified for the entitlement.\nif the processorType is selected as Dedicated, then processors value cannot be fractional.\nWhen omitted, this means that the user has no opinion and the platform is left to choose a\nreasonable default, which is subject to change over time. The current default is Shared.",
+                  "enum": [
+                    "Dedicated",
+                    "Shared",
+                    "Capped",
+                    ""
+                  ],
+                  "type": "string"
+                },
+                "processors": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "description": "processors is the number of virtual processors in a virtual machine.\nwhen the processorType is selected as Dedicated the processors value cannot be fractional.\nmaximum value for the Processors depends on the selected SystemType,\nand minimum value for Processors depends on the selected ProcessorType, which can be found here: https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-pricing-virtual-server-on-cloud.\nwhen ProcessorType is set as Shared or Capped, The minimum processors is 0.25.\nwhen ProcessorType is set as Dedicated, The minimum processors is 1.\nWhen omitted, this means that the user has no opinion and the platform is left to choose a\nreasonable default, which is subject to change over time. The default is set based on the selected ProcessorType.\nwhen ProcessorType selected as Dedicated, the default is set to 1.\nwhen ProcessorType selected as Shared or Capped, the default is set to 0.25.",
+                  "x-kubernetes-int-or-string": true
+                },
+                "providerID": {
+                  "description": "providerID is the unique identifier as specified by the cloud provider.",
+                  "maxLength": 512,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "sshKey": {
+                  "description": "sshKey is the name of the SSH key pair provided to the VM for authenticating users.",
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "systemType": {
+                  "description": "systemType is the System type used to host the instance.\nsystemType determines the number of cores and memory that is available.\nFew of the supported SystemTypes are e980,s1022,s1122,e1050,e1080.\nWhen omitted, this means that the user has no opinion and the platform is left to choose a\nreasonable default, which is subject to change over time. The current default is s1022 which is generally available.",
+                  "maxLength": 16,
+                  "minLength": 1,
+                  "pattern": "^[a-z][0-9]+$",
+                  "type": "string"
+                },
+                "workspace": {
+                  "description": "workspace identifies the PowerVS workspace where the instance will be created.\nIf omitted, the workspace is inherited from the associated IBMPowerVSCluster.\nSupported identifiers are name and id.\nMore details: https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-creating-power-virtual-server",
+                  "minProperties": 1,
+                  "properties": {
+                    "id": {
+                      "description": "id of the resource.",
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "name of the resource.",
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "exactly one of id or name must be specified",
+                      "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "image"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "template"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "description": "status defines the observed state of IBMPowerVSMachineTemplate",
+      "minProperties": 1,
+      "properties": {
+        "capacity": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "pattern": "^(\\+|-)?(([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\\+|-)?(([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))))?$",
+            "x-kubernetes-int-or-string": true
+          },
+          "description": "capacity defines the resource capacity for this machine.\nThis value is used for autoscaling from zero operations as defined in:\nhttps://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20210310-opt-in-autoscaling-from-zero.md",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}

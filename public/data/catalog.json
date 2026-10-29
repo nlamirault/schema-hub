@@ -41346,6 +41346,159 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "ibmpowervscluster",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervscluster_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmpowervscluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervscluster",
+        "version": "v1beta3",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervscluster_v1beta3.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta3/ibmpowervscluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsclustertemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsclustertemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmpowervsclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsclustertemplate",
+        "version": "v1beta3",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsclustertemplate_v1beta3.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta3/ibmpowervsclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsimage",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsimage_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmpowervsimage",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsimage",
+        "version": "v1beta3",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsimage_v1beta3.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta3/ibmpowervsimage",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmpowervsmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsmachine",
+        "version": "v1beta3",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsmachine_v1beta3.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta3/ibmpowervsmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsmachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsmachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmpowervsmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmpowervsmachinetemplate",
+        "version": "v1beta3",
+        "file": "infrastructure.cluster.x-k8s.io/ibmpowervsmachinetemplate_v1beta3.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta3/ibmpowervsmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmvpccluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ibmvpccluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ibmvpccluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmvpccluster",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmvpccluster_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmvpccluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmvpcclustertemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmvpcclustertemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmvpcclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmvpcmachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ibmvpcmachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ibmvpcmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmvpcmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmvpcmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmvpcmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmvpcmachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/ibmvpcmachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/ibmvpcmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "ibmvpcmachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/ibmvpcmachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/ibmvpcmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "openstackcluster",
         "version": "v1beta1",
         "file": "infrastructure.cluster.x-k8s.io/openstackcluster_v1beta1.json",

@@ -1,0 +1,1955 @@
+{
+  "description": "IBMPowerVSClusterTemplate is the Schema for the ibmpowervsclustertemplates API.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "spec defines the desired state of IBMPowerVSClusterTemplate",
+      "properties": {
+        "template": {
+          "description": "template is the IBMPowerVSClusterTemplateResource.",
+          "minProperties": 1,
+          "properties": {
+            "metadata": {
+              "description": "metadata is the standard object's metadata.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
+              "minProperties": 1,
+              "properties": {
+                "annotations": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "annotations is an unstructured key value map stored with a resource that may be\nset by external tools to store and retrieve arbitrary metadata. They are not\nqueryable and should be preserved when modifying objects.\nMore info: http://kubernetes.io/docs/user-guide/annotations",
+                  "type": "object"
+                },
+                "labels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "labels is a map of string keys and values that can be used to organize and categorize\n(scope and select) objects. May match selectors of replication controllers\nand services.\nMore info: http://kubernetes.io/docs/user-guide/labels",
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "spec": {
+              "description": "spec is the IBMPowerVSClusterSpec.",
+              "properties": {
+                "controlPlaneEndpoint": {
+                  "description": "controlPlaneEndpoint represents the endpoint used to communicate with the control plane.",
+                  "minProperties": 1,
+                  "properties": {
+                    "host": {
+                      "description": "host is the hostname on which the API server is serving.",
+                      "maxLength": 512,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "port": {
+                      "description": "port is the port on which the API server is serving.",
+                      "format": "int32",
+                      "maximum": 65535,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "cosInstance": {
+                  "description": "cosInstance contains options to configure a supporting IBM Cloud COS instance and bucket\nfor this cluster. It is currently used for nodes requiring Ignition for bootstrapping.",
+                  "properties": {
+                    "bucketName": {
+                      "description": "bucketName is the name of the IBM Cloud COS bucket used for Ignition bootstrapping.",
+                      "maxLength": 63,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "bucketRegion": {
+                      "description": "bucketRegion is the IBM Cloud region where the COS bucket resides or will be created.",
+                      "maxLength": 32,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "provision": {
+                      "description": "provision contains the configuration for provisioning a new COS instance and bucket.",
+                      "minProperties": 1,
+                      "properties": {
+                        "name": {
+                          "description": "name defines the explicit name of the IBM Cloud COS instance to be created.\nIf omitted, the system will dynamically create it using the cluster name.",
+                          "maxLength": 63,
+                          "minLength": 3,
+                          "pattern": "^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "reference": {
+                      "description": "reference contains the information to identify an existing COS instance.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "type defines whether to use an existing COS instance or provision a new one.",
+                      "enum": [
+                        "Reference",
+                        "Provision"
+                      ],
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "COS instance type is immutable once set",
+                          "rule": "self == oldSelf"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                      "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                    },
+                    {
+                      "message": "provision configuration is forbidden when type is not Provision; it is optional when type is Provision",
+                      "rule": "self.type != 'Provision' ? !has(self.provision) : true"
+                    }
+                  ]
+                },
+                "ignition": {
+                  "description": "ignition defines options related to the bootstrapping systems where Ignition is used.",
+                  "minProperties": 1,
+                  "properties": {
+                    "version": {
+                      "description": "version defines which version of Ignition will be used to generate bootstrap data.",
+                      "enum": [
+                        "2.3",
+                        "2.4",
+                        "3.0",
+                        "3.1",
+                        "3.2",
+                        "3.3",
+                        "3.4"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "loadBalancers": {
+                  "description": "loadBalancers contains information about IBM Cloud VPC Load Balancer resources.\nThis field is rejected by the API if the Topology is set to VirtualIP.",
+                  "items": {
+                    "description": "LoadBalancerSource defines how the IBM Cloud VPC Load Balancer is sourced.",
+                    "properties": {
+                      "provision": {
+                        "description": "provision contains the configuration for provisioning a new Load Balancer.",
+                        "minProperties": 1,
+                        "properties": {
+                          "additionalListeners": {
+                            "description": "additionalListeners sets the additional listeners for the load balancer.",
+                            "items": {
+                              "description": "AdditionalListener defines the desired state of an\nadditional listener on a VPC load balancer.",
+                              "properties": {
+                                "defaultPoolName": {
+                                  "description": "defaultPoolName defines the name of a VPC Load Balancer Backend Pool to use for the VPC Load Balancer Listener.",
+                                  "maxLength": 63,
+                                  "minLength": 1,
+                                  "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                                  "type": "string"
+                                },
+                                "port": {
+                                  "description": "port sets the port for the additional listener.",
+                                  "format": "int64",
+                                  "maximum": 65535,
+                                  "minimum": 1,
+                                  "type": "integer"
+                                },
+                                "protocol": {
+                                  "description": "protocol defines the protocol to use for the VPC Load Balancer Listener.\nWill default to TCP protocol if not specified.",
+                                  "enum": [
+                                    "http",
+                                    "https",
+                                    "tcp",
+                                    "udp"
+                                  ],
+                                  "type": "string"
+                                },
+                                "selector": {
+                                  "description": "selector is used to find IBMPowerVSMachines with matching labels.\nIf the label matches, the machine is then added to the load balancer listener configuration.",
+                                  "properties": {
+                                    "matchExpressions": {
+                                      "description": "matchExpressions is a list of label selector requirements. The requirements are ANDed.",
+                                      "items": {
+                                        "description": "A label selector requirement is a selector that contains values, a key, and an operator that\nrelates the key and values.",
+                                        "properties": {
+                                          "key": {
+                                            "description": "key is the label key that the selector applies to.",
+                                            "type": "string"
+                                          },
+                                          "operator": {
+                                            "description": "operator represents a key's relationship to a set of values.\nValid operators are In, NotIn, Exists and DoesNotExist.",
+                                            "type": "string"
+                                          },
+                                          "values": {
+                                            "description": "values is an array of string values. If the operator is In or NotIn,\nthe values array must be non-empty. If the operator is Exists or DoesNotExist,\nthe values array must be empty. This array is replaced during a strategic\nmerge patch.",
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "type": "array",
+                                            "x-kubernetes-list-type": "atomic"
+                                          }
+                                        },
+                                        "required": [
+                                          "key",
+                                          "operator"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array",
+                                      "x-kubernetes-list-type": "atomic"
+                                    },
+                                    "matchLabels": {
+                                      "additionalProperties": {
+                                        "type": "string"
+                                      },
+                                      "description": "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels\nmap is equivalent to an element of matchExpressions, whose key field is \"key\", the\noperator is \"In\", and the values array contains only \"value\". The requirements are ANDed.",
+                                      "type": "object"
+                                    }
+                                  },
+                                  "type": "object",
+                                  "x-kubernetes-map-type": "atomic"
+                                }
+                              },
+                              "required": [
+                                "port"
+                              ],
+                              "type": "object"
+                            },
+                            "maxItems": 10,
+                            "type": "array",
+                            "x-kubernetes-list-map-keys": [
+                              "port"
+                            ],
+                            "x-kubernetes-list-type": "map"
+                          },
+                          "backendPools": {
+                            "description": "backendPools defines the load balancer's backend pools.",
+                            "items": {
+                              "description": "LoadBalancerBackendPool defines the desired configuration of a VPC Load Balancer Backend Pool.",
+                              "properties": {
+                                "algorithm": {
+                                  "description": "algorithm defines the load balancing algorithm to use.",
+                                  "enum": [
+                                    "least_connections",
+                                    "round_robin",
+                                    "weighted_round_robin"
+                                  ],
+                                  "type": "string"
+                                },
+                                "failsafePolicy": {
+                                  "description": "failsafePolicy defines the action to take when all members of the pool are unhealthy.\nFor route-mode network load balancers, use \"bypass\" to send traffic directly to member IPs.\nWhen omitted, the IBM Cloud default for the load balancer profile is used.",
+                                  "enum": [
+                                    "bypass",
+                                    "drop",
+                                    "fail",
+                                    "forward"
+                                  ],
+                                  "type": "string"
+                                },
+                                "healthMonitor": {
+                                  "description": "healthMonitor defines the backend pool's health monitor.",
+                                  "properties": {
+                                    "delay": {
+                                      "description": "delay defines the seconds to wait between health checks.",
+                                      "format": "int64",
+                                      "maximum": 60,
+                                      "minimum": 2,
+                                      "type": "integer"
+                                    },
+                                    "port": {
+                                      "description": "port defines the port to perform health monitoring on.",
+                                      "format": "int64",
+                                      "maximum": 65535,
+                                      "minimum": 1,
+                                      "type": "integer"
+                                    },
+                                    "retries": {
+                                      "description": "retries defines the max retries for health check.",
+                                      "format": "int64",
+                                      "maximum": 10,
+                                      "minimum": 1,
+                                      "type": "integer"
+                                    },
+                                    "timeout": {
+                                      "description": "timeout defines the seconds to wait for a health check response.",
+                                      "format": "int64",
+                                      "maximum": 59,
+                                      "minimum": 1,
+                                      "type": "integer"
+                                    },
+                                    "type": {
+                                      "description": "type defines the protocol used for health checks.",
+                                      "enum": [
+                                        "http",
+                                        "https",
+                                        "tcp"
+                                      ],
+                                      "type": "string"
+                                    },
+                                    "urlPath": {
+                                      "description": "urlPath defines the URL to use for health monitoring.",
+                                      "maxLength": 8192,
+                                      "minLength": 1,
+                                      "pattern": "^\\/(([a-zA-Z0-9-._~!$&'()*+,;=:@]|%[a-fA-F0-9]{2})+(\\/([a-zA-Z0-9-._~!$&'()*+,;=:@]|%[a-fA-F0-9]{2})*)*)?(\\\\?([a-zA-Z0-9-._~!$&'()*+,;=:@\\/?]|%[a-fA-F0-9]{2})*)?$",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "delay",
+                                    "retries",
+                                    "timeout",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "x-kubernetes-validations": [
+                                    {
+                                      "message": "health monitor's delay must be greater than the timeout",
+                                      "rule": "self.delay > self.timeout"
+                                    }
+                                  ]
+                                },
+                                "name": {
+                                  "description": "name defines the name of the Backend Pool.",
+                                  "maxLength": 63,
+                                  "minLength": 1,
+                                  "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                                  "type": "string"
+                                },
+                                "protocol": {
+                                  "description": "protocol defines the protocol to use for the Backend Pool.",
+                                  "enum": [
+                                    "http",
+                                    "https",
+                                    "tcp",
+                                    "udp"
+                                  ],
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "algorithm",
+                                "healthMonitor",
+                                "protocol"
+                              ],
+                              "type": "object"
+                            },
+                            "maxItems": 10,
+                            "type": "array",
+                            "x-kubernetes-list-type": "atomic"
+                          },
+                          "name": {
+                            "description": "name sets the name of the VPC load balancer.\nIf omitted, the system will dynamically create it.",
+                            "maxLength": 63,
+                            "minLength": 1,
+                            "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                            "type": "string"
+                          },
+                          "profile": {
+                            "description": "profile defines the profile to use for this load balancer.\nSupported values are \"application\" and \"network-fixed\".\nWhen omitted, the IBM Cloud default (application) is used.",
+                            "enum": [
+                              "application",
+                              "network-fixed"
+                            ],
+                            "type": "string"
+                          },
+                          "routeMode": {
+                            "description": "routeMode enables routing mode on the load balancer, making it act as a Layer 3\nnext-hop router rather than a load balancer. Only valid when profile is \"network-fixed\".\nRequired when using the load balancer as a VNF next-hop for a VPC routing table route.",
+                            "enum": [
+                              "Enabled",
+                              "Disabled"
+                            ],
+                            "type": "string"
+                          },
+                          "securityGroups": {
+                            "description": "securityGroups defines the Security Groups to attach to the load balancer.",
+                            "items": {
+                              "description": "ResourceIdentifier defines the identification of a specific PowerVS resource by ID or Name.",
+                              "minProperties": 1,
+                              "properties": {
+                                "id": {
+                                  "description": "id of the resource.",
+                                  "maxLength": 64,
+                                  "minLength": 1,
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "name of the resource.",
+                                  "maxLength": 128,
+                                  "minLength": 1,
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object",
+                              "x-kubernetes-validations": [
+                                {
+                                  "message": "exactly one of id or name must be specified",
+                                  "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                                }
+                              ]
+                            },
+                            "maxItems": 5,
+                            "type": "array",
+                            "x-kubernetes-list-type": "atomic"
+                          },
+                          "subnets": {
+                            "description": "subnets defines the VPC Subnets to attach to the load balancer.",
+                            "items": {
+                              "description": "ResourceIdentifier defines the identification of a specific PowerVS resource by ID or Name.",
+                              "minProperties": 1,
+                              "properties": {
+                                "id": {
+                                  "description": "id of the resource.",
+                                  "maxLength": 64,
+                                  "minLength": 1,
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "name of the resource.",
+                                  "maxLength": 128,
+                                  "minLength": 1,
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object",
+                              "x-kubernetes-validations": [
+                                {
+                                  "message": "exactly one of id or name must be specified",
+                                  "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                                }
+                              ]
+                            },
+                            "maxItems": 15,
+                            "minItems": 1,
+                            "type": "array",
+                            "x-kubernetes-list-type": "atomic"
+                          },
+                          "type": {
+                            "description": "type indicates whether the load balancer is public or private.\nWhen omitted, defaults to Public.",
+                            "enum": [
+                              "Public",
+                              "Private"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "routeMode can only be enabled when profile is network-fixed",
+                            "rule": "!has(self.routeMode) || self.routeMode != 'Enabled' || (has(self.profile) && self.profile == 'network-fixed')"
+                          }
+                        ]
+                      },
+                      "reference": {
+                        "description": "reference contains the information to identify an existing Load Balancer.",
+                        "minProperties": 1,
+                        "properties": {
+                          "id": {
+                            "description": "id of the resource.",
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "name of the resource.",
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "exactly one of id or name must be specified",
+                            "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                          }
+                        ]
+                      },
+                      "type": {
+                        "description": "type defines whether to use an existing Load Balancer or provision a new one.",
+                        "enum": [
+                          "Reference",
+                          "Provision"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                        "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                      },
+                      {
+                        "message": "provision configuration is forbidden when type is not Provision",
+                        "rule": "self.type != 'Provision' ? !has(self.provision) : true"
+                      }
+                    ]
+                  },
+                  "maxItems": 50,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                },
+                "network": {
+                  "description": "network specifies how the PowerVS network should be sourced.",
+                  "properties": {
+                    "provision": {
+                      "description": "provision provides the configuration for the controller to CREATE a new Network.\nExactly one of dhcpServer or dhcpSubnet must be set when type is Provision.",
+                      "properties": {
+                        "dhcpServer": {
+                          "description": "dhcpServer contains the configuration for creating a new DHCP server (and its associated\nprivate network) via the PowerVS DHCP service API.\nRequired when type is DHCPServer; forbidden otherwise.",
+                          "minProperties": 1,
+                          "properties": {
+                            "cidr": {
+                              "description": "cidr is the CIDR for the DHCP private network.",
+                              "maxLength": 49,
+                              "minLength": 1,
+                              "pattern": "^([0-9]{1,3}\\.){3}[0-9]{1,3}($|/[0-9]{1,2})$",
+                              "type": "string"
+                            },
+                            "dnsServer": {
+                              "description": "dnsServer is the DNS Server for the DHCP service.",
+                              "maxLength": 45,
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "name is the name of the DHCP Service to be created. Only alphanumeric characters and dashes are allowed.\nIf omitted, the name will default to DHCPSERVER<CLUSTER_NAME>_Private.",
+                              "maxLength": 128,
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "snat": {
+                              "description": "snat indicates the SNAT policy for the DHCP service.\nAllowed values are \"Enabled\" and \"Disabled\".\nIf omitted, the system will choose a Enabled policy by default.",
+                              "enum": [
+                                "Enabled",
+                                "Disabled"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "dhcpSubnet": {
+                          "description": "dhcpSubnet contains the configuration for creating a plain PowerVS network with DHCP\nnatively enabled (NetworkCreate.EnableDHCP). This avoids creating a separate DHCP server\nresource and is the preferred approach for new clusters.\nRequired when type is DHCPSubnet; forbidden otherwise.",
+                          "minProperties": 1,
+                          "properties": {
+                            "cidr": {
+                              "description": "cidr is the network CIDR in notation (e.g. 192.168.0.0/24).",
+                              "maxLength": 49,
+                              "minLength": 1,
+                              "pattern": "^([0-9]{1,3}\\.){3}[0-9]{1,3}($|/[0-9]{1,2})$",
+                              "type": "string"
+                            },
+                            "dnsServers": {
+                              "description": "dnsServers is the list of DNS servers for the network.\nIf omitted, defaults to 127.0.0.1 for private (vlan) networks.",
+                              "items": {
+                                "maxLength": 45,
+                                "type": "string"
+                              },
+                              "maxItems": 2,
+                              "type": "array",
+                              "x-kubernetes-list-type": "atomic"
+                            },
+                            "name": {
+                              "description": "name is the name of the PowerVS network to be created.\nIf omitted, the name will default to <CLUSTER_NAME>-dhcpsubnet.\nOnly alphanumeric characters, dashes, and underscores are allowed.",
+                              "maxLength": 128,
+                              "minLength": 1,
+                              "pattern": "^[a-zA-Z0-9-_][a-zA-Z0-9-_]*$",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": {
+                          "description": "type defines how the network is provisioned.\nDHCPServer creates a dedicated DHCP Server and its managed private network.\nDHCPSubnet creates a plain PowerVS network with DHCP natively enabled (no separate DHCP server resource).",
+                          "enum": [
+                            "DHCPServer",
+                            "DHCPSubnet"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "dhcpServer configuration is required when type is DHCPServer, and forbidden otherwise",
+                          "rule": "self.type == 'DHCPServer' ? has(self.dhcpServer) : !has(self.dhcpServer)"
+                        },
+                        {
+                          "message": "dhcpSubnet configuration is required when type is DHCPSubnet, and forbidden otherwise",
+                          "rule": "self.type == 'DHCPSubnet' ? has(self.dhcpSubnet) : !has(self.dhcpSubnet)"
+                        }
+                      ]
+                    },
+                    "reference": {
+                      "description": "reference tells the controller to look up an EXISTING PowerVS network.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "type defines how the Network is sourced.",
+                      "enum": [
+                        "Reference",
+                        "Provision"
+                      ],
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "Network type is immutable once set",
+                          "rule": "self == oldSelf"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                      "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                    },
+                    {
+                      "message": "provision configuration is required when type is Provision, and forbidden otherwise",
+                      "rule": "self.type == 'Provision' ? has(self.provision) : !has(self.provision)"
+                    }
+                  ]
+                },
+                "resourceGroup": {
+                  "description": "resourceGroup defines the IBM Cloud Resource Group for the cluster.",
+                  "properties": {
+                    "reference": {
+                      "description": "reference specifies the existing Resource Group to use by Name or ID.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "type defines the intended action for the Resource Group.\nCurrently, only \"Reference\" is supported.",
+                      "maxLength": 32,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "reference configuration is required when type is Reference",
+                      "rule": "self.type == 'Reference' ? has(self.reference) : true"
+                    },
+                    {
+                      "message": "Provisioning a Resource Group is not yet supported in this API version",
+                      "rule": "self.type != 'Provision'"
+                    }
+                  ]
+                },
+                "subnets": {
+                  "description": "subnets configures the VPC Subnets bound to this cluster environment.",
+                  "items": {
+                    "description": "VPCSubnetSource defines how the IBM Cloud VPC Subnet is sourced.",
+                    "properties": {
+                      "provision": {
+                        "description": "provision contains the configuration for provisioning a new VPC Subnet.",
+                        "minProperties": 1,
+                        "properties": {
+                          "name": {
+                            "description": "name of the VPC Subnet to be created.\nIf omitted, the system will dynamically create the VPC subnet with name <CLUSTER_NAME>-vpcsubnet-<INDEX>.",
+                            "maxLength": 63,
+                            "minLength": 1,
+                            "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "publicGateway": {
+                        "description": "publicGateway specifies the VPC Public Gateway to attach to this subnet.\nCan be identified by name or id.",
+                        "minProperties": 1,
+                        "properties": {
+                          "id": {
+                            "description": "id of the resource.",
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "name of the resource.",
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "exactly one of id or name must be specified",
+                            "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                          }
+                        ]
+                      },
+                      "reference": {
+                        "description": "reference contains the information to identify an existing VPC Subnet.",
+                        "minProperties": 1,
+                        "properties": {
+                          "id": {
+                            "description": "id of the resource.",
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "name of the resource.",
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "exactly one of id or name must be specified",
+                            "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                          }
+                        ]
+                      },
+                      "type": {
+                        "description": "type defines whether to use an existing VPC Subnet or provision a new one.",
+                        "enum": [
+                          "Reference",
+                          "Provision"
+                        ],
+                        "type": "string"
+                      },
+                      "zone": {
+                        "description": "zone of the IBM Cloud VPC Subnet.\nWhen provisioning, if omitted, a random zone is picked from available zones of the VPC.Region.",
+                        "maxLength": 63,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                        "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                      },
+                      {
+                        "message": "provision configuration is forbidden when type is not Provision",
+                        "rule": "self.type != 'Provision' ? !has(self.provision) : true"
+                      }
+                    ]
+                  },
+                  "maxItems": 15,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                },
+                "topology": {
+                  "description": "topology defines the architectural mode for external cluster access.",
+                  "enum": [
+                    "VirtualIP",
+                    "LoadBalancer"
+                  ],
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "topology is immutable once set",
+                      "rule": "self == oldSelf"
+                    }
+                  ]
+                },
+                "transitGateway": {
+                  "description": "transitGateway contains information about the IBM Cloud TransitGateway.\nIBM Cloud TransitGateway helps in establishing network connectivity between IBM Cloud PowerVS and VPC infrastructure.\nThis field is rejected by the API if the Topology is set to VirtualIP.",
+                  "properties": {
+                    "powerVSConnection": {
+                      "description": "powerVSConnection defines how the PowerVS connection to the Transit Gateway is sourced.",
+                      "properties": {
+                        "provision": {
+                          "description": "provision contains the configuration for provisioning a new connection.",
+                          "minProperties": 1,
+                          "properties": {
+                            "name": {
+                              "description": "name of the connection to be created.\nIf omitted, the system will dynamically create the connection with a default name.",
+                              "maxLength": 63,
+                              "minLength": 1,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "reference": {
+                          "description": "reference contains the information to identify an existing connection.",
+                          "minProperties": 1,
+                          "properties": {
+                            "id": {
+                              "description": "id of the resource.",
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "name of the resource.",
+                              "maxLength": 128,
+                              "minLength": 1,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "x-kubernetes-validations": [
+                            {
+                              "message": "exactly one of id or name must be specified",
+                              "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                            }
+                          ]
+                        },
+                        "type": {
+                          "description": "type defines whether to use an existing connection or provision a new one.",
+                          "enum": [
+                            "Reference",
+                            "Provision"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                          "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                        },
+                        {
+                          "message": "provision configuration is forbidden when type is not Provision",
+                          "rule": "self.type != 'Provision' ? !has(self.provision) : true"
+                        }
+                      ]
+                    },
+                    "provision": {
+                      "description": "provision contains the configuration for provisioning a new Transit Gateway.",
+                      "minProperties": 1,
+                      "properties": {
+                        "globalRouting": {
+                          "description": "globalRouting indicates whether to use Local or Global routing.\nIf omitted, the system will automatically decide based on the PowerVS and VPC regions.",
+                          "enum": [
+                            "Local",
+                            "Global"
+                          ],
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the transit gateway to be created.",
+                          "maxLength": 63,
+                          "minLength": 1,
+                          "pattern": "^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "reference": {
+                      "description": "reference contains the information to identify an existing Transit Gateway.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "type defines whether to use an existing Transit Gateway or provision a new one.",
+                      "enum": [
+                        "Reference",
+                        "Provision"
+                      ],
+                      "type": "string"
+                    },
+                    "vpcConnection": {
+                      "description": "vpcConnection defines how the VPC connection to the Transit Gateway is sourced.",
+                      "properties": {
+                        "provision": {
+                          "description": "provision contains the configuration for provisioning a new connection.",
+                          "minProperties": 1,
+                          "properties": {
+                            "name": {
+                              "description": "name of the connection to be created.\nIf omitted, the system will dynamically create the connection with a default name.",
+                              "maxLength": 63,
+                              "minLength": 1,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "reference": {
+                          "description": "reference contains the information to identify an existing connection.",
+                          "minProperties": 1,
+                          "properties": {
+                            "id": {
+                              "description": "id of the resource.",
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "name of the resource.",
+                              "maxLength": 128,
+                              "minLength": 1,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "x-kubernetes-validations": [
+                            {
+                              "message": "exactly one of id or name must be specified",
+                              "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                            }
+                          ]
+                        },
+                        "type": {
+                          "description": "type defines whether to use an existing connection or provision a new one.",
+                          "enum": [
+                            "Reference",
+                            "Provision"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                          "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                        },
+                        {
+                          "message": "provision configuration is forbidden when type is not Provision",
+                          "rule": "self.type != 'Provision' ? !has(self.provision) : true"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                      "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                    },
+                    {
+                      "message": "provision configuration is forbidden when type is not Provision",
+                      "rule": "self.type != 'Provision' ? !has(self.provision) : true"
+                    }
+                  ]
+                },
+                "vpc": {
+                  "description": "vpc specifies how the IBM Cloud VPC should be sourced.",
+                  "properties": {
+                    "provision": {
+                      "description": "provision contains the configuration for provisioning a new VPC.",
+                      "minProperties": 1,
+                      "properties": {
+                        "name": {
+                          "description": "name of the VPC to be created.\nIf omitted, the system will dynamically create the VPC with the name <CLUSTER_NAME>-vpc.",
+                          "maxLength": 63,
+                          "minLength": 1,
+                          "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "reference": {
+                      "description": "reference contains the information to identify an existing VPC.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "region": {
+                      "description": "region is the IBM Cloud region where the VPC is or will be located.",
+                      "maxLength": 32,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type defines whether to use an existing VPC or provision a new one.",
+                      "enum": [
+                        "Reference",
+                        "Provision"
+                      ],
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "VPC type is immutable once set",
+                          "rule": "self == oldSelf"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "region",
+                    "type"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                      "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                    },
+                    {
+                      "message": "provision configuration is required when type is Provision, and forbidden otherwise",
+                      "rule": "self.type == 'Provision' ? has(self.provision) : !has(self.provision)"
+                    }
+                  ]
+                },
+                "vpcPublicGateways": {
+                  "description": "vpcPublicGateways defines the VPC Public Gateways that should exist or be created for the cluster's VPC.\nA public gateway provides outbound internet access to resources in a subnet. One gateway is required\nper zone in which subnets need outbound access.",
+                  "items": {
+                    "description": "VPCPublicGateway defines a VPC Public Gateway to create or reference for the cluster's VPC.\nA public gateway provides outbound internet access for resources in a subnet; one is needed per zone.",
+                    "properties": {
+                      "provision": {
+                        "description": "provision contains the configuration for provisioning a new VPC Public Gateway.",
+                        "minProperties": 1,
+                        "properties": {
+                          "name": {
+                            "description": "name of the VPC Public Gateway to be created.",
+                            "maxLength": 63,
+                            "minLength": 1,
+                            "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "reference": {
+                        "description": "reference contains the information to identify an existing VPC Public Gateway.",
+                        "minProperties": 1,
+                        "properties": {
+                          "id": {
+                            "description": "id of the resource.",
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "name of the resource.",
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "exactly one of id or name must be specified",
+                            "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                          }
+                        ]
+                      },
+                      "type": {
+                        "description": "type defines whether to use an existing VPC Public Gateway or provision a new one.",
+                        "enum": [
+                          "Reference",
+                          "Provision"
+                        ],
+                        "type": "string"
+                      },
+                      "zone": {
+                        "description": "zone is the IBM Cloud VPC zone in which the public gateway resides or should be created.\nRequired when type is Provision.",
+                        "maxLength": 63,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                        "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                      },
+                      {
+                        "message": "provision configuration is required when type is Provision, and forbidden otherwise",
+                        "rule": "self.type == 'Provision' ? has(self.provision) : !has(self.provision)"
+                      }
+                    ]
+                  },
+                  "maxItems": 10,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                },
+                "vpcRoutingTables": {
+                  "description": "vpcRoutingTables defines the VPC Routing Tables that should exist or be created for the cluster's VPC.",
+                  "items": {
+                    "description": "VPCRoutingTableSource defines a VPC Routing Table that should exist or be created for the cluster's VPC.",
+                    "properties": {
+                      "provision": {
+                        "description": "provision contains the configuration for provisioning a new Routing Table.",
+                        "minProperties": 1,
+                        "properties": {
+                          "advertiseRoutesTo": {
+                            "description": "advertiseRoutesTo defines the ingress sources to which routes in this routing table will be advertised.",
+                            "items": {
+                              "description": "AdvertiseRouteTarget defines the ingress sources to which routes in a routing table will be advertised.",
+                              "enum": [
+                                "transit_gateway",
+                                "direct_link"
+                              ],
+                              "type": "string"
+                            },
+                            "maxItems": 2,
+                            "type": "array",
+                            "x-kubernetes-list-type": "set"
+                          },
+                          "name": {
+                            "description": "name of the Routing Table to be created.\nIf omitted, IBM Cloud will generate a name.",
+                            "maxLength": 63,
+                            "minLength": 1,
+                            "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                            "type": "string"
+                          },
+                          "routeDirectLinkIngress": {
+                            "description": "routeDirectLinkIngress defines whether this routing table routes traffic from Direct Link.\nOnly one routing table per VPC may have this set to Enabled.",
+                            "enum": [
+                              "Enabled",
+                              "Disabled"
+                            ],
+                            "type": "string"
+                          },
+                          "routeTransitGatewayIngress": {
+                            "description": "routeTransitGatewayIngress defines whether this routing table routes traffic from Transit Gateway.\nOnly one routing table per VPC may have this set to Enabled.",
+                            "enum": [
+                              "Enabled",
+                              "Disabled"
+                            ],
+                            "type": "string"
+                          },
+                          "routeVPCZoneIngress": {
+                            "description": "routeVPCZoneIngress defines whether this routing table routes traffic from subnets in other zones.\nOnly one routing table per VPC may have this set to Enabled.",
+                            "enum": [
+                              "Enabled",
+                              "Disabled"
+                            ],
+                            "type": "string"
+                          },
+                          "routes": {
+                            "description": "routes defines the set of routes to create in the routing table.",
+                            "items": {
+                              "description": "VPCRoutingTableRoute defines a route within a VPC Routing Table.\nIf action is deliver and nextHop is omitted, the controller will resolve it automatically\nfrom the first private IP of a provisioned load balancer in the cluster status.",
+                              "properties": {
+                                "action": {
+                                  "description": "action defines the action to perform with a packet matching this route.",
+                                  "enum": [
+                                    "delegate",
+                                    "delegate_vpc",
+                                    "deliver",
+                                    "drop"
+                                  ],
+                                  "type": "string"
+                                },
+                                "advertise": {
+                                  "description": "advertise controls whether this route is advertised to the ingress sources\nconfigured on the routing table (e.g. Transit Gateway).\nWhen omitted, the IBM Cloud API defaults to Disabled.",
+                                  "enum": [
+                                    "Enabled",
+                                    "Disabled"
+                                  ],
+                                  "type": "string"
+                                },
+                                "destination": {
+                                  "description": "destination is the destination CIDR for the route.\nThe host identifier in the CIDR must be zero.",
+                                  "maxLength": 128,
+                                  "minLength": 1,
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "name is an optional name for the route.\nIf unspecified, IBM Cloud will generate a name.",
+                                  "maxLength": 63,
+                                  "minLength": 1,
+                                  "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                                  "type": "string"
+                                },
+                                "nextHop": {
+                                  "description": "nextHop is the next-hop IP address for routes with action deliver.\nMust be a unicast IP address within a subnet in the routing table's VPC.",
+                                  "maxLength": 39,
+                                  "minLength": 1,
+                                  "type": "string"
+                                },
+                                "zone": {
+                                  "description": "zone is the name of the availability zone to apply the route to.",
+                                  "maxLength": 63,
+                                  "minLength": 1,
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "action",
+                                "destination",
+                                "zone"
+                              ],
+                              "type": "object",
+                              "x-kubernetes-validations": [
+                                {
+                                  "message": "nextHop must not be set unless action is deliver",
+                                  "rule": "self.action != 'deliver' ? !has(self.nextHop) : true"
+                                }
+                              ]
+                            },
+                            "maxItems": 200,
+                            "type": "array",
+                            "x-kubernetes-list-type": "atomic"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "reference": {
+                        "description": "reference contains the information to identify an existing Routing Table.\nThe controller will look up the routing table but will not manage its routes.",
+                        "minProperties": 1,
+                        "properties": {
+                          "id": {
+                            "description": "id of the resource.",
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "name of the resource.",
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "exactly one of id or name must be specified",
+                            "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                          }
+                        ]
+                      },
+                      "type": {
+                        "description": "type defines whether to use an existing Routing Table or provision a new one.",
+                        "enum": [
+                          "Reference",
+                          "Provision"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                        "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                      },
+                      {
+                        "message": "provision configuration is required when type is Provision, and forbidden otherwise",
+                        "rule": "self.type == 'Provision' ? has(self.provision) : !has(self.provision)"
+                      }
+                    ]
+                  },
+                  "maxItems": 10,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                },
+                "vpcSecurityGroups": {
+                  "description": "vpcSecurityGroups defines the VPC Security Groups that should exist or be created.",
+                  "items": {
+                    "description": "VPCSecurityGroupSource defines a VPC Security Group that should exist or be created.",
+                    "properties": {
+                      "provision": {
+                        "description": "provision contains the configuration for provisioning a new Security Group.",
+                        "minProperties": 1,
+                        "properties": {
+                          "name": {
+                            "description": "name of the Security Group.",
+                            "maxLength": 63,
+                            "minLength": 1,
+                            "pattern": "^-?([a-z]|[a-z][-a-z0-9]*[a-z0-9]|[0-9][-a-z0-9]*([a-z]|[-a-z][-a-z0-9]*[a-z0-9]))$",
+                            "type": "string"
+                          },
+                          "rules": {
+                            "description": "rules are the Security Group Rules for the Security Group.",
+                            "items": {
+                              "description": "VPCSecurityGroupRule defines a VPC Security Group Rule for a specified Security Group.",
+                              "properties": {
+                                "destination": {
+                                  "description": "destination defines the destination of outbound traffic for the Security Group Rule.\nOnly used when direction is VPCSecurityGroupRuleDirectionOutbound.",
+                                  "properties": {
+                                    "icmpCode": {
+                                      "description": "icmpCode is the ICMP code for the Rule.",
+                                      "format": "int64",
+                                      "maximum": 255,
+                                      "minimum": 0,
+                                      "type": "integer"
+                                    },
+                                    "icmpType": {
+                                      "description": "icmpType is the ICMP type for the Rule.",
+                                      "format": "int64",
+                                      "maximum": 254,
+                                      "minimum": 0,
+                                      "type": "integer"
+                                    },
+                                    "portRange": {
+                                      "description": "portRange is a range of ports allowed for the Rule's remote.\nIf specified, both minimumPort and maximumPort must be specified.\nIf unspecified, traffic on all destination ports is allowed.",
+                                      "properties": {
+                                        "maximumPort": {
+                                          "description": "maximumPort is the inclusive upper range of ports.",
+                                          "format": "int64",
+                                          "maximum": 65535,
+                                          "minimum": 1,
+                                          "type": "integer"
+                                        },
+                                        "minimumPort": {
+                                          "description": "minimumPort is the inclusive lower range of ports.",
+                                          "format": "int64",
+                                          "maximum": 65535,
+                                          "minimum": 1,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "required": [
+                                        "maximumPort",
+                                        "minimumPort"
+                                      ],
+                                      "type": "object",
+                                      "x-kubernetes-validations": [
+                                        {
+                                          "message": "maximum port must be greater than or equal to minimum port",
+                                          "rule": "self.maximumPort >= self.minimumPort"
+                                        }
+                                      ]
+                                    },
+                                    "protocol": {
+                                      "description": "protocol defines the traffic protocol used for the Security Group Rule.",
+                                      "maxLength": 128,
+                                      "minLength": 1,
+                                      "pattern": "^(any|all|icmp_tcp_udp|icmp|tcp|udp|ah|esp|gre|ip_in_ip|l2tp|rsvp|sctp|vrrp|number_(?:0|2|3|5|[7-9]|1[0-6]|1[8-9]|[2-3][0-9]|4[0-5]|4[89]|5[2-9]|[6-9][0-9]|10[0-9]|11[0-1]|11[3-4]|11[6-9]|12[0-9]|13[0-1]|13[3-9]|1[4-9][0-9]|2[0-4][0-9]|25[0-5]))$",
+                                      "type": "string"
+                                    },
+                                    "remotes": {
+                                      "description": "remotes is a set of VPCSecurityGroupRuleRemote's that define the traffic allowed.",
+                                      "items": {
+                                        "description": "VPCSecurityGroupRuleRemote defines a VPC Security Group Rule's remote details.",
+                                        "properties": {
+                                          "address": {
+                                            "description": "address is the address to use for the remote's destination/source.",
+                                            "maxLength": 15,
+                                            "minLength": 7,
+                                            "pattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",
+                                            "type": "string"
+                                          },
+                                          "cidrSubnetName": {
+                                            "description": "cidrSubnetName is the name of the VPC Subnet to retrieve the CIDR from.",
+                                            "maxLength": 63,
+                                            "minLength": 1,
+                                            "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                                            "type": "string"
+                                          },
+                                          "remoteType": {
+                                            "description": "remoteType defines the type of filter to define for the remote's destination/source.",
+                                            "enum": [
+                                              "any",
+                                              "cidr",
+                                              "address",
+                                              "sg"
+                                            ],
+                                            "type": "string"
+                                          },
+                                          "securityGroupName": {
+                                            "description": "securityGroupName is the name of the VPC Security Group to use for the remote.",
+                                            "maxLength": 63,
+                                            "minLength": 1,
+                                            "pattern": "^-?([a-z]|[a-z][-a-z0-9]*[a-z0-9]|[0-9][-a-z0-9]*([a-z]|[-a-z][-a-z0-9]*[a-z0-9]))$",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "remoteType"
+                                        ],
+                                        "type": "object",
+                                        "x-kubernetes-validations": [
+                                          {
+                                            "message": "cidrSubnetName, address, and securityGroupName are not valid for VPCSecurityGroupRuleRemoteTypeAny remoteType",
+                                            "rule": "self.remoteType == 'any' ? (!has(self.cidrSubnetName) && !has(self.address) && !has(self.securityGroupName)) : true"
+                                          },
+                                          {
+                                            "message": "only cidrSubnetName is valid for VPCSecurityGroupRuleRemoteTypeCIDR remoteType",
+                                            "rule": "self.remoteType == 'cidr' ? (has(self.cidrSubnetName) && !has(self.address) && !has(self.securityGroupName)) : true"
+                                          },
+                                          {
+                                            "message": "only address is valid for VPCSecurityGroupRuleRemoteTypeAddress remoteType",
+                                            "rule": "self.remoteType == 'address' ? (has(self.address) && !has(self.cidrSubnetName) && !has(self.securityGroupName)) : true"
+                                          },
+                                          {
+                                            "message": "only securityGroupName is valid for VPCSecurityGroupRuleRemoteTypeSG remoteType",
+                                            "rule": "self.remoteType == 'sg' ? (has(self.securityGroupName) && !has(self.cidrSubnetName) && !has(self.address)) : true"
+                                          }
+                                        ]
+                                      },
+                                      "maxItems": 25,
+                                      "type": "array",
+                                      "x-kubernetes-list-type": "atomic"
+                                    }
+                                  },
+                                  "required": [
+                                    "protocol"
+                                  ],
+                                  "type": "object",
+                                  "x-kubernetes-validations": [
+                                    {
+                                      "message": "icmpCode and icmpType are only supported for VPCSecurityGroupRuleProtocolIcmp protocol",
+                                      "rule": "self.protocol != 'icmp' ? (!has(self.icmpCode) && !has(self.icmpType)) : true"
+                                    },
+                                    {
+                                      "message": "portRange is not valid for VPCSecurityGroupRuleProtocolIcmp protocol",
+                                      "rule": "self.protocol == 'icmp' ? !has(self.portRange) : true"
+                                    },
+                                    {
+                                      "message": "portRange is not valid for protocol",
+                                      "rule": "(self.protocol != 'tcp' && self.protocol != 'udp') ? !has(self.portRange) : true"
+                                    },
+                                    {
+                                      "message": "portRange is not valid for VPCSecurityGroupRuleProtocolIcmpTCPUDP protocol",
+                                      "rule": "self.protocol == 'icmp_tcp_udp' ? !has(self.portRange) : true"
+                                    }
+                                  ]
+                                },
+                                "direction": {
+                                  "description": "direction is the direction of traffic to allow.\nAllowable values: inbound, outbound.",
+                                  "enum": [
+                                    "inbound",
+                                    "outbound"
+                                  ],
+                                  "maxLength": 128,
+                                  "minLength": 1,
+                                  "pattern": "^[a-z][a-z0-9]*(_[a-z0-9]+)*$",
+                                  "type": "string"
+                                },
+                                "securityGroupID": {
+                                  "description": "securityGroupID is the ID of the Security Group for the Security Group Rule.",
+                                  "maxLength": 64,
+                                  "minLength": 1,
+                                  "pattern": "^[-0-9a-z_]+$",
+                                  "type": "string"
+                                },
+                                "source": {
+                                  "description": "source defines the source of inbound traffic for the Security Group Rule.\nOnly used when direction is VPCSecurityGroupRuleDirectionInbound.",
+                                  "properties": {
+                                    "icmpCode": {
+                                      "description": "icmpCode is the ICMP code for the Rule.",
+                                      "format": "int64",
+                                      "maximum": 255,
+                                      "minimum": 0,
+                                      "type": "integer"
+                                    },
+                                    "icmpType": {
+                                      "description": "icmpType is the ICMP type for the Rule.",
+                                      "format": "int64",
+                                      "maximum": 254,
+                                      "minimum": 0,
+                                      "type": "integer"
+                                    },
+                                    "portRange": {
+                                      "description": "portRange is a range of ports allowed for the Rule's remote.\nIf specified, both minimumPort and maximumPort must be specified.\nIf unspecified, traffic on all destination ports is allowed.",
+                                      "properties": {
+                                        "maximumPort": {
+                                          "description": "maximumPort is the inclusive upper range of ports.",
+                                          "format": "int64",
+                                          "maximum": 65535,
+                                          "minimum": 1,
+                                          "type": "integer"
+                                        },
+                                        "minimumPort": {
+                                          "description": "minimumPort is the inclusive lower range of ports.",
+                                          "format": "int64",
+                                          "maximum": 65535,
+                                          "minimum": 1,
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "required": [
+                                        "maximumPort",
+                                        "minimumPort"
+                                      ],
+                                      "type": "object",
+                                      "x-kubernetes-validations": [
+                                        {
+                                          "message": "maximum port must be greater than or equal to minimum port",
+                                          "rule": "self.maximumPort >= self.minimumPort"
+                                        }
+                                      ]
+                                    },
+                                    "protocol": {
+                                      "description": "protocol defines the traffic protocol used for the Security Group Rule.",
+                                      "maxLength": 128,
+                                      "minLength": 1,
+                                      "pattern": "^(any|all|icmp_tcp_udp|icmp|tcp|udp|ah|esp|gre|ip_in_ip|l2tp|rsvp|sctp|vrrp|number_(?:0|2|3|5|[7-9]|1[0-6]|1[8-9]|[2-3][0-9]|4[0-5]|4[89]|5[2-9]|[6-9][0-9]|10[0-9]|11[0-1]|11[3-4]|11[6-9]|12[0-9]|13[0-1]|13[3-9]|1[4-9][0-9]|2[0-4][0-9]|25[0-5]))$",
+                                      "type": "string"
+                                    },
+                                    "remotes": {
+                                      "description": "remotes is a set of VPCSecurityGroupRuleRemote's that define the traffic allowed.",
+                                      "items": {
+                                        "description": "VPCSecurityGroupRuleRemote defines a VPC Security Group Rule's remote details.",
+                                        "properties": {
+                                          "address": {
+                                            "description": "address is the address to use for the remote's destination/source.",
+                                            "maxLength": 15,
+                                            "minLength": 7,
+                                            "pattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",
+                                            "type": "string"
+                                          },
+                                          "cidrSubnetName": {
+                                            "description": "cidrSubnetName is the name of the VPC Subnet to retrieve the CIDR from.",
+                                            "maxLength": 63,
+                                            "minLength": 1,
+                                            "pattern": "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$",
+                                            "type": "string"
+                                          },
+                                          "remoteType": {
+                                            "description": "remoteType defines the type of filter to define for the remote's destination/source.",
+                                            "enum": [
+                                              "any",
+                                              "cidr",
+                                              "address",
+                                              "sg"
+                                            ],
+                                            "type": "string"
+                                          },
+                                          "securityGroupName": {
+                                            "description": "securityGroupName is the name of the VPC Security Group to use for the remote.",
+                                            "maxLength": 63,
+                                            "minLength": 1,
+                                            "pattern": "^-?([a-z]|[a-z][-a-z0-9]*[a-z0-9]|[0-9][-a-z0-9]*([a-z]|[-a-z][-a-z0-9]*[a-z0-9]))$",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "remoteType"
+                                        ],
+                                        "type": "object",
+                                        "x-kubernetes-validations": [
+                                          {
+                                            "message": "cidrSubnetName, address, and securityGroupName are not valid for VPCSecurityGroupRuleRemoteTypeAny remoteType",
+                                            "rule": "self.remoteType == 'any' ? (!has(self.cidrSubnetName) && !has(self.address) && !has(self.securityGroupName)) : true"
+                                          },
+                                          {
+                                            "message": "only cidrSubnetName is valid for VPCSecurityGroupRuleRemoteTypeCIDR remoteType",
+                                            "rule": "self.remoteType == 'cidr' ? (has(self.cidrSubnetName) && !has(self.address) && !has(self.securityGroupName)) : true"
+                                          },
+                                          {
+                                            "message": "only address is valid for VPCSecurityGroupRuleRemoteTypeAddress remoteType",
+                                            "rule": "self.remoteType == 'address' ? (has(self.address) && !has(self.cidrSubnetName) && !has(self.securityGroupName)) : true"
+                                          },
+                                          {
+                                            "message": "only securityGroupName is valid for VPCSecurityGroupRuleRemoteTypeSG remoteType",
+                                            "rule": "self.remoteType == 'sg' ? (has(self.securityGroupName) && !has(self.cidrSubnetName) && !has(self.address)) : true"
+                                          }
+                                        ]
+                                      },
+                                      "maxItems": 25,
+                                      "type": "array",
+                                      "x-kubernetes-list-type": "atomic"
+                                    }
+                                  },
+                                  "required": [
+                                    "protocol"
+                                  ],
+                                  "type": "object",
+                                  "x-kubernetes-validations": [
+                                    {
+                                      "message": "icmpCode and icmpType are only supported for VPCSecurityGroupRuleProtocolIcmp protocol",
+                                      "rule": "self.protocol != 'icmp' ? (!has(self.icmpCode) && !has(self.icmpType)) : true"
+                                    },
+                                    {
+                                      "message": "portRange is not valid for VPCSecurityGroupRuleProtocolIcmp protocol",
+                                      "rule": "self.protocol == 'icmp' ? !has(self.portRange) : true"
+                                    },
+                                    {
+                                      "message": "portRange is not valid for protocol",
+                                      "rule": "(self.protocol != 'tcp' && self.protocol != 'udp') ? !has(self.portRange) : true"
+                                    },
+                                    {
+                                      "message": "portRange is not valid for VPCSecurityGroupRuleProtocolIcmpTCPUDP protocol",
+                                      "rule": "self.protocol == 'icmp_tcp_udp' ? !has(self.portRange) : true"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "direction"
+                              ],
+                              "type": "object",
+                              "x-kubernetes-validations": [
+                                {
+                                  "message": "both destination and source cannot be provided",
+                                  "rule": "(has(self.destination) && !has(self.source)) || (!has(self.destination) && has(self.source))"
+                                },
+                                {
+                                  "message": "source must be set for VPCSecurityGroupRuleDirectionInbound direction",
+                                  "rule": "self.direction == 'inbound' ? has(self.source) : true"
+                                },
+                                {
+                                  "message": "destination is not valid for VPCSecurityGroupRuleDirectionInbound direction",
+                                  "rule": "self.direction == 'inbound' ? !has(self.destination) : true"
+                                },
+                                {
+                                  "message": "destination must be set for VPCSecurityGroupRuleDirectionOutbound direction",
+                                  "rule": "self.direction == 'outbound' ? has(self.destination) : true"
+                                },
+                                {
+                                  "message": "source is not valid for VPCSecurityGroupRuleDirectionOutbound direction",
+                                  "rule": "self.direction == 'outbound' ? !has(self.source) : true"
+                                },
+                                {
+                                  "message": "protocol is required in source",
+                                  "rule": "has(self.source) ? has(self.source.protocol) : true"
+                                },
+                                {
+                                  "message": "protocol is required in destination",
+                                  "rule": "has(self.destination) ? has(self.destination.protocol) : true"
+                                }
+                              ]
+                            },
+                            "maxItems": 250,
+                            "type": "array",
+                            "x-kubernetes-list-type": "atomic"
+                          },
+                          "tags": {
+                            "description": "tags are tag names to create for the Security Group.",
+                            "items": {
+                              "maxLength": 128,
+                              "pattern": "^[ ]*[A-Za-z0-9:_.\\-][A-Za-z0-9 :_.\\-]*$",
+                              "type": "string"
+                            },
+                            "maxItems": 100,
+                            "minItems": 1,
+                            "type": "array",
+                            "x-kubernetes-list-type": "set"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "reference": {
+                        "description": "reference contains the information to identify an existing Security Group.\nCAPI will not manage rules for referenced Security Groups.",
+                        "minProperties": 1,
+                        "properties": {
+                          "id": {
+                            "description": "id of the resource.",
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "name of the resource.",
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "exactly one of id or name must be specified",
+                            "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                          }
+                        ]
+                      },
+                      "type": {
+                        "description": "type defines whether to use an existing Security Group or provision a new one.",
+                        "enum": [
+                          "Reference",
+                          "Provision"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                        "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                      },
+                      {
+                        "message": "provision configuration is required when type is Provision, and forbidden otherwise",
+                        "rule": "self.type == 'Provision' ? has(self.provision) : !has(self.provision)"
+                      }
+                    ]
+                  },
+                  "maxItems": 25,
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                },
+                "workspace": {
+                  "description": "workspace specifies how the PowerVS workspace is sourced.\nA PowerVS workspace is a container for PowerVS resources in a specific zone.\nMore details: https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-creating-power-virtual-server",
+                  "properties": {
+                    "provision": {
+                      "description": "provision defines the configuration for creating a new PowerVS workspace.",
+                      "minProperties": 1,
+                      "properties": {
+                        "name": {
+                          "description": "name is the explicit name of the workspace to be created.\nIf omitted, the system will dynamically create the workspace with the name <CLUSTER_NAME>-workspace.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "reference": {
+                      "description": "reference tells the controller to use an existing PowerVS workspace.\nSupported identifiers are name and id.\nIf more than one workspace has the same name, use id.",
+                      "minProperties": 1,
+                      "properties": {
+                        "id": {
+                          "description": "id of the resource.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "name of the resource.",
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "exactly one of id or name must be specified",
+                          "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "type defines how the workspace is sourced.",
+                      "enum": [
+                        "Reference",
+                        "Provision"
+                      ],
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "workspace type is immutable once set",
+                          "rule": "self == oldSelf"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "reference configuration is required when type is Reference, and forbidden otherwise",
+                      "rule": "self.type == 'Reference' ? has(self.reference) : !has(self.reference)"
+                    },
+                    {
+                      "message": "provision configuration is required when type is Provision, and forbidden otherwise",
+                      "rule": "self.type == 'Provision' ? has(self.provision) : !has(self.provision)"
+                    }
+                  ]
+                },
+                "zone": {
+                  "description": "zone is the name of PowerVS zone where the cluster will be created\npossible values can be found here https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-creating-power-virtual-server.",
+                  "maxLength": 32,
+                  "minLength": 1,
+                  "pattern": "^[a-zA-Z0-9\\-_]+$",
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "zone is immutable",
+                      "rule": "self == oldSelf"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "topology"
+              ],
+              "type": "object",
+              "x-kubernetes-validations": [
+                {
+                  "message": "zone is required when topology is set to LoadBalancer",
+                  "rule": "!has(self.topology) || self.topology != 'LoadBalancer' || (has(self.zone) && size(self.zone) > 0)"
+                },
+                {
+                  "message": "resourceGroup is required and must include either an id or name when topology is set to LoadBalancer",
+                  "rule": "!has(self.topology) || self.topology != 'LoadBalancer' || (has(self.resourceGroup) && self.resourceGroup.type == 'Reference' && has(self.resourceGroup.reference) && ((has(self.resourceGroup.reference.id) && size(self.resourceGroup.reference.id) > 0) || (has(self.resourceGroup.reference.name) && size(self.resourceGroup.reference.name) > 0)))"
+                },
+                {
+                  "message": "When topology is VirtualIP, workspace type must be 'Reference' and include either an id or name",
+                  "rule": "!has(self.topology) || self.topology != 'VirtualIP' || (has(self.workspace) && self.workspace.type == 'Reference' && has(self.workspace.reference) && ((has(self.workspace.reference.id) && size(self.workspace.reference.id) > 0) || (has(self.workspace.reference.name) && size(self.workspace.reference.name) > 0)))"
+                },
+                {
+                  "message": "When topology is VirtualIP, network type must be 'Reference' and include either an id or name",
+                  "rule": "!has(self.topology) || self.topology != 'VirtualIP' || (has(self.network) && self.network.type == 'Reference' && has(self.network.reference) && ((has(self.network.reference.id) && size(self.network.reference.id) > 0) || (has(self.network.reference.name) && size(self.network.reference.name) > 0)))"
+                },
+                {
+                  "message": "TransitGateway must not be configured when topology is set to VirtualIP",
+                  "rule": "!has(self.topology) || self.topology != 'VirtualIP' || !has(self.transitGateway)"
+                },
+                {
+                  "message": "cosInstance configuration is required when ignition is specified",
+                  "rule": "has(self.ignition) ? has(self.cosInstance) : true"
+                }
+              ]
+            }
+          },
+          "required": [
+            "spec"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "template"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object"
+}
