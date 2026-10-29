@@ -774,6 +774,14 @@ sources:
   - bootstrap.cluster.x-k8s.io
   - infrastructure.cluster.x-k8s.io
   project: cluster-api
+- id: cluster-api-provider-hetzner
+  name: Cluster API Provider Hetzner
+  category: Kubernetes
+  cncf: null
+  upstream: syself/cluster-api-provider-hetzner
+  groups:
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
 - id: cluster-api-provider-vcluster
   name: Cluster API Provider vCluster
   category: Kubernetes

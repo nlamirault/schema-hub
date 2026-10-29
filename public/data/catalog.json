@@ -41247,6 +41247,105 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "hcloudmachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hcloudmachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hcloudmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hcloudmachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hcloudmachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hcloudmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hcloudremediation",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hcloudremediation_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hcloudremediation",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hcloudremediationtemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hcloudremediationtemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hcloudremediationtemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hetznerbaremetalhost",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hetznerbaremetalhost_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hetznerbaremetalhost",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hetznerbaremetalmachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hetznerbaremetalmachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hetznerbaremetalmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hetznerbaremetalmachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hetznerbaremetalmachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hetznerbaremetalmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hetznerbaremetalremediation",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hetznerbaremetalremediation_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hetznerbaremetalremediation",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hetznerbaremetalremediationtemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hetznerbaremetalremediationtemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hetznerbaremetalremediationtemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hetznercluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hetznercluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hetznercluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "hetznerclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/hetznerclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/hetznerclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "rosacluster",
         "version": "v1beta2",
         "file": "infrastructure.cluster.x-k8s.io/rosacluster_v1beta2.json",
