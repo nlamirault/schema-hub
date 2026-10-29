@@ -575,6 +575,7 @@
       "infrastructure.cluster.x-k8s.io",
       "infrastructure.cluster.x-k8s.io",
       "bootstrap.cluster.x-k8s.io",
+      "infrastructure.cluster.x-k8s.io",
       "infrastructure.cluster.x-k8s.io"
     ]
   },

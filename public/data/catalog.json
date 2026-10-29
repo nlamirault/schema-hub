@@ -41227,6 +41227,60 @@
         "category": "Kubernetes",
         "upstream": "kubernetes-sigs/cluster-api",
         "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrbaremetalmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrbaremetalmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrbaremetalmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrbaremetalmachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrbaremetalmachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrbaremetalmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrcluster",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrcluster_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrclustertemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrclustertemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "vultrmachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/vultrmachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/vultrmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
       }
     ],
     "insights.azure.com": [
