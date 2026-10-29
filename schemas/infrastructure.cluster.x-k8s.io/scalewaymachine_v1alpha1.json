@@ -1,0 +1,302 @@
+{
+  "description": "ScalewayMachine is the Schema for the scalewaymachines API.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "ScalewayMachineSpec defines the desired state of ScalewayMachine.",
+      "properties": {
+        "additionalVolumes": {
+          "description": "AdditionalVolumes to be created and attached to the instance before it's first started.\nThese volumes are deleted during instance deletion.",
+          "items": {
+            "description": "AdditionalVolume defines the characteristics of an additional volume.",
+            "minProperties": 1,
+            "properties": {
+              "iops": {
+                "description": "IOPS is the number of IOPS requested for the disk. This is only applicable for block volumes.",
+                "format": "int64",
+                "minimum": 5000,
+                "type": "integer"
+              },
+              "size": {
+                "description": "Size of the volume in GB.",
+                "format": "int64",
+                "maximum": 10000,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "type": {
+                "default": "block",
+                "description": "Type of the volume. Note that not all types of instances support local or\nscratch volumes. Please refer to the Scaleway documentation for more details\non supported volume types per instance type.",
+                "enum": [
+                  "local",
+                  "block",
+                  "scratch"
+                ],
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "x-kubernetes-validations": [
+              {
+                "message": "iops can only be set for block volumes",
+                "rule": "!has(self.iops) || has(self.type) && self.type == 'block'"
+              }
+            ]
+          },
+          "maxItems": 15,
+          "minItems": 1,
+          "type": "array",
+          "x-kubernetes-list-type": "atomic",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
+        "commercialType": {
+          "default": "PRO2-S",
+          "description": "CommercialType of instance (e.g. PRO2-S).",
+          "type": "string",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
+        "image": {
+          "description": "Image ID, Name or Label to use to create the instance.",
+          "properties": {
+            "id": {
+              "description": "ID of the image.",
+              "type": "string"
+            },
+            "label": {
+              "description": "Label of the image.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the image.",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            },
+            {
+              "message": "exactly one of id, name or label must be set",
+              "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) + (has(self.label) ? 1 : 0) == 1"
+            }
+          ]
+        },
+        "placementGroup": {
+          "description": "PlacementGroup allows attaching a Placement Group to the instance.",
+          "properties": {
+            "id": {
+              "description": "ID of the placement group.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the placement group.",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            },
+            {
+              "message": "exactly one of id or name must be set",
+              "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+            }
+          ]
+        },
+        "providerID": {
+          "description": "ProviderID must match the provider ID as seen on the node object corresponding to this machine.",
+          "type": "string",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
+        "publicNetwork": {
+          "description": "PublicNetwork allows attaching public IPs to the instance.",
+          "properties": {
+            "enableIPv4": {
+              "description": "EnableIPv4 defines whether server has IPv4 address enabled.",
+              "type": "boolean"
+            },
+            "enableIPv6": {
+              "description": "EnableIPv6 defines whether server has IPv6 addresses enabled.",
+              "type": "boolean"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
+        "rootVolume": {
+          "description": "RootVolume defines the characteristics of the system (root) volume.",
+          "properties": {
+            "iops": {
+              "description": "IOPS is the number of IOPS requested for the disk. This is only applicable for block volumes.",
+              "format": "int64",
+              "type": "integer"
+            },
+            "size": {
+              "default": 20,
+              "description": "Size of the root volume in GB. Defaults to 20 GB.",
+              "format": "int64",
+              "minimum": 8,
+              "type": "integer"
+            },
+            "type": {
+              "default": "block",
+              "description": "Type of the root volume. Can be local or block. Note that not all types\nof instances support local volumes.",
+              "enum": [
+                "local",
+                "block"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            }
+          ]
+        },
+        "securityGroup": {
+          "description": "SecurityGroup allows attaching a Security Group to the instance.",
+          "properties": {
+            "id": {
+              "description": "ID of the security group.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the security group.",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            },
+            {
+              "message": "exactly one of id or name must be set",
+              "rule": "(has(self.id) ? 1 : 0) + (has(self.name) ? 1 : 0) == 1"
+            }
+          ]
+        }
+      },
+      "required": [
+        "commercialType",
+        "image"
+      ],
+      "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "rootVolume cannot be added or removed",
+          "rule": "has(self.rootVolume) == has(oldSelf.rootVolume)"
+        },
+        {
+          "message": "publicNetwork cannot be added or removed",
+          "rule": "has(self.publicNetwork) == has(oldSelf.publicNetwork)"
+        },
+        {
+          "message": "placementGroup cannot be added or removed",
+          "rule": "has(self.placementGroup) == has(oldSelf.placementGroup)"
+        },
+        {
+          "message": "securityGroup cannot be added or removed",
+          "rule": "has(self.securityGroup) == has(oldSelf.securityGroup)"
+        },
+        {
+          "message": "additionalVolumes cannot be added or removed",
+          "rule": "has(self.additionalVolumes) == has(oldSelf.additionalVolumes)"
+        }
+      ]
+    },
+    "status": {
+      "description": "ScalewayMachineStatus defines the observed state of ScalewayMachine.",
+      "properties": {
+        "addresses": {
+          "description": "Addresses contains the associated addresses for the machine.",
+          "items": {
+            "description": "MachineAddress contains information for the node's address.",
+            "properties": {
+              "address": {
+                "description": "address is the machine address.",
+                "maxLength": 256,
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": {
+                "description": "type is the machine address type, one of Hostname, ExternalIP, InternalIP, ExternalDNS or InternalDNS.",
+                "enum": [
+                  "Hostname",
+                  "ExternalIP",
+                  "InternalIP",
+                  "ExternalDNS",
+                  "InternalDNS"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "address",
+              "type"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "ready": {
+          "description": "Ready denotes that the Scaleway machine infrastructure is fully provisioned.\nNOTE: this field is part of the Cluster API contract and it is used to orchestrate provisioning.\nThe value of this field is never updated after provisioning is completed. Please use conditions\nto check the operational state of the infra machine.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "type": "object",
+  "x-kubernetes-validations": [
+    {
+      "message": "name must be between 1 and 63 characters",
+      "rule": "self.metadata.name.size() <= 63"
+    },
+    {
+      "message": "name must be a valid DNS label",
+      "rule": "self.metadata.name.matches('^[a-z0-9]([-a-z0-9]*[a-z0-9])?$')"
+    }
+  ]
+}
