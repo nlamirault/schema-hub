@@ -1,5 +1,45 @@
 # Changelog
 
+## [1.12.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.11.0...schema-hub-v1.12.0) (2026-10-29)
+
+
+### 🚀 Features
+
+* **crd:** add Security Profiles Operator support ([#579](https://github.com/nlamirault/schema-hub/issues/579)) ([2635fbf](https://github.com/nlamirault/schema-hub/commit/2635fbf39ebe7aa9d1f97cfda12e5da9ffc8a5d3)), closes [#576](https://github.com/nlamirault/schema-hub/issues/576)
+
+
+### 🐛 Bug Fixes
+
+* **deps:** update dependency astro to v7.3.2 [security] ([#575](https://github.com/nlamirault/schema-hub/issues/575)) ([0f043da](https://github.com/nlamirault/schema-hub/commit/0f043da4fe2ebd3a37b3918dd4378a8e6205a044))
+* **deps:** update dependency astro to v7.3.3 [security] ([#580](https://github.com/nlamirault/schema-hub/issues/580)) ([a469ca3](https://github.com/nlamirault/schema-hub/commit/a469ca33b5d91f917c9a7a30ef36c3d802f6c0bb))
+
+
+### 🚨 Maintenance
+
+* **deps:** update astral-sh/setup-uv action to v10.3.3 ([#577](https://github.com/nlamirault/schema-hub/issues/577)) ([05b2c27](https://github.com/nlamirault/schema-hub/commit/05b2c27e265785d1c5e5da08feb86867e0615d97))
+* **deps:** update dependency 1password/onepassword-operator to v1.12.1 ([#578](https://github.com/nlamirault/schema-hub/issues/578)) ([7d8fb4c](https://github.com/nlamirault/schema-hub/commit/7d8fb4c9f34356502e6bab262853debcb8f040e9))
+* **deps:** update dependency argoproj/argo-cd to v3.5.6 ([#574](https://github.com/nlamirault/schema-hub/issues/574)) ([c76a5b9](https://github.com/nlamirault/schema-hub/commit/c76a5b953afd0387a1cf2124b13a1f17501027f4))
+* **deps:** update dependency aws-controllers-k8s/iam-controller to v1.10.1 ([#557](https://github.com/nlamirault/schema-hub/issues/557)) ([9b6e15d](https://github.com/nlamirault/schema-hub/commit/9b6e15db9225e5b4eb3571df7caadf8987fb81be))
+* **deps:** update dependency aws-controllers-k8s/kafka-controller to v1.13.1 ([#558](https://github.com/nlamirault/schema-hub/issues/558)) ([bb4a299](https://github.com/nlamirault/schema-hub/commit/bb4a29929081c015ca075bd6624912e59edf24f5))
+* **deps:** update dependency aws-controllers-k8s/kinesis-controller to v1.6.1 ([#561](https://github.com/nlamirault/schema-hub/issues/561)) ([4a32456](https://github.com/nlamirault/schema-hub/commit/4a324566b258ab17fb5c097611a603ec148815ae))
+* **deps:** update dependency aws-controllers-k8s/lambda-controller to v1.18.2 ([#562](https://github.com/nlamirault/schema-hub/issues/562)) ([cdd76a8](https://github.com/nlamirault/schema-hub/commit/cdd76a89777a48900ab17e3b1f34f19749359d0c))
+* **deps:** update dependency aws-controllers-k8s/mq-controller to v1.7.1 ([#563](https://github.com/nlamirault/schema-hub/issues/563)) ([8665e25](https://github.com/nlamirault/schema-hub/commit/8665e25fc7fb3cd230cfd460e286ba9b0816c03a))
+* **deps:** update dependency aws-controllers-k8s/networkfirewall-controller to v1.6.1 ([#564](https://github.com/nlamirault/schema-hub/issues/564)) ([778f084](https://github.com/nlamirault/schema-hub/commit/778f08400d2de69c838eebdb5b9c2ddd2b8211c4))
+* **deps:** update dependency aws-controllers-k8s/opensearchservice-controller to v1.8.1 ([#565](https://github.com/nlamirault/schema-hub/issues/565)) ([0b20433](https://github.com/nlamirault/schema-hub/commit/0b20433969103e3e2fc0269ba2b8408dfa0d041b))
+* **deps:** update dependency aws-controllers-k8s/organizations-controller to v1.6.2 ([#566](https://github.com/nlamirault/schema-hub/issues/566)) ([493825d](https://github.com/nlamirault/schema-hub/commit/493825de5d21330b40f0dd5d3183eb7b8b07c822))
+* **deps:** update dependency aws-controllers-k8s/pipes-controller to v1.7.1 ([#567](https://github.com/nlamirault/schema-hub/issues/567)) ([12a8bb8](https://github.com/nlamirault/schema-hub/commit/12a8bb8ae58a38e3d954081f960bab7639495ebb))
+* **deps:** update dependency aws-controllers-k8s/prometheusservice-controller to v1.9.0 ([#568](https://github.com/nlamirault/schema-hub/issues/568)) ([7f77e0e](https://github.com/nlamirault/schema-hub/commit/7f77e0eb10d1fc708c90f7b7d3a50d372edf0ea0))
+* **deps:** update dependency aws-controllers-k8s/ram-controller to v1.6.1 ([#569](https://github.com/nlamirault/schema-hub/issues/569)) ([db1ae03](https://github.com/nlamirault/schema-hub/commit/db1ae03dcc4e396bb414579d0c8132018f6519fb))
+* **deps:** update dependency aws-controllers-k8s/rds-controller to v1.13.4 ([#570](https://github.com/nlamirault/schema-hub/issues/570)) ([6df151d](https://github.com/nlamirault/schema-hub/commit/6df151d33851d9c2212d226805378bef245120b8))
+* **deps:** update dependency aws-controllers-k8s/route53-controller to v1.7.1 ([#571](https://github.com/nlamirault/schema-hub/issues/571)) ([831237d](https://github.com/nlamirault/schema-hub/commit/831237d3b4c1b0b70bfa6b285dc23cca103cb8b7))
+* **deps:** update dependency aws-controllers-k8s/s3-controller to v1.13.1 ([#573](https://github.com/nlamirault/schema-hub/issues/573)) ([a52d724](https://github.com/nlamirault/schema-hub/commit/a52d7248c7c157c16d5e2faed23b060f346cb1e2))
+* **deps:** update dependency dopplerhq/kubernetes-operator to v1.7.5 ([#572](https://github.com/nlamirault/schema-hub/issues/572)) ([41f7d95](https://github.com/nlamirault/schema-hub/commit/41f7d95be231def6928d65e4f98271c83042c6c7))
+
+
+### 📚 Documentation
+
+* **schemas:** generate reference docs from sources.yaml ([#559](https://github.com/nlamirault/schema-hub/issues/559)) ([75bf377](https://github.com/nlamirault/schema-hub/commit/75bf3771160a91c9489c1aa5b627686295da31f4))
+
 ## [1.11.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.10.0...schema-hub-v1.11.0) (2026-10-18)
 
 
