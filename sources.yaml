@@ -782,6 +782,14 @@ sources:
   groups:
   - infrastructure.cluster.x-k8s.io
   project: cluster-api
+- id: cluster-api-provider-openstack
+  name: Cluster API Provider OpenStack
+  category: Kubernetes
+  cncf: null
+  upstream: kubernetes-sigs/cluster-api-provider-openstack
+  groups:
+  - infrastructure.cluster.x-k8s.io
+  project: cluster-api
 - id: cluster-api-provider-vcluster
   name: Cluster API Provider vCluster
   category: Kubernetes

@@ -41346,6 +41346,105 @@
         "cncf_maturity": "incubating"
       },
       {
+        "kind": "openstackcluster",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/openstackcluster_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/openstackcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackcluster",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/openstackcluster_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/openstackcluster",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackclusteridentity",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/openstackclusteridentity_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/openstackclusteridentity",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackclustertemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/openstackclustertemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/openstackclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackclustertemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/openstackclustertemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/openstackclustertemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackfloatingippool",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/openstackfloatingippool_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/openstackfloatingippool",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackmachine",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/openstackmachine_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/openstackmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackmachine",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/openstackmachine_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/openstackmachine",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackmachinetemplate",
+        "version": "v1beta1",
+        "file": "infrastructure.cluster.x-k8s.io/openstackmachinetemplate_v1beta1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta1/openstackmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackmachinetemplate",
+        "version": "v1beta2",
+        "file": "infrastructure.cluster.x-k8s.io/openstackmachinetemplate_v1beta2.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1beta2/openstackmachinetemplate",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
+        "kind": "openstackserver",
+        "version": "v1alpha1",
+        "file": "infrastructure.cluster.x-k8s.io/openstackserver_v1alpha1.json",
+        "slug": "infrastructure.cluster.x-k8s.io/v1alpha1/openstackserver",
+        "category": "Kubernetes",
+        "upstream": "kubernetes-sigs/cluster-api",
+        "cncf_maturity": "incubating"
+      },
+      {
         "kind": "rosacluster",
         "version": "v1beta2",
         "file": "infrastructure.cluster.x-k8s.io/rosacluster_v1beta2.json",

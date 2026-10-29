@@ -16,7 +16,7 @@ from it.
 
 <!-- BEGIN GENERATED: generate-schemas-reference.py -->
 
-_116 operators and controllers, 1047 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
+_117 operators and controllers, 1048 API groups. Generated from `sources.yaml` — do not edit this section by hand; run `make docs-schemas` after changing `sources.yaml`._
 
 ## AI Orchestration
 
@@ -136,6 +136,7 @@ _116 operators and controllers, 1047 API groups. Generated from `sources.yaml` �
 | Cluster API Provider DigitalOcean | [kubernetes-sigs/cluster-api-provider-digitalocean](https://github.com/kubernetes-sigs/cluster-api-provider-digitalocean) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider GCP | [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp) | `bootstrap.cluster.x-k8s.io`, `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider Hetzner | [syself/cluster-api-provider-hetzner](https://github.com/syself/cluster-api-provider-hetzner) | `infrastructure.cluster.x-k8s.io` |
+| Cluster API Provider OpenStack | [kubernetes-sigs/cluster-api-provider-openstack](https://github.com/kubernetes-sigs/cluster-api-provider-openstack) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider vCluster | [loft-sh/cluster-api-provider-vcluster](https://github.com/loft-sh/cluster-api-provider-vcluster) | `infrastructure.cluster.x-k8s.io` |
 | Cluster API Provider Vultr | [vultr/cluster-api-provider-vultr](https://github.com/vultr/cluster-api-provider-vultr) | `infrastructure.cluster.x-k8s.io` |
 | Crossplane | [crossplane/crossplane](https://github.com/crossplane/crossplane) | 4 API groups — see `sources.yaml` (`crossplane`) |
