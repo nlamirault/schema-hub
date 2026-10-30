@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.13.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.12.0...schema-hub-v1.13.0) (2026-10-30)
+
+
+### 🚀 Features
+
+* **crd:** add Cluster API Provider DigitalOcean support ([#583](https://github.com/nlamirault/schema-hub/issues/583)) ([bf4c24c](https://github.com/nlamirault/schema-hub/commit/bf4c24cd4d35c689cf8c47f54ea994482307a68c)), closes [#340](https://github.com/nlamirault/schema-hub/issues/340)
+* **crd:** add Cluster API Provider Hetzner support ([#584](https://github.com/nlamirault/schema-hub/issues/584)) ([235fff9](https://github.com/nlamirault/schema-hub/commit/235fff9a24f087717343b1ca86889dff68732721)), closes [#342](https://github.com/nlamirault/schema-hub/issues/342)
+* **crd:** add Cluster API Provider IBM Cloud support ([#586](https://github.com/nlamirault/schema-hub/issues/586)) ([492f8ee](https://github.com/nlamirault/schema-hub/commit/492f8ee7ab4e37705d2b60a9b7bb83de94e8f4c4)), closes [#343](https://github.com/nlamirault/schema-hub/issues/343)
+* **crd:** add Cluster API Provider OCI support ([#585](https://github.com/nlamirault/schema-hub/issues/585)) ([3fb4c57](https://github.com/nlamirault/schema-hub/commit/3fb4c57a3fcb80a9c8cb23146e09de4684a4b381)), closes [#344](https://github.com/nlamirault/schema-hub/issues/344)
+* **crd:** add Cluster API Provider OpenStack support ([#588](https://github.com/nlamirault/schema-hub/issues/588)) ([c6f34a0](https://github.com/nlamirault/schema-hub/commit/c6f34a0cf7c90e228b99aa1fb166ae61173eb4da)), closes [#345](https://github.com/nlamirault/schema-hub/issues/345)
+* **crd:** add Cluster API Provider Scaleway support ([#587](https://github.com/nlamirault/schema-hub/issues/587)) ([bc26a7d](https://github.com/nlamirault/schema-hub/commit/bc26a7d570e0b1a91b492c0a51b97ee02b8e6f91)), closes [#346](https://github.com/nlamirault/schema-hub/issues/346)
+* **crd:** add Cluster API Provider vCluster support ([#589](https://github.com/nlamirault/schema-hub/issues/589)) ([83d5b5a](https://github.com/nlamirault/schema-hub/commit/83d5b5a8806a2b83ea8f11eb8dd571aa3fbf1e20)), closes [#347](https://github.com/nlamirault/schema-hub/issues/347)
+* **crd:** add Cluster API Provider Vultr support ([#590](https://github.com/nlamirault/schema-hub/issues/590)) ([9ca6323](https://github.com/nlamirault/schema-hub/commit/9ca6323e85f2e5103bae9cf750b80952f6bd76f3)), closes [#348](https://github.com/nlamirault/schema-hub/issues/348)
+
+
+### 🐛 Bug Fixes
+
+* migrate hawkeye config to the v7 schema ([#594](https://github.com/nlamirault/schema-hub/issues/594)) ([e4f2c36](https://github.com/nlamirault/schema-hub/commit/e4f2c366c2f7b5a69a9799d764d17ed9b8a65de6))
+
+
+### 🚨 Maintenance
+
+* **deps:** update dependency agentgateway/agentgateway to v1.7.0 ([#603](https://github.com/nlamirault/schema-hub/issues/603)) ([306bf0c](https://github.com/nlamirault/schema-hub/commit/306bf0c72fe36d7f6f32a3c95cba634dbf7f0ac5))
+* **deps:** update dependency akuity/kargo to v1.12.5 ([#581](https://github.com/nlamirault/schema-hub/issues/581)) ([08ff2a4](https://github.com/nlamirault/schema-hub/commit/08ff2a4890d7023208190c02dc3a34d0a3428d97))
+* **deps:** update dependency argoproj/argo-workflows to v4.1.6 ([#582](https://github.com/nlamirault/schema-hub/issues/582)) ([9aaa0f0](https://github.com/nlamirault/schema-hub/commit/9aaa0f08288582ebdd21726e935ded901dc0ad92))
+* **deps:** update dependency aws-controllers-k8s/acm-controller to v1.11.0 ([#604](https://github.com/nlamirault/schema-hub/issues/604)) ([36ba7df](https://github.com/nlamirault/schema-hub/commit/36ba7df93b7b076d27cbb4c01479b86ada397c35))
+* **deps:** update dependency aws-controllers-k8s/acmpca-controller to v1.7.0 ([#605](https://github.com/nlamirault/schema-hub/issues/605)) ([8966067](https://github.com/nlamirault/schema-hub/commit/8966067d7d83e7544576df7880427f54996ea562))
+* **deps:** update dependency aws-controllers-k8s/kafka-controller to v1.13.2 ([#592](https://github.com/nlamirault/schema-hub/issues/592)) ([05be195](https://github.com/nlamirault/schema-hub/commit/05be195b0e79de4b7123ee96c612cf4a05373251))
+* **deps:** update dependency cert-manager/cert-manager to v1.21.3 ([#593](https://github.com/nlamirault/schema-hub/issues/593)) ([76ccd48](https://github.com/nlamirault/schema-hub/commit/76ccd48816d3126cfdb0c9325e22440c74a61fbb))
+* **deps:** update dependency cilium/cilium to v1.20.4 ([#595](https://github.com/nlamirault/schema-hub/issues/595)) ([404f3a8](https://github.com/nlamirault/schema-hub/commit/404f3a83ae6f91eb91340a972f43f9b06650fbc8))
+* **deps:** update dependency envoyproxy/gateway to v1.9.3 ([#596](https://github.com/nlamirault/schema-hub/issues/596)) ([037f6b4](https://github.com/nlamirault/schema-hub/commit/037f6b4bb84914a40b9e6fe2e05d59f61b6bf322))
+* **deps:** update dependency istio/istio to v1.31.3 ([#597](https://github.com/nlamirault/schema-hub/issues/597)) ([68aaa4d](https://github.com/nlamirault/schema-hub/commit/68aaa4dfb924567129fe23d7cb6e9a9e558f0f33))
+* **deps:** update dependency kagent-dev/kagent to v0.10.4 ([#598](https://github.com/nlamirault/schema-hub/issues/598)) ([7d2e754](https://github.com/nlamirault/schema-hub/commit/7d2e75475abb5d51f695ebb7a650942f4d8031eb))
+* **deps:** update dependency kubernetes-sigs/agent-sandbox to v1.0.9 ([#599](https://github.com/nlamirault/schema-hub/issues/599)) ([c2d3ee0](https://github.com/nlamirault/schema-hub/commit/c2d3ee0855879259115110bfb05cb26a959c9b10))
+* **deps:** update dependency kubernetes-sigs/security-profiles-operator to v1.1.2 ([#600](https://github.com/nlamirault/schema-hub/issues/600)) ([993b5e1](https://github.com/nlamirault/schema-hub/commit/993b5e1d73c8ab1c209eb7cf6c500b856cbf9641))
+* **deps:** update dependency open-feature/open-feature-operator to v0.9.4 ([#601](https://github.com/nlamirault/schema-hub/issues/601)) ([f3ec812](https://github.com/nlamirault/schema-hub/commit/f3ec812fe7ba174c87248dc77bb72f51bd910788))
+* **deps:** update dependency traefik/traefik to v3.7.16 ([#602](https://github.com/nlamirault/schema-hub/issues/602)) ([7495672](https://github.com/nlamirault/schema-hub/commit/7495672c960be47a0a527d5aeda854efcc526f78))
+
 ## [1.12.0](https://github.com/nlamirault/schema-hub/compare/schema-hub-v1.11.0...schema-hub-v1.12.0) (2026-10-29)
 
 
