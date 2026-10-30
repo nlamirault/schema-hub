@@ -21,7 +21,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=istio/istio
-export VERSION=1.31.2
+export VERSION=1.31.3
 
 function generate_url {
   echo "https://raw.githubusercontent.com/istio/istio/refs/tags/${VERSION}/manifests/charts/base/files/crd-all.gen.yaml"
