@@ -9,7 +9,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=aws-controllers-k8s/bedrockagent-controller
-export VERSION=1.5.1
+export VERSION=1.6.0
 
 function generate_url {
   local crd_file=$1
