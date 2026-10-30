@@ -17,7 +17,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=open-feature/open-feature-operator
-export VERSION=0.9.3
+export VERSION=0.9.4
 
 function generate_url {
   echo "https://github.com/open-feature/open-feature-operator/config/crd?ref=v${VERSION}"
