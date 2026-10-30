@@ -14,7 +14,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=kubernetes-sigs/security-profiles-operator
-export VERSION=1.1.1
+export VERSION=1.1.2
 
 function generate_url {
   local crd_file=$1

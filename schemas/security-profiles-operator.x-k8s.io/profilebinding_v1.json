@@ -67,7 +67,7 @@
           "x-kubernetes-validations": [
             {
               "message": "matchExpressions operator must be In, NotIn, Exists or DoesNotExist, In and NotIn require values, Exists and DoesNotExist must not have values",
-              "rule": "!has(self.matchExpressions) || self.matchExpressions.all(e, e.operator in ['In', 'NotIn'] ? (has(e.values) && size(e.values) > 0) : (e.operator in ['Exists', 'DoesNotExist'] && (!has(e.values) || size(e.values) == 0)))"
+              "rule": "!has(self.matchExpressions) || self.matchExpressions.all(e, has(e.values) && size(e.values) > 0 ? (e.operator == 'In' || e.operator == 'NotIn') : (e.operator == 'Exists' || e.operator == 'DoesNotExist'))"
             }
           ]
         },
@@ -107,7 +107,7 @@
       "description": "status contains the observed state of the ProfileBinding.",
       "properties": {
         "activeWorkloads": {
-          "description": "activeWorkloads lists the workloads currently using this binding.",
+          "description": "activeWorkloads lists the workloads currently using this binding. It\nholds at most 1000 workloads.",
           "items": {
             "type": "string"
           },
