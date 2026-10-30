@@ -11,7 +11,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=aws-controllers-k8s/applicationautoscaling-controller
-export VERSION=1.8.2
+export VERSION=1.9.0
 
 function generate_url {
   local crd_file=$1
