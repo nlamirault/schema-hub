@@ -11,6 +11,14 @@
     },
     "spec": {
       "properties": {
+        "failedPodPolicy": {
+          "default": "Retain",
+          "enum": [
+            "Retain",
+            "Recreate"
+          ],
+          "type": "string"
+        },
         "operatingMode": {
           "default": "Running",
           "enum": [
@@ -6002,6 +6010,7 @@
                     "type": "object"
                   },
                   "name": {
+                    "maxLength": 63,
                     "type": "string"
                   }
                 },
@@ -6148,10 +6157,23 @@
             "required": [
               "spec"
             ],
-            "type": "object"
+            "type": "object",
+            "x-kubernetes-validations": [
+              {
+                "message": "metadata.name must not be empty",
+                "rule": "has(self.metadata) && has(self.metadata.name) && size(self.metadata.name) > 0"
+              }
+            ]
           },
+          "maxItems": 128,
           "type": "array",
-          "x-kubernetes-list-type": "atomic"
+          "x-kubernetes-list-type": "atomic",
+          "x-kubernetes-validations": [
+            {
+              "message": "volumeClaimTemplates names must be unique",
+              "rule": "self.all(a, !has(a.metadata) || !has(a.metadata.name) || self.exists_one(b, has(b.metadata) && has(b.metadata.name) && b.metadata.name == a.metadata.name))"
+            }
+          ]
         }
       },
       "required": [
