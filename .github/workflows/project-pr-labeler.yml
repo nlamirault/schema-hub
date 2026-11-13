@@ -29,10 +29,6 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-    # - name: Monitor Actions
-    #   uses: GitHubSecurityLab/actions-permissions/monitor@37c927c24552caa0ef6040ab0876db729cc12754 # v1.0.2
-    #   with:
-    #     config: ${{ vars.PERMISSIONS_CONFIG }}
     - uses: actions/labeler@bf12e9b00b37c5c0ca2b87b79b2daf7891dbda13 # v7.0.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"

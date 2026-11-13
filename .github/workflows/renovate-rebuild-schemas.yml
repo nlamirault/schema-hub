@@ -36,11 +36,6 @@ jobs:
         ref: ${{ inputs.branch || github.head_ref }}
         fetch-depth: 0
 
-    - name: Monitor GitHub Actions permissions
-      uses: GitHubSecurityLab/actions-permissions/monitor@v1
-      with:
-        config: ${{ vars.PERMISSIONS_CONFIG }}
-
     - name: Install yq
       uses: mikefarah/yq@c14f446382944492701b16c1ddb48bb9dbe683e3 # v4.53.6
 
