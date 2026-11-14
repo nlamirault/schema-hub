@@ -26,7 +26,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=kubernetes-sigs/cluster-api
-export VERSION=1.14.3
+export VERSION=1.14.4
 
 function generate_url {
   local crd_file=$1
