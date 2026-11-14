@@ -18,7 +18,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=syself/cluster-api-provider-hetzner
-export VERSION=1.1.10
+export VERSION=1.1.12
 
 function generate_url {
   local crd_file=$1
