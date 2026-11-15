@@ -12,7 +12,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=argoproj/argo-rollouts
-export VERSION=1.10.1
+export VERSION=1.10.2
 
 function generate_url {
   local crd_file=$1
